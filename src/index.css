@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+  }
+}
+
+@layer components {
+  .main-section {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+  }
+  .container {
+    max-width: 1400px;
+  }
+  .select {
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+  }
+}
+
+/* custom input */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.font-weight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+span.swiper-pagination-bullet {
+  
+  @apply w-5 h-2 rounded-lg size-7
+}
+
+span.swiper-pagination-bullet-active {
+  
+  @apply !bg-teal-700 w-8
+ 
+}
+
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal{
+  bottom: 0px; 
+}
+
+.protect-img {
+    pointer-events: none;
+}
+
+
+
+
+/* .partners-container {
+  width: 100%;
+  overflow: hidden; 
+  justify-content: center;
+  position: relative;
+}
+
+.partners-images {
+  display: flex;
+  gap: 80px;
+  animation: scroll-left 30s linear infinite;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0); 
+  }
+  to {
+    transform: translateX(-100%); 
+  }
+}
+
+.partners-images img {
+  width: 150px; 
+  height: auto;
+} */
+
+
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), );
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), );
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: flex;
+  animation: 15s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 50px;
+  margin: 0 40px;
+}
+
+.logos-slide {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
