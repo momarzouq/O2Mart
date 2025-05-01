@@ -1,11 +1,11 @@
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
-import Layout from "./components/layout/Layout";
-import Batteries from "./pages/Batteries";
-import Tyres from "./pages/Tyres";
-import AutoParts from "./pages/Auto-Parts";
-import Rims from "./pages/Rims";
-
+import Layout from "./components/Layout";
+import AutoParts from './pages/auto-parts/Index'
+import Batteries from './pages/batteries/Index'
+import Tyres from './pages/auto-parts/Index'
+import Rims from './pages/rims/Index'
+import NotFound from "./components/Not404";
 function App() {
   return (
     <Layout>
@@ -15,7 +15,7 @@ function App() {
         <Route path="/batteries" element={<Batteries />} />
         <Route path="/tyres" element={<Tyres />} />
         <Route path="/rims" element={<Rims />} />
-        <Route path="/*" element={<div>404</div>} />
+        <Route path="/*" element={<NotFound/>} />
       </Routes>
     </Layout>
   );

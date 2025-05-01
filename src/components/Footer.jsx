@@ -1,7 +1,7 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
 import Container from "../UI/Container";
-import Payment from "../../assets/Payment_footer.svg";
-import Logo from "../../assets/logo.svg";
+import Payment from "../assets/Payment_footer.svg";
+import Logo from "../assets/logo.svg";
 export default function Footer() {
   return (
     <div className="bg-black pt-14 pb-10">

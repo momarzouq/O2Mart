@@ -1,9 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
-import Container from "../../UI/Container";
-import LogoImg from "../../assets/logo.svg";
+import LogoImg from "../assets/logo.svg";
 import { useState } from "react";
 import { BsPerson } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import Container from "../UI/Container";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

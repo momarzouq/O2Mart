@@ -1,7 +1,6 @@
-import Navbar from "./layout/Navbar";
-import ScrollToTopButton from "./ScrolleToTop";
+import Navbar from "./Navbar";
 import Footer from "./Footer";
-
+import ScrollToTopButton from './ScrolleToTop'
 function Layout({ children }) {
   return (
     <div>

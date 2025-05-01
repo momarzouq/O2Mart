@@ -1,8 +1,8 @@
-import Hero from "../components/home/hero/Hero";
-import Main from "../components/home/main/Main";
-import Modal from "../assets/Modal.png";
+import Modal from "../../assets/Modal.png";
 import PropTypes from "prop-types";
 import { IoClose } from "react-icons/io5";
+import Main from "./main/Main";
+import Hero from "./hero/Hero";
 
 import { useEffect, useState } from "react";
 // responsible of displaying home sections...
@@ -54,7 +54,7 @@ const DiscountModal = ({ isOpen, onClose }) => {
           typesetting industry.  
         </p>
         {/* Email Input */}
-        <form className="flex flex-col justify-center items-center space-y-2">
+        <form className="flex flex-col justify-center items-center space-y-4">
           <input
             id="email"
             type="email"
