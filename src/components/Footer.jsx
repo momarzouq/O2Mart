@@ -1,5 +1,5 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
-import Container from "../../UI/Container";
+import Container from "../UI/Container";
 import Payment from "../../assets/Payment_footer.svg";
 import Logo from "../../assets/logo.svg";
 export default function Footer() {
