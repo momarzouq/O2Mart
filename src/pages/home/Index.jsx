@@ -46,7 +46,7 @@ const DiscountModal = ({ isOpen, onClose }) => {
             <h2 className="text-3xl text-gray-800 mb-2">REGISTER AND GET</h2>
             <p className="text-4xl font-bold text-red-600">20% OFF</p>
           </div>
-          <img src={Modal} alt="Modal" className="max-w-[316px]"/>
+          <img src={Modal} alt="Modal" className="max-w-[316px]" />
         </div>
         <p className="text-center w-[550px] md:w-[300px] mb-4">
           Lorem Ipsum is simply dummy text of the printing and typesetting

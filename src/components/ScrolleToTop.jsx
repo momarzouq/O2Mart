@@ -33,7 +33,7 @@ export default function ScrollToTopButton() {
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 bg-red-600 text-white p-2 rounded-full shadow-lg hover:bg-red-700 transition duration-300"
         >
-          <IoIosArrowUp size={20}/>
+          <IoIosArrowUp size={20} />
         </button>
       )}
     </div>

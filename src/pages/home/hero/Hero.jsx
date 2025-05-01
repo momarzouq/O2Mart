@@ -20,9 +20,7 @@ const Section1 = () => {
       <div className="flex flex-col gap-4 md:gap-1 items-start mt-12 md:mt-4 mx-[70px] md:mx-4">
         <h1 className="text-6xl md:text-xl font-bold ">Auto Parts</h1>
         <p className="font-bold text-lg md:text-sm mt-2 md:mt-0 w-64 md:w-40">
-          We scan the market,
-          compare prices,
-         and recommend the best deals
+          We scan the market, compare prices, and recommend the best deals
         </p>
         <button className="text-xs bg-red-600 hover:bg-red-700 text-white py-2 md:py-1 px-6 md:px-4 rounded-3xl">
           Inquire Now
