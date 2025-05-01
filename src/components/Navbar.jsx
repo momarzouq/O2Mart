@@ -62,7 +62,7 @@ const NavLinkComponent = ({ link }) => {
         to={link.path}
         className={({ isActive }) =>
           isActive
-            ? "text-red-600 rounded-full px-4 py-2 font-semibold"
+            ? "text-Brand rounded-full px-4 py-2 font-semibold"
             : "text-white"
         }
       >
@@ -76,7 +76,7 @@ const MobileNav = ({ links }) => {
   return (
     <>
       <ul className="absolute z-10 top-16 left-0 w-full bg-white shadow-md py-4 space-y-4 font-semibold text-lg">
-        <button className="hidden w-full sm:block bg-red-600 hover:bg-red-700 py-2 rounded-lg text-white font-semibold">
+        <button className="hidden w-full sm:block bg-Brand hover:bg-red-600 py-2 rounded-lg text-white font-semibold">
           Get Quote
         </button>
         {links.map((link) => (
@@ -87,7 +87,7 @@ const MobileNav = ({ links }) => {
             <NavLink
               to={link.path}
               className={({ isActive }) =>
-                isActive ? "text-red-600  font-semibold" : "text-black"
+                isActive ? "text-Brand  font-semibold" : "text-black"
               }
             >
               {link.name}
@@ -102,7 +102,7 @@ const MobileNav = ({ links }) => {
 const GetQuteAndShopCart = () => {
   return (
     <div className="flex items-center gap-2">
-      <button className="  bg-red-600 hover:bg-red-700 py-2 px-5 rounded-lg text-white font-semibold sm:hidden">
+      <button className="  bg-Brand hover:bg-red-600 py-2 px-5 rounded-lg text-white font-semibold sm:hidden">
         Get Quote
       </button>
       <BsPerson color="#FFFFFF" size={25} />

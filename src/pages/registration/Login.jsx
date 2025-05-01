@@ -13,7 +13,7 @@ export default function Login() {
       <div className="flex flex-col justify-center items-center mt-10 space-y-2">
         {/* button */}
         <div className="flex gap-2 mb-6">
-          <button className="bg-red-600 text-white py-3 w-[300px] rounded-xl">
+          <button className="bg-Brand text-white py-3 w-[300px] rounded-xl">
             Login
           </button>
           <button className="bg-[#F5F5F5] text-gray-400 py-3 w-[300px]  rounded-xl">
@@ -24,7 +24,7 @@ export default function Login() {
         <div className="w-[44%] flex flex-col gap-8 justify-center">
           <div className="relative w-full  border rounded-md">
             <div className="absolute bg-[#F5F5F5] left-0 top-0 h-full w-10 flex items-center justify-center rounded-l-md ">
-              <MdPersonAddAlt1 className="bx bx-user text-red-600 text-xl" />
+              <MdPersonAddAlt1 className="bx bx-user text-Brand text-xl" />
             </div>
             <input
               type="text"
@@ -36,7 +36,7 @@ export default function Login() {
           {/* Password Input */}
           <div className="relative w-full  border  rounded mb-6">
             <div className="absolute bg-[#F5F5F5] left-0 top-0 h-full w-10 flex items-center justify-center rounded-l">
-              <IoKey className="bx bx-user text-red-600 text-xl" />
+              <IoKey className="bx bx-user text-Brand text-xl" />
             </div>
             <input
               type="text"
@@ -53,17 +53,17 @@ export default function Login() {
             <input type="checkbox" />{" "}
             <span className="text-sm text-gray-700">Remember me</span>
           </div>
-          <p className="text-red-600 text-sm">Forgot Password?</p>
+          <p className="text-Brand text-sm">Forgot Password?</p>
         </div>
 
         {/* button login */}
 
-        <button className="w-[44%] bg-[#F5F5F5] text-red-600 py-2 rounded-xl">
+        <button className="w-[44%] bg-[#F5F5F5] text-Brand py-2 rounded-xl">
           Login
         </button>
         <p className="w-[44%] text-start text-sm">
           Don't have accound ?
-          <span className=" text-sm text-red-600"> Register Now</span>
+          <span className=" text-sm text-Brand"> Register Now</span>
         </p>
       </div>
     </Container>

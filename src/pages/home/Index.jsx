@@ -44,7 +44,7 @@ const DiscountModal = ({ isOpen, onClose }) => {
         <div className="flex md:flex-col gap-4">
           <div className="flex flex-col justify-center items-center">
             <h2 className="text-3xl text-gray-800 mb-2">REGISTER AND GET</h2>
-            <p className="text-4xl font-bold text-red-600">20% OFF</p>
+            <p className="text-4xl font-bold text-Brand">20% OFF</p>
           </div>
           <img src={Modal} alt="Modal" className="max-w-[316px]" />
         </div>
@@ -64,7 +64,7 @@ const DiscountModal = ({ isOpen, onClose }) => {
           />
           <button
             type="submit"
-            className=" bg-red-600 text-white py-1.5 px-8 rounded-md hover:bg-red-700 transition duration-200"
+            className=" bg-Brand text-white py-1.5 px-8 rounded-md hover:bg-red-600 transition duration-200"
           >
             Inquire Now
           </button>

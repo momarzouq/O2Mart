@@ -36,18 +36,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 span.swiper-pagination-bullet {
-  
-  @apply w-2 h-2 rounded-3xl size-7
+  @apply w-2 h-2 rounded-3xl size-7;
 }
 
 span.swiper-pagination-bullet-active {
-  
-  @apply !bg-red-600 w-2
- 
+  @apply !bg-Brand w-2;
 }
 
-.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal{
-  top: -10px !important; 
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  top: -10px !important;
 }
 
 .protect-img {
@@ -59,4 +56,3 @@ span.swiper-pagination-bullet-active {
   color: #9b9797 !important; /* Red color */
   --swiper-navigation-size: 24px; /* Adjust size */
 }
-

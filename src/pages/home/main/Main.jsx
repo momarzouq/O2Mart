@@ -228,10 +228,12 @@ const Section3 = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex md:flex-col md:space-y-4 lg:gap-2 md:text-center md:px-2 items-center justify-around bg-red-600 py-2 rounded-2xl">
+      <div className="flex md:flex-col md:space-y-4 lg:gap-2 md:text-center md:px-2 items-center justify-around bg-Brand py-2 rounded-2xl">
         <img src={Email} alt="Email" />
         <div className="flex flex-col gap-2 text-white">
-          <h3 className="text-2xl lg:text-xl">Get the Latest Deals & Updates.</h3>
+          <h3 className="text-2xl lg:text-xl">
+            Get the Latest Deals & Updates.
+          </h3>
           <p className="lg:text-sm">
             Stay in the loop! Subscribe to our newsletter to receive the latest
             deals,
@@ -246,7 +248,7 @@ const Section3 = () => {
             placeholder="Email address"
             className="text-sm border border-gray-300 rounded-sm p-2 focus:outline-none focus:ring-1 focus:ring-red-600"
           />
-          <FaTelegramPlane className="absolute right-4 top-2 text-red-600 size-6" />
+          <FaTelegramPlane className="absolute right-4 top-2 text-Brand size-6" />
         </div>
       </div>
     </div>
@@ -313,7 +315,9 @@ const Section4 = () => {
             <div className="h-full bg-white flex items-center justify-center">
               <div>
                 <img src={item.img} className="rounded-md" />
-                <p className="text-sm font-semibold w-60 mt-2 md:w-48">{item.desc}</p>
+                <p className="text-sm font-semibold w-60 mt-2 md:w-48">
+                  {item.desc}
+                </p>
               </div>
             </div>
           </SwiperSlide>

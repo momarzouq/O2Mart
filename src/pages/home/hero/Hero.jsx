@@ -22,7 +22,7 @@ const Section1 = () => {
         <p className="font-bold text-lg md:text-sm mt-2 md:mt-0 w-64 md:w-40">
           We scan the market, compare prices, and recommend the best deals
         </p>
-        <button className="text-xs bg-red-600 hover:bg-red-700 text-white py-2 md:py-1 px-6 md:px-4 rounded-3xl">
+        <button className="text-xs bg-Brand hover:bg-red-600 text-white py-2 md:py-1 px-6 md:px-4 rounded-3xl">
           Inquire Now
         </button>
       </div>

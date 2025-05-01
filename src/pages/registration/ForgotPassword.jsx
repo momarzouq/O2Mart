@@ -18,7 +18,7 @@ export default function ForgotPassword() {
               className="w-full px-4 pr-4 py-[14px] rounded-md text-sm bg-white outline-none "
             />
           </div>
-          <button className="bg-red-600 text-white py-3 w-[300px] rounded-xl">
+          <button className="bg-Brand text-white py-3 w-[300px] rounded-xl">
             Login
           </button>
         </div>

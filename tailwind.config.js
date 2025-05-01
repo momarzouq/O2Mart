@@ -24,6 +24,7 @@ export default {
       colors: {
         general: "#276C76",
         header: "#C8E677",
+        Brand: "#EF3B24",
       },
       boxShadow: {
         neon: "0 0 5px theme('colors.lime.50'), 0 0  30px theme('colors.lime.200')",

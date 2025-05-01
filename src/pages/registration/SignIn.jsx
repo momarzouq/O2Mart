@@ -16,7 +16,7 @@ export default function SignIn() {
           <button className="bg-[#F5F5F5] text-gray-400  py-3 w-[300px] rounded-xl">
             Login
           </button>
-          <button className="bg-red-600 text-white py-3 w-[300px]  rounded-xl">
+          <button className="bg-Brand text-white py-3 w-[300px]  rounded-xl">
             Register
           </button>
         </div>
@@ -24,7 +24,7 @@ export default function SignIn() {
         <div className="w-[44%] flex flex-col gap-8 justify-center">
           <div className="relative w-full  border rounded-md">
             <div className="absolute bg-[#F5F5F5] left-0 top-0 h-full w-10 flex items-center justify-center rounded-l-md ">
-              <MdAlternateEmail className="text-red-600 text-xl " />
+              <MdAlternateEmail className="text-Brand text-xl " />
             </div>
             <input
               type="text"
@@ -37,7 +37,7 @@ export default function SignIn() {
           <div className="flex gap-6">
             <div className="relative w-1/2  border rounded-md">
               <div className="absolute bg-[#F5F5F5] left-0 top-0 h-full w-10 flex items-center justify-center rounded-l-md ">
-                <IoPersonOutline className="text-red-600 text-xl size-4" />
+                <IoPersonOutline className="text-Brand text-xl size-4" />
               </div>
               <input
                 type="text"
@@ -47,7 +47,7 @@ export default function SignIn() {
             </div>
             <div className="relative w-1/2  border rounded-md">
               <div className="absolute bg-[#F5F5F5] left-0 top-0 h-full w-10 flex items-center justify-center rounded-l-md ">
-                <IoPersonOutline className="bx bx-user text-red-600 text-xl size-4" />
+                <IoPersonOutline className="bx bx-user text-Brand text-xl size-4" />
               </div>
               <input
                 type="text"
@@ -60,7 +60,7 @@ export default function SignIn() {
           {/* Password Input */}
           <div className="relative w-full  border  rounded">
             <div className="absolute bg-[#F5F5F5] left-0 top-0 h-full w-10 flex items-center justify-center rounded-l">
-              <IoKey className="bx bx-user text-red-600 text-xl" />
+              <IoKey className="bx bx-user text-Brand text-xl" />
             </div>
             <input
               type="text"
@@ -72,7 +72,7 @@ export default function SignIn() {
           {/* Confirm Password Input */}
           <div className="relative w-full  border  rounded mb-6">
             <div className="absolute bg-[#F5F5F5] left-0 top-0 h-full w-10 flex items-center justify-center rounded-l">
-              <IoKey className="bx bx-user text-red-600 text-xl" />
+              <IoKey className="bx bx-user text-Brand text-xl" />
             </div>
             <input
               type="text"
@@ -90,7 +90,7 @@ export default function SignIn() {
             <span className="text-xs font-semibold text-gray-700">
               I accept the{" "}
             </span>
-            <span className="text-xs font-semibold text-red-600">
+            <span className="text-xs font-semibold text-Brand">
               Terms of Service and Privacy Policy
             </span>
           </div>
@@ -98,7 +98,7 @@ export default function SignIn() {
 
         {/* button login */}
 
-        <button className="w-[44%] bg-[#F5F5F5] text-gray-400 hover:text-red-600 py-2 rounded-xl">
+        <button className="w-[44%] bg-[#F5F5F5] text-gray-400 hover:text-Brand py-2 rounded-xl">
           Register
         </button>
       </div>
