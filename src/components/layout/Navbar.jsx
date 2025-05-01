@@ -57,7 +57,7 @@ const Nav = ({ links }) => {
 
 const NavLinkComponent = ({ link }) => {
   return (
-    <li className="text-gray-600 hover:text-gray-950 py-2 px-5 rounded-2xl">
+    <li className="text-gray-600 hover:text-gray-950 py-2 px-4 rounded-2xl">
       <NavLink
         to={link.path}
         className={({ isActive }) =>

@@ -2,7 +2,7 @@
 
 ## React Router     react-router-dom
 
-## Icons Library    iconsax-react
+## Icons Library    react-icons
 
 ## Swiper Library   npm i swiper
                              
