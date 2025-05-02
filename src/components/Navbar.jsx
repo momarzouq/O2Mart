@@ -11,7 +11,7 @@ export default function Navbar() {
     { name: "Home", path: "/" },
     { name: "Auto Part", path: "/auto-parts" },
     { name: "Batteries", path: "/batteries" },
-    { name: "Tyres", path: "/tyres" },
+    { name: "Tires", path: "/tires" },
     { name: "Rims", path: "/rims" },
   ];
 

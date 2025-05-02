@@ -16,13 +16,16 @@ import HONDA from "../../assets/HONDA.svg";
 import Tyers from "../../assets/Tyers.svg";
 import Volum from "../../assets/volum.png";
 import Nissan from "../../assets/nissan.svg";
-import { useState } from "react";
+import RIM_Size from "../../assets/size-tyer.png";
+import On from "../../assets/on.svg";
+import { useEffect, useState } from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { IoHeartOutline } from "react-icons/io5";
+import { IoClose, IoHeartOutline } from "react-icons/io5";
 import { MdOutlineCompareArrows } from "react-icons/md";
 import { RiArrowDownSFill, RiArrowUpSFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
-export default function Tyers() {
+export default function Tires() {
   return (
     <div>
       <Section1 />
@@ -35,6 +38,24 @@ export default function Tyers() {
 }
 
 const Section1 = () => {
+  const [width, setWidth] = useState("");
+  const [height, setHeight] = useState("");
+  const [rim, setRim] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  useEffect(() => {
+    if (width && height && rim) {
+      setShowModal(true);
+    }
+  }, [width, height, rim]);
+
+  const tyreOptions = [
+    { label: "225/60R16", img: Tyers },
+    { label: "235/65R17", img: Tyers, onImg: On },
+    { label: "245/45R18", img: Tyers },
+    { label: "255/55R19", img: Tyers, onImg: On },
+    { label: "255/55R19", img: Tyers },
+    { label: "255/55R19", img: Tyers },
+  ];
   return (
     <div className="relative bg-[#FBFBFB]  flex items-center justify-center overflow-hidden">
       {/* Right Image */}
@@ -46,27 +67,85 @@ const Section1 = () => {
 
       {/* Modal in Center */}
       <div className="relative bg-[#F0EDED] w-[60%] md:w-[90%] rounded-[50px] my-10">
-        <h3 className="absolute left-[64px] md:left-2 top-8 rounded h-14 py-1 px-2 text-xs bg-[#FFFFFF] font-semibold text-Brand mb-2">
-          Search by Car
-        </h3>
-        <div className="z-10 bg-[#FFFFFF] py-10 px-20 rounded-[30px] my-12 mx-16 md:mx-2">
+        <div className="z-10 bg-[#FFFFFF] py-10 md:pb-28 px-20 xl:px-10 rounded-[30px] my-12 mx-16 xl:mx-4">
+          <div className="flex items-center gap-4 mb-4 ">
+            <h3 className=" text-sm font-semibold text-Brand cursor-pointer">
+              Search by Car
+            </h3>
+            <h3 className=" cursor-pointer  text-sm  font-semibold ">
+              Search by Car
+            </h3>
+          </div>
           <div>
             {/* Car Info: Make, Model, Year */}
             <form className="space-y-4 text-sm">
               <div className="flex md:flex-col gap-2 ">
-                <select className="flex-1 border border-Brand rounded-md p-3 outline-none">
-                  <option>Car Make</option>
+                <select
+                  onChange={(e) => setWidth(e.target.value)}
+                  className="w-1/4 md:w-full border border-Brand rounded-md p-3 outline-none cursor-pointer"
+                >
+                  <option>Width</option>
+                  <option>20</option>
                 </select>
-                <select className="flex-1 text-gray-500  rounded-md p-3 bg-[#E3E3E3] outline-none">
-                  <option>Model</option>
+                <select
+                  onChange={(e) => setHeight(e.target.value)}
+                  className="w-1/4 md:w-full text-gray-500  rounded-md p-3 bg-[#E3E3E3] outline-none cursor-pointer"
+                >
+                  <option>Height</option>
+                  <option>50</option>
                 </select>
-                <select className="flex-1 text-gray-500  rounded-md p-3 bg-[#E3E3E3] outline-none">
-                  <option>Year</option>
+                <select
+                  onChange={(e) => setRim(e.target.value)}
+                  className="w-1/4 md:w-full text-gray-500  rounded-md p-3 bg-[#E3E3E3] outline-none cursor-pointer"
+                >
+                  <option>RIM size</option>
+                  <option>16</option>
                 </select>
+                <img
+                  src={RIM_Size}
+                  className="absolute right-[10%] md:right-[31%] bottom-[48px]  rounded-3xl h-24 xl:h-16"
+                />
               </div>
             </form>
           </div>
         </div>
+
+        {/* Modal Overlay */}
+        {showModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="relative bg-white rounded-lg mx-12 md:mx-2 p-6 w-[70%] items-center">
+              <h2 className="text-xl text-center font-semibold mb-4">
+                Please Select Size
+              </h2>
+              <div className="flex flex-wrap md:flex-col items-center justify-center gap-5 xl:gap-4 py-10">
+                {tyreOptions.map(({ label, img, onImg }) => (
+                  <button
+                    key={label}
+                    className={`relative flex items-center md:gap-2 text-sm font-semibold border rounded-lg hover:bg-gray-100
+        ${onImg ? "pl-6 w-40 md:w-48" : "w-40 px-6 md:w-48"}`}
+                  >
+                    <img src={img} alt={label} className="h-8" />
+                    <span className="flex-1 text-center">{label}</span>
+                    {onImg && (
+                      <img
+                        src={onImg}
+                        alt={`${label} selected`}
+                        className="h-8 rounded"
+                      />
+                    )}
+                  </button>
+                ))}
+              </div>
+
+              <button
+                onClick={() => setShowModal(false)}
+                className="absolute right-4 top-4 text-gray-600 hover:text-gray-700"
+              >
+                <IoClose size={20} />
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -374,9 +453,9 @@ const Section3 = () => {
                     {filter.options.length > 0 ? (
                       filter.options.map((option, idx) => (
                         <li key={idx}>
-                          <label className="flex items-center justify-between">
+                          <label className="flex items-center justify-between ">
                             {option}
-                            <input type="checkbox" />
+                            <input type="checkbox" className="cursor-pointer" />
                           </label>
                         </li>
                       ))
@@ -399,58 +478,61 @@ const Section3 = () => {
           </h2>
           <div className="grid grid-cols-3 lg:grid-cols-1 gap-4">
             {products.map((product) => (
-              <div
-                key={product.id}
-                className="relative flex flex-col items-center justify-center border p-4 "
-              >
-                {/* Brand Of Product & Add To Favorit & Comprison */}
-                <div className="flex items-center">
+              <Link key={product.id} to={`/product/${product.id}`}>
+                <div
+                  key={product.id}
+                  className="relative flex flex-col items-center justify-center border p-4 "
+                >
+                  {/* Brand Of Product & Add To Favorit & Comprison */}
+                  <div className="flex items-center">
+                    <img
+                      src={product.brand}
+                      alt={product.brand}
+                      className="absolute left-4 top-2 object-cover rounded h-12"
+                    />
+                    <IoHeartOutline className="absolute right-4 top-2 size-6 cursor-pointer" />
+                    <MdOutlineCompareArrows className="absolute right-11 top-2 size-6 cursor-pointer" />
+                  </div>
                   <img
-                    src={product.brand}
-                    alt={product.brand}
-                    className="absolute left-4 top-2 object-cover rounded h-12"
+                    src={product.image}
+                    alt={product.name}
+                    className="object-cover rounded h-20 my-6"
                   />
-                  <IoHeartOutline className="absolute right-4 top-2 size-6" />
-                  <MdOutlineCompareArrows className="absolute right-11 top-2 size-6" />
-                </div>
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="object-cover rounded h-20 my-6"
-                />
-                <img
-                  src={product.volume}
-                  alt={product.name}
-                  className="object-cover"
-                />
-                <h3 className="mt-2 font-semibold w-48 text-center">
-                  {product.name}
-                </h3>
-                <div className="flex items-center gap-1 mt-1">
-                  {renderStars(product.rating)}
-                </div>
-                <div className="mt-2 flex items-center gap-2">
-                  {product.originalPrice && (
-                    <span className="line-through text-sm text-gray-400">
-                      AED {product.originalPrice}
+                  <img
+                    src={product.volume}
+                    alt={product.name}
+                    className="object-cover"
+                  />
+                  <h3 className="mt-2 font-semibold w-48 text-center">
+                    {product.name}
+                  </h3>
+                  <div className="flex items-center gap-1 mt-1">
+                    {renderStars(product.rating)}
+                  </div>
+                  <div className="mt-2 flex items-center gap-2">
+                    {product.originalPrice && (
+                      <span className="line-through text-sm text-gray-400">
+                        AED {product.originalPrice}
+                      </span>
+                    )}
+                    <span className="font-semibold">
+                      <span className="text-gray-400">AED</span> $
+                      {product.price}
                     </span>
-                  )}
-                  <span className="font-semibold">
-                    <span className="text-gray-400">AED</span> ${product.price}
-                  </span>
+                  </div>
+                  <div className="relative">
+                    <select className="absolute border outline-none rounded-2xl py-[2px] md:py-0 px-4 cursor-pointer">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                    <button className=" text-sm text-gray-500 border border-Brand rounded-2xl py-1 md:py-0.5 px-20 xl:px-10">
+                      Add to Cart
+                    </button>
+                  </div>
                 </div>
-                <div className="relative">
-                  <select className="absolute border outline-none rounded-2xl py-[2px] md:py-0 px-4">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                  </select>
-                  <button className=" text-sm text-gray-500 border border-Brand rounded-2xl py-1 md:py-0.5 px-20 xl:px-10">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
+              </Link>
             ))}
           </div>
           {/* Pagination */}
@@ -461,8 +543,8 @@ const Section3 = () => {
                   key={index}
                   className={`w-8 h-8 rounded-full border text-sm ${
                     currentPage === index + 1
-                      ? "bg-black text-white"
-                      : "bg-white text-black"
+                      ? "bg-Brand text-white"
+                      : "bg-white text-Brand"
                   }`}
                   onClick={() => setCurrentPage(index + 1)}
                 >
