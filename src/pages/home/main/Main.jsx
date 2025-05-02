@@ -40,7 +40,6 @@ const Section1 = () => {
       <Swiper
         navigation={true}
         modules={[Navigation, Autoplay]}
-        className="mySwiper"
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
@@ -86,7 +85,7 @@ const Section2 = () => {
       <Swiper
         navigation={true}
         modules={[Navigation, Autoplay]}
-        className="mySwiper mb-28"
+        className="mb-28"
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
@@ -194,7 +193,7 @@ const Section3 = () => {
       <Swiper
         navigation={true}
         modules={[Navigation, Autoplay]}
-        className="mySwiper mb-28"
+        className="mb-28"
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
@@ -292,7 +291,6 @@ const Section4 = () => {
       <Swiper
         pagination={true}
         modules={[Pagination]}
-        className="mySwiper"
         breakpoints={{
           0: {
             slidesPerView: 1,

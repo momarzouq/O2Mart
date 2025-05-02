@@ -28,7 +28,7 @@ export default function Slider({ children, ...props }) {
           slidesPerView: 3,
         },
       }}
-      className="mySwiper !pb-16 items-stretch"
+      className="!pb-16 items-stretch"
       {...props}
     >
       {children}

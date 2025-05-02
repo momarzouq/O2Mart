@@ -1,14 +1,15 @@
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
-import AutoParts from './pages/auto-parts/Index'
-import Batteries from './pages/batteries/Index'
-import Tyres from './pages/auto-parts/Index'
-import Rims from './pages/rims/Index'
+import AutoParts from "./pages/auto-parts/Index";
+import Batteries from "./pages/batteries/Index";
+import Tyres from "./pages/auto-parts/Index";
+import Rims from "./pages/rims/Index";
 import NotFound from "./components/Not404";
-import Login from './pages/registration/Login'
+import Login from "./pages/registration/Login";
 import SignIn from "./pages/registration/SignIn";
 import ForgotPassword from "./pages/registration/ForgotPassword";
+import Shop from "./pages/home/Shop";
 function App() {
   return (
     <Layout>
@@ -22,7 +23,8 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/rims" element={<Rims />} />
-        <Route path="/*" element={<NotFound/>} />
+        <Route path="/home/shop" element={<Shop />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </Layout>
   );
