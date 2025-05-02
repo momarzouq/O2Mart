@@ -22,7 +22,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/rims" element={<Rims />} />
         <Route path="/home/shop" element={<Shop />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>

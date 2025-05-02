@@ -436,7 +436,6 @@ const Section3 = () => {
       <div className="flex md:flex-col gap-4">
         {/* Left Side - Filters */}
         <div className="flex-1 bg-white p-4 rounded-md space-y-4">
-          <h2 className="text-lg font-semibold">Filters</h2>
           {filters.map((filter, index) => {
             const isOpen = openFilters[filter.name] ?? true;
             return (
