@@ -15,6 +15,7 @@ function App() {
   return (
     <Layout>
       <Routes>
+        {/* skip Home entirely */}
         <Route exact path="/" element={<Home />} />
         <Route path="/auto-parts" element={<AutoParts />} />
         <Route path="/batteries" element={<Batteries />} />

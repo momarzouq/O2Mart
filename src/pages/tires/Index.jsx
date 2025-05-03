@@ -24,6 +24,7 @@ import { IoClose, IoHeartOutline } from "react-icons/io5";
 import { MdOutlineCompareArrows } from "react-icons/md";
 import { RiArrowDownSFill, RiArrowUpSFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import useProductStore from "../../store/productsStore";
 
 export default function Tires() {
   return (
@@ -259,12 +260,14 @@ const Section2 = () => {
 const Section3 = () => {
   const [openFilters, setOpenFilters] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
+  const { setSelectedProduct } = useProductStore();
   const toggleFilter = (name) => {
     setOpenFilters((prev) => ({
       ...prev,
       [name]: !prev[name],
     }));
   };
+
   const renderStars = (rating) => {
     const stars = [];
     const fullStars = Math.floor(rating);
@@ -478,7 +481,11 @@ const Section3 = () => {
           </h2>
           <div className="grid grid-cols-3 lg:grid-cols-1 gap-4">
             {products.map((product) => (
-              <Link key={product.id} to={`/product/${product.id}`}>
+              <Link
+                key={product.id}
+                to={`/product/${product.id}`}
+                onClick={() => setSelectedProduct(product)}
+              >
                 <div
                   key={product.id}
                   className="relative flex flex-col items-center justify-center border p-4 "
@@ -555,6 +562,7 @@ const Section3 = () => {
           )}
         </div>
       </div>
+      
       {/* Decide */}
       <div className="flex flex-col items-start gap-4 mb-20">
         <h3 className="text-3xl font-semibold">Not Sure How to Decide?</h3>
