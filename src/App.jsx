@@ -1,4 +1,4 @@
-import Home from "./pages/Home";
+import Home from './pages/home/Index'
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import AutoParts from "./pages/auto-parts/Index";
