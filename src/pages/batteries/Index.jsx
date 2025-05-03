@@ -21,6 +21,7 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { IoHeartOutline } from "react-icons/io5";
 import { MdOutlineCompareArrows } from "react-icons/md";
 import { RiArrowDownSFill, RiArrowUpSFill } from "react-icons/ri";
+import { SelectingSteps } from "../../components/ProductSelectingSteps";
 
 export default function AutoParts() {
   return (
@@ -45,7 +46,7 @@ const Section1 = () => {
       />
 
       {/* Modal in Center */}
-    
+
       <div className="z-10 bg-[#FFFFFF] py-10 px-20 rounded-[40px] shadow-md  w-[50%] md:w-[80%] my-28">
         <div>
           <h3 className="text-xs font-semibold text-Brand mb-2">
@@ -87,39 +88,15 @@ const Section2 = () => {
   ];
   return (
     <div>
-      <div className="flex md:flex-col justify-around md:items-center gap-4 py-4  font-semibold mb-10 shadow-md rounded-3xl">
-        {/* Step1 */}
-        <div className="flex items-center gap-2 text-lg">
-          <img src={Step1} alt="Step1" />
-          <div className="w-28">
-            <span className="text-Brand">1.</span> SELECT YOUR TYRES
-          </div>
-          <SlArrowRight className="size-12 text-gray-300" />
-        </div>
-        {/* Step2 */}
-        <div className="flex items-center gap-2 text-lg">
-          <img src={Step2} alt="Step2" />
-          <div className="w-28">
-            <span className="text-Brand">2.</span> SELECT INSTALLER
-          </div>
-          <SlArrowRight className="size-12 text-gray-300" />
-        </div>
-        {/* Step3 */}
-        <div className="flex items-center gap-2 text-lg">
-          <img src={Step3} alt="Step3" />
-          <div className="w-28">
-            <span className="text-Brand">3.</span> ORDER & PAY ONLINE
-          </div>
-          <SlArrowRight className="size-12 text-gray-300" />
-        </div>
-        {/* Step4 */}
-        <div className="flex items-center gap-2 text-lg">
-          <img src={Step4} alt="Step4" />
-          <div className="w-28">
-            <span className="text-Brand">4.</span> WE INSTALL YOUR TYRES
-          </div>
-          <SlArrowRight className="size-12 text-gray-300" />
-        </div>
+      <div className=" font-semibold mb-10 shadow-md rounded-3xl">
+        <SelectingSteps
+          steps={[
+            { img: Step1, title: "SELECT YOUR TYRES" },
+            { img: Step2, title: "SELECT INSTALLER" },
+            { img: Step3, title: "ORDER & PAY ONLINE" },
+            { img: Step4, title: "WE INSTALL YOUR TYRES" },
+          ]}
+        />
       </div>
 
       {/* Swiper Section */}
