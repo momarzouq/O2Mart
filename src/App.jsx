@@ -1,4 +1,4 @@
-import Home from './pages/home/Index'
+import Home from "./pages/home/Index";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import AutoParts from "./pages/auto-parts/Index";
@@ -10,7 +10,7 @@ import Login from "./pages/registration/Login";
 import SignIn from "./pages/registration/SignIn";
 import ForgotPassword from "./pages/registration/ForgotPassword";
 import Shop from "./pages/home/Shop";
-import ProductDetails from "./pages/tires/ProductDetails";
+import ProductDetails from "./components/ProductDetails";
 function App() {
   return (
     <Layout>

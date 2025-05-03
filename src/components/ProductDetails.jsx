@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { AiFillStar, AiOutlineStar, AiOutlineShareAlt } from "react-icons/ai";
 import { IoHeartOutline } from "react-icons/io5";
 import { MdOutlineCompareArrows } from "react-icons/md";
-import TyreImg from "../../assets/Tyers.svg";
-import BrandLogo from "../../assets/nissan.svg";
-import Volum from "../../assets/volum.png";
-import Tyers from "../../assets/Tyers.svg";
-import Nissan from "../../assets/nissan.svg";
-import Container from "../../UI/Container";
+import BrandLogo from "../assets/nissan.svg";
+import Volum from "../assets/volum.png";
+import Tyers from "../assets/Tyers.svg";
+import Nissan from "../assets/nissan.svg";
+import Container from "../UI/Container";
 const specsList = [
   { label: "Product Name", value: "Primacy 4 Mo" },
   { label: "Tyre Size", value: "235/55 19" },
@@ -20,7 +19,7 @@ const specsList = [
 const relatedItems = Array.from({ length: 4 }, (_, i) => ({
   id: i + 1,
   brand: BrandLogo,
-  img: TyreImg,
+  img: Tyers,
   region: "UAE",
   volume: "75ml",
   name: "Mazad Motor Oil SN 5W-30 Golden",
@@ -91,10 +90,10 @@ const product = [
   },
 ];
 const detailProduct = {
-    id: 1,
-    rating: 4.2,
-    // …other fields if needed
-  };
+  id: 1,
+  rating: 4.2,
+  // …other fields if needed
+};
 export default function ProductDetails() {
   const renderStars = (rating) => {
     const stars = [];
