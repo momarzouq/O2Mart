@@ -192,7 +192,7 @@ const Section1 = () => {
                   </option>
                 ))}
               </select>
-              <button className=" text-sm text-white border bg-Brand rounded-2xl py-1.5 md:py-1 px-20 xl:px-10">
+              <button className=" text-sm text-white border bg-Brand rounded-2xl py-1.5 md:py-1 px-20 xl:px-10 md:ml-6">
                 Add to Cart
               </button>
             </div>
