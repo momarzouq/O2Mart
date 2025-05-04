@@ -8,7 +8,9 @@ function Layout({ children, hideContact = false }) {
   return (
     <div className="relative">
       <Navbar />
-      <div className="min-h-screen">{children}</div>
+      <div className="min-h-screen">
+        {children}
+      </div>
       <ScrollToTopButton />
 
       {/* Contact Us - Bottom Right */}

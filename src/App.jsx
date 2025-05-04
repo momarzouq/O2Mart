@@ -11,6 +11,7 @@ import SignIn from "./pages/registration/SignIn";
 import ForgotPassword from "./pages/registration/ForgotPassword";
 import Shop from "./pages/home/Shop";
 import ProductDetails from "./components/ProductDetails";
+import Inquiry from "./components/Inquiry";
 function App() {
   return (
     <Layout>
@@ -26,6 +27,7 @@ function App() {
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/home/shop" element={<Shop />} />
         <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/inquiry" element={<Inquiry />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Layout>

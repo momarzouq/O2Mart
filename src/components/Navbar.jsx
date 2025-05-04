@@ -6,7 +6,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import Container from "../UI/Container";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [openInquiryModal, setOpenInquiryModal] = useState(false);
   const links = [
     { name: "Home", path: "/" },
     { name: "Auto Part", path: "/auto-parts" },
@@ -21,7 +21,7 @@ export default function Navbar() {
         <Logo />
         <Nav links={links} />
         <span className="md:absolute md:right-14">
-          <GetQuteAndShopCart />
+          <GetQuteAndShopCart openModal={setOpenInquiryModal} />
         </span>
         <i
           className="bx bx-menu hidden md:flex text-3xl cursor-pointer text-white"
@@ -99,10 +99,13 @@ const MobileNav = ({ links }) => {
   );
 };
 
-const GetQuteAndShopCart = () => {
+const GetQuteAndShopCart = ({ setOpenInquiryModal }) => {
   return (
     <div className="flex items-center gap-2">
-      <button className="  bg-Brand hover:bg-red-600 py-2 px-5 rounded-lg text-white font-semibold sm:hidden">
+      <button
+        onClick={() => setOpenInquiryModal((prev) => !prev)}
+        className=" bg-Brand hover:bg-red-600 py-2 px-5 rounded-lg text-white font-semibold sm:hidden"
+      >
         Get Quote
       </button>
       <BsPerson color="#FFFFFF" size={25} />
@@ -110,3 +113,4 @@ const GetQuteAndShopCart = () => {
     </div>
   );
 };
+

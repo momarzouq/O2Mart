@@ -3,13 +3,9 @@ import PropTypes from "prop-types";
 import { IoClose } from "react-icons/io5";
 import Main from "./main/Main";
 import Hero from "./hero/Hero";
-
 import { useEffect, useState } from "react";
-// responsible of displaying home sections...
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
-
-  // Show modal after 3 seconds when component mounts
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowModal(true);
