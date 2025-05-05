@@ -13,7 +13,17 @@ import Shop from "./pages/home/Shop";
 import ProductDetails from "./components/ProductDetails";
 import Inquiry from "./components/Inquiry";
 import Comparsion from "./components/Comparsion";
+import Dashboard from "./pages/dashboard";
+import Wishlist from "./pages/dashboard/Wishlist";
+import Orders from "./pages/dashboard/Orders";
+import TrackOrder from "./pages/dashboard/TrackOrder";
+import SavedCards from "./pages/dashboard/SavedCards";
+import AddressBook from "./pages/dashboard/AddressBook";
+import AccountDetails from "./pages/dashboard/AccountDetails";
+import ChangePassword from "./pages/dashboard/ChangePassword";
+import MyGarage from "./pages/dashboard/MyGarage";
 import Cart from "./components/Cart";
+
 function App() {
   return (
     <Layout>
@@ -31,6 +41,15 @@ function App() {
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/inquiry" element={<Inquiry />} />
         <Route path="/comparsion" element={<Comparsion />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/orders" element={<Orders />} />
+        <Route path="/order-tracking" element={<TrackOrder />} />
+        <Route path="/saved-cards" element={<SavedCards />} />
+        <Route path="/addresses" element={<AddressBook />} />
+        <Route path="/account-details" element={<AccountDetails />} />
+        <Route path="/change-password" element={<ChangePassword />} />
+        <Route path="/my-garage" element={<MyGarage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
