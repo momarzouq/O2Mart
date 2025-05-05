@@ -13,6 +13,7 @@ import Shop from "./pages/home/Shop";
 import ProductDetails from "./components/ProductDetails";
 import Inquiry from "./components/Inquiry";
 import Comparsion from "./components/Comparsion";
+import Cart from "./components/Cart";
 function App() {
   return (
     <Layout>
@@ -30,6 +31,7 @@ function App() {
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/inquiry" element={<Inquiry />} />
         <Route path="/comparsion" element={<Comparsion />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Layout>

@@ -5,9 +5,11 @@ import { BsPerson } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Container from "../UI/Container";
 import useModalStore from "../store/getqouteStore";
+import useCartStore from "../store/sidebarStore";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const openModal = useModalStore((state) => state.openModal);
+  const openSidebar = useCartStore((state) => state.openModal);
   const links = [
     { name: "Home", path: "/" },
     { name: "Auto Part", path: "/auto-parts" },
@@ -22,7 +24,7 @@ export default function Navbar() {
         <Logo />
         <Nav links={links} />
         <span className="md:absolute md:right-14">
-          <GetQuteAndShopCart openModal={openModal}/>
+          <GetQuteAndShopCart openModal={openModal} openSidebar={openSidebar} />
         </span>
         <i
           className="bx bx-menu hidden md:flex text-3xl cursor-pointer text-white"
@@ -100,18 +102,20 @@ const MobileNav = ({ links }) => {
   );
 };
 
-const GetQuteAndShopCart = ({openModal}) => {
+const GetQuteAndShopCart = ({ openModal, openSidebar }) => {
   return (
     <div className="flex items-center gap-2">
       <button
-       onClick={openModal}
+        onClick={openModal}
         className=" bg-Brand hover:bg-red-600 py-2 px-5 rounded-lg text-white font-semibold sm:hidden"
       >
         Get Quote
       </button>
-      <BsPerson color="#FFFFFF" size={25} />
-      <AiOutlineShoppingCart color="#FFFFFF" size={25} />
+      <BsPerson className="text-white size-7 hover:text-Brand" />
+      <AiOutlineShoppingCart
+        onClick={openSidebar}
+        className="text-white size-7 hover:text-Brand"
+      />
     </div>
   );
 };
-

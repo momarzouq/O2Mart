@@ -89,21 +89,14 @@ export const FiltersAndProducts = ({ products, filters }) => {
             );
           })}
         </div>
-
         {/* Right Side - Products */}
-        <div className="flex-[3] bg-white p-4 rounded-md">
-          <h2 className="text-lg text-gray-500 text-center font-semibold mb-4">
-            All Prices VAT Inclusive
-          </h2>
+        <div className="flex-[3] bg-white p-6 rounded-md ">
           <div className="grid grid-cols-3 lg:grid-cols-1 gap-4">
             {products.map((product) => (
-              <Link
-                to={`/product/${product.id}`}
-                className="relative flex flex-col items-center justify-center border p-4 hover:shadow-lg"
-              >
+              <Link to={`/product/${product.id}`}>
                 <div
                   key={product.id}
-                  className="relative flex flex-col items-center justify-center border p-4 "
+                  className="relative flex flex-col items-center justify-center border p-4 space-y-2"
                 >
                   {/* Brand Of Product & Add To Favorit & Comprison */}
                   <div className="flex items-center">
