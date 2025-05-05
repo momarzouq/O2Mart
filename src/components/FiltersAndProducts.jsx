@@ -4,6 +4,27 @@ import { IoHeartOutline } from "react-icons/io5";
 import { MdOutlineCompareArrows } from "react-icons/md";
 import { RiArrowDownSFill, RiArrowUpSFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+
+export const renderStars = (rating) => {
+  const stars = [];
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 >= 0.5;
+
+  for (let i = 0; i < fullStars; i++) {
+    stars.push(<AiFillStar key={i} className="text-[#F29F05]" />);
+  }
+
+  if (hasHalfStar) {
+    stars.push(<AiFillStar key="half" className="text-[#F29F05] opacity-50" />);
+  }
+
+  while (stars.length < 5) {
+    stars.push(<AiOutlineStar key={stars.length} className="text-[#F29F05]" />);
+  }
+
+  return stars;
+};
+
 export const FiltersAndProducts = ({ products, filters }) => {
   const [openFilters, setOpenFilters] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
@@ -13,29 +34,7 @@ export const FiltersAndProducts = ({ products, filters }) => {
       [name]: !prev[name],
     }));
   };
-  const renderStars = (rating) => {
-    const stars = [];
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 >= 0.5;
 
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(<AiFillStar key={i} className="text-[#F29F05]" />);
-    }
-
-    if (hasHalfStar) {
-      stars.push(
-        <AiFillStar key="half" className="text-[#F29F05] opacity-50" />
-      );
-    }
-
-    while (stars.length < 5) {
-      stars.push(
-        <AiOutlineStar key={stars.length} className="text-[#F29F05]" />
-      );
-    }
-
-    return stars;
-  };
   const productsPerPage = 6;
   const totalPages = Math.ceil(products.length / productsPerPage);
   const paginatedProducts =

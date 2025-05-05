@@ -3,8 +3,18 @@ import LogoImg from "../assets/logo.svg";
 import { useState } from "react";
 import { BsPerson } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import {
+  FaRegUserCircle,
+  FaRegUser,
+  FaRegHeart,
+  FaCarSide,
+} from "react-icons/fa";
+import { IoMdLogOut } from "react-icons/io";
+import { LuShoppingCart } from "react-icons/lu";
+import { FiMapPin } from "react-icons/fi";
 import Container from "../UI/Container";
 import useModalStore from "../store/getqouteStore";
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const openModal = useModalStore((state) => state.openModal);
@@ -22,7 +32,7 @@ export default function Navbar() {
         <Logo />
         <Nav links={links} />
         <span className="md:absolute md:right-14">
-          <GetQuteAndShopCart openModal={openModal}/>
+          <GetQuteAndShopCart openModal={openModal} />
         </span>
         <i
           className="bx bx-menu hidden md:flex text-3xl cursor-pointer text-white"
@@ -100,18 +110,78 @@ const MobileNav = ({ links }) => {
   );
 };
 
-const GetQuteAndShopCart = ({openModal}) => {
+const GetQuteAndShopCart = ({ openModal }) => {
   return (
     <div className="flex items-center gap-2">
       <button
-       onClick={openModal}
+        onClick={openModal}
         className=" bg-Brand hover:bg-red-600 py-2 px-5 rounded-lg text-white font-semibold sm:hidden"
       >
         Get Quote
       </button>
-      <BsPerson color="#FFFFFF" size={25} />
+      <ProfileBtnWithModal />
       <AiOutlineShoppingCart color="#FFFFFF" size={25} />
     </div>
   );
 };
 
+const ProfileBtnWithModal = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setIsOpen((prev) => !prev)}
+        className="flex items-center gap-2"
+      >
+        <BsPerson color="#FFFFFF" size={25} />
+        <span className="sr-only">open profile</span>
+      </button>
+
+      {isOpen && <ProfileModal />}
+    </div>
+  );
+};
+
+const links = [
+  { name: "Dashboard", icon: FaRegUser, path: "/dashboard" },
+  { name: "Wishlist", icon: FaRegHeart, path: "/wishlist" },
+  { name: "Orders", icon: LuShoppingCart, path: "/orders" },
+  { name: "Addresses", icon: FiMapPin, path: "/addresses" },
+  { name: "My Garage", icon: FaCarSide, path: "/my-garage" },
+];
+
+const ProfileModal = () => {
+  return (
+    <div className="absolute bg-white rounded-[10px] p-5 space-y-2 z-50 top-[calc(100%+1rem)] -right-6 shadow-lg">
+      <div className="flex gap-4 pb-4 border-b border-[#BDBDBD]">
+        <FaRegUserCircle color="#C2C2C2" size={80} />
+        <div className="space-y-2">
+          <div>
+            <h2 className="text-[18px] font-bold">Test</h2>
+            <p className="text-[14px] text-[#616161]">mmm@gmail.com</p>
+          </div>
+          <button className="bg-[#B2B2B2] py-2 px-3 text-white font-semibold rounded-lg">
+            <Link>Edit profile</Link>
+          </button>
+        </div>
+      </div>
+
+      <div className="pb-10 border-b border-[#BDBDBD]">
+        {links.map((link) => (
+          <Link
+            to={link.path}
+            key={link.name}
+            className="flex items-center gap-2 py-2 font-semibold hover:bg-gray-100"
+          >
+            <link.icon size={24} />
+            {link.name}
+          </Link>
+        ))}
+      </div>
+
+      <button className="text-Brand font-semibold flex items-center gap-2 py-3">
+        <IoMdLogOut size={24} /> Logout
+      </button>
+    </div>
+  );
+};
