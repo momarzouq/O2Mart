@@ -17,6 +17,10 @@ import Dashboard from "./pages/dashboard";
 import Wishlist from "./pages/dashboard/Wishlist";
 import Orders from "./pages/dashboard/Orders";
 import TrackOrder from "./pages/dashboard/TrackOrder";
+import SavedCards from "./pages/dashboard/SavedCards";
+import AddressBook from "./pages/dashboard/AddressBook";
+import AccountDetails from "./pages/dashboard/AccountDetails";
+import ChangePassword from "./pages/dashboard/ChangePassword";
 
 function App() {
   return (
@@ -39,6 +43,10 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/order-tracking" element={<TrackOrder />} />
+        <Route path="/saved-cards" element={<SavedCards />} />
+        <Route path="/addresses" element={<AddressBook />} />
+        <Route path="/account-details" element={<AccountDetails />} />
+        <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Layout>

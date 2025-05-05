@@ -40,9 +40,9 @@ const Orders = () => {
     <Container className="space-y-12 py-8">
       <div className="space-y-3">
         <Breadcrumb
-          items={[{ label: "Home", href: "/" }, { label: "My account" }]}
+          items={[{ label: "Home", href: "/" }, { label: "My orders" }]}
         />
-        <h2 className="text-2xl font-bold">My account</h2>
+        <h2 className="text-2xl font-bold">My orders</h2>
       </div>
 
       <div className="flex gap-6 md:flex-col">

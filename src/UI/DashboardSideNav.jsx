@@ -8,6 +8,7 @@ import {
   FaTruck,
   FaAddressBook,
 } from "react-icons/fa";
+import { MdOutlineSecurity } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 
 const DashboardSideNav = () => {
@@ -17,9 +18,14 @@ const DashboardSideNav = () => {
     { label: "wishlist", icon: <FaHeart />, href: "/wishlist" },
     { label: "orders", icon: <FaBox />, href: "/orders" },
     { label: "order Tracking", icon: <FaTruck />, href: "/order-tracking" },
-    { label: "Saved Cards", icon: <FaCreditCard />, href: "saved-cards" },
+    { label: "Saved Cards", icon: <FaCreditCard />, href: "/saved-cards" },
     { label: "Address Book", icon: <FaAddressBook />, href: "/addresses" },
-    { label: "Account details", icon: <FaUser />, href: "account-details" },
+    { label: "Account details", icon: <FaUser />, href: "/account-details" },
+    {
+      label: "Security",
+      icon: <MdOutlineSecurity />,
+      href: "/change-password",
+    },
     { label: "My garage", icon: <FaTruck />, href: "/my-garage" },
     { label: "Logout", icon: <FaSignOutAlt />, href: "/log-out", danger: true },
   ];
