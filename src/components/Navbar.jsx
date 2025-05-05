@@ -14,10 +14,13 @@ import { LuShoppingCart } from "react-icons/lu";
 import { FiMapPin } from "react-icons/fi";
 import Container from "../UI/Container";
 import useModalStore from "../store/getqouteStore";
+import useCartStore from "../store/sidebarStore";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const openModal = useModalStore((state) => state.openModal);
+  const openSidebar = useCartStore((state) => state.openModal);
+
   const links = [
     { name: "Home", path: "/" },
     { name: "Auto Part", path: "/auto-parts" },
@@ -32,7 +35,7 @@ export default function Navbar() {
         <Logo />
         <Nav links={links} />
         <span className="md:absolute md:right-14">
-          <GetQuteAndShopCart openModal={openModal} />
+          <GetQuteAndShopCart openModal={openModal} openSidebar={openSidebar} />
         </span>
         <i
           className="bx bx-menu hidden md:flex text-3xl cursor-pointer text-white"
@@ -85,32 +88,30 @@ const NavLinkComponent = ({ link }) => {
 
 const MobileNav = ({ links }) => {
   return (
-    <>
-      <ul className="absolute z-10 top-16 left-0 w-full bg-white shadow-md py-4 space-y-4 font-semibold text-lg">
-        <button className="hidden w-full sm:block bg-Brand hover:bg-red-600 py-2 rounded-lg text-white font-semibold">
-          Get Quote
-        </button>
-        {links.map((link) => (
-          <li
-            key={link.name}
-            className="py-2 hover:bg-gray-100  rounded-md text-center"
+    <ul className="absolute z-10 top-16 left-0 w-full bg-white shadow-md py-4 space-y-4 font-semibold text-lg">
+      <button className="hidden w-full sm:block bg-Brand hover:bg-red-600 py-2 rounded-lg text-white font-semibold">
+        Get Quote
+      </button>
+      {links.map((link) => (
+        <li
+          key={link.name}
+          className="py-2 hover:bg-gray-100 rounded-md text-center"
+        >
+          <NavLink
+            to={link.path}
+            className={({ isActive }) =>
+              isActive ? "text-Brand font-semibold" : "text-black"
+            }
           >
-            <NavLink
-              to={link.path}
-              className={({ isActive }) =>
-                isActive ? "text-Brand  font-semibold" : "text-black"
-              }
-            >
-              {link.name}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-    </>
+            {link.name}
+          </NavLink>
+        </li>
+      ))}
+    </ul>
   );
 };
 
-const GetQuteAndShopCart = ({ openModal }) => {
+const GetQuteAndShopCart = ({ openModal, openSidebar }) => {
   return (
     <div className="flex items-center gap-2">
       <button
@@ -120,7 +121,10 @@ const GetQuteAndShopCart = ({ openModal }) => {
         Get Quote
       </button>
       <ProfileBtnWithModal />
-      <AiOutlineShoppingCart color="#FFFFFF" size={25} />
+      <AiOutlineShoppingCart
+        onClick={openSidebar}
+        className="text-white size-7 hover:text-Brand"
+      />
     </div>
   );
 };
@@ -136,13 +140,12 @@ const ProfileBtnWithModal = () => {
         <BsPerson color="#FFFFFF" size={25} />
         <span className="sr-only">open profile</span>
       </button>
-
       {isOpen && <ProfileModal />}
     </div>
   );
 };
 
-const links = [
+const profileLinks = [
   { name: "Dashboard", icon: FaRegUser, path: "/dashboard" },
   { name: "Wishlist", icon: FaRegHeart, path: "/wishlist" },
   { name: "Orders", icon: LuShoppingCart, path: "/orders" },
@@ -167,7 +170,7 @@ const ProfileModal = () => {
       </div>
 
       <div className="pb-10 border-b border-[#BDBDBD]">
-        {links.map((link) => (
+        {profileLinks.map((link) => (
           <Link
             to={link.path}
             key={link.name}
