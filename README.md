@@ -1,8 +1,9 @@
-## React + Vite     npm run dev
+## React + Vite npm run dev
 
-## React Router     react-router-dom
+## React Router react-router-dom
 
-## Icons Library    react-icons
+## Icons Library react-icons
 
-## Swiper Library   npm i swiper
-                             
+## Swiper Library npm i swiper
+
+## npm install react-data-table-component

@@ -12,6 +12,7 @@ import Van from "../assets/Van.svg";
 import Installation from "../assets/Installation.svg";
 import Container from "../UI/Container";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
+import { Link } from "react-router-dom";
 const specsList = [
   { label: "Product Name", value: "Primacy 4 Mo" },
   { label: "Tyre Size", value: "235/55 19" },
@@ -202,9 +203,11 @@ const Section1 = () => {
         {/* Left side */}
         <div className="flex-1">
           <div className="flex items-end md:justify-center justify-end gap-4 text-3xl text-gray-400 my-8">
-            <AiOutlineShareAlt />
-            <MdOutlineCompareArrows />
-            <IoHeartOutline />
+            <AiOutlineShareAlt className="hover:text-Brand" />
+            <Link to="/comparsion">
+              <MdOutlineCompareArrows className="hover:text-Brand" />
+            </Link>
+            <IoHeartOutline className="hover:text-Brand" />
           </div>
           <div className="flex items-end justify-end gap-6">
             <ul className="spec-list">
