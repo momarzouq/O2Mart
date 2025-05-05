@@ -3,10 +3,13 @@ import { BsExclamationCircle } from "react-icons/bs";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
-import { MdDone } from "react-icons/md";
+import ThankYou from "./ThankYou";
+import useModalStore from "../store/getqouteStore";
 export default function Inquiry() {
   const [step, setStep] = useState(1);
-  const [isOpen, setIsOpen] = useState(true);
+  const { isOpen, closeModal } = useModalStore();
+
+  if (!isOpen) return null;
   const handleNext = (e) => {
     e.preventDefault();
     setStep((prev) => Math.min(prev + 1, 7));
@@ -488,18 +491,7 @@ export default function Inquiry() {
         );
 
       case 7:
-        return (
-          <div className="flex flex-col items-center justify-center space-y-10 mt-48">
-            <div className="text-3xl bg-Brand py-8 text-white px-8 rounded-full">
-              <MdDone className="size-20" />
-            </div>
-            <h2 className="text-4xl font-bold mb-4">Thank You!</h2>
-            <p className="text-center">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </p>
-          </div>
-        );
+        return <ThankYou />;
 
       default:
         return null;
@@ -510,9 +502,9 @@ export default function Inquiry() {
     <div>
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="relative z-10 bg-white px-10 md:px-6 py-6 rounded-lg shadow-md w-[60%] md:w-[90%] h-full my-12 overflow-y-auto">
+          <div className="relative z-10 bg-white px-10 md:px-6 py-6 rounded-lg shadow-md w-[60%] md:w-[90%] h-[90%] my-12 overflow-y-auto">
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={() => closeModal(true)}
               className="absolute top-6 right-6 z-50 text-gray-600 hover:text-red-500 text-xl"
               aria-label="Close"
             >

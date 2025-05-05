@@ -1,6 +1,7 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ScrollToTopButton from "./ScrolleToTop";
+import Inquiry from "./Inquiry";
 // import { BiMessageAltDetail } from "react-icons/bi";
 // import ContactUs from "../assets/contact-us.svg";
 // Accept hideContact as a prop
@@ -8,9 +9,8 @@ function Layout({ children, hideContact = false }) {
   return (
     <div className="relative">
       <Navbar />
-      <div className="min-h-screen">
-        {children}
-      </div>
+      <Inquiry />
+      <div className="min-h-screen">{children}</div>
       <ScrollToTopButton />
 
       {/* Contact Us - Bottom Right */}

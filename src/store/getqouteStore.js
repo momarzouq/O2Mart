@@ -1,9 +1,10 @@
+// store/modalStore.js
 import { create } from 'zustand';
 
 const useModalStore = create((set) => ({
-  isInquiryModalOpen: false,
-  openInquiryModal: () => set({ isInquiryModalOpen: true }),
-  closeInquiryModal: () => set({ isInquiryModalOpen: false }),
+  isOpen: false,
+  openModal: () => set({ isOpen: true }),
+  closeModal: () => set({ isOpen: false }),
 }));
 
 export default useModalStore;
