@@ -8,9 +8,9 @@ const AccountDetails = () => {
     <Container className="space-y-12 py-8">
       <div className="space-y-3">
         <Breadcrumb
-          items={[{ label: "Home", href: "/" }, { label: "My account" }]}
+          items={[{ label: "Home", href: "/" }, { label: "Account details" }]}
         />
-        <h2 className="text-2xl font-bold">My account</h2>
+        <h2 className="text-2xl font-bold">Account details</h2>
       </div>
 
       <div className="flex gap-6 md:flex-col">
@@ -94,7 +94,7 @@ const AccountDetails = () => {
           <div>
             <button
               type="submit"
-              class="bg-Brand text-white font-medium py-2 px-4 rounded"
+              class="bg-Brand text-white font-medium py-2 px-4 rounded-xl"
             >
               Save changes
             </button>

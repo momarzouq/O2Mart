@@ -21,6 +21,7 @@ import SavedCards from "./pages/dashboard/SavedCards";
 import AddressBook from "./pages/dashboard/AddressBook";
 import AccountDetails from "./pages/dashboard/AccountDetails";
 import ChangePassword from "./pages/dashboard/ChangePassword";
+import MyGarage from "./pages/dashboard/MyGarage";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         <Route path="/addresses" element={<AddressBook />} />
         <Route path="/account-details" element={<AccountDetails />} />
         <Route path="/change-password" element={<ChangePassword />} />
+        <Route path="/my-garage" element={<MyGarage />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Layout>
