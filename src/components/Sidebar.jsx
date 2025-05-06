@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import useCartStore from "../store/sidebarStore";
 import Close from "../assets/X.svg";
 import Tyre from "../assets/Tyers.svg";
-import { RiDeleteBin6Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import QuantityItem from "./QuantityItem";
 
 const SidebarCart = () => {
   const { isOpen, closeModal } = useCartStore();
@@ -92,25 +92,12 @@ const SidebarCart = () => {
               </p>
 
               {/* Counter */}
-              <div className="flex items-center border rounded overflow-hidden w-max">
-                <button
-                  onClick={() =>
-                    item.quantity === 1
-                      ? removeItem(item.id)
-                      : decrement(item.id)
-                  }
-                  className="px-3 py-1 hover:text-Brand "
-                >
-                  {item.quantity === 1 ? <RiDeleteBin6Line /> : "-"}
-                </button>
-                <span className="px-4 py-1">{item.quantity}</span>
-                <button
-                  onClick={() => increment(item.id)}
-                  className="px-3 py-1 hover:text-Brand"
-                >
-                  +
-                </button>
-              </div>
+              <QuantityItem
+                item={item}
+                increment={increment}
+                decrement={decrement}
+                removeItem={removeItem}
+              />
             </div>
           </div>
         ))}
