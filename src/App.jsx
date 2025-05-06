@@ -13,7 +13,7 @@ import Shop from "./pages/home/Shop";
 import ProductDetails from "./components/ProductDetails";
 import Inquiry from "./components/Inquiry";
 import Comparsion from "./components/Comparsion";
-import Dashboard from "./pages/dashboard";
+import Dashboard from "./pages/dashboard/Index";
 import Wishlist from "./pages/dashboard/Wishlist";
 import Orders from "./pages/dashboard/Orders";
 import TrackOrder from "./pages/dashboard/TrackOrder";

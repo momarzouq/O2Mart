@@ -45,17 +45,6 @@ const Wishlist = () => {
       rating: 5,
       brand: Nissan,
     },
-    {
-      id: 4,
-      name: "Mazda Motor Oil SN 5W-30 Golden",
-      price: 165,
-      originalPrice: 179,
-      sale: false,
-      volume: Volum,
-      image: Tyers,
-      rating: 5,
-      brand: Nissan,
-    },
   ];
 
   return (
@@ -69,7 +58,7 @@ const Wishlist = () => {
 
       <div className="flex gap-6 md:flex-col">
         <DashboardSideNav />
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 md:grid-cols-1 gap-4">
           {TiresProducts.map((product) => (
             <div
               key={product.id}
