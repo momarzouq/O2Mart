@@ -7,6 +7,7 @@ import Tyers from "../assets/Tyers.svg";
 import Nissan from "../assets/nissan.svg";
 import { Link } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
+import { Breadcrumb } from "../UI/Breadcrumb";
 export default function Cart() {
   const [isAdded, setIsAdded] = useState(false);
   const handleClick = () => {
@@ -83,6 +84,14 @@ export default function Cart() {
   };
   return (
     <Container>
+      <Breadcrumb
+        items={[
+          { label: "HOME", href: "/" },
+          { label: "Shop" },
+          { label: "Cart" },
+        ]}
+      />
+
       <div className="flex flex-col space-y-6 my-4">
         <h3 className="text-xl font-bold">Cart</h3>
         <p className="text-sm font-bold">

@@ -4,10 +4,14 @@ import AutoParts from "../../assets/shopage.png";
 import Steps from "../../assets/steps.svg";
 import { BsExclamationCircle } from "react-icons/bs";
 import { CiCirclePlus } from "react-icons/ci";
+import { Breadcrumb } from "../../UI/Breadcrumb";
 export default function Shop() {
   return (
     <div>
       <Container>
+        <Breadcrumb
+          items={[{ label: "HOME", href: "/" }, { label: "Shop" }]}
+        />
         <Section1 />
         <Section2 />
       </Container>
