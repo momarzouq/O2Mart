@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../UI/Container";
 import { MdOutlineCompareArrows } from "react-icons/md";
 import { IoHeartOutline } from "react-icons/io5";
@@ -10,88 +10,77 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { Breadcrumb } from "../UI/Breadcrumb";
 import CouponSection from "./AddCupon";
 import QuantityItem from "./QuantityItem";
+import { useCartStore } from "../store/cartStore";
 
 export default function Cart() {
   const [isAdded, setIsAdded] = useState(false);
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "ACDeleo 123123123 Doxron VI Transmission Fluid (IL)",
-      image: Tyers,
-      price: 32.0,
-      quantity: 1, 
-      deliveryOptions: [
-        "Delivery Only",
-        "Delivery with Installation",
-        "Installation Center",
-      ],
-      description:
-        "Items will be shipped to your designated address. Shipping costs will be calculated during the checkout process",
-    },
-    {
-      id: 2,
-      name: "Varta 12V 70AH Battery",
-      image: Tyers,
-      price: 300.0,
-      quantity: 1,
-      deliveryOptions: [
-        "Delivery Only",
-        "Delivery with Installation",
-        "Installation Center",
-      ],
-      description:
-        "Get professional installation at your doorstep. Service cost is a flat AED200. Click here to select a mobile installer before checkout.",
-    },
-    {
-      id: 3,
-      name: "Bridgestone 225/50 R17",
-      image: Tyers,
-      price: 160.0,
-      quantity: 1, 
-      deliveryOptions: [
-        "Delivery Only",
-        "Delivery with Installation",
-        "Installation Center",
-      ],
-    },
-    {
-      id: 4,
-      name: "18° Mazda AMG 5 Spoke Original Wheels",
-      image: Tyers,
-      price: 1200.0,
-      quantity: 1, 
-      deliveryOptions: [
-        "Delivery Only",
-        "Delivery with Installation",
-        "Installation Center",
-      ],
-    },
-  ]);
+  const {
+    cartItems = [],
+    setCartItems,
+    increment,
+    decrement,
+    removeItem,
+  } = useCartStore();
 
-  const increment = (id) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    );
-  };
-
-  const decrement = (id) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      )
-    );
-  };
+  useEffect(() => {
+    setCartItems([
+      {
+        id: 1,
+        name: "ACDeleo 123123123 Doxron VI Transmission Fluid (IL)",
+        image: Tyers,
+        price: 32.0,
+        quantity: 1,
+        deliveryOptions: [
+          "Delivery Only",
+          "Delivery with Installation",
+          "Installation Center",
+        ],
+        description:
+          "Items will be shipped to your designated address. Shipping costs will be calculated during the checkout process",
+      },
+      {
+        id: 2,
+        name: "Varta 12V 70AH Battery",
+        image: Tyers,
+        price: 300.0,
+        quantity: 1,
+        deliveryOptions: [
+          "Delivery Only",
+          "Delivery with Installation",
+          "Installation Center",
+        ],
+        description:
+          "Get professional installation at your doorstep. Service cost is a flat AED200. Click here to select a mobile installer before checkout.",
+      },
+      {
+        id: 3,
+        name: "Bridgestone 225/50 R17",
+        image: Tyers,
+        price: 160.0,
+        quantity: 1,
+        deliveryOptions: [
+          "Delivery Only",
+          "Delivery with Installation",
+          "Installation Center",
+        ],
+      },
+      {
+        id: 4,
+        name: "18° Mazda AMG 5 Spoke Original Wheels",
+        image: Tyers,
+        price: 1200.0,
+        quantity: 1,
+        deliveryOptions: [
+          "Delivery Only",
+          "Delivery with Installation",
+          "Installation Center",
+        ],
+      },
+    ]);
+  }, [setCartItems]);
 
   const handleClick = () => {
     setIsAdded(true);
-  };
-
-  const handleRemoveItem = (id) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
   };
 
   const renderStars = (rating) => {
@@ -165,7 +154,10 @@ export default function Cart() {
     },
   ];
 
-  const subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
+  const subtotal = (cartItems || []).reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
   const installationFee = 200;
   const total = subtotal + installationFee;
 
@@ -179,7 +171,7 @@ export default function Cart() {
         ]}
       />
       <div className="grid grid-cols-3 md:grid-cols-1 gap-4">
-        {cartItems.length === 0 ? (
+        {cartItems && cartItems.length === 0 ? (
           <div className="flex flex-col space-y-6 my-4">
             <h3 className="text-xl font-bold">Cart</h3>
             <p className="text-sm font-bold">
@@ -217,10 +209,10 @@ export default function Cart() {
                               item={item}
                               increment={increment}
                               decrement={decrement}
-                              removeItem={handleRemoveItem}
+                              removeItem={removeItem}
                             />
                             <button
-                              onClick={() => handleRemoveItem(item.id)}
+                              onClick={() => removeItem(item.id)}
                               className="text-xs text-gray-700 hover:text-red-500 underline"
                             >
                               Remove Item
@@ -251,7 +243,8 @@ export default function Cart() {
                       )}
                     </div>
                     {/* Right */}
-                    <p className="font-semibold ">{item.price.toFixed(2)}AED</p>
+                    <p className="font-semibold ">{(item.price * item.quantity).toFixed(2)} AED</p>
+
                   </div>
                 </div>
               ))}
@@ -368,11 +361,4 @@ export default function Cart() {
       )}
     </Container>
   );
-}
-
-{
-  /* Quantity and Remove */
-}
-{
-  /*  */
 }
