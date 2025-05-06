@@ -88,7 +88,7 @@ export default function Cart() {
         <p className="text-sm font-bold">
           Your cart is empty. Start shopping now
         </p>
-        <h3 className="text-2xl font-semibold">New in store</h3>
+        <h3 className="text-2xl font-bold">New in store</h3>
       </div>
 
       {/* Right Side - Products */}
