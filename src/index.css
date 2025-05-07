@@ -63,8 +63,6 @@ ul.spec-list {
   padding-left: 1rem; /* Creates space for bullet */
 }
 
-
-
 /* Grid System fo product */
 
 .grid-custom {
@@ -84,7 +82,6 @@ ul.spec-list {
     grid-template-columns: repeat(3, minmax(0, 1fr)); /* large = 4 cols */
   }
 }
-
 
 /* Grid system for  */
 .grid-custom-cart {
@@ -108,4 +105,24 @@ ul.spec-list {
   .grid-custom-cart {
     grid-template-columns: repeat(4, minmax(0, 1fr)); /* large = 4 cols */
   }
+}
+
+/* CSS customizations for scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+/* لتغيير الطول (الارتفاع) للـ scrollbar الأفقي */
+::-webkit-scrollbar:horizontal {
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ef3b24;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  border-left: 1px solid #9c9c9c;
+  border-right: 1px solid #9c9c9c;
 }

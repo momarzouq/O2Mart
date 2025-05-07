@@ -11,8 +11,11 @@ import { Breadcrumb } from "../UI/Breadcrumb";
 import CouponSection from "./AddCupon";
 import QuantityItem from "./QuantityItem";
 import { useCartStore } from "../store/cartStore";
+import { useLocationModalStore } from "../store/locationStore";
+import { LocationModal } from "./LocationModal";
 
 export default function Cart() {
+  const { isLocationModalOpen, openLocationModal } = useLocationModalStore();
   const [isAdded, setIsAdded] = useState(false);
   const {
     cartItems = [],
@@ -160,6 +163,13 @@ export default function Cart() {
   );
   const installationFee = 200;
   const total = subtotal + installationFee;
+  const handleDeliveryOptionChange = (option) => {
+    if (
+      ["Delivery with Installation", "Installation Center"].includes(option)
+    ) {
+      openLocationModal(option);
+    }
+  };
 
   return (
     <Container>
@@ -170,6 +180,7 @@ export default function Cart() {
           { label: "Cart" },
         ]}
       />
+      {isLocationModalOpen && <LocationModal cartItems={cartItems} />}
       <div className="grid grid-cols-5 xl:grid-cols-3 gap-4">
         {cartItems && cartItems.length === 0 ? (
           <div className="flex flex-col space-y-6 my-4">
@@ -232,6 +243,9 @@ export default function Cart() {
                               className="flex items-center gap-1 text-sm text-gray-600"
                             >
                               <input
+                                onClick={() =>
+                                  handleDeliveryOptionChange(option)
+                                }
                                 type="checkbox"
                                 className="appearance-none w-3 h-3 rounded-full border border-gray-400 checked:bg-Brand checked:border-transparent focus:outline-none"
                               />
