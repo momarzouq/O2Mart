@@ -7,19 +7,20 @@ import {
 import Container from "../UI/Container";
 import Payment from "../assets/Payment_footer.svg";
 import Logo from "../assets/logo.svg";
+import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <div className="bg-black pt-14 pb-10">
       <Container>
-        <div className="flex gap-40 xl:gap-32 md:flex-col md:items-start">
+        <div className="flex gap-40 xl:gap-10 md:flex-col md:items-start">
           {/* Products */}
           <div className="flex flex-col text-gray-300 space-y-4">
             <p className="text-white font-semibold">Products</p>
-            <p>Auto Parts</p>
-            <p>Batteries</p>
-            <p>Tyers</p>
-            <p>Rims</p>
-            <p>All Products</p>
+            <Link to="/auto-parts">Auto Parts</Link>
+            <Link to="/batteries">Batteries</Link>
+            <Link to="/tyers">Tyers</Link>
+            <Link to="/rims">Rims</Link>
+            <Link to="/auto-parts">All Products</Link>
             <img src={Payment} alt="Payment" />
           </div>
           {/* Help and Support */}
@@ -53,7 +54,7 @@ export default function Footer() {
               <FaLinkedinIn size={25} />
             </div>
 
-            <div className="relative flex flex-col gap-2 w-80">
+            <div className="relative flex flex-col gap-2 w-80 lg:w-60">
               <label htmlFor="email" className="text-Brand font-medium text-sm">
                 Get the Latest Deals & Updates
               </label>

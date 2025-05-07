@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { IoHeartOutline } from "react-icons/io5";
 import { MdOutlineCompareArrows } from "react-icons/md";
@@ -35,7 +35,7 @@ export const FiltersAndProducts = ({ products, filters }) => {
     }));
   };
 
-  const productsPerPage = 6;
+  const productsPerPage = 9;
   const totalPages = Math.ceil(products.length / productsPerPage);
   const paginatedProducts =
     products.length >= 9
@@ -44,6 +44,11 @@ export const FiltersAndProducts = ({ products, filters }) => {
           currentPage * productsPerPage
         )
       : products;
+  useEffect(() => {
+    if (products.length > 9) {
+      setCurrentPage(2);
+    }
+  }, [products]);
 
   return (
     <div className="relative mt-8">
@@ -92,7 +97,7 @@ export const FiltersAndProducts = ({ products, filters }) => {
         {/* Right Side - Products */}
         <div className="flex-[3] bg-white p-6 rounded-md ">
           <div className="grid-custom gap-4">
-            {products.map((product) => (
+            {paginatedProducts.map((product) => (
               <div
                 key={product.id}
                 className="relative flex flex-col items-center justify-center border p-4 space-y-2"
@@ -158,10 +163,8 @@ export const FiltersAndProducts = ({ products, filters }) => {
               {Array.from({ length: totalPages }, (_, index) => (
                 <button
                   key={index}
-                  className={`w-8 h-8 rounded-full border text-sm ${
-                    currentPage === index + 1
-                      ? "bg-black text-white"
-                      : "bg-white text-black"
+                  className={`font-medium mx-2 text-sm ${
+                    currentPage === index + 1 ? " text-Brand" : " text-black"
                   }`}
                   onClick={() => setCurrentPage(index + 1)}
                 >

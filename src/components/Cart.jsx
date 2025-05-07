@@ -170,7 +170,7 @@ export default function Cart() {
           { label: "Cart" },
         ]}
       />
-      <div className="grid grid-cols-3 md:grid-cols-1 gap-4">
+      <div className="grid grid-cols-5 xl:grid-cols-3 gap-4">
         {cartItems && cartItems.length === 0 ? (
           <div className="flex flex-col space-y-6 my-4">
             <h3 className="text-xl font-bold">Cart</h3>
@@ -180,71 +180,77 @@ export default function Cart() {
             <h3 className="text-2xl font-bold">New in store</h3>
           </div>
         ) : (
-          <div className="grid col-span-2 gap-6 my-4">
+          <div className="col-span-3 gap-6 my-4">
+            <h3 className="text-xl font-bold md:mb-4">Cart</h3>
             {/* Left Side - Cart Items */}
-            <div className="col-span-2 bg-white p-6 rounded-md">
+            <div className="bg-white rounded-md">
               <div className="flex justify-between items-center font-medium border-b pb-3 mb-4">
                 <h3>PRODUCT</h3>
-                <h3>SUBTOTAL</h3>
+                <h3 className="md:hidden">SUBTOTAL</h3>
               </div>
 
               {cartItems.map((item) => (
                 // Left Side
                 <div key={item.id} className="border-b pb-6 mb-6">
-                  <div className="flex items-start justify-between">
+                  <div className="relative flex md:flex-col items-start  justify-between">
                     {/* Left section */}
-                    <img src={item.image} className="h-20 w-20" />
-                    {/* Middle */}
-                    <div>
-                      <div className="flex items-start justify-between gap-16">
-                        <div>
-                          <h4 className="w-[350px] font-medium">{item.name}</h4>
-                          <p className="font-medium my-1">
-                            {item.price.toFixed(2)} AED
-                          </p>
-                        </div>
-                        <div className="flex  items-center">
-                          <div className="flex flex-col items-center">
-                            <QuantityItem
-                              item={item}
-                              increment={increment}
-                              decrement={decrement}
-                              removeItem={removeItem}
-                            />
-                            <button
-                              onClick={() => removeItem(item.id)}
-                              className="text-xs text-gray-700 hover:text-red-500 underline"
-                            >
-                              Remove Item
-                            </button>
+                    <div className="flex gap-4">
+                      <img src={item.image} className="h-20 w-20" />
+                      {/* Middle */}
+                      <div>
+                        <div className="flex md:flex-col items-start gap-12 md:gap-2">
+                          <div>
+                            <h4 className="w-[400px] xl:w-[200px] font-medium">
+                              {item.name}
+                            </h4>
+                            <p className="font-medium my-1">
+                              {item.price.toFixed(2)} AED
+                            </p>
+                          </div>
+                          <div className="flex  items-center">
+                            <div className="flex flex-col items-center">
+                              <QuantityItem
+                                item={item}
+                                increment={increment}
+                                decrement={decrement}
+                                removeItem={removeItem}
+                              />
+                              <button
+                                onClick={() => removeItem(item.id)}
+                                className="text-xs text-gray-700 hover:text-red-500 underline"
+                              >
+                                Remove Item
+                              </button>
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      <div className="flex items-center  gap-4 my-2">
-                        {item.deliveryOptions.map((option, index) => (
-                          <span
-                            key={index}
-                            className="flex items-center gap-1 text-sm text-gray-600"
-                          >
-                            <input
-                              type="checkbox"
-                              className="appearance-none w-3 h-3 rounded-full border border-gray-400 checked:bg-Brand checked:border-transparent focus:outline-none"
-                            />
-                            {option}
-                            {index < item.deliveryOptions.length - 1}
-                          </span>
-                        ))}
+                        <div className="flex md:flex-col items-center md:items-start  gap-4 my-2">
+                          {item.deliveryOptions.map((option, index) => (
+                            <span
+                              key={index}
+                              className="flex items-center gap-1 text-sm text-gray-600"
+                            >
+                              <input
+                                type="checkbox"
+                                className="appearance-none w-3 h-3 rounded-full border border-gray-400 checked:bg-Brand checked:border-transparent focus:outline-none"
+                              />
+                              {option}
+                              {index < item.deliveryOptions.length - 1}
+                            </span>
+                          ))}
+                        </div>
+                        {item.description && (
+                          <p className="w-[500px] md:w-[200px] text-sm text-gray-500 mt-2 border border-Brand rounded py-1 px-2">
+                            {item.description}
+                          </p>
+                        )}
                       </div>
-                      {item.description && (
-                        <p className="w-[500px] text-sm text-gray-500 mt-2 border border-Brand rounded py-1 px-2">
-                          {item.description}
-                        </p>
-                      )}
                     </div>
                     {/* Right */}
-                    <p className="font-semibold ">{(item.price * item.quantity).toFixed(2)} AED</p>
-
+                    <p className="col-span-1 font-semibold md:hidden">
+                      {(item.price * item.quantity).toFixed(2)} AED
+                    </p>
                   </div>
                 </div>
               ))}
@@ -254,7 +260,7 @@ export default function Cart() {
           </div>
         )}
         {cartItems.length > 0 && (
-          <div className="col-span-1 bg-white p-6 rounded-md h-fit">
+          <div className="col-span-2 xl:col-span-5 bg-white p-6 rounded-md h-fit">
             <h3 className="font-medium border-b mb-4 pb-2">ORDER SUMMARY</h3>
 
             <div className="space-y-4">
