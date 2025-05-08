@@ -35,7 +35,7 @@ const DashboardSideNav = () => {
         <Link
           key={idx}
           to={item.href}
-          className={`flex items-center gap-2 px-4 py-3 rounded-xl font-medium text-sm transition ${
+          className={`flex items-center gap-2 px-4 py-4 rounded-lg font-medium text-sm transition ${
             item.danger
               ? "text-Brand hover:bg-red-100"
               : loc.pathname === item.href

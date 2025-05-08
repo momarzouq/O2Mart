@@ -37,30 +37,26 @@ const orders = [
 
 const Orders = () => {
   return (
-    <Container className="space-y-12 py-8">
-      <div className="space-y-3">
-        <Breadcrumb
-          items={[{ label: "Home", href: "/" }, { label: "My orders" }]}
-        />
-        <h2 className="text-2xl font-bold">My orders</h2>
-      </div>
-
-      <div className="flex gap-6 md:flex-col">
-        <DashboardSideNav />
-        <div className="space-y-6 flex-1">
-          {/* Filters */}
+    <Container className="my-4">
+      <Breadcrumb
+        items={[{ label: "Home", href: "/" }, { label: "My orders" }]}
+      />
+      <div>
+        <h2 className="flex items-center text-2xl font-bold mt-2">My orders</h2>
+        {/* Filters */}
+        <div className="md:hidden flex items-center justify-center w-full mb-4 ml-10 lg:ml-8">
           <div className="flex gap-4 flex-wrap">
             <div className="relative">
               <input
                 type="text"
                 placeholder="Search"
-                className="rounded-xl px-4 pl-8 py-2 w-full max-w-xs outline-none"
+                className="rounded-lg px-4 pl-8 py-2 w-[500px] lg:w-[300px] outline-none"
                 style={{ boxShadow: "0 0 15px rgba(0, 0, 0, 0.1)" }}
               />
               <HiMiniMagnifyingGlass className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500" />
             </div>
             <select
-              className="rounded-xl px-4 py-2 outline-none"
+              className="text-gray-400 rounded-lg px-4 py-2 outline-none"
               style={{ boxShadow: "0 0 15px rgba(0, 0, 0, 0.1)" }}
             >
               <option>Date</option>
@@ -68,33 +64,78 @@ const Orders = () => {
               <option>Oldest</option>
             </select>
           </div>
+        </div>
+      </div>
 
+      <div className="flex gap-6 md:flex-col md:items-start md:justify-start">
+        <div className="flex md:justify-start">
+          <DashboardSideNav />
+        </div>
+        {/* Filter Mobile  */}
+      <div className="hidden md:block">
+        <div className=" flex items-start justify-start w-full mb-4">
+          <div className="flex gap-2 flex-wrap">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search"
+                className="rounded-lg px-4 pl-8 py-2 w-[200px] outline-none"
+                style={{ boxShadow: "0 0 15px rgba(0, 0, 0, 0.1)" }}
+              />
+              <HiMiniMagnifyingGlass className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500" />
+            </div>
+            <select
+              className="text-gray-400 rounded-lg px-4 py-2 outline-none"
+              style={{ boxShadow: "0 0 15px rgba(0, 0, 0, 0.1)" }}
+            >
+              <option>Date</option>
+              <option>Newest</option>
+              <option>Oldest</option>
+            </select>
+          </div>
+        </div>
+      </div>
+        <div className="space-y-6 flex-1">
           {/* Table */}
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm">
+          <div className="overflow-x-auto rounded-lg bg-white p-4 md:p-0">
+            <table className="w-full  text-left text-sm md:text-xs">
               <thead>
-                <tr className="border-b">
-                  <th className="py-3">order</th>
-                  <th className="py-3">Date</th>
-                  <th className="py-3">Status</th>
-                  <th className="py-3">Total</th>
-                  <th className="py-3">Actions</th>
-                  <th className="py-3">Tracking No</th>
+                <tr className=" text-gray-700">
+                  <th className="py-3 px-4 md:px-2 md:py-1">Order</th>
+                  <th className="py-3 px-4 md:px-2 md:py-1">Date</th>
+                  <th className="py-3 px-4 md:px-2 md:py-1">Status</th>
+                  <th className="py-3 px-4 md:px-2 md:py-1">Total</th>
+                  <th className="py-3 px-4 md:px-2 md:py-1">Actions</th>
+                  <th className="py-3 px-4 md:px-2 md:py-1">Tracking No</th>
                 </tr>
               </thead>
-              <tbody>
+
+              <tbody className="divide-y divide-gray-200">
                 {orders.map((order, index) => (
-                  <tr key={index} className="border-b">
-                    <td className="py-3 text-red-600">{order.id}</td>
-                    <td className="py-3">{order.date}</td>
-                    <td className="py-3 capitalize">{order.status}</td>
-                    <td className="py-3">{order.total}</td>
-                    <td className="py-3">
-                      <button className="bg-[#f2f2f2] text-red-500 rounded px-4 py-1">
+                  <tr
+                    key={index}
+                    className="hover:bg-gray-50 transition-colors"
+                  >
+                    <td className="py-3 px-4 md:py-1 md:px-2 md:max-w-6 text-Brand font-semibold">
+                      {order.id}
+                    </td>
+                    <td className="py-3 px-4 md:py-1 md:px-2 md:max-w-6 md:text-center">
+                      {order.date}
+                    </td>
+                    <td className="py-3 px-4 md:py-1 md:px-2 md:max-w-6 md:text-center capitalize">
+                      {order.status}
+                    </td>
+                    <td className="py-3 px-4 md:py-1 md:px-2 md:max-w-6 md:text-center font-medium">
+                      {order.total}
+                    </td>
+                    <td className="py-3 px-4 md:py-1 md:px-2 md:max-w-6 md:text-center">
+                      <button className="bg-Brand text-white rounded-lg px-4 md:px-2 py-1 font-medium hover:bg-BrandDark transition-all">
                         View
                       </button>
                     </td>
-                    <td className="py-3">{order.trackingNo}</td>
+                    <td className="py-3 px-4 md:py-1 md:px-2 md:max-w-6 md:text-center">
+                      {order.trackingNo}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -102,6 +143,7 @@ const Orders = () => {
           </div>
         </div>
       </div>
+
     </Container>
   );
 };

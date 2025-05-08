@@ -19,38 +19,38 @@ const MyGarage = () => {
         <DashboardSideNav />
         <div className="space-y-4 w-full max-w-2xl">
           {/* Add more header */}
-          <div className="flex items-center text-red-600 font-semibold text-xl cursor-pointer">
+          <div className="flex items-center text-Brand font-semibold text-xl cursor-pointer">
             <CiCirclePlus className="size-8 mr-2" />
             Add more
           </div>
 
           {/* Make Dropdown */}
           <div className="relative">
-            <select className="block appearance-none w-full bg-white border border-[#D0D5DD] rounded-xl py-3 px-4 pr-8 leading-tight focus:outline-none">
+            <select className="block text-gray-400 appearance-none w-full bg-white border border-[#D0D5DD] rounded-xl py-3 px-4 pr-8 leading-tight focus:outline-none">
               <option value="">Make</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <FaChevronDown className="h-4 w-4" />
+            <FaChevronDown className="h-3 w-3" />
             </div>
           </div>
 
           {/* Model Dropdown */}
           <div className="relative">
-            <select className="block appearance-none w-full bg-white border border-[#D0D5DD] rounded-xl py-3 px-4 pr-8 leading-tight focus:outline-none">
+            <select className="block text-gray-400 appearance-none w-full bg-white border border-[#D0D5DD] rounded-xl py-3 px-4 pr-8 leading-tight focus:outline-none">
               <option value="">Model</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <FaChevronDown className="h-4 w-4" />
+              <FaChevronDown className="h-3 w-3" />
             </div>
           </div>
 
           {/* Year Dropdown */}
           <div className="relative">
-            <select className="block appearance-none w-full bg-white border border-[#D0D5DD] rounded-xl py-3 px-4 pr-8 leading-tight focus:outline-none">
+            <select className="block text-gray-400 appearance-none w-full bg-white border border-[#D0D5DD] rounded-xl py-3 px-4 pr-8 leading-tight focus:outline-none">
               <option value="">Year</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <FaChevronDown className="h-4 w-4" />
+            <FaChevronDown className="h-3 w-3" />
             </div>
           </div>
 

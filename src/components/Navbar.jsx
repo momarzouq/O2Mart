@@ -41,7 +41,7 @@ export default function Navbar() {
           className="bx bx-menu hidden md:flex text-3xl cursor-pointer text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         ></i>
-        {isMenuOpen && <MobileNav links={links} />}
+        {isMenuOpen && <MobileNav links={links} openModal={openModal}/>}
       </Container>
     </nav>
   );
@@ -60,7 +60,7 @@ const Logo = () => {
 const Nav = ({ links }) => {
   return (
     <div className="md:hidden">
-      <ul className="flex items-center space-x-1 font-semibold">
+      <ul className="flex items-center  font-semibold">
         {links.map((link) => (
           <NavLinkComponent key={link.name} link={link} />
         ))}
@@ -71,7 +71,7 @@ const Nav = ({ links }) => {
 
 const NavLinkComponent = ({ link }) => {
   return (
-    <li className="text-gray-600 hover:text-gray-950 py-2 px-4 rounded-2xl">
+    <li className="text-gray-600 hover:text-gray-950 py-2 px-4 rounded-2xl lg:text-sm">
       <NavLink
         to={link.path}
         className={({ isActive }) =>
@@ -86,10 +86,13 @@ const NavLinkComponent = ({ link }) => {
   );
 };
 
-const MobileNav = ({ links }) => {
+const MobileNav = ({ links, openModal }) => {
   return (
-    <ul className="absolute z-10 top-16 left-0 w-full bg-white shadow-md py-4 space-y-4 font-semibold text-lg">
-      <button className="hidden w-full sm:block bg-Brand hover:bg-red-600 py-2 rounded-lg text-white font-semibold">
+    <ul className="absolute z-50 top-16 left-0 w-full bg-white shadow-md py-4 space-y-4 font-semibold text-lg">
+      <button
+        onClick={openModal}
+        className="hidden w-full md:block bg-Brand hover:bg-red-600 py-2 rounded-lg text-white font-semibold"
+      >
         Get Quote
       </button>
       {links.map((link) => (
@@ -116,7 +119,7 @@ const GetQuteAndShopCart = ({ openModal, openSidebar }) => {
     <div className="flex items-center gap-2">
       <button
         onClick={openModal}
-        className=" bg-Brand hover:bg-red-600 py-2 px-5 rounded-lg text-white font-semibold sm:hidden"
+        className=" bg-Brand hover:bg-red-600 py-2 px-5 lg:text-sm rounded-lg text-white font-semibold sm:hidden"
       >
         Get Quote
       </button>

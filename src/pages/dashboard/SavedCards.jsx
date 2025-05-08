@@ -26,7 +26,7 @@ const SavedCards = () => {
               {/* Card chip icon */}
               <div className="flex justify-between gap-4 items-start mb-6">
                 <img src={Chip} alt="Card Chip" className="w-auto h-6" />
-                <img src={Wifi} alt="Card Chip" className="w-auto h-6" />
+                <img src={Wifi} alt="Card Chip" className="w-auto h-6 " />
               </div>
 
               {/* Card number */}
