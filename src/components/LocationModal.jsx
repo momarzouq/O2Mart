@@ -7,6 +7,8 @@ import {
 import { useLocationModalStore } from "../store/locationStore";
 import { BsClock } from "react-icons/bs";
 import { SlClose } from "react-icons/sl";
+import Checkout from "./Checkout";
+import { Link } from "react-router-dom";
 
 export const LocationModal = ({ cartItems }) => {
   const { closeLocationModal } = useLocationModalStore();
@@ -198,17 +200,17 @@ export const LocationModal = ({ cartItems }) => {
                 <h3>Pick Installation Date</h3>
                 <p className="text-Brand">Sand Dance - Al Qouz</p>
               </div>
-              <button
+              <Link
                 className={`absolute font-medium right-4 bottom-4 rounded-md py-1 px-4 mt-4 ${
                   selectedDate
                     ? "bg-Brand text-white cursor-pointer"
                     : "bg-[#DCDBDB] text-[#969494] cursor-not-allowed"
                 }`}
-                disabled={!selectedDate} // Disable until a date is selected
-                onClick={() => alert("Proceeding...")}
+                disabled={!selectedDate}
+                to="/checkout"
               >
                 Proceed
-              </button>
+              </Link>
               <div className="bg-[#DCDBDB80] rounded py-3 px-8 mt-10 mb-8">
                 <div className="flex items-center gap-4 flex-wrap justify-center">
                   {currentDates.map((date, index) => (
@@ -233,7 +235,6 @@ export const LocationModal = ({ cartItems }) => {
             </div>
           </>
         )}
-        {currentCase === 3 && <></>}
       </div>
     </div>
   );

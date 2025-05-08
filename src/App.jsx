@@ -23,6 +23,8 @@ import AccountDetails from "./pages/dashboard/AccountDetails";
 import ChangePassword from "./pages/dashboard/ChangePassword";
 import MyGarage from "./pages/dashboard/MyGarage";
 import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
+import ThankYou from "./components/ThankYou";
 
 function App() {
   return (
@@ -50,7 +52,9 @@ function App() {
         <Route path="/account-details" element={<AccountDetails />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/my-garage" element={<MyGarage />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Layout>

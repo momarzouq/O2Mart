@@ -190,7 +190,7 @@ export default function Inquiry() {
               </div>
               <div className="flex-1 flex flex-col ">
                 <label className="flex items-center gap-1 mb-1 font-medium">
-                  VIN/Chassis Number<span className="text-red-500">*</span>{" "}
+                  VIN/Chassis Number<span className="text-red-500">*</span>
                   <HiOutlineExclamationCircle className="text-Brand size-4" />
                 </label>
                 <input
