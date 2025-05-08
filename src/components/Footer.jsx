@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
           {/* About us */}
           <div className="flex flex-col text-gray-300 space-y-4">
-            <p className="text-white font-semibold">About Us</p>
+            <Link to="/about-us" className="text-white font-semibold">About Us</Link>
             <p>Why O2Mart</p>
             <p>Become Partner</p>
             <p>Privacy policy</p>

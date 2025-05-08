@@ -9,7 +9,7 @@ import NotFound from "./components/404";
 import Login from "./pages/registration/Login";
 import SignIn from "./pages/registration/SignIn";
 import ForgotPassword from "./pages/registration/ForgotPassword";
-import Shop from "./pages/home/Shop";
+import Shop from "./pages/Shop";
 import ProductDetails from "./components/ProductDetails";
 import Inquiry from "./components/Inquiry";
 import Comparsion from "./components/Comparsion";
@@ -25,7 +25,7 @@ import MyGarage from "./pages/dashboard/MyGarage";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import ThankYou from "./components/ThankYou";
-import AboutUs from "./pages/about-us/Index";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
   return (
