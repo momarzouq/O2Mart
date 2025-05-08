@@ -315,7 +315,7 @@ const Section2 = ({ product, renderStars }) => {
 
           <div>
             <label className="block font-semibold">
-              Your Rating <span className="text-red-500">*</span>
+              Your Rating <span className="text-Brand-500">*</span>
             </label>
             <div className="flex items-center gap-1 mt-1">
               Rating

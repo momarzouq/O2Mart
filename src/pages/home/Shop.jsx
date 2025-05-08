@@ -9,9 +9,7 @@ export default function Shop() {
   return (
     <div>
       <Container>
-        <Breadcrumb
-          items={[{ label: "HOME", href: "/" }, { label: "Shop" }]}
-        />
+        <Breadcrumb items={[{ label: "HOME", href: "/" }, { label: "Shop" }]} />
         <Section1 />
         <Section2 />
       </Container>
@@ -120,7 +118,7 @@ const Section2 = () => {
           </div>
 
           {/* Add Another Part */}
-          <button type="button" className="flex items-center text-red-500">
+          <button type="button" className="flex items-center text-Brand-500">
             <span className="flex items-center gap-1">
               <CiCirclePlus size={20} />
               Add Another Part

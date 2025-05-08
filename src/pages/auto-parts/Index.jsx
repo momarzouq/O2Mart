@@ -13,7 +13,7 @@ import Step3 from "../../assets/step3.png";
 import Step4 from "../../assets/step4.png";
 import BMW from "../../assets/BMW.svg";
 import WV from "../../assets/WV.svg";
-import Volum from '../../assets/volum.png'
+import Volum from "../../assets/volum.png";
 import Tyers from "../../assets/Tyers.svg";
 import Nissan from "../../assets/nissan.svg";
 import HONDA from "../../assets/HONDA.svg";
@@ -21,141 +21,144 @@ import { SelectingSteps } from "../../components/ProductSelectingSteps";
 import { FiltersAndProducts } from "../../components/FiltersAndProducts";
 
 export default function AutoParts() {
-    const AutoPartsProducts = [
-      {
-        id: 1,
-        name: "Mazda Motor Oil SN 5W-30 Golden",
-        price: 165,
-        originalPrice: 179,
-        sale: true,
-        volume: Volum,
-        image: Tyers,
-        rating: 5,
-        brand: Nissan,
-      },
-      {
-        id: 2,
-        name: "Mazda Motor Oil SN 5W-30 Golden",
-        price: 165,
-        originalPrice: 179,
-        sale: true,
-        volume: Volum,
-        image: Tyers,
-        rating: 5,
-        brand: Nissan,
-      },
-      {
-        id: 3,
-        name: "Mazda Motor Oil SN 5W-30 Golden",
-        price: 165,
-        originalPrice: 179,
-        sale: true,
-        volume: Volum,
-        image: Tyers,
-        rating: 5,
-        brand: Nissan,
-      },
-      {
-        id: 4,
-        name: "Mazda Motor Oil SN 5W-30 Golden",
-        price: 165,
-        originalPrice: 179,
-        sale: false,
-        volume: Volum,
-        image: Tyers,
-        rating: 5,
-        brand: Nissan,
-      },
-      {
-        id: 5,
-        name: "Mazda Motor Oil SN 5W-30 Golden",
-        price: 165,
-        originalPrice: 179,
-        sale: true,
-        volume: Volum,
-        image: Tyers,
-        rating: 5,
-        brand: Nissan,
-      },
-      {
-        id: 6,
-        name: "Mazda Motor Oil SN 5W-30 Golden",
-        price: 165,
-        originalPrice: 179,
-        sale: true,
-        volume: Volum,
-        image: Tyers,
-        rating: 5,
-        brand: Nissan,
-      },
-      {
-        id: 7,
-        name: "Mazda Motor Oil SN 5W-30 Golden",
-        price: 165,
-        originalPrice: 179,
-        sale: false,
-        volume: Volum,
-        image: Tyers,
-        rating: 5,
-        brand: Nissan,
-      },
-      {
-        id: 8,
-        name: "Mazda Motor Oil SN 5W-30 Golden",
-        price: 165,
-        originalPrice: 179,
-        sale: true,
-        volume: Volum,
-        image: Tyers,
-        rating: 5,
-        brand: Nissan,
-      },
-      {
-        id: 9,
-        name: "Mazda Motor Oil SN 5W-30 Golden",
-        price: 165,
-        originalPrice: 179,
-        sale: true,
-        volume: Volum,
-        image: Tyers,
-        rating: 5,
-        brand: Nissan,
-      },
-    ];
-  
-    const AutoPartsFilters = [
-      {
-        name: "Brand",
-        options: ["Nissan", "Mazda", "Toyota"],
-      },
-      {
-        name: "Year",
-        options: ["2025", "2024", "2023"],
-      },
-      {
-        name: "Filter 1",
-        options: [
-          "This past week",
-          "This past week",
-          "This past week",
-          "This past week",
-        ],
-      },
-      {
-        name: "Filter 2",
-        options: [],
-      },
-      {
-        name: "Filter 3",
-        options: [],
-      },
-    ];
+  const AutoPartsProducts = [
+    {
+      id: 1,
+      name: "Mazda Motor Oil SN 5W-30 Golden",
+      price: 165,
+      originalPrice: 179,
+      sale: true,
+      volume: Volum,
+      image: Tyers,
+      rating: 5,
+      brand: Nissan,
+    },
+    {
+      id: 2,
+      name: "Mazda Motor Oil SN 5W-30 Golden",
+      price: 165,
+      originalPrice: 179,
+      sale: true,
+      volume: Volum,
+      image: Tyers,
+      rating: 5,
+      brand: Nissan,
+    },
+    {
+      id: 3,
+      name: "Mazda Motor Oil SN 5W-30 Golden",
+      price: 165,
+      originalPrice: 179,
+      sale: true,
+      volume: Volum,
+      image: Tyers,
+      rating: 5,
+      brand: Nissan,
+    },
+    {
+      id: 4,
+      name: "Mazda Motor Oil SN 5W-30 Golden",
+      price: 165,
+      originalPrice: 179,
+      sale: false,
+      volume: Volum,
+      image: Tyers,
+      rating: 5,
+      brand: Nissan,
+    },
+    {
+      id: 5,
+      name: "Mazda Motor Oil SN 5W-30 Golden",
+      price: 165,
+      originalPrice: 179,
+      sale: true,
+      volume: Volum,
+      image: Tyers,
+      rating: 5,
+      brand: Nissan,
+    },
+    {
+      id: 6,
+      name: "Mazda Motor Oil SN 5W-30 Golden",
+      price: 165,
+      originalPrice: 179,
+      sale: true,
+      volume: Volum,
+      image: Tyers,
+      rating: 5,
+      brand: Nissan,
+    },
+    {
+      id: 7,
+      name: "Mazda Motor Oil SN 5W-30 Golden",
+      price: 165,
+      originalPrice: 179,
+      sale: false,
+      volume: Volum,
+      image: Tyers,
+      rating: 5,
+      brand: Nissan,
+    },
+    {
+      id: 8,
+      name: "Mazda Motor Oil SN 5W-30 Golden",
+      price: 165,
+      originalPrice: 179,
+      sale: true,
+      volume: Volum,
+      image: Tyers,
+      rating: 5,
+      brand: Nissan,
+    },
+    {
+      id: 9,
+      name: "Mazda Motor Oil SN 5W-30 Golden",
+      price: 165,
+      originalPrice: 179,
+      sale: true,
+      volume: Volum,
+      image: Tyers,
+      rating: 5,
+      brand: Nissan,
+    },
+  ];
+
+  const AutoPartsFilters = [
+    {
+      name: "Brand",
+      options: ["Nissan", "Mazda", "Toyota"],
+    },
+    {
+      name: "Year",
+      options: ["2025", "2024", "2023"],
+    },
+    {
+      name: "Filter 1",
+      options: [
+        "This past week",
+        "This past week",
+        "This past week",
+        "This past week",
+      ],
+    },
+    {
+      name: "Filter 2",
+      options: [],
+    },
+    {
+      name: "Filter 3",
+      options: [],
+    },
+  ];
   return (
     <div>
       <Section1 />
       <Container>
         <Section2 />
-        <FiltersAndProducts products={AutoPartsProducts} filters={AutoPartsFilters}/>
+        <FiltersAndProducts
+          products={AutoPartsProducts}
+          filters={AutoPartsFilters}
+        />
       </Container>
     </div>
   );
@@ -237,7 +240,7 @@ const Section1 = () => {
             </div>
 
             {/* Add Another Part */}
-            <button type="button" className="flex items-center text-red-500">
+            <button type="button" className="flex items-center text-Brand-500">
               <span className="flex items-center gap-1">
                 <CiCirclePlus size={20} />
                 Add Another Part

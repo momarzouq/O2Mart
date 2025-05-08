@@ -14,7 +14,9 @@ const AccountDetails = () => {
       </div>
 
       <div className="flex gap-6 md:flex-col">
-        <DashboardSideNav />
+      <div className="flex md:justify-start">
+          <DashboardSideNav />
+        </div>
 
         <div class="space-y-6 w-full">
           <div>

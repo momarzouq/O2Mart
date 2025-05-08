@@ -14,7 +14,9 @@ const ChangePassword = () => {
       </div>
 
       <div className="flex gap-6 md:flex-col">
-        <DashboardSideNav />
+      <div className="flex md:justify-start">
+          <DashboardSideNav />
+        </div>
         <div className="space-y-6 w-full">
           <h2 className="font-semibold">Password change</h2>
           <div>

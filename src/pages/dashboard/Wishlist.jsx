@@ -57,7 +57,9 @@ const Wishlist = () => {
       </div>
 
       <div className="flex gap-6 md:flex-col">
-        <DashboardSideNav />
+      <div className="flex md:justify-start">
+          <DashboardSideNav />
+        </div>
         <div className="grid grid-cols-3 md:grid-cols-1 gap-4">
           {TiresProducts.map((product) => (
             <div

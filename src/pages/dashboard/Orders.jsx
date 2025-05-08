@@ -67,7 +67,7 @@ const Orders = () => {
         </div>
       </div>
 
-      <div className="flex gap-6 md:flex-col md:items-start md:justify-start">
+      <div className="flex gap-6 md:flex-col ">
         <div className="flex md:justify-start">
           <DashboardSideNav />
         </div>

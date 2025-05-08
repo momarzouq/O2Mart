@@ -14,7 +14,9 @@ const TrackOrder = () => {
       </div>
 
       <div className="flex gap-6 md:flex-col">
-        <DashboardSideNav />
+      <div className="flex md:justify-start">
+          <DashboardSideNav />
+        </div>
         <div className="space-y-6">
           <h1 className="text-4xl font-semibold text-[#5F5D5D]">
             Track Your Order

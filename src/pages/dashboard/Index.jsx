@@ -15,7 +15,9 @@ const Dashboard = () => {
       </div>
 
       <div className="flex gap-6 md:flex-col">
-        <DashboardSideNav />
+      <div className="flex md:justify-start">
+          <DashboardSideNav />
+        </div>
         <div className="space-y-6">
           <div className="flex-1 space-y-3">
             <p className="font-semibold">

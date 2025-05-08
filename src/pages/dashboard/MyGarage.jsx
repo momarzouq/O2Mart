@@ -16,7 +16,9 @@ const MyGarage = () => {
       </div>
 
       <div className="flex gap-6 md:flex-col">
-        <DashboardSideNav />
+      <div className="flex md:justify-start">
+          <DashboardSideNav />
+        </div>
         <div className="space-y-4 w-full max-w-2xl">
           {/* Add more header */}
           <div className="flex items-center text-Brand font-semibold text-xl cursor-pointer">

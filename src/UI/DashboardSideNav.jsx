@@ -30,7 +30,7 @@ const DashboardSideNav = () => {
     { label: "Logout", icon: <FaSignOutAlt />, href: "/log-out", danger: true },
   ];
   return (
-    <div className="w-full max-w-[200px] space-y-3 md:self-center">
+    <div className="w-full min-w-44 max-w-[200px] space-y-3 md:self-center">
       {menuItems.map((item, idx) => (
         <Link
           key={idx}

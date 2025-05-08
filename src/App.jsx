@@ -25,12 +25,12 @@ import MyGarage from "./pages/dashboard/MyGarage";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import ThankYou from "./components/ThankYou";
+import AboutUs from "./pages/about-us/Index";
 
 function App() {
   return (
     <Layout>
       <Routes>
-        {/* skip Home entirely */}
         <Route exact path="/" element={<Home />} />
         <Route path="/auto-parts" element={<AutoParts />} />
         <Route path="/batteries" element={<Batteries />} />
@@ -55,6 +55,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Layout>

@@ -24,7 +24,7 @@ export default function Inquiry() {
             {/* What Do You Need */}
             <div className="flex flex-col">
               <label className="mb-1 font-medium">
-                What Do You Need?<span className="text-red-500">*</span>
+                What Do You Need?<span className="text-Brand-500">*</span>
               </label>
               <select className="w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                 <option>Auto Part</option>
@@ -35,7 +35,7 @@ export default function Inquiry() {
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-medium">
-                  Car Make<span className="text-red-500">*</span>
+                  Car Make<span className="text-Brand-500">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>Select Car Make</option>
@@ -43,7 +43,7 @@ export default function Inquiry() {
               </div>
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-medium">
-                  Car Model<span className="text-red-500">*</span>
+                  Car Model<span className="text-Brand-500">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>Select Car Model</option>
@@ -54,7 +54,7 @@ export default function Inquiry() {
             {/* Car Year */}
             <div className="flex flex-col">
               <label className="mb-1 font-medium">
-                Car Year<span className="text-red-500">*</span>
+                Car Year<span className="text-Brand-500">*</span>
               </label>
               <select className="w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                 <option>Select Car Year</option>
@@ -96,7 +96,7 @@ export default function Inquiry() {
             <div className="flex gap-2 items-end">
               <div className="flex flex-col w-1/2">
                 <label className="mb-1 font-medium">
-                  Required Part<span className="text-red-500">*</span>
+                  Required Part<span className="text-Brand-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -114,7 +114,7 @@ export default function Inquiry() {
               </div>
               <div className="flex flex-col w-[40%] md:w-[45%]">
                 <label className="md:text-xs mb-1 font-medium">
-                  Upload Part Photo<span className="text-red-500">*</span>
+                  Upload Part Photo<span className="text-Brand-500">*</span>
                 </label>
                 <button
                   type="button"
@@ -128,7 +128,7 @@ export default function Inquiry() {
             {/* Add Another Part */}
             <button
               type="button"
-              className="font-[500] text-lg flex items-center text-red-500"
+              className="font-[500] text-lg flex items-center text-Brand-500"
             >
               <span className="flex items-center gap-1">
                 <IoMdAddCircleOutline size={22} />
@@ -152,7 +152,7 @@ export default function Inquiry() {
             {/* What Do You Need */}
             <div className="flex flex-col">
               <label className="mb-1 font-medium">
-                What Do You Need?<span className="text-red-500">*</span>
+                What Do You Need?<span className="text-Brand-500">*</span>
               </label>
               <select className="w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                 <option>Battery </option>
@@ -163,7 +163,7 @@ export default function Inquiry() {
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-medium">
-                  Car Make<span className="text-red-500">*</span>
+                  Car Make<span className="text-Brand-500">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>Select Car Make</option>
@@ -171,7 +171,7 @@ export default function Inquiry() {
               </div>
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-medium">
-                  Car Model<span className="text-red-500">*</span>
+                  Car Model<span className="text-Brand-500">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>Select Car Model</option>
@@ -182,7 +182,7 @@ export default function Inquiry() {
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-medium">
-                  Car Make<span className="text-red-500">*</span>
+                  Car Make<span className="text-Brand-500">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>Select Car Make</option>
@@ -190,7 +190,7 @@ export default function Inquiry() {
               </div>
               <div className="flex-1 flex flex-col ">
                 <label className="flex items-center gap-1 mb-1 font-medium">
-                  VIN/Chassis Number<span className="text-red-500">*</span>
+                  VIN/Chassis Number<span className="text-Brand-500">*</span>
                   <HiOutlineExclamationCircle className="text-Brand size-4" />
                 </label>
                 <input
@@ -205,7 +205,7 @@ export default function Inquiry() {
             <div className="flex gap-2 items-end">
               <div className="w-full flex flex-col">
                 <label className="mb-1 font-medium">
-                  Battery Space <span className="text-red-500">*</span>
+                  Battery Space <span className="text-Brand-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -231,7 +231,7 @@ export default function Inquiry() {
             {/* What Do You Need */}
             <div className="flex flex-col">
               <label className="mb-1 font-medium">
-                What Do You Need?<span className="text-red-500">*</span>
+                What Do You Need?<span className="text-Brand-500">*</span>
               </label>
               <select className="w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                 <option>Tiers By Size </option>
@@ -242,7 +242,7 @@ export default function Inquiry() {
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-medium">
-                  Width <span className="text-red-500">*</span>
+                  Width <span className="text-Brand-500">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>55</option>
@@ -250,7 +250,7 @@ export default function Inquiry() {
               </div>
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-medium">
-                  Height <span className="text-red-500">*</span>
+                  Height <span className="text-Brand-500">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>55</option>
@@ -261,7 +261,7 @@ export default function Inquiry() {
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-medium">
-                  Diameter <span className="text-red-500">*</span>
+                  Diameter <span className="text-Brand-500">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>000</option>
@@ -282,7 +282,7 @@ export default function Inquiry() {
             {/* Add Another Part */}
             <button
               type="button"
-              className="font-[500] text-lg flex items-center text-red-500"
+              className="font-[500] text-lg flex items-center text-Brand-500"
             >
               <span className="flex items-center gap-1">
                 <IoMdAddCircleOutline size={22} />
@@ -306,7 +306,7 @@ export default function Inquiry() {
             {/* What Do You Need */}
             <div className="flex flex-col">
               <label className="mb-1 font-medium">
-                What Do You Need?<span className="text-red-500">*</span>
+                What Do You Need?<span className="text-Brand-500">*</span>
               </label>
               <select className="w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                 <option>Tiers By Car Make </option>
@@ -317,7 +317,7 @@ export default function Inquiry() {
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-medium">
-                  Width <span className="text-red-500">*</span>
+                  Width <span className="text-Brand-500">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>55</option>
@@ -325,7 +325,7 @@ export default function Inquiry() {
               </div>
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-medium">
-                  Height <span className="text-red-500">*</span>
+                  Height <span className="text-Brand-500">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>55</option>
@@ -336,7 +336,7 @@ export default function Inquiry() {
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-medium">
-                  Diameter <span className="text-red-500">*</span>
+                  Diameter <span className="text-Brand-500">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>000</option>
@@ -376,7 +376,7 @@ export default function Inquiry() {
             {/* What Do You Need */}
             <div className="flex flex-col">
               <label className="mb-1 font-medium">
-                What Do You Need?<span className="text-red-500">*</span>
+                What Do You Need?<span className="text-Brand-500">*</span>
               </label>
               <select className="w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                 <option>RIMS</option>
@@ -387,7 +387,7 @@ export default function Inquiry() {
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-medium">
-                  Width <span className="text-red-500">*</span>
+                  Width <span className="text-Brand-500">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>55</option>
@@ -395,7 +395,7 @@ export default function Inquiry() {
               </div>
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-medium">
-                  Height <span className="text-red-500">*</span>
+                  Height <span className="text-Brand-500">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>55</option>
@@ -406,7 +406,7 @@ export default function Inquiry() {
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-medium">
-                  Diameter <span className="text-red-500">*</span>
+                  Diameter <span className="text-Brand-500">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>000</option>
@@ -447,7 +447,7 @@ export default function Inquiry() {
             {/* What Do You Need */}
             <div className="w-full flex flex-col">
               <label className="mb-1 font-medium">
-                Full Name<span className="text-red-500">*</span>
+                Full Name<span className="text-Brand-500">*</span>
               </label>
               <input
                 type="text"
@@ -460,7 +460,7 @@ export default function Inquiry() {
             <div className="flex gap-2">
               <div className="flex-1 flex flex-col">
                 <label className="mb-1 font-medium">
-                  Phone Number<span className="text-red-500">*</span>
+                  Phone Number<span className="text-Brand-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -470,7 +470,7 @@ export default function Inquiry() {
               </div>
               <div className="flex-1 flex flex-col">
                 <label className="mb-1 font-medium">
-                  Email <span className="text-red-500">*</span>
+                  Email <span className="text-Brand-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -505,7 +505,7 @@ export default function Inquiry() {
           <div className="relative z-10 bg-white px-10 md:px-6 py-6 rounded-lg shadow-md w-[60%] md:w-[90%] h-[90%] my-12 overflow-y-auto">
             <button
               onClick={() => closeModal(true)}
-              className="absolute top-6 right-6 z-50 text-gray-600 hover:text-red-500 text-xl"
+              className="absolute top-6 right-6 z-50 text-gray-600 hover:text-Brand-500 text-xl"
               aria-label="Close"
             >
               <IoClose size={20} />
