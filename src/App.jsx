@@ -28,6 +28,7 @@ import ThankYou from "./components/ThankYou";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import TrackOrder from "./pages/TrackOrder";
+import Blog from "./pages/Blog";
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/track-order" element={<TrackOrder />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Layout>
