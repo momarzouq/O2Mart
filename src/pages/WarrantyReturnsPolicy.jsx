@@ -61,7 +61,6 @@ export default function WarrantyReturnsPolicy() {
             <li> Contact our customer service team right away</li>
             <li> Provide your order number and photos of the part</li>
             <li>
-              {" "}
               Our team will guide you through the next steps based on the
               supplier’s warranty terms
             </li>

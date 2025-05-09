@@ -28,7 +28,7 @@ export default function Footer() {
             <p className="text-white font-semibold">Help and Support</p>
             <Link to="/track-order">Track My Order</Link>
             <Link to="contact-us">Contact us</Link>
-            <p>My account</p>
+            <Link to="/dashboard">My account</Link>
             <Link to="/blog">Blog</Link>
             <p>FAQ</p>
           </div>
@@ -38,8 +38,8 @@ export default function Footer() {
               About Us
             </Link>
             <p>Why O2Mart</p>
-            <p>Become Partner</p>
-            <p>Privacy policy</p>
+            <Link to="/become-partner">Become Partner</Link>
+            <Link to="/privacy-policy">Privacy policy</Link>
             <Link to="/termsof-us">Terms of Use</Link>
             <Link to="/warranty-returns-policy">Warranty & Returns Policy</Link>
           </div>

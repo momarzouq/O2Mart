@@ -31,6 +31,8 @@ import TrackOrder from "./pages/TrackOrder";
 import Blog from "./pages/Blog";
 import TermsofUs from "./pages/TermsofUs";
 import WarrantyReturnsPolicy from "./pages/WarrantyReturnsPolicy";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import BecomePartner from "./pages/BecomePartner";
 
 function App() {
   return (
@@ -66,6 +68,8 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/termsof-us" element={<TermsofUs />} />
         <Route path="/warranty-returns-policy" element={<WarrantyReturnsPolicy />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/become-partner" element={<BecomePartner/>} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Layout>

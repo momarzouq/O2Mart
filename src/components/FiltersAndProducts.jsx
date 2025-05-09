@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { IoHeartOutline } from "react-icons/io5";
-import { MdOutlineCompareArrows } from "react-icons/md";
+import { MdKeyboardArrowRight, MdOutlineCompareArrows } from "react-icons/md";
 import { RiArrowDownSFill, RiArrowUpSFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
@@ -171,6 +171,7 @@ export const FiltersAndProducts = ({ products, filters }) => {
                   {index + 1}
                 </button>
               ))}
+              <MdKeyboardArrowRight size={20} />
             </div>
           )}
         </div>
