@@ -60,11 +60,11 @@ const Wishlist = () => {
       <div className="flex md:justify-start">
           <DashboardSideNav />
         </div>
-        <div className="grid grid-cols-3 md:grid-cols-1 gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {TiresProducts.map((product) => (
             <div
               key={product.id}
-              className="relative flex flex-col items-center justify-center border p-4 space-y-2"
+              className="relative flex flex-col items-center justify-center border p-4 space-y-2 max-h-fit"
             >
               {/* Brand Of Product & Add To Favorit & Comprison */}
               <div className=" flex items-center">

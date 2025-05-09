@@ -16,7 +16,7 @@ import Comparsion from "./components/Comparsion";
 import Dashboard from "./pages/dashboard/Index";
 import Wishlist from "./pages/dashboard/Wishlist";
 import Orders from "./pages/dashboard/Orders";
-import TrackOrder from "./pages/dashboard/TrackOrder";
+import DashboardTrackOrder from "./pages/dashboard/TrackOrder";
 import SavedCards from "./pages/dashboard/SavedCards";
 import AddressBook from "./pages/dashboard/AddressBook";
 import AccountDetails from "./pages/dashboard/AccountDetails";
@@ -27,6 +27,7 @@ import Checkout from "./components/Checkout";
 import ThankYou from "./components/ThankYou";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import TrackOrder from "./pages/TrackOrder";
 
 function App() {
   return (
@@ -40,14 +41,14 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/home/shop" element={<Shop />} />
+        <Route path="/shop" element={<Shop />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/inquiry" element={<Inquiry />} />
         <Route path="/comparsion" element={<Comparsion />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/orders" element={<Orders />} />
-        <Route path="/order-tracking" element={<TrackOrder />} />
+        <Route path="/order-tracking" element={<DashboardTrackOrder />} />
         <Route path="/saved-cards" element={<SavedCards />} />
         <Route path="/addresses" element={<AddressBook />} />
         <Route path="/account-details" element={<AccountDetails />} />
@@ -58,6 +59,7 @@ function App() {
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/track-order" element={<TrackOrder />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Layout>

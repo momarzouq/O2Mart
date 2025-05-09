@@ -126,3 +126,8 @@ ul.spec-list {
   border-left: 1px solid #9c9c9c;
   border-right: 1px solid #9c9c9c;
 }
+
+
+.tracking-order-input {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Shadow from all directions */
+}
