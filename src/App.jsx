@@ -26,6 +26,7 @@ import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import ThankYou from "./components/ThankYou";
 import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Layout>
