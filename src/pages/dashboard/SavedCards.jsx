@@ -5,7 +5,7 @@ import { Breadcrumb } from "../../UI/Breadcrumb";
 import Wifi from "../../assets/wifi.png";
 import Chip from "../../assets/chip.png";
 import MasterCart from "../../assets/MasterCart.svg";
-import Visa from "../../assets/Visa.svg";
+import Visa from "../../assets/visa.svg";
 import { FiCreditCard } from "react-icons/fi";
 
 const SavedCards = () => {
