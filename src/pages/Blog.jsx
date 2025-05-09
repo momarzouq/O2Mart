@@ -243,7 +243,7 @@ const SeatchAndContent = () => {
                 alt={post.title}
               />
               <div className="flex flex-col">
-                <p className="text-gray-400 text-xs font-semibold">
+                <p className="text-gray-300 text-xs font-semibold">
                   {post.date}
                 </p>
                 <p className="text-sm font-semibold">{post.title}</p>
