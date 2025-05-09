@@ -29,6 +29,8 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import TrackOrder from "./pages/TrackOrder";
 import Blog from "./pages/Blog";
+import TermsofUs from "./pages/TermsofUs";
+import WarrantyReturnsPolicy from "./pages/WarrantyReturnsPolicy";
 
 function App() {
   return (
@@ -62,6 +64,8 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/track-order" element={<TrackOrder />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/termsof-us" element={<TermsofUs />} />
+        <Route path="/warranty-returns-policy" element={<WarrantyReturnsPolicy />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Layout>

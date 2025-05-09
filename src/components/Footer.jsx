@@ -26,20 +26,22 @@ export default function Footer() {
           {/* Help and Support */}
           <div className="flex flex-col text-gray-300 space-y-4">
             <p className="text-white font-semibold">Help and Support</p>
-            <p>Track My Order</p>
-            <p>Contact us</p>
+            <Link to="/track-order">Track My Order</Link>
+            <Link to="contact-us">Contact us</Link>
             <p>My account</p>
-            <p>Blog</p>
+            <Link to="/blog">Blog</Link>
             <p>FAQ</p>
           </div>
           {/* About us */}
           <div className="flex flex-col text-gray-300 space-y-4">
-            <Link to="/about-us" className="text-white font-semibold">About Us</Link>
+            <Link to="/about-us" className="text-white font-semibold">
+              About Us
+            </Link>
             <p>Why O2Mart</p>
             <p>Become Partner</p>
             <p>Privacy policy</p>
-            <p>Terms of Use</p>
-            <p>Warranty & Returns Policy</p>
+            <Link to="/termsof-us">Terms of Use</Link>
+            <Link to="/warranty-returns-policy">Warranty & Returns Policy</Link>
           </div>
           {/* logo and Contact us */}
           <div className="flex flex-col space-y-4 text-white">
