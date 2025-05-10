@@ -33,6 +33,7 @@ import TermsofUs from "./pages/TermsofUs";
 import WarrantyReturnsPolicy from "./pages/WarrantyReturnsPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import BecomePartner from "./pages/BecomePartner";
+import FAQ from "./pages/FAQ";
 
 function App() {
   return (
@@ -70,6 +71,7 @@ function App() {
         <Route path="/warranty-returns-policy" element={<WarrantyReturnsPolicy />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/become-partner" element={<BecomePartner/>} />
+        <Route path="/faq" element={<FAQ/>} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Layout>

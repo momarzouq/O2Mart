@@ -30,7 +30,7 @@ export default function Footer() {
             <Link to="contact-us">Contact us</Link>
             <Link to="/dashboard">My account</Link>
             <Link to="/blog">Blog</Link>
-            <p>FAQ</p>
+            <Link to="/faq">FAQ</Link>
           </div>
           {/* About us */}
           <div className="flex flex-col text-gray-300 space-y-4">
