@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Container from "../UI/Container";
-import FAQImg from "../assets/faq.svg";
+import FAQImg from "../assets/FAQ.svg";
 import { Breadcrumb } from "../UI/Breadcrumb";
 import FaqContent from "../components/FaqContent";
 
