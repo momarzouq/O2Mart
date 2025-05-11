@@ -15,33 +15,67 @@ export default function Footer() {
         <div className="flex gap-40 xl:gap-10 md:flex-col md:items-start">
           {/* Products */}
           <div className="flex flex-col text-gray-300 space-y-4">
-            <p className="text-white font-semibold">Products</p>
-            <Link to="/auto-parts">Auto Parts</Link>
-            <Link to="/batteries">Batteries</Link>
-            <Link to="/tyers">Tyers</Link>
-            <Link to="/rims">Rims</Link>
-            <Link to="/auto-parts">All Products</Link>
+            <Link to="/shop" className="text-white font-semibold">
+              Products
+            </Link>
+            <Link to="/auto-parts" className="hover:text-white">
+              Auto Parts
+            </Link>
+            <Link to="/batteries" className="hover:text-white">
+              Batteries
+            </Link>
+            <Link to="/tyers" className="hover:text-white">
+              Tyers
+            </Link>
+            <Link to="/rims" className="hover:text-white">
+              Rims
+            </Link>
+            <Link to="/auto-parts" className="hover:text-white">
+              All Products
+            </Link>
             <img src={Payment} alt="Payment" />
           </div>
           {/* Help and Support */}
           <div className="flex flex-col text-gray-300 space-y-4">
-            <p className="text-white font-semibold">Help and Support</p>
-            <Link to="/track-order">Track My Order</Link>
-            <Link to="contact-us">Contact us</Link>
-            <Link to="/dashboard">My account</Link>
-            <Link to="/blog">Blog</Link>
-            <Link to="/faq">FAQ</Link>
+            <Link to="/faq" className="text-white font-semibold">
+              Help and Support
+            </Link>
+            <Link to="/track-order" className="hover:text-white">
+              Track My Order
+            </Link>
+            <Link to="contact-us" className="hover:text-white">
+              Contact us
+            </Link>
+            <Link to="/dashboard" className="hover:text-white">
+              My account
+            </Link>
+            <Link to="/blog" className="hover:text-white">
+              Blog
+            </Link>
+            <Link to="/faq" className="hover:text-white">
+              FAQ
+            </Link>
           </div>
           {/* About us */}
           <div className="flex flex-col text-gray-300 space-y-4">
             <Link to="/about-us" className="text-white font-semibold">
               About Us
             </Link>
-            <p>Why O2Mart</p>
-            <Link to="/become-partner">Become Partner</Link>
-            <Link to="/privacy-policy">Privacy policy</Link>
-            <Link to="/termsof-us">Terms of Use</Link>
-            <Link to="/warranty-returns-policy">Warranty & Returns Policy</Link>
+            <Link to="/about-us" className="hover:text-white">
+              Why O2Mart
+            </Link>
+            <Link to="/become-partner" className="hover:text-white">
+              Become Partner
+            </Link>
+            <Link to="/privacy-policy" className="hover:text-white">
+              Privacy policy
+            </Link>
+            <Link to="/termsof-us" className="hover:text-white">
+              Terms of Use
+            </Link>
+            <Link to="/warranty-returns-policy" className="hover:text-white">
+              Warranty & Returns Policy
+            </Link>
           </div>
           {/* logo and Contact us */}
           <div className="flex flex-col space-y-4 text-white">
@@ -52,7 +86,7 @@ export default function Footer() {
             <p>Sunday: Closed.</p>
             <div className="flex gap-6">
               <FaFacebookF size={25} />
-              <FaInstagram size={25} />
+              <FaInstagram size={25} /> className="hover:text-white"
               <FaLinkedinIn size={25} />
             </div>
 
