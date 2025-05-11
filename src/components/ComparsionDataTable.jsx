@@ -46,7 +46,7 @@ const ProductsComparisonTable = () => {
           <tr className="odd:bg-white even:bg-gray-100 ">
             <td className="w-96 border px-4 py-2 text-start font-medium space-y-4">
               <p className="text-xl">Go to product page for more products</p>
-              <button className="text-lg block underline">View More</button>
+              <button className="text-lg block underline whitespace-nowrap">View More</button>
             </td>
             {products.map((p, index) => (
               <td key={index} className="relative w-96 border px-4 py-2">
