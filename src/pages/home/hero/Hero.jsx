@@ -1,6 +1,7 @@
 import HomeBG from "../../../assets/hombg.png";
 import HomeBg from "../../../assets/hombg2.svg";
 import Steps from "../../../assets/steps.svg";
+import { useDiscountModalStore } from "../../../store/useDiscountModalStore";
 import Container from "../../../UI/Container";
 export default function Hero() {
   return (
@@ -15,6 +16,7 @@ export default function Hero() {
 }
 
 const Section1 = () => {
+  const { openModal } = useDiscountModalStore();
   return (
     <div className="flex justify-between bg-[#FBFBFB]">
       <div className="flex flex-col gap-4 md:gap-1 items-start mt-12 md:mt-4 mx-[70px] md:mx-4">
@@ -22,7 +24,10 @@ const Section1 = () => {
         <p className="font-bold text-lg md:text-sm mt-2 md:mt-0 w-64 md:w-40">
           We scan the market, compare prices, and recommend the best deals
         </p>
-        <button className="text-xs bg-Brand hover:bg-red-600 text-white py-2 md:py-1 px-6 md:px-4 rounded-3xl">
+        <button
+          onClick={openModal}
+          className="text-xs bg-Brand hover:bg-red-600 text-white py-2 md:py-1 px-6 md:px-4 rounded-3xl"
+        >
           Inquire Now
         </button>
       </div>
@@ -42,11 +47,11 @@ const Section2 = () => {
           Your One-Stop Shop For
           <br /> Auto Parts In the UAE
         </h1>
-        <p>
+        <p className="font-medium">
           Lorem Ipsum is simply dummy text of the printing and <br />
           typesetting industry.
         </p>
-        <p className="w-[470px] md:w-[320px]">
+        <p className="max-w-[600px]">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -54,10 +59,10 @@ const Section2 = () => {
           five centuries,
         </p>
       </div>
-      <div className="flex-[5] justify-center items-center w-full">
+      <div className="flex-[2] lg:w-full justify-center items-center w-full">
         <img
           src={HomeBg}
-          className=" h-[110px] object-contain"
+          className="lg:ml-8 h-[120px] object-contain"
           alt="Home background"
         />
       </div>
@@ -66,22 +71,21 @@ const Section2 = () => {
 };
 const Section3 = () => {
   return (
-    <div className="flex flex-col items-center justify-center ">
-      <h1 className="text-2xl font-bold mt-8">How this work</h1>
-      <div className="flex md:flex-col">
-        <div className="flex justify-center items-center shrink-0">
-          <img
-            src={Steps}
-            className="h-[300px] object-contain"
-            alt="Home background"
-          />
-        </div>
-        <div className="flex flex-col md:items-center md:text-center gap-4 mt-10">
-          <p>
+    <div className="flex flex-col items-center justify-center">
+      <h1 className="text-2xl font-bold text-center mt-8">How this work</h1>
+      <div className="flex md:flex-col gap-16 md:gap-2 items-center justify-between">
+        <img
+          src={Steps}
+          className="h-[350px] object-contain"
+          alt="Home background"
+        />
+
+        <div>
+          <p className="font-medium mb-4">
             Lorem Ipsum is simply dummy text of the printing and <br />
             typesetting industry.
           </p>
-          <p className="w-[470px] md:w-[300px]">
+          <p className="max-w-[450px]">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type

@@ -34,6 +34,7 @@ import WarrantyReturnsPolicy from "./pages/WarrantyReturnsPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import BecomePartner from "./pages/BecomePartner";
 import FAQ from "./pages/FAQ";
+import BlogDetails from "./pages/BlogDetails";
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/track-order" element={<TrackOrder />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:title" element={<BlogDetails />} />
         <Route path="/termsof-us" element={<TermsofUs />} />
         <Route path="/warranty-returns-policy" element={<WarrantyReturnsPolicy />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

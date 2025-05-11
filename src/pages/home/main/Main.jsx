@@ -8,13 +8,14 @@ import Categories from "../../../assets/categories.svg";
 import GetHelp from "../../../assets/GetHelp.svg";
 import CarsBrand from "../../../assets/Cars-Brand.svg";
 import Email from "../../../assets/email.svg";
-import Article1 from "../../../assets/article1.png";
-import Article2 from "../../../assets/article2.png";
-import Article3 from "../../../assets/article3.png";
+import Article1 from "../../../assets/article1.svg";
+import Article2 from "../../../assets/article2.svg";
+import Article3 from "../../../assets/article3.svg";
 import Container from "../../../UI/Container";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { FaTelegramPlane } from "react-icons/fa";
 import { BiMessageAltDetail } from "react-icons/bi";
+import { Link } from "react-router-dom";
 export default function Main() {
   return (
     <div className="relative mb-20">
@@ -217,18 +218,19 @@ const Section3 = () => {
         spaceBetween={20}
       >
         {CarsBrandData.map((item) => (
-          <SwiperSlide
-            key={item.id}
-            className="flex justify-center items-center"
-          >
-            <div className="h-full p-6 bg-white rounded-lg flex items-center justify-center gap-2">
-              <div>
-                <h3 className="text-md font-semibold">{item.User}</h3>
-                <p className="flex mb-2">{renderStars(item.Rating)}</p>
-                <p className="text-gray-700 text-sm w-60">{item.Description}</p>
-              </div>
-            </div>
-          </SwiperSlide>
+        <SwiperSlide
+        key={item.id}
+        className="flex justify-center items-center select-text"
+      >
+        <div className="h-full p-6 bg-white rounded-lg flex items-center justify-center gap-2">
+          <div>
+            <h3 className="text-md font-semibold">{item.User}</h3>
+            <p className="flex mb-2">{renderStars(item.Rating)}</p>
+            <p className="text-gray-700 text-sm w-60">{item.Description}</p>
+          </div>
+        </div>
+      </SwiperSlide>
+      
         ))}
       </Swiper>
       <div className="flex md:flex-col md:space-y-4 lg:gap-2 md:text-center md:px-2 items-center justify-around bg-Brand py-2 rounded-2xl">
@@ -287,9 +289,12 @@ const Section4 = () => {
           ensure you have all the knowledge you need to make the correct
           purchase here at Mobex.
         </p>
-        <button className="font-semibold border-2 border-gray-800 rounded-md py-1.5 px-8">
+        <Link
+          to="/blog"
+          className="font-semibold border-2 border-gray-800 rounded-md py-1.5 px-8"
+        >
           Read more
-        </button>
+        </Link>
       </div>
       {/* Right Side & Swiper */}
       <Swiper

@@ -1,15 +1,15 @@
 import { IoClose } from "react-icons/io5";
 import Modal from "../assets/Modal.png";
 import PropTypes from "prop-types";
-export const DiscountModal = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
-
+import { useDiscountModalStore } from "../store/useDiscountModalStore";
+export const DiscountModal = () => {
+  const { closeModal } = useDiscountModalStore();
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center z-50">
       {/* Modal Container */}
-      <div className="relative flex flex-col gap-2 justify-center items-center bg-white rounded-lg shadow-xl w-[60%] md:w-[90%] overflow-hidden animate-fade-in px-8 pt-16 pb-8">
+      <div className="relative flex flex-col gap-2 justify-center items-center bg-white rounded-lg shadow-xl w-[60%] md:w-[90%] overflow-hidden animate-fade-in px-8 py-10 lg:pt-10 lg:pb-4">
         {/* Header */}
-        <p className="text-center">
+        <p className="text-center lg:text-sm">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
         </p>
@@ -17,12 +17,20 @@ export const DiscountModal = ({ isOpen, onClose }) => {
         {/* Center  */}
         <div className="flex md:flex-col gap-4">
           <div className="flex flex-col justify-center items-center">
-            <h2 className="text-3xl text-gray-800 mb-2">REGISTER AND GET</h2>
-            <p className="text-4xl font-bold text-Brand">20% OFF</p>
+            <h2 className="text-3xl lg:text-2xl text-gray-800 mb-2">
+              REGISTER AND GET
+            </h2>
+            <p className="text-4xl lg:text-3xl font-bold text-Brand">20% OFF</p>
           </div>
-          <img src={Modal} alt="Modal" className="max-w-[316px]" />
+          <div className="lg:flex lg:justify-center">
+            <img
+              src={Modal}
+              alt="Modal"
+              className="max-w-[316px] lg:max-w-[200px]"
+            />
+          </div>
         </div>
-        <p className="text-center w-[550px] md:w-[300px] mb-4">
+        <p className="text-center w-[550px] md:w-[300px] mb-4 lg:text-sm">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.Lorem Ipsum is simply dummy text of the printing and
           typesetting industry.  
@@ -45,9 +53,9 @@ export const DiscountModal = ({ isOpen, onClose }) => {
         </form>
 
         {/* Modal Footer */}
-        <div className="absolute right-8 top-6">
+        <div className="absolute right-6 top-4">
           <button
-            onClick={onClose}
+            onClick={closeModal}
             className="text-gray-600 hover:text-gray-700"
             aria-label="Close modal"
           >
