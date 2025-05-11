@@ -98,61 +98,74 @@ export const FiltersAndProducts = ({ products, filters }) => {
         <div className="flex-[3] bg-white p-6 rounded-md ">
           <div className="grid-custom gap-4">
             {paginatedProducts.map((product) => (
-              <div
-                key={product.id}
-                className="relative flex flex-col items-center justify-center border p-4 space-y-2"
-              >
-                {/* Brand Of Product & Add To Favorit & Comprison */}
-                <div className=" flex items-center">
-                  <img
-                    src={product.brand}
-                    alt={product.brand}
-                    className="absolute left-4 top-2 object-cover rounded h-12"
-                  />
-                  <IoHeartOutline className="absolute right-4 top-2 size-6 hover:text-Brand" />
-                  <Link to="/comparsion">
-                    <MdOutlineCompareArrows className="absolute right-11 top-2 size-6 hover:text-Brand" />
+              <div className="relative">
+                {product.offer && (
+                  <p className="absolute top-0 left-0 right-0 text-center py-2 bg-Brand rounded-t-3xl text-sm font-bold text-white">
+                    BUY 3,GET 1 FREE
+                  </p>
+                )}
+                <div
+                  key={product.id}
+                  className="relative mt-9 flex flex-col items-center justify-center border p-4 space-y-2"
+                >
+                  {/* Brand Of Product & Add To Favorit & Comprison */}
+                  <div className=" flex items-center">
+                    <img
+                      src={product.brand}
+                      alt={product.brand}
+                      className="absolute left-4 top-2 object-cover rounded h-12"
+                    />
+                    <IoHeartOutline className="absolute right-4 top-2 size-6 hover:text-Brand" />
+                    <Link to="/comparsion">
+                      <MdOutlineCompareArrows className="absolute right-11 top-2 size-6 hover:text-Brand" />
+                    </Link>
+                    {product.sale && (
+                      <span className="absolute right-4 top-10 h-10 w-10 text-xs font-semibold px-2 py-3 text-white rounded-full bg-Brand">
+                        Sale
+                      </span>
+                    )}
+                  </div>
+                  <Link to={`/product/${product.id}`}>
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="object-cover rounded h-20 my-6 flex justify-center"
+                    />
                   </Link>
-                </div>
-                <Link to={`/product/${product.id}`}>
                   <img
-                    src={product.image}
+                    src={product.volume}
                     alt={product.name}
-                    className="object-cover rounded h-20 my-6 flex justify-center"
+                    className="object-cover"
                   />
-                </Link>
-                <img
-                  src={product.volume}
-                  alt={product.name}
-                  className="object-cover"
-                />
-                <h3 className="mt-2 font-semibold w-48 text-center">
-                  {product.name}
-                </h3>
-                <div className="flex items-center gap-1 mt-1">
-                  {renderStars(product.rating)}
-                </div>
-                <div className="mt-2 flex items-center gap-2">
-                  {product.originalPrice && (
-                    <span className="line-through text-sm text-gray-400">
-                      AED {product.originalPrice}
+                  <h3 className="mt-2 font-semibold w-48 text-center">
+                    {product.name}
+                  </h3>
+                  <div className="flex items-center gap-1 mt-1">
+                    {renderStars(product.rating)}
+                  </div>
+                  <div className="mt-2 flex items-center gap-2">
+                    {product.originalPrice && (
+                      <span className="line-through text-sm text-gray-400">
+                        AED {product.originalPrice}
+                      </span>
+                    )}
+                    <span className="font-semibold">
+                      <span className="text-gray-400">AED</span> $
+                      {product.price}
                     </span>
-                  )}
-                  <span className="font-semibold">
-                    <span className="text-gray-400">AED</span> ${product.price}
-                  </span>
-                </div>
+                  </div>
 
-                <div className="relative">
-                  <select className="absolute border outline-none rounded-2xl py-[2px] md:py-0 px-4">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                  </select>
-                  <button className=" text-sm text-gray-500 border border-Brand rounded-2xl py-1 md:py-0.5 px-20 xl:px-10">
-                    Add to Cart
-                  </button>
+                  <div className="relative">
+                    <select className="absolute border outline-none rounded-2xl py-[2px] md:py-0 px-4">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                    <button className=" text-sm text-gray-500 border border-Brand rounded-2xl py-1 md:py-0.5 px-20 xl:px-10">
+                      Add to Cart
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
