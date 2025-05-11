@@ -8,11 +8,17 @@ import useModalStore from "../store/getqouteStore";
 export default function Inquiry() {
   const [step, setStep] = useState(1);
   const { isOpen, closeModal } = useModalStore();
+  //Add Another Part
   const [parts, setParts] = useState([{}]);
-
   const addAnotherPart = () => {
     setParts([...parts, {}]);
   };
+  //Differen Rear Tyer Size
+  const [tyreSizes, setTyreSizes] = useState([{}]);
+  const addAnotherTyreSize = () => {
+    setTyreSizes([...tyreSizes, {}]);
+  };
+
   if (!isOpen) return null;
   const handleNext = (e) => {
     e.preventDefault();
@@ -266,37 +272,45 @@ export default function Inquiry() {
               </div>
             </div>
             {/* Car Make & Model */}
-            <div className="flex gap-2">
-              <div className="flex flex-col flex-1">
-                <label className="mb-1 font-medium">
-                  Diameter <span className="text-Brand-500">*</span>
-                </label>
-                <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
-                  <option>000</option>
-                </select>
-              </div>
-              <div className="flex flex-col flex-1">
-                <label className="mb-1 font-medium">Quantity</label>
-                <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
-                  <option>Select Quantity</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
-              </div>
-            </div>
+            <div>
+              {tyreSizes.map((_, index) => (
+                <div key={index} className="flex gap-2 mb-4">
+                  <div className="flex flex-col flex-1">
+                    <label className="mb-1 font-medium">
+                      Diameter <span className="text-Brand-500">*</span>
+                    </label>
+                    <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
+                      <option>000</option>
+                      <option>100</option>
+                      <option>200</option>
+                      <option>300</option>
+                    </select>
+                  </div>
+                  <div className="flex flex-col flex-1">
+                    <label className="mb-1 font-medium">Quantity</label>
+                    <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
+                      <option>Select Quantity</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </div>
+                </div>
+              ))}
 
-            {/* Add Another Part */}
-            <button
-              type="button"
-              className="font-[500] text-lg flex items-center text-Brand-500"
-            >
-              <span className="flex items-center gap-1">
-                <IoMdAddCircleOutline size={22} />
-                Different Rear Tyre Size
-              </span>
-            </button>
+              {/* زر لإضافة مجموعة جديدة */}
+              <button
+                type="button"
+                className="font-[500] text-lg flex items-center text-Brand-500"
+                onClick={addAnotherTyreSize}
+              >
+                <span className="flex items-center text-Brand gap-1">
+                  <IoMdAddCircleOutline size={22} />
+                  Different Rear Tyre Size
+                </span>
+              </button>
+            </div>
 
             {/* Next Button */}
             <button
