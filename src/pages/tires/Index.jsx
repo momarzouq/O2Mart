@@ -12,15 +12,17 @@ import Step4 from "../../assets/step4.png";
 import BMW from "../../assets/BMW.svg";
 import WV from "../../assets/WV.svg";
 import HONDA from "../../assets/HONDA.svg";
-import Volum from '../../assets/volum.png'
+import Volum from "../../assets/volum.png";
 import Tyers from "../../assets/Tyers.svg";
 import Nissan from "../../assets/nissan.svg";
 import RIM_Size from "../../assets/size-tyer.png";
 import On from "../../assets/on.svg";
+import ContactUs from "../../assets/contact-us.svg";
 import { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { SelectingSteps } from "../../components/ProductSelectingSteps";
 import { FiltersAndProducts } from "../../components/FiltersAndProducts";
+import { BiMessageAltDetail } from "react-icons/bi";
 
 export default function Tires() {
   const TiresProducts = [
@@ -153,12 +155,19 @@ export default function Tires() {
     },
   ];
   return (
-    <div>
+    <div className="relative">
       <Section1 />
       <Container>
         <Section2 />
-        <FiltersAndProducts products={TiresProducts} filters={TiresFilters}/>
+        <FiltersAndProducts products={TiresProducts} filters={TiresFilters} />
       </Container>
+      {/* Contact Us */}
+      <div className="absolute z-50 flex items-center gap-1 max-h-12 max-w-28 shadow-md right-24 top-[100%] bg-[#FFFFFF]">
+        <img src={ContactUs} alt="Contact Us" className="pr-8" />
+        <div>
+          <BiMessageAltDetail className="absolute right-0 top-0 bg-Brand rounded-full p-2 text-white text-xl w-8 h-8 object-cover" />
+        </div>
+      </div>
     </div>
   );
 }

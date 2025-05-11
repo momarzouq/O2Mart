@@ -13,6 +13,8 @@ import Installation from "../assets/Installation.svg";
 import Container from "../UI/Container";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { BiMessageAltDetail } from "react-icons/bi";
+import ContactUs from "../assets/contact-us.svg";
 const specsList = [
   { label: "Product Name", value: "Primacy 4 Mo" },
   { label: "Tyre Size", value: "235/55 19" },
@@ -120,11 +122,18 @@ export default function ProductDetails() {
   };
 
   return (
-    <Container>
+    <Container className="relative">
       <div className="space-y-10">
         <Section1 />
         <Section2 product={detailProduct} renderStars={renderStars} />
         <Section3 />
+      </div>
+      {/* Contact Us */}
+      <div className="absolute z-50 flex items-center gap-1 max-h-12 max-w-28 shadow-md right-0 top-[100%] bg-[#FFFFFF]">
+        <img src={ContactUs} alt="Contact Us" className="pr-8" />
+        <div>
+          <BiMessageAltDetail className="absolute right-0 top-0 bg-Brand rounded-full p-2 text-white text-xl w-8 h-8 object-cover" />
+        </div>
       </div>
     </Container>
   );

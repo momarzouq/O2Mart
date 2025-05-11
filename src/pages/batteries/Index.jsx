@@ -11,12 +11,14 @@ import Step3 from "../../assets/step3.png";
 import Step4 from "../../assets/step4.png";
 import BMW from "../../assets/BMW.svg";
 import WV from "../../assets/WV.svg";
-import Volum from '../../assets/volum.png'
+import Volum from "../../assets/volum.png";
 import Tyers from "../../assets/Tyers.svg";
 import Nissan from "../../assets/nissan.svg";
 import HONDA from "../../assets/HONDA.svg";
+import ContactUs from "../../assets/contact-us.svg";
 import { SelectingSteps } from "../../components/ProductSelectingSteps";
 import { FiltersAndProducts } from "../../components/FiltersAndProducts";
+import { BiMessageAltDetail } from "react-icons/bi";
 
 export default function AutoParts() {
   const BatteriesProducts = [
@@ -121,7 +123,7 @@ export default function AutoParts() {
     },
   ];
 
-  const BatteriesFilters= [
+  const BatteriesFilters = [
     {
       name: "Brand",
       options: ["Nissan", "Mazda", "Toyota"],
@@ -149,12 +151,22 @@ export default function AutoParts() {
     },
   ];
   return (
-    <div>
+    <div className="relative ">
       <Section1 />
       <Container>
         <Section2 />
-        <FiltersAndProducts  products={BatteriesProducts} filters={BatteriesFilters}/>
+        <FiltersAndProducts
+          products={BatteriesProducts}
+          filters={BatteriesFilters}
+        />
       </Container>
+      {/* Contact Us */}
+      <div className="absolute z-50 flex items-center gap-1 max-h-12 max-w-28 shadow-md right-24 top-[100%] bg-[#FFFFFF]">
+        <img src={ContactUs} alt="Contact Us" className="pr-8" />
+        <div>
+          <BiMessageAltDetail className="absolute right-0 top-0 bg-Brand rounded-full p-2 text-white text-xl w-8 h-8 object-cover" />
+        </div>
+      </div>
     </div>
   );
 }

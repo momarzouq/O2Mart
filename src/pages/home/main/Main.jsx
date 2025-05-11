@@ -26,7 +26,7 @@ export default function Main() {
       </Container>
       {/* Contact Us */}
       <div>
-        <BiMessageAltDetail className="absolute z-50 right-8 top-[100%] bg-Brand rounded-full p-2 text-white text-xl w-10 h-10 object-cover" />
+        <BiMessageAltDetail className="absolute z-50 right-20 md:right-4 top-[100%] bg-Brand rounded-full p-2 text-white text-xl w-10 h-10 object-cover" />
       </div>
     </div>
   );
@@ -313,7 +313,7 @@ const Section4 = () => {
         {ArticleData.map((item) => (
           <SwiperSlide
             key={item.id}
-            className="flex justify-center items-center min-h-[300px]"
+            className="flex items-center min-h-[300px] "
           >
             <div className="h-full bg-white flex items-center justify-center">
               <div>

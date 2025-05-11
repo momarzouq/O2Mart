@@ -7,7 +7,6 @@ function Layout({ children }) {
   return (
     <div>
       <Navbar />
-
       <SidebarCart />
       <Inquiry />
       <div className="min-h-screen">{children}</div>
