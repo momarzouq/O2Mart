@@ -37,7 +37,7 @@ const Section2 = () => {
   return (
     <div className="flex gap-12 md:gap-0 md:flex-col">
       {/* Text Section */}
-      <div className="flex flex-col items-start md:items-center md:text-center gap-4">
+      <div className="flex-[6] flex-col items-start md:items-center md:text-center gap-4">
         <h1 className="text-2xl font-bold ">
           Your One-Stop Shop For
           <br /> Auto Parts In the UAE
@@ -54,7 +54,7 @@ const Section2 = () => {
           five centuries,
         </p>
       </div>
-      <div className="flex justify-center items-center w-full">
+      <div className="flex-[5] justify-center items-center w-full">
         <img
           src={HomeBg}
           className=" h-[110px] object-contain"

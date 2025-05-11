@@ -86,7 +86,6 @@ const Section2 = () => {
 
   return (
     <div className="py-8 w-full">
-      <h3 className="text-center text-3xl font-bold my-4">Categories</h3>
       <Swiper
         navigation={true}
         modules={[Navigation, Autoplay]}
