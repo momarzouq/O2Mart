@@ -8,7 +8,11 @@ import useModalStore from "../store/getqouteStore";
 export default function Inquiry() {
   const [step, setStep] = useState(1);
   const { isOpen, closeModal } = useModalStore();
+  const [parts, setParts] = useState([{}]);
 
+  const addAnotherPart = () => {
+    setParts([...parts, {}]);
+  };
   if (!isOpen) return null;
   const handleNext = (e) => {
     e.preventDefault();
@@ -93,49 +97,53 @@ export default function Inquiry() {
             </div>
 
             {/* Required Part / Quantity / Photo Upload */}
-            <div className="flex gap-2 items-end">
-              <div className="flex flex-col w-1/2">
-                <label className="mb-1 font-medium">
-                  Required Part<span className="text-Brand-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Enter The Required Part"
-                  className="border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
-                />
-              </div>
-              <div className="flex flex-col w-[12%] max-w-14">
-                <label className="mb-1 font-medium">QTY</label>
-                <input
-                  type="number"
-                  placeholder="QTY"
-                  className="border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
-                />
-              </div>
-              <div className="flex flex-col w-[40%] md:w-[45%]">
-                <label className="md:text-xs mb-1 font-medium">
-                  Upload Part Photo<span className="text-Brand-500">*</span>
-                </label>
-                <button
-                  type="button"
-                  className="text-gray-500 text-start border border-gray-500 rounded-md px-2 py-2 focus:border-Brand"
-                >
-                  Upload
-                </button>
-              </div>
+            <div>
+              {parts.map((_, index) => (
+                <div key={index} className="flex gap-2 items-end mb-4">
+                  <div className="flex flex-col w-1/2">
+                    <label className="mb-1 font-medium">
+                      Required Part<span className="text-Brand-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter The Required Part"
+                      className="border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
+                    />
+                  </div>
+                  <div className="flex flex-col w-[12%] max-w-14">
+                    <label className="mb-1 font-medium">QTY</label>
+                    <input
+                      type="number"
+                      placeholder="QTY"
+                      className="border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
+                    />
+                  </div>
+                  <div className="flex flex-col w-[40%] md:w-[45%]">
+                    <label className="md:text-xs mb-1 font-medium">
+                      Upload Part Photo<span className="text-Brand-500">*</span>
+                    </label>
+                    <button
+                      type="button"
+                      className="text-gray-500 text-start border border-gray-500 rounded-md px-2 py-2 focus:border-Brand"
+                    >
+                      Upload
+                    </button>
+                  </div>
+                </div>
+              ))}
+
+              {/* Add Another Part */}
+              <button
+                type="button"
+                className="font-[500] text-lg flex items-center text-Brand-500"
+                onClick={addAnotherPart}
+              >
+                <span className="flex items-center text-Brand gap-1">
+                  <IoMdAddCircleOutline size={22} />
+                  Add Another Part
+                </span>
+              </button>
             </div>
-
-            {/* Add Another Part */}
-            <button
-              type="button"
-              className="font-[500] text-lg flex items-center text-Brand-500"
-            >
-              <span className="flex items-center gap-1">
-                <IoMdAddCircleOutline size={22} />
-                Add Another Part
-              </span>
-            </button>
-
             {/* Next Button */}
             <button
               type="submit"
@@ -539,7 +547,7 @@ export default function Inquiry() {
                           className={`text-center text-xs mt-1 font-medium ${
                             (s === 1 && step < 6) || (s === 2 && step === 6)
                               ? "text-Brand"
-                              : "text-gray-500"
+                              : "text-black"
                           }`}
                         >
                           {s === 1 ? "Inquiry Details" : "Contact Details"}
