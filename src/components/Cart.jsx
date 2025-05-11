@@ -17,6 +17,8 @@ import { LocationModal } from "./LocationModal";
 export default function Cart() {
   const { isLocationModalOpen, openLocationModal } = useLocationModalStore();
   const [isAdded, setIsAdded] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(""); // حالة لتخزين القيمة المختارة
+
   const {
     cartItems = [],
     setCartItems,
@@ -110,6 +112,14 @@ export default function Cart() {
     return stars;
   };
 
+  const handleDeliveryOptionChange = (option) => {
+    if (
+      ["Delivery with Installation", "Installation Center"].includes(option)
+    ) {
+      openLocationModal(option);
+    }
+  };
+
   const products = [
     {
       id: 1,
@@ -163,13 +173,6 @@ export default function Cart() {
   );
   const installationFee = 200;
   const total = subtotal + installationFee;
-  const handleDeliveryOptionChange = (option) => {
-    if (
-      ["Delivery with Installation", "Installation Center"].includes(option)
-    ) {
-      openLocationModal(option);
-    }
-  };
 
   return (
     <Container>
@@ -180,7 +183,9 @@ export default function Cart() {
           { label: "Cart" },
         ]}
       />
-      {isLocationModalOpen && <LocationModal cartItems={cartItems} />}
+      {isLocationModalOpen && (
+        <LocationModal cartItems={cartItems} selectedOption={selectedOption} />
+      )}
       <div className="grid grid-cols-5 xl:grid-cols-3 gap-4">
         {cartItems && cartItems.length === 0 ? (
           <div className="flex flex-col space-y-6 my-4">
@@ -246,7 +251,9 @@ export default function Cart() {
                                 onClick={() =>
                                   handleDeliveryOptionChange(option)
                                 }
-                                type="checkbox"
+                                value={option}
+                                type="radio"
+                                name="deliveryOption"
                                 className="appearance-none w-3 h-3 rounded-full border border-gray-400 checked:bg-Brand checked:border-transparent focus:outline-none"
                               />
                               {option}

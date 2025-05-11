@@ -28,30 +28,30 @@ const MyGarage = () => {
 
           {/* Make Dropdown */}
           <div className="relative">
-            <select className="block text-gray-400 appearance-none w-full bg-white border border-[#D0D5DD] rounded-xl py-3 px-4 pr-8 leading-tight focus:outline-none">
+            <select className="block text-gray-400 appearance-none w-full bg-white border border-[#D0D5DD] rounded-md py-3 px-4 pr-8 leading-tight focus:outline-none">
               <option value="">Make</option>
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-gray-700">
             <FaChevronDown className="h-3 w-3" />
             </div>
           </div>
 
           {/* Model Dropdown */}
           <div className="relative">
-            <select className="block text-gray-400 appearance-none w-full bg-white border border-[#D0D5DD] rounded-xl py-3 px-4 pr-8 leading-tight focus:outline-none">
+            <select className="block text-gray-400 appearance-none w-full bg-white border border-[#D0D5DD] rounded-md py-3 px-4 pr-8 leading-tight focus:outline-none">
               <option value="">Model</option>
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-gray-700">
               <FaChevronDown className="h-3 w-3" />
             </div>
           </div>
 
           {/* Year Dropdown */}
           <div className="relative">
-            <select className="block text-gray-400 appearance-none w-full bg-white border border-[#D0D5DD] rounded-xl py-3 px-4 pr-8 leading-tight focus:outline-none">
+            <select className="block text-gray-400 appearance-none w-full bg-white border border-[#D0D5DD] rounded-md py-3 px-4 pr-8 leading-tight focus:outline-none">
               <option value="">Year</option>
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-gray-700">
             <FaChevronDown className="h-3 w-3" />
             </div>
           </div>
@@ -61,7 +61,7 @@ const MyGarage = () => {
             <input
               type="text"
               placeholder="VIN or Chassis Number"
-              className="w-full border border-[#D0D5DD] rounded-xl py-3 px-4 focus:outline-none"
+              className="w-full border border-[#D0D5DD] rounded-md py-3 px-4 focus:outline-none"
             />
           </div>
 
@@ -70,7 +70,7 @@ const MyGarage = () => {
             <input
               type="text"
               placeholder="Current Mileage"
-              className="w-full border border-[#D0D5DD] rounded-xl py-3 px-4 focus:outline-none"
+              className="w-full border border-[#D0D5DD] rounded-md py-3 px-4 focus:outline-none"
             />
           </div>
 
@@ -78,7 +78,7 @@ const MyGarage = () => {
           <div>
             <button
               type="button"
-              className="w-full bg-Brand text-white font-medium py-3 px-4 rounded-xl"
+              className="w-full bg-Brand text-white font-medium py-3 px-4 rounded-md"
             >
               Add vehicle
             </button>

@@ -10,7 +10,7 @@ import { SlClose } from "react-icons/sl";
 import Checkout from "./Checkout";
 import { Link } from "react-router-dom";
 
-export const LocationModal = ({ cartItems }) => {
+export const LocationModal = ({ selectedOption }) => {
   const { closeLocationModal } = useLocationModalStore();
   const [currentCase, setCurrentCase] = useState(1);
   const [selectedDate, setSelectedDate] = useState(null);
@@ -131,18 +131,16 @@ export const LocationModal = ({ cartItems }) => {
         {currentCase === 1 && (
           <>
             <h2 className="text-start text-2xl font-bold mb-2">
-              {cartItems.deliveryOptions === "Installation Center"
+              {selectedOption === "Installation Center"
                 ? "Select Installation Center Service"
-                : cartItems.deliveryOptions === "Delivery with Installation"
-                ? "Select Mobile Van Service"
-                : "Select Service"}
+                : "Delivery with Installation"}
             </h2>
             <div className="flex md:flex-col gap-2 mb-6">
               <input
-                className="flex-[5]  py-1.5 px-2 border rounded-md bg-[#DCDBDB80] outline-none"
+                className="flex-[5] xl:flex-[4]  py-1.5 px-2 border rounded-md bg-[#DCDBDB80] outline-none"
                 placeholder="Enter Location"
               />
-              <button className="flex-[1] bg-Brand text-white rounded-md p-2">
+              <button className="flex-[1] xl:flex-[2] bg-Brand text-white rounded-md p-2">
                 Search Location
               </button>
             </div>

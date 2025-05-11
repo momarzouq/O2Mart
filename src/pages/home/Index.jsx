@@ -2,6 +2,7 @@ import Main from "./main/Main";
 import Hero from "./hero/Hero";
 import { useEffect, useState } from "react";
 import { DiscountModal } from "../../components/DiscountModal";
+
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
   useEffect(() => {
@@ -20,4 +21,3 @@ export default function Home() {
     </>
   );
 }
-

@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../UI/Container";
 import AutoParts from "../assets/shopage.png";
 import Steps from "../assets/steps.svg";
 import { BsExclamationCircle } from "react-icons/bs";
 import { CiCirclePlus } from "react-icons/ci";
 import { Breadcrumb } from "../UI/Breadcrumb";
+import { BiMessageAltDetail, BiSolidDownArrow } from "react-icons/bi";
+import { RiArrowDownSFill } from "react-icons/ri";
 export default function Shop() {
   return (
-    <div>
+    <div className="relative">
       <Container>
         <Breadcrumb items={[{ label: "HOME", href: "/" }, { label: "Shop" }]} />
         <Section1 />
         <Section2 />
       </Container>
+      {/* Contact Us */}
+      <div>
+        <BiMessageAltDetail className="absolute z-50 right-8 md:right-4 top-[94%] md:top-[96%]  bg-Brand rounded-full p-2 text-white text-xl w-10 h-10 object-cover" />
+      </div>
     </div>
   );
 }
@@ -51,6 +57,20 @@ const Section1 = () => {
 };
 
 const Section2 = () => {
+  const [carMake, setCarMake] = useState("");
+  const [modelOptions, setModelOptions] = useState([]);
+
+  const handleCarMakeChange = (e) => {
+    const selectedMake = e.target.value;
+    setCarMake(selectedMake);
+
+    // فقط للتجربة - هنا هتجيب الموديلات بناءً على الماركة اللي المستخدم اختارها
+    if (selectedMake === "Toyota") {
+      setModelOptions(["Corolla", "Camry", "RAV4"]);
+    } else {
+      setModelOptions([]);
+    }
+  };
   return (
     <div className="flex md:flex-col justify-between mt-10">
       {/* Left Side */}
@@ -64,16 +84,50 @@ const Section2 = () => {
           />
 
           {/* Car Info: Make, Model, Year */}
-          <div className="flex gap-2">
-            <select className="flex-1 border border-gray-500 rounded-md p-2">
-              <option>Car Make</option>
-            </select>
-            <select className="flex-1 border border-gray-500 rounded-md p-2 bg-[#E3E3E3]">
-              <option>Model</option>
-            </select>
-            <select className="flex-1 border border-gray-500 rounded-md p-2 bg-[#E3E3E3]">
-              <option>Year</option>
-            </select>
+          <div className="flex flex-wrap gap-4 w-full">
+            <div className="relative flex-1 ">
+              <select
+                value={carMake}
+                onChange={handleCarMakeChange}
+                className="w-full border border-gray-300 rounded-md py-3 px-2 outline-none appearance-none"
+              >
+                <option value="">Car Make</option>
+                <option value="Toyota">Toyota</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-gray-700">
+                <BiSolidDownArrow className="size-3 text-Brand" />
+              </div>
+            </div>
+            <div className="relative flex-1">
+              <select
+                className={`w-full border border-gray-300 rounded-md py-3 px-2 outline-none appearance-none ${
+                  carMake ? "" : "bg-[#E3E3E3] cursor-not-allowed"
+                }`}
+                disabled={!carMake}
+              >
+                <option value="">Model</option>
+                <option value="Corolla">Corolla</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-gray-700">
+                <BiSolidDownArrow className="size-3 text-Brand" />
+              </div>
+            </div>
+            <div className="relative flex-1 ">
+              <select
+                className={`w-full border border-gray-300 rounded-md py-3 px-2 outline-none appearance-none ${
+                  carMake && modelOptions.length
+                    ? ""
+                    : "bg-[#E3E3E3] cursor-not-allowed"
+                }`}
+                disabled={!carMake || !modelOptions.length}
+              >
+                <option value="">Year</option>
+                <option value="2023">2023</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-gray-700">
+                <BiSolidDownArrow className="size-3 text-Brand" />
+              </div>
+            </div>
           </div>
 
           {/* VIN / License Upload */}
@@ -81,15 +135,15 @@ const Section2 = () => {
             <input
               type="text"
               placeholder="Enter VIN/ Chassis Number"
-              className="flex border border-gray-500 rounded-md py-2 px-1"
+              className="w-[50%] border border-gray-500 rounded-md py-3 px-1 outline-none"
             />
-            <span className="flex items-center gap-1 text-md text-Brand">
+            <span className="w-[9%] flex items-center gap-1 text-md text-Brand">
               <BsExclamationCircle />
               OR
             </span>
             <button
               type="button"
-              className=" border border-gray-500 rounded-md px-1.5 py-2"
+              className="w-[35%] border border-gray-500 rounded-md px-2 py-3 lg:py-0"
             >
               Upload car license
             </button>
@@ -100,18 +154,18 @@ const Section2 = () => {
             <input
               type="text"
               placeholder="Required Part"
-              className=" border border-gray-500 rounded-md py-2 px-1"
+              className="w-[50%] border border-gray-500 rounded-md py-3 px-1 outline-none"
             />
 
             <input
               type="number"
               placeholder="QTY"
-              className="max-w-14 border border-gray-500 rounded-md  py-2 px-1"
+              className="w-[13%] border border-gray-500 rounded-md  py-3 px-1 outline-none"
             />
 
             <button
               type="button"
-              className="border border-gray-500 rounded-md px-2"
+              className="w-[35%] border border-gray-500 rounded-md px-2 outline-none"
             >
               Upload Part Photo
             </button>
@@ -130,18 +184,18 @@ const Section2 = () => {
             <input
               type="text"
               placeholder="Contact Name"
-              className="flex-1 border border-gray-500 rounded-md p-2"
+              className="flex-1 w-1/2 border border-gray-500 rounded-md py-3 px-2 outline-none"
             />
             <input
               type="tel"
               placeholder="Mobile Number"
-              className="flex-1 border border-gray-500 rounded-md p-2"
+              className="flex-1 w-1/2 border border-gray-500 rounded-md py-3 px-2 outline-none"
             />
           </div>
           <input
             type="email"
             placeholder="Email"
-            className="w-full border border-gray-500 rounded-md p-2"
+            className="w-full border border-gray-500 rounded-md py-3 px-2 outline-none"
           />
 
           {/* Submit Button */}

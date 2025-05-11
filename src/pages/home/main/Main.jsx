@@ -14,15 +14,20 @@ import Article3 from "../../../assets/article3.png";
 import Container from "../../../UI/Container";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { FaTelegramPlane } from "react-icons/fa";
+import { BiMessageAltDetail } from "react-icons/bi";
 export default function Main() {
   return (
-    <div className="mb-20">
+    <div className="relative mb-20">
       <Container>
         <Section1 />
         <Section2 />
         <Section3 />
         <Section4 />
       </Container>
+      {/* Contact Us */}
+      <div>
+        <BiMessageAltDetail className="absolute z-50 right-8 top-[100%] bg-Brand rounded-full p-2 text-white text-xl w-10 h-10 object-cover" />
+      </div>
     </div>
   );
 }
