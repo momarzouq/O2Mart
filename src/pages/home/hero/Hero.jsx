@@ -54,7 +54,7 @@ const Section2 = () => {
           five centuries,
         </p>
       </div>
-      <div className="flex justify-center items-center shrink-0">
+      <div className="flex justify-center items-center w-full">
         <img
           src={HomeBg}
           className=" h-[110px] object-contain"

@@ -158,7 +158,7 @@ const AddNewAddress = ({ addNewAddress, setAddNewAddress }) => {
           <div className="relative z-10 bg-white px-10 md:px-6 py-6 rounded-lg shadow-md w-[60%] md:w-[90%] h-fit my-12 overflow-y-auto">
             <button
               onClick={() => setAddNewAddress(false)}
-              className="absolute top-4 hover:text-Brand right-6 z-50 text-gray-600 hover:text-Brand-500 text-xl"
+              className="absolute top-4 hover:text-Brand right-6 z-50 text-gray-600 hover:text-Brand text-xl"
               aria-label="Close"
             >
               <IoClose size={20} />

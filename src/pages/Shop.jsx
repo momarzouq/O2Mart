@@ -172,7 +172,7 @@ const Section2 = () => {
           </div>
 
           {/* Add Another Part */}
-          <button type="button" className="flex items-center text-Brand-500">
+          <button type="button" className="flex items-center text-Brand">
             <span className="flex items-center gap-1">
               <CiCirclePlus size={20} />
               Add Another Part

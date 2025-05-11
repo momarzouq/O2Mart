@@ -30,7 +30,7 @@ export default function AutoParts() {
       price: 165,
       originalPrice: 179,
       sale: true,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -42,7 +42,7 @@ export default function AutoParts() {
       price: 165,
       originalPrice: 179,
       sale: false,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -54,7 +54,7 @@ export default function AutoParts() {
       price: 165,
       originalPrice: 179,
       sale: true,
-      offer:true,
+      offer: true,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -66,7 +66,7 @@ export default function AutoParts() {
       price: 165,
       originalPrice: 179,
       sale: false,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -78,7 +78,7 @@ export default function AutoParts() {
       price: 165,
       originalPrice: 179,
       sale: true,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -90,7 +90,7 @@ export default function AutoParts() {
       price: 165,
       originalPrice: 179,
       sale: false,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -102,7 +102,7 @@ export default function AutoParts() {
       price: 165,
       originalPrice: 179,
       sale: false,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -114,7 +114,7 @@ export default function AutoParts() {
       price: 165,
       originalPrice: 179,
       sale: true,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -126,7 +126,7 @@ export default function AutoParts() {
       price: 165,
       originalPrice: 179,
       sale: true,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -258,7 +258,7 @@ const Section1 = () => {
             </div>
 
             {/* Add Another Part */}
-            <button type="button" className="flex items-center text-Brand-500">
+            <button type="button" className="flex items-center text-Brand">
               <span className="flex items-center gap-1">
                 <CiCirclePlus size={20} />
                 Add Another Part

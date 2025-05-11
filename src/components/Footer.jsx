@@ -37,7 +37,10 @@ export default function Footer() {
           </div>
           {/* Help and Support */}
           <div className="flex flex-col text-gray-300 space-y-4">
-            <Link to="/faq" className="text-white font-semibold">
+            <Link
+              to="/faq"
+              className="text-white font-semibold whitespace-nowrap"
+            >
               Help and Support
             </Link>
             <Link to="/track-order" className="hover:text-white">

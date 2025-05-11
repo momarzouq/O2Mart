@@ -292,7 +292,9 @@ const Section2 = ({ product, renderStars }) => {
           {/* Left */}
           <div className="flex-1 space-y-1 ">
             <p className="text-sm font-semibold">RATINGS</p>
-            <p className="text-sm md:text-xs text-gray-500 whitespace-nowrap">Average Ratings</p>
+            <p className="text-sm md:text-xs text-gray-500 whitespace-nowrap">
+              Average Ratings
+            </p>
             <p className="flex md:text-xs">{renderStars(product.rating)}</p>
             <p className="text-sm md:text-xs text-gray-500 mt-1">0 Reviews</p>
           </div>
@@ -324,7 +326,7 @@ const Section2 = ({ product, renderStars }) => {
 
           <div>
             <label className="block font-semibold">
-              Your Rating <span className="text-Brand-500">*</span>
+              Your Rating <span className="text-Brand">*</span>
             </label>
             <div className="flex items-center gap-1 mt-1">
               Rating
