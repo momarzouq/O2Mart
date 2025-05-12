@@ -16,7 +16,7 @@
     min-height: 100vh;
   }
   .container {
-    max-width: 1400px;
+    max-width: 1280px;
   }
   .select {
     border-radius: 10px;
@@ -56,6 +56,7 @@ span.swiper-pagination-bullet-active {
   color: #9b9797 !important; /* Red color */
   --swiper-navigation-size: 24px; /* Adjust size */
 }
+
 
 /* List Style */
 ul.spec-list {

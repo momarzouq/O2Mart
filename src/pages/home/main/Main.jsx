@@ -61,7 +61,7 @@ const Section1 = () => {
         loop={true}
       >
         {Tyeries.map((item) => (
-          <SwiperSlide key={item.id}>
+          <SwiperSlide key={item.id} className="w-full ">
             <div className="h-full flex items-center justify-center">
               <img
                 src={item.image}
@@ -312,7 +312,7 @@ const Section4 = () => {
           },
         }}
         loop={true}
-        spaceBetween={2}
+        spaceBetween={30}
       >
         {ArticleData.map((item) => (
           <SwiperSlide
