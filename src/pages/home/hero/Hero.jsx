@@ -59,10 +59,10 @@ const Section2 = () => {
           five centuries,
         </p>
       </div>
-      <div className="flex-[2] lg:w-full justify-center items-center w-full">
+      <div className="flex-[2] lg:w-full justify-center items-center w-full mt-8">
         <img
           src={HomeBg}
-          className="lg:ml-8 h-[120px] object-contain"
+          className="lg:ml-8 h-[140px] object-contain"
           alt="Home background"
         />
       </div>
