@@ -158,35 +158,35 @@ const AddNewAddress = ({ addNewAddress, setAddNewAddress }) => {
           <div className="relative z-10 bg-white px-10 md:px-6 py-6 rounded-lg shadow-md w-[60%] md:w-[90%] h-fit my-12 overflow-y-auto">
             <button
               onClick={() => setAddNewAddress(false)}
-              className="absolute top-4 hover:text-Brand right-6 z-50 text-gray-600 hover:text-Brand text-xl"
+              className="absolute top-4 right-6 z-50 text-gray-600 hover:text-Brand text-xl"
               aria-label="Close"
             >
               <IoClose size={20} />
             </button>
             {/* Address And Country And City */}
-            <div className="flex gap-4 lg:gap-1 w-full md:text-sm">
-              <div className="w-[50%] lg:w-1/3 flex flex-col">
+            <div className="flex gap-4 lg:gap-1 items-center w-full md:text-sm ">
+              <div className="w-[52%] lg:w-1/3 flex flex-col">
                 <label className=" font-medium mb-1">Address</label>
-                <input className="bg-[#DCDBDB80] p-2 rounded-md col-span-2" />
+                <input className="bg-[#DCDBDB80] p-2 rounded-md col-span-2 outline-none" />
               </div>
               <div className="w-[20%] lg:w-1/3 flex flex-col">
                 <label className=" font-medium mb-1">Country</label>
-                <input className="bg-[#DCDBDB80] p-2 rounded-md" />
+                <input className="bg-[#DCDBDB80] p-2 rounded-md outline-none" />
               </div>
               <div className="w-[30%] lg:w-1/3 flex flex-col">
                 <label className=" font-medium mb-1">City</label>
-                <input className="bg-[#DCDBDB80] p-2 rounded-md" />
+                <input className="bg-[#DCDBDB80] p-2 rounded-md outline-none" />
               </div>
             </div>
             {/* Address And Country And City */}
-            <div className="flex gap-4 md:gap-1 w-full md:text-sm">
+            <div className="flex gap-4 md:gap-1 w-full md:text-sm mt-2">
               <div className="w-[48.3%] lg:w-1/2 flex flex-col">
                 <label className=" font-medium mb-1">Area</label>
-                <input className="bg-[#DCDBDB80] p-2 rounded-md" />
+                <input className="bg-[#DCDBDB80] p-2 rounded-md outline-none" />
               </div>
               <div className="w-[50%] lg:w-1/2 flex flex-col">
                 <label className=" font-medium mb-1">Address</label>
-                <input className="bg-[#DCDBDB80] p-2 rounded-md col-span-2" />
+                <input className="bg-[#DCDBDB80] p-2 rounded-md col-span-2 outline-none" />
               </div>
             </div>
             {/* Additional Instructions */}
@@ -194,7 +194,7 @@ const AddNewAddress = ({ addNewAddress, setAddNewAddress }) => {
               <label className="font-medium mb-1">
                 Additional Instructions
               </label>
-              <input className="bg-[#DCDBDB80] p-2 rounded-md col-span-2" />
+              <input className="bg-[#DCDBDB80] p-2 rounded-md col-span-2 outline-none" />
             </div>
           </div>
         </div>

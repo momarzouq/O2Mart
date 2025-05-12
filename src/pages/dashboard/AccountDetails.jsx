@@ -14,7 +14,7 @@ const AccountDetails = () => {
       </div>
 
       <div className="flex gap-6 md:flex-col">
-      <div className="flex md:justify-start">
+        <div className="flex md:justify-start">
           <DashboardSideNav />
         </div>
 
@@ -27,8 +27,8 @@ const AccountDetails = () => {
               type="text"
               id="firstName"
               name="firstName"
-              value="Test"
-              class="w-full border border-[#BDBDBD8A] rounded-xl p-3"
+              placeholder="Enter your first name"
+              class="w-full border border-[#BDBDBD8A] rounded-xl p-3 outline-none"
               required
             />
           </div>
@@ -41,8 +41,8 @@ const AccountDetails = () => {
               type="text"
               id="lastName"
               name="lastName"
-              value="Test"
-              class="w-full border border-[#BDBDBD8A] rounded-xl p-3"
+              placeholder="Enter your last name"
+              class="w-full border border-[#BDBDBD8A] rounded-xl p-3 outline-none"
               required
             />
           </div>
@@ -55,8 +55,8 @@ const AccountDetails = () => {
               type="text"
               id="displayName"
               name="displayName"
-              value="Test"
-              class="w-full border border-[#BDBDBD8A] rounded-xl p-3"
+              placeholder="Enter your display name"
+              class="w-full border border-[#BDBDBD8A] rounded-xl p-3 outline-none"
               required
             />
           </div>
@@ -65,6 +65,7 @@ const AccountDetails = () => {
             This will be how your name will be displayed in the account section
             and in reviews
           </p>
+
           <div>
             <label for="email" class="block text-lg mb-2">
               Email address <span>*</span>
@@ -73,8 +74,8 @@ const AccountDetails = () => {
               type="email"
               id="email"
               name="email"
-              value="@testing1.com"
-              class="w-full border border-[#BDBDBD8A] rounded-xl p-3"
+              placeholder="Enter your email address"
+              class="w-full border border-[#BDBDBD8A] rounded-xl p-3 outline-none"
               required
             />
           </div>
@@ -87,8 +88,8 @@ const AccountDetails = () => {
               type="tel"
               id="mobile"
               name="mobile"
-              value="111 222 333 444 555"
-              class="w-full border border-[#BDBDBD8A] rounded-xl p-3"
+              placeholder="Enter your mobile number"
+              class="w-full border border-[#BDBDBD8A] rounded-xl p-3 outline-none"
               required
             />
           </div>
@@ -96,7 +97,7 @@ const AccountDetails = () => {
           <div>
             <button
               type="submit"
-              class="bg-Brand text-white font-medium py-2 px-4 rounded-xl"
+              class="bg-Brand text-white font-medium py-2 px-8 rounded-lg mt-2"
             >
               Save changes
             </button>

@@ -5,10 +5,7 @@ import { Breadcrumb } from "../UI/Breadcrumb";
 export default function BecomePartner() {
   return (
     <Container>
-      <Breadcrumb
-        items={[{ label: "Home", href: "/" }, { label: "Become Partner" }]}
-      />
-      <div className="flex lg:flex-col gap-8 my-4">
+      <div className="flex lg:flex-col gap-8 my-8">
         <div className="flex-[3] ">
           <div className="space-y-6">
             <h3 className="text-3xl font-bold mb-4">

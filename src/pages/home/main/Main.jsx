@@ -41,7 +41,7 @@ const Section1 = () => {
   ];
 
   return (
-    <div className="py-8 w-full">
+    <div className="py-1 w-full">
       <h3 className="text-center text-3xl font-bold my-4">Categories</h3>
       <Swiper
         navigation={true}
@@ -86,11 +86,11 @@ const Section2 = () => {
   ];
 
   return (
-    <div className="py-8 w-full">
+    <div className="py-1 w-full">
       <Swiper
         navigation={true}
         modules={[Navigation, Autoplay]}
-        className="mb-28"
+        className="mb-8"
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
@@ -191,7 +191,7 @@ const Section3 = () => {
   };
 
   return (
-    <div className="py-8">
+    <div className="py-1">
       <h3 className="text-center text-3xl font-bold my-4">
         What Our Customers Say?
       </h3>
@@ -219,18 +219,18 @@ const Section3 = () => {
       >
         {CarsBrandData.map((item) => (
         <SwiperSlide
-        key={item.id}
-        className="flex justify-center items-center select-text"
-      >
-        <div className="h-full p-6 bg-white rounded-lg flex items-center justify-center gap-2">
-          <div>
-            <h3 className="text-md font-semibold">{item.User}</h3>
-            <p className="flex mb-2">{renderStars(item.Rating)}</p>
-            <p className="text-gray-700 text-sm w-60">{item.Description}</p>
-          </div>
-        </div>
-      </SwiperSlide>
-      
+  key={item.id}
+  className="flex justify-center items-center select-text"
+>
+  <div className="h-full px-6 my-2 bg-white rounded-lg flex items-center justify-center gap-2">
+    <div>
+      <h3 className="text-md font-semibold">{item.User}</h3>
+      <p className="flex mb-2">{renderStars(item.Rating)}</p>
+      <p className="text-gray-700 text-sm w-60">{item.Description}</p>
+    </div>
+  </div>
+</SwiperSlide>
+
         ))}
       </Swiper>
       <div className="flex md:flex-col md:space-y-4 lg:gap-2 md:text-center md:px-2 items-center justify-around bg-Brand py-2 rounded-2xl">
@@ -280,7 +280,7 @@ const Section4 = () => {
     },
   ];
   return (
-    <div className="flex mt-4 md:gap-1">
+    <div className="flex  md:gap-1">
       {/* Left Side */}
       <div className="flex flex-col gap-3 items-start mt-6 ">
         <h3 className="text-xl font-bold">Guides and articles</h3>

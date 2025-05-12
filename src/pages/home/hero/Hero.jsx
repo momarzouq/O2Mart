@@ -5,7 +5,7 @@ import { useDiscountModalStore } from "../../../store/useDiscountModalStore";
 import Container from "../../../UI/Container";
 export default function Hero() {
   return (
-    <div className="flex flex-col space-y-10">
+    <div className="flex flex-col space-y-4">
       <Section1 />
       <Container>
         <Section2 />
@@ -19,7 +19,7 @@ const Section1 = () => {
   const { openModal } = useDiscountModalStore();
   return (
     <div className="flex justify-between bg-[#FBFBFB]">
-      <div className="flex flex-col gap-4 md:gap-1 items-start mt-12 md:mt-4 mx-[70px] md:mx-4">
+      <div className="flex flex-col gap-4 md:gap-1 items-start md:items-center mt-12 md:mt-4 mx-[70px] md:mx-4">
         <h1 className="text-6xl md:text-xl font-bold ">Auto Parts</h1>
         <p className="font-bold text-lg md:text-sm mt-2 md:mt-0 w-64 md:w-40">
           We scan the market, compare prices, and recommend the best deals
