@@ -20,7 +20,7 @@ const Section1 = () => {
   return (
     <div className="flex justify-between bg-[#FBFBFB]">
       <div className="flex flex-col gap-4 md:gap-1 items-start md:items-center mt-12 md:mt-4 mx-[70px] md:mx-4">
-        <h1 className="text-6xl md:text-xl font-bold ">Auto Parts</h1>
+        <h1 className="text-[70px] md:text-xl font-bold ">Auto Parts</h1>
         <p className="font-bold text-lg md:text-sm mt-2 md:mt-0 w-64 md:w-40">
           We scan the market, compare prices, and recommend the best deals
         </p>
