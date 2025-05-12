@@ -456,11 +456,11 @@ const Section2 = () => {
           Find Any Spare Parts, All Makes, All Models
         </h3>
         <div className="flex gap-4">
-          <p className="w-1/2 text-start">
+          <p className="w-1/2 text-start text-gray-500">
             Everything you need, in one place, and simplified. Whether you want
             batteries, tires, or any spare part you can think of, we have it.
           </p>
-          <p className="w-1/2 text-start">
+          <p className="w-1/2 text-start text-gray-500">
             Everything you need, in one place, and simplified. Whether you want
             batteries, tires, or any spare part you can think of, we have it.
           </p>

@@ -2,8 +2,9 @@ import { useState } from "react";
 import CompareImg from "../assets/Tyers.svg";
 import Nissan from "../assets/nissan.svg";
 import Close from "../assets/close.svg";
+import { Link } from "react-router-dom";
 
-const products = [
+const initialProducts = [
   {
     title: "Bridgestone 202/2022 123 1233",
     compare: "AED 567.55",
@@ -37,7 +38,13 @@ const products = [
 ];
 
 const ProductsComparisonTable = () => {
+  const [products, setProducts] = useState(initialProducts);
   const [selectedIndex, setSelectedIndex] = useState(null);
+
+  const removeProduct = (index) => {
+    setProducts(products.filter((_, i) => i !== index));
+  };
+
   return (
     <div className="overflow-x-auto">
       <h3 className="text-2xl font-bold mt-4 mb-8">Compare Products</h3>
@@ -46,18 +53,25 @@ const ProductsComparisonTable = () => {
           <tr className="odd:bg-white even:bg-gray-100 ">
             <td className="w-96 border px-4 py-2 text-start font-medium space-y-4">
               <p className="text-xl">Go to product page for more products</p>
-              <button className="text-lg block underline whitespace-nowrap">View More</button>
+              <Link
+                to="/auto-parts"
+                className="text-lg block underline whitespace-nowrap"
+              >
+                View More
+              </Link>
             </td>
             {products.map((p, index) => (
-              <td key={index} className="relative w-96 border px-4 py-2">
-                <div className=" flex flex-col items-center pt-4 pb-2 space-y-2">
+              <td key={index} className="relative w-96 border px-4 py-2 group">
+                <div className="flex flex-col items-center pt-4 pb-2 space-y-2">
                   <img
                     src={p.Brand}
                     className="absolute left-4 top-4 w-10 h-10 object-contain"
                   />
                   <img
                     src={Close}
-                    className="absolute right-4 top-4 w-6 h-6 object-contain"
+                    onClick={() => removeProduct(index)}
+                    className="absolute right-4 top-4 w-6 h-6 object-contain "
+                    alt="Delete"
                   />
                   <img
                     src={p.image}
@@ -80,8 +94,8 @@ const ProductsComparisonTable = () => {
                       onClick={() => setSelectedIndex(index)}
                       className={`text-sm font-medium border rounded-2xl py-1 md:py-0.5 px-16 xl:px-10 ${
                         selectedIndex === index
-                          ? "bg-[#D9D9D9]  border-transparent"
-                          : " border-Brand"
+                          ? "bg-[#D9D9D9] border-transparent"
+                          : "border-Brand"
                       }`}
                     >
                       Add to Cart
@@ -102,9 +116,7 @@ const ProductsComparisonTable = () => {
                   <span className="text-Brand text-2xl mr-1">
                     {"★".repeat(p.rating)}
                   </span>
-                  <span className="ml-1 text-xs text-gray-500">
-                    ({p.feedback})
-                  </span>
+                  <span className="ml-2 text-gray-500 text-sm">({p.feedback})</span>
                 </div>
               </td>
             ))}
@@ -112,7 +124,7 @@ const ProductsComparisonTable = () => {
 
           {[...Array(5)].map((_, rowIndex) => (
             <tr key={rowIndex} className="odd:bg-white even:bg-gray-100">
-              <td className="text-gray-500  text-sm border px-4 py-[18px]">
+              <td className="text-gray-500 text-sm border px-4 py-[18px]">
                 Customer feedback
               </td>
               {products.map((p, index) => (
