@@ -49,7 +49,7 @@ export default function Navbar() {
 
 const Logo = () => {
   return (
-    <div className="flex-shrink-0">
+    <div className="flex-shrink-0 ">
       <Link to="/">
         <img src={LogoImg} alt="Logo" className="w-30 h-10 sm:w-20 sm:h-5" />
       </Link>
@@ -76,7 +76,7 @@ const NavLinkComponent = ({ link }) => {
         to={link.path}
         className={({ isActive }) =>
           isActive
-            ? "text-Brand rounded-full px-4 py-2 font-semibold"
+            ? "text-Brand rounded-full font-semibold"
             : "text-white"
         }
       >

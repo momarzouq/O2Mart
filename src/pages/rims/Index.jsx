@@ -18,7 +18,8 @@ import HONDA from "../../assets/HONDA.svg";
 import ContactUs from "../../assets/contact-us.svg";
 import { SelectingSteps } from "../../components/ProductSelectingSteps";
 import { FiltersAndProducts } from "../../components/FiltersAndProducts";
-import { BiMessageAltDetail } from "react-icons/bi";
+import { BiMessageAltDetail, BiSolidDownArrow } from "react-icons/bi";
+import { useState } from "react";
 
 export default function Rims() {
   const RimsProducts = [
@@ -64,7 +65,7 @@ export default function Rims() {
       price: 165,
       originalPrice: 179,
       sale: false,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -76,7 +77,7 @@ export default function Rims() {
       price: 165,
       originalPrice: 179,
       sale: true,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -88,7 +89,7 @@ export default function Rims() {
       price: 165,
       originalPrice: 179,
       sale: true,
-      offer:true,
+      offer: true,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -100,7 +101,7 @@ export default function Rims() {
       price: 165,
       originalPrice: 179,
       sale: false,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -112,7 +113,7 @@ export default function Rims() {
       price: 165,
       originalPrice: 179,
       sale: true,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -124,7 +125,7 @@ export default function Rims() {
       price: 165,
       originalPrice: 179,
       sale: true,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -178,6 +179,9 @@ export default function Rims() {
 }
 
 const Section1 = () => {
+  const [carMake, setCarMake] = useState("");
+  const [carModel, setCarModel] = useState("");
+
   return (
     <div className="relative bg-[#FBFBFB]  flex items-center justify-center overflow-hidden">
       {/* Right Image */}
@@ -196,16 +200,79 @@ const Section1 = () => {
           <div>
             {/* Car Info: Make, Model, Year */}
             <form className="space-y-4 text-sm">
-              <div className="flex md:flex-col gap-2 ">
-                <select className="flex-1 border border-Brand rounded-md p-3 outline-none">
-                  <option>Car Make</option>
-                </select>
-                <select className="flex-1 text-gray-500  rounded-md p-3 bg-[#E3E3E3] outline-none">
-                  <option>Model</option>
-                </select>
-                <select className="flex-1 text-gray-500  rounded-md p-3 bg-[#E3E3E3] outline-none">
-                  <option>Year</option>
-                </select>
+              <div className="flex lg:flex-col gap-2 relative">
+                {/* Car Make Select */}
+                <div className="relative flex-1">
+                  <select
+                    onChange={(e) => setCarMake(e.target.value)}
+                    className="w-full border focus:border-Brand rounded-md p-3 outline-none appearance-none cursor-pointer"
+                  >
+                    <option value="">Car Make</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Ford">Ford</option>
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-gray-700">
+                    <BiSolidDownArrow className="text-Brand" />
+                  </div>
+                </div>
+
+                {/* Model Select (Disabled until Car Make is selected) */}
+                <div className="relative flex-1">
+                  <select
+                    onChange={(e) => setCarModel(e.target.value)}
+                    disabled={!carMake}
+                    className={`w-full border focus:border-Brand rounded-md p-3 outline-none appearance-none cursor-pointer ${
+                      carMake ? "bg-white" : "bg-[#E3E3E3] cursor-not-allowed"
+                    }`}
+                  >
+                    <option value="">Model</option>
+                    {carMake === "Toyota" && (
+                      <>
+                        <option value="Corolla">Corolla</option>
+                        <option value="Camry">Camry</option>
+                      </>
+                    )}
+                    {carMake === "Ford" && (
+                      <>
+                        <option value="Focus">Focus</option>
+                        <option value="Mustang">Mustang</option>
+                      </>
+                    )}
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-gray-700">
+                  <BiSolidDownArrow
+                      className={`${
+                        carModel
+                          ? "text-Brand"
+                          : "text-gray-500 cursor-not-allowed"
+                      }`}
+                    />
+                  </div>
+                </div>
+
+                {/* Year Select (Disabled until Model is selected) */}
+                <div className="relative flex-1">
+                  <select
+                    disabled={!carModel}
+                    className={`w-full border focus:border-Brand rounded-md p-3 outline-none appearance-none cursor-pointer ${
+                      carModel ? "bg-white" : "bg-[#E3E3E3] cursor-not-allowed"
+                    }`}
+                  >
+                    <option value="">Year</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-gray-700">
+                    <BiSolidDownArrow
+                      className={`${
+                        carModel
+                          ? "text-Brand"
+                          : "text-gray-500 cursor-not-allowed"
+                      }`}
+                    />
+                  </div>
+                </div>
               </div>
             </form>
           </div>

@@ -158,3 +158,16 @@ ul.spec-list {
 .select-text {
   user-select: text !important;
 }
+
+/* Default (Base) */
+.search-container {
+  position: absolute;
+  left: 65px;
+  top: 2rem;
+}
+
+@media (max-width: 1250px) {
+  .search-container {
+    left: 16px;
+  }
+}

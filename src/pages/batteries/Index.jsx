@@ -215,7 +215,7 @@ const Section1 = () => {
 
       <div className="z-10 bg-[#FFFFFF] py-10 px-20 rounded-[40px] shadow-md  w-[50%] md:w-[80%] my-28">
         <div>
-          <h3 className="text-xs font-semibold text-Brand mb-2">
+          <h3 className="text-sm font-semibold text-Brand mb-4">
             Search by Car
           </h3>
           {/* Car Info: Make, Model, Year */}
@@ -226,7 +226,7 @@ const Section1 = () => {
                 <select
                   value={carMake}
                   onChange={handleCarMakeChange}
-                  className="w-full border border-gray-300 rounded-md py-3 px-2 outline-Brand appearance-none"
+                  className="w-full border rounded-md py-3 px-2 focus:border-Brand appearance-none outline-none"
                 >
                   <option value="">Car Make</option>
                   <option value="Toyota">Toyota</option>
@@ -244,7 +244,7 @@ const Section1 = () => {
                   value={carModel}
                   onChange={handleCarModelChange}
                   disabled={!carMake}
-                  className={`w-full border border-gray-300 rounded-md py-3 px-2 outline-Brand appearance-none ${
+                  className={`w-full border rounded-md py-3 px-2 focus:border-Brand appearance-none outline-none ${
                     carMake ? "" : "bg-[#E3E3E3] cursor-not-allowed"
                   }`}
                 >
@@ -258,7 +258,11 @@ const Section1 = () => {
                   {carMake === "Mazda" && <option value="CX-5">CX-5</option>}
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-4 lg:right-0 flex items-center px-2 text-gray-700">
-                  <BiSolidDownArrow className="size-3 text-Brand" />
+                  <BiSolidDownArrow
+                    className={`size-3 ${
+                      carMake ? "text-Brand" : "text-gray-500"
+                    }`}
+                  />
                 </div>
               </div>
 
@@ -268,7 +272,7 @@ const Section1 = () => {
                   value={carYear}
                   onChange={handleCarYearChange}
                   disabled={!carModel}
-                  className={`w-full border border-gray-300 rounded-md py-3 px-2 outline-Brand appearance-none ${
+                  className={`w-full border rounded-md py-3 px-2 focus:border-Brand appearance-none outline-none ${
                     carModel ? "" : "bg-[#E3E3E3] cursor-not-allowed"
                   }`}
                 >
@@ -278,7 +282,11 @@ const Section1 = () => {
                   <option value="2023">2023</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-4 lg:right-0 flex items-center px-2 text-gray-700">
-                  <BiSolidDownArrow className="size-3 text-Brand" />
+                  <BiSolidDownArrow
+                    className={`size-3 ${
+                      carMake ? "text-Brand" : "text-gray-500"
+                    }`}
+                  />
                 </div>
               </div>
             </div>

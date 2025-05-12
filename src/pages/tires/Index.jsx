@@ -213,15 +213,15 @@ const Section1 = () => {
 
       {/* Modal in Center */}
       <div className="relative bg-[#F0EDED] w-[60%] md:w-[90%] rounded-[50px] my-10">
-        <div className="z-10 bg-[#FFFFFF] pt-10 md:pb-28 px-20 xl:px-10 rounded-[30px] my-12 mx-16 xl:mx-4">
-          <div className="flex items-center gap-4 ">
-            <h3 className="text-sm font-semibold text-Brand cursor-pointer">
-              Search by Car
-            </h3>
-            <h3 className="cursor-pointer text-sm font-semibold">
-              Search by Car
-            </h3>
-          </div>
+        <div className="absolute search-container top-8 flex items-center gap-2 ">
+          <h3 className="text-sm bg-[#FFFFFF] rounded py-1 px-2 h-12 font-semibold text-Brand cursor-pointer">
+            Search by Car
+          </h3>
+          <h3 className="text-sm bg-[#FFFFFF] rounded  py-1 px-2 h-12 font-semibold cursor-pointer  ">
+            Search by Car
+          </h3>
+        </div>
+        <div className="z-10 bg-[#FFFFFF] pt-4 md:pb-28 px-20 xl:px-10 rounded-[30px] my-12 mx-16 xl:mx-4">
           <div>
             {/* Car Info: Width, Height, RIM */}
             <form className="space-y-4 text-sm">
@@ -254,7 +254,11 @@ const Section1 = () => {
                     <option value="50">50</option>
                     <option value="60">60</option>
                   </select>
-                  <BiSolidDownArrow className="absolute right-3 text-Brand pointer-events-none" />
+                  <BiSolidDownArrow
+                    className={`absolute right-3 ${
+                      width ? "text-Brand" : "text-gray-500"
+                    } pointer-events-none`}
+                  />
                 </div>
 
                 {/* RIM Select */}
@@ -272,7 +276,11 @@ const Section1 = () => {
                     <option value="16">16</option>
                     <option value="17">17</option>
                   </select>
-                  <BiSolidDownArrow className="absolute right-3 text-Brand pointer-events-none" />
+                  <BiSolidDownArrow
+                    className={`absolute right-3 ${
+                      width ? "text-Brand" : "text-gray-500"
+                    } pointer-events-none`}
+                  />
                 </div>
 
                 {/* RIM SIZE */}
