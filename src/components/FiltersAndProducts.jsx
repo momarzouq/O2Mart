@@ -149,9 +149,9 @@ export const FiltersAndProducts = ({ products, filters }) => {
                         AED {product.originalPrice}
                       </span>
                     )}
-                    <span className="font-semibold">
-                      <span className="text-gray-400">AED</span> $
-                      {product.price}
+                    <span>
+                      <span className="text-gray-400">AED</span> 
+                     <span className="font-bold"> {product.price}</span>
                     </span>
                   </div>
 

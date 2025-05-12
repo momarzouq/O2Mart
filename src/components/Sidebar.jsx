@@ -86,7 +86,7 @@ const SidebarCart = () => {
             </Link>
 
             <div className="flex flex-col space-y-2">
-              <p className="text-sm">{item.name}</p>
+              <p className="text-sm font-medium">{item.name}</p>
               <p className="text-sm text-gray-400">
                 Price: {item.price.toFixed(2)} AED
               </p>

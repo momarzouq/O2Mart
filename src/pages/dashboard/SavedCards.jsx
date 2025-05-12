@@ -2,8 +2,9 @@ import React from "react";
 import DashboardSideNav from "../../UI/DashboardSideNav";
 import Container from "../../UI/Container";
 import { Breadcrumb } from "../../UI/Breadcrumb";
-import Wifi from "../../assets/wifi.png";
-import Chip from "../../assets/chip.png";
+import Wifi from "../../assets/wifi.svg";
+import Chip from "../../assets/chip.svg";
+import ChipMaster from "../../assets/chipmaster.svg";
 import MasterCart from "../../assets/MasterCart.svg";
 import Visa from "../../assets/visa.svg";
 import { FiCreditCard } from "react-icons/fi";
@@ -29,7 +30,7 @@ const SavedCards = () => {
             <div>
               <div className="space-y-4 mb-8 w-[350px] sm:w-full">
                 {/* Mastercard */}
-                <div className="bg-slate-800 rounded-xl p-4 text-white shadow-lg relative overflow-hidden w-full">
+                <div className="bg-gradient-to-r from-[#090f3c] to-[#032f72] rounded-3xl p-4 text-white shadow-lg relative overflow-hidden w-full">
                   {/* Card chip icon */}
                   <div className="flex justify-between gap-4 items-start mb-6">
                     <img src={Chip} alt="Card Chip" className="w-auto h-6" />
@@ -37,7 +38,7 @@ const SavedCards = () => {
                   </div>
 
                   {/* Card number */}
-                  <div className="tracking-wider mb-6">
+                  <div className="tracking-wider mb-6 text-2xl font-medium">
                     <span className="mr-2">4562</span>
                     <span className="mr-2">1122</span>
                     <span className="mr-2">4595</span>
@@ -136,15 +137,19 @@ const SavedCards = () => {
               {" "}
               <div className="space-y-4 mb-8 w-[350px] sm:w-full">
                 {/* Mastercard */}
-                <div className="bg-slate-800 rounded-xl p-4 text-white shadow-lg relative overflow-hidden w-full">
+                <div className="bg-[#212141] rounded-3xl p-4 text-white shadow-lg relative overflow-hidden w-full">
                   {/* Card chip icon */}
                   <div className="flex justify-between gap-4 items-start mb-6">
-                    <img src={Chip} alt="Card Chip" className="w-auto h-6" />
+                    <img
+                      src={ChipMaster}
+                      alt="Card Chip"
+                      className="w-auto h-6"
+                    />
                     <img src={Wifi} alt="Card Chip" className="w-auto h-6 " />
                   </div>
 
                   {/* Card number */}
-                  <div className="tracking-wider mb-6">
+                  <div className="tracking-wider mb-6 text-2xl font-medium">
                     <span className="mr-2">4562</span>
                     <span className="mr-2">1122</span>
                     <span className="mr-2">4595</span>
@@ -168,8 +173,11 @@ const SavedCards = () => {
 
                     {/* Visa logo */}
                     <div className="ml-auto self-end">
-                      <span className="h-8 w-10 text-white">
-                        <img src={Visa} />
+                      <span>
+                        <img
+                          src={Visa}
+                          className="filter brightness-0 invert"
+                        />
                       </span>
                     </div>
                   </div>
@@ -232,7 +240,7 @@ const SavedCards = () => {
                         <span>•••• •••• •••• •852</span>
                       </div>
                       <div className="ml-auto self-end">
-                        <span className="h-8 w-10 text-white">
+                        <span>
                           <img src={Visa} />
                         </span>
                       </div>

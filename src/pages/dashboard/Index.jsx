@@ -27,7 +27,7 @@ const Dashboard = () => {
               </Link>{" "}
               )
             </p>
-            <p className="text-[#5F5D5D] text-sm">
+            <p className="text-[#5F5D5D] text-sm font-semibold">
               From your account dashboard you can view your recent orders,
               manage your shipping and billing addresses, and edit your password
               and account details.
