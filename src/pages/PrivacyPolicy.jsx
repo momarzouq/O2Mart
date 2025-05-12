@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
       <Breadcrumb
         items={[{ label: "Home", href: "/" }, { label: "Privacy Policy" }]}
       />
-      <div className="my-4 space-y-6 ">
+      <div className="mt-12 mb-4 space-y-6 ">
         <h3 className="text-4xl font-bold">Privacy and Cookies Policy</h3>
         <div>
           <p className="text-sm text-[#444444] mb-6">

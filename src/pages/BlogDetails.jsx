@@ -53,12 +53,16 @@ const BlogDetails = () => {
   }
 
   return (
-    <Container className="flex lg:flex-col gap-10">
-      <div className="flex-[3]">
-        <BlogCartDetails selectedArticle={selectedArticle} />
-      </div>
-      <div className="flex-[1]">
-        <SearchAndContent />
+    <Container>
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
+        <h3 className="text-xl font-bold">Blog</h3>
+      <div className="flex lg:flex-col gap-10">
+        <div className="flex-[3]">
+          <BlogCartDetails selectedArticle={selectedArticle} />
+        </div>
+        <div className="flex-[1]">
+          <SearchAndContent />
+        </div>
       </div>
     </Container>
   );
@@ -186,7 +190,7 @@ const SearchAndContent = () => {
     },
   ];
   return (
-    <div className="my-2">
+    <div className="my-8">
       <div className="space-y-10">
         {/* Social Midea */}
         <div>

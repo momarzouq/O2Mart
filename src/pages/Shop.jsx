@@ -58,18 +58,10 @@ const Section1 = () => {
 
 const Section2 = () => {
   const [carMake, setCarMake] = useState("");
-  const [modelOptions, setModelOptions] = useState([]);
 
   const handleCarMakeChange = (e) => {
     const selectedMake = e.target.value;
     setCarMake(selectedMake);
-
-    // فقط للتجربة - هنا هتجيب الموديلات بناءً على الماركة اللي المستخدم اختارها
-    if (selectedMake === "Toyota") {
-      setModelOptions(["Corolla", "Camry", "RAV4"]);
-    } else {
-      setModelOptions([]);
-    }
   };
   return (
     <div className="flex md:flex-col justify-between mt-10">

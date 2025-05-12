@@ -89,7 +89,7 @@ export default function Footer() {
             <p>Sunday: Closed.</p>
             <div className="flex gap-6">
               <FaFacebookF size={25} />
-              <FaInstagram size={25} /> className="hover:text-white"
+              <FaInstagram size={25} />
               <FaLinkedinIn size={25} />
             </div>
 
@@ -109,7 +109,7 @@ export default function Footer() {
         </div>
       </Container>
       <hr className="mt-6 border-1 border-gray-700" />
-      <p className="text-sm text-center text-white mt-8">
+      <p className="text-sm text-center text-Brand mt-8 ">
         Copyright © 2025 O2Mart. All Rights Reserved
       </p>
     </div>

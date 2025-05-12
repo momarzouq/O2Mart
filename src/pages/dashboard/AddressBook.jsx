@@ -59,7 +59,7 @@ const AddressBook = () => {
       />
       <div className="space-y-3">
         <Breadcrumb
-          items={[{ label: "Home", href: "/" }, { label: "Addresses" }]}
+          items={[{ label: "Home", href: "/" }, { label: "Address Book" }]}
         />
         <h2 className="text-2xl font-bold">My Addresses</h2>
       </div>

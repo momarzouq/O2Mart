@@ -11,7 +11,7 @@ export default function WarrantyReturnsPolicy() {
           { label: "Warranty & Returns Policy" },
         ]}
       />
-      <div className="mt-4 space-y-6">
+      <div className="my-4 space-y-6">
         <h3 className="text-4xl font-bold">Warranty & Returns Policy</h3>
         <div>
           <p className="text-sm text-[#444444] mb-6">

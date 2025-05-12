@@ -18,7 +18,8 @@ import HONDA from "../../assets/HONDA.svg";
 import ContactUs from "../../assets/contact-us.svg";
 import { SelectingSteps } from "../../components/ProductSelectingSteps";
 import { FiltersAndProducts } from "../../components/FiltersAndProducts";
-import { BiMessageAltDetail } from "react-icons/bi";
+import { BiMessageAltDetail, BiSolidDownArrow } from "react-icons/bi";
+import { useState } from "react";
 
 export default function AutoParts() {
   const BatteriesProducts = [
@@ -181,6 +182,26 @@ export default function AutoParts() {
 }
 
 const Section1 = () => {
+  const [carMake, setCarMake] = useState("");
+  const [carModel, setCarModel] = useState("");
+  const [carYear, setCarYear] = useState("");
+
+  // Function to handle make change
+  const handleCarMakeChange = (e) => {
+    const selectedMake = e.target.value;
+    setCarMake(selectedMake);
+    setCarModel(""); // Reset model when make changes
+    setCarYear(""); // Reset year when make changes
+  };
+  // Function to handle model change
+  const handleCarModelChange = (e) => {
+    setCarModel(e.target.value);
+  };
+
+  // Function to handle year change
+  const handleCarYearChange = (e) => {
+    setCarYear(e.target.value);
+  };
   return (
     <div className="relative bg-[#FBFBFB]  flex items-center justify-center overflow-hidden">
       {/* Right Image */}
@@ -199,16 +220,67 @@ const Section1 = () => {
           </h3>
           {/* Car Info: Make, Model, Year */}
           <form className="space-y-4 text-sm">
-            <div className="flex md:flex-col gap-2 ">
-              <select className="flex-1 border border-Brand rounded-md p-3">
-                <option>Car Make</option>
-              </select>
-              <select className="flex-1 text-gray-500  rounded-md p-3 bg-[#E3E3E3]">
-                <option>Model</option>
-              </select>
-              <select className="flex-1 text-gray-500  rounded-md p-3 bg-[#E3E3E3]">
-                <option>Year</option>
-              </select>
+            <div className="flex lg:flex-col gap-2">
+              {/* Car Make */}
+              <div className="relative flex-1">
+                <select
+                  value={carMake}
+                  onChange={handleCarMakeChange}
+                  className="w-full border border-gray-300 rounded-md py-3 px-2 outline-Brand appearance-none"
+                >
+                  <option value="">Car Make</option>
+                  <option value="Toyota">Toyota</option>
+                  <option value="Nissan">Nissan</option>
+                  <option value="Mazda">Mazda</option>
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-4 lg:right-0 flex items-center px-2 text-gray-700">
+                  <BiSolidDownArrow className="size-3 text-Brand" />
+                </div>
+              </div>
+
+              {/* Car Model */}
+              <div className="relative flex-1">
+                <select
+                  value={carModel}
+                  onChange={handleCarModelChange}
+                  disabled={!carMake}
+                  className={`w-full border border-gray-300 rounded-md py-3 px-2 outline-Brand appearance-none ${
+                    carMake ? "" : "bg-[#E3E3E3] cursor-not-allowed"
+                  }`}
+                >
+                  <option value="">Model</option>
+                  {carMake === "Toyota" && (
+                    <option value="Corolla">Corolla</option>
+                  )}
+                  {carMake === "Nissan" && (
+                    <option value="Altima">Altima</option>
+                  )}
+                  {carMake === "Mazda" && <option value="CX-5">CX-5</option>}
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-4 lg:right-0 flex items-center px-2 text-gray-700">
+                  <BiSolidDownArrow className="size-3 text-Brand" />
+                </div>
+              </div>
+
+              {/* Car Year */}
+              <div className="relative flex-1">
+                <select
+                  value={carYear}
+                  onChange={handleCarYearChange}
+                  disabled={!carModel}
+                  className={`w-full border border-gray-300 rounded-md py-3 px-2 outline-Brand appearance-none ${
+                    carModel ? "" : "bg-[#E3E3E3] cursor-not-allowed"
+                  }`}
+                >
+                  <option value="">Year</option>
+                  <option value="2025">2025</option>
+                  <option value="2024">2024</option>
+                  <option value="2023">2023</option>
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-4 lg:right-0 flex items-center px-2 text-gray-700">
+                  <BiSolidDownArrow className="size-3 text-Brand" />
+                </div>
+              </div>
             </div>
           </form>
         </div>

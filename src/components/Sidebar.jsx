@@ -118,9 +118,9 @@ const SidebarCart = () => {
 
         {/* Buttons */}
         <div className="flex flex-col gap-2">
-          <button className="w-full text-xs font-semibold text-Brand text-center rounded-md border py-2 border-Brand">
+          <Link to="/cart" className="w-full text-xs font-semibold text-Brand text-center rounded-md border py-2 border-Brand">
             View Cart
-          </button>
+          </Link>
           <button className="w-full text-xs font-semibold bg-Brand text-white text-center rounded-md border py-2 border-Brand">
             Checkout
           </button>

@@ -22,7 +22,7 @@ import { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { SelectingSteps } from "../../components/ProductSelectingSteps";
 import { FiltersAndProducts } from "../../components/FiltersAndProducts";
-import { BiMessageAltDetail } from "react-icons/bi";
+import { BiMessageAltDetail, BiSolidDownArrow } from "react-icons/bi";
 
 export default function Tires() {
   const TiresProducts = [
@@ -32,7 +32,7 @@ export default function Tires() {
       price: 165,
       originalPrice: 179,
       sale: true,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -44,7 +44,7 @@ export default function Tires() {
       price: 165,
       originalPrice: 179,
       sale: false,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -56,7 +56,7 @@ export default function Tires() {
       price: 165,
       originalPrice: 179,
       sale: true,
-      offer:true,
+      offer: true,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -68,7 +68,7 @@ export default function Tires() {
       price: 165,
       originalPrice: 179,
       sale: false,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -80,7 +80,7 @@ export default function Tires() {
       price: 165,
       originalPrice: 179,
       sale: true,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -92,7 +92,7 @@ export default function Tires() {
       price: 165,
       originalPrice: 179,
       sale: false,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -104,7 +104,7 @@ export default function Tires() {
       price: 165,
       originalPrice: 179,
       sale: false,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -116,7 +116,7 @@ export default function Tires() {
       price: 165,
       originalPrice: 179,
       sale: true,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -128,7 +128,7 @@ export default function Tires() {
       price: 165,
       originalPrice: 179,
       sale: true,
-      offer:false,
+      offer: false,
       volume: Volum,
       image: Tyers,
       rating: 5,
@@ -186,6 +186,7 @@ const Section1 = () => {
   const [height, setHeight] = useState("");
   const [rim, setRim] = useState("");
   const [showModal, setShowModal] = useState(false);
+
   useEffect(() => {
     if (width && height && rim) {
       setShowModal(true);
@@ -200,8 +201,9 @@ const Section1 = () => {
     { label: "255/55R19", img: Tyers },
     { label: "255/55R19", img: Tyers },
   ];
+
   return (
-    <div className="relative bg-[#FBFBFB]  flex items-center justify-center overflow-hidden">
+    <div className="relative bg-[#FBFBFB] flex items-center justify-center overflow-hidden">
       {/* Right Image */}
       <img
         src={Background}
@@ -211,44 +213,72 @@ const Section1 = () => {
 
       {/* Modal in Center */}
       <div className="relative bg-[#F0EDED] w-[60%] md:w-[90%] rounded-[50px] my-10">
-        <div className="z-10 bg-[#FFFFFF] py-10 md:pb-28 px-20 xl:px-10 rounded-[30px] my-12 mx-16 xl:mx-4">
-          <div className="flex items-center gap-4 mb-4 ">
-            <h3 className=" text-sm font-semibold text-Brand cursor-pointer">
+        <div className="z-10 bg-[#FFFFFF] pt-10 md:pb-28 px-20 xl:px-10 rounded-[30px] my-12 mx-16 xl:mx-4">
+          <div className="flex items-center gap-4 ">
+            <h3 className="text-sm font-semibold text-Brand cursor-pointer">
               Search by Car
             </h3>
-            <h3 className=" cursor-pointer  text-sm  font-semibold ">
+            <h3 className="cursor-pointer text-sm font-semibold">
               Search by Car
             </h3>
           </div>
           <div>
-            {/* Car Info: Make, Model, Year */}
+            {/* Car Info: Width, Height, RIM */}
             <form className="space-y-4 text-sm">
-              <div className="flex md:flex-col gap-2 ">
-                <select
-                  onChange={(e) => setWidth(e.target.value)}
-                  className="w-1/4 md:w-full border border-Brand rounded-md p-3 outline-none cursor-pointer"
-                >
-                  <option>Width</option>
-                  <option>20</option>
-                </select>
-                <select
-                  onChange={(e) => setHeight(e.target.value)}
-                  className="w-1/4 md:w-full text-gray-500  rounded-md p-3 bg-[#E3E3E3] outline-none cursor-pointer"
-                >
-                  <option>Height</option>
-                  <option>50</option>
-                </select>
-                <select
-                  onChange={(e) => setRim(e.target.value)}
-                  className="w-1/4 md:w-full text-gray-500  rounded-md p-3 bg-[#E3E3E3] outline-none cursor-pointer"
-                >
-                  <option>RIM size</option>
-                  <option>16</option>
-                </select>
-                <img
-                  src={RIM_Size}
-                  className="absolute right-[10%] md:right-[31%] bottom-[48px]  rounded-3xl h-24 xl:h-16"
-                />
+              <div className="flex lg:flex-col gap-2 lg:justify-center">
+                {/* Width Select */}
+                <div className="w-1/4 lg:w-full relative flex items-center">
+                  <select
+                    onChange={(e) => setWidth(e.target.value)}
+                    className="w-full border border-gray-300 focus:border-Brand rounded-md p-3 pr-10 outline-none cursor-pointer appearance-none"
+                  >
+                    <option value="">Width</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                  </select>
+                  <BiSolidDownArrow className="absolute right-3 text-Brand pointer-events-none" />
+                </div>
+
+                {/* Height Select */}
+                <div className="w-1/4 lg:w-full relative flex items-center">
+                  <select
+                    onChange={(e) => setHeight(e.target.value)}
+                    disabled={!width}
+                    className={`w-full border border-gray-300 rounded-md p-3 pr-10 outline-none cursor-pointer appearance-none ${
+                      width
+                        ? "bg-white text-black"
+                        : "bg-[#E3E3E3] text-gray-500 cursor-not-allowed"
+                    }`}
+                  >
+                    <option value="">Height</option>
+                    <option value="50">50</option>
+                    <option value="60">60</option>
+                  </select>
+                  <BiSolidDownArrow className="absolute right-3 text-Brand pointer-events-none" />
+                </div>
+
+                {/* RIM Select */}
+                <div className="w-1/4 lg:w-full relative flex items-center">
+                  <select
+                    onChange={(e) => setRim(e.target.value)}
+                    disabled={!height}
+                    className={`w-full border border-gray-300 rounded-md p-3 pr-10 outline-none cursor-pointer appearance-none ${
+                      height
+                        ? "bg-white text-black"
+                        : "bg-[#E3E3E3] text-gray-500 cursor-not-allowed"
+                    }`}
+                  >
+                    <option value="">RIM size</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                  </select>
+                  <BiSolidDownArrow className="absolute right-3 text-Brand pointer-events-none" />
+                </div>
+
+                {/* RIM SIZE */}
+                <div className="flex lg:justify-center mt-4">
+                  <img src={RIM_Size} className="rounded-3xl h-24 xl:h-16" />
+                </div>
               </div>
             </form>
           </div>
