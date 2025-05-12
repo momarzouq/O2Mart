@@ -2,8 +2,25 @@ import { IoClose } from "react-icons/io5";
 import Modal from "../assets/Modal.png";
 import PropTypes from "prop-types";
 import { useDiscountModalStore } from "../store/useDiscountModalStore";
+import { toast } from "react-toastify";
+
 export const DiscountModal = () => {
   const { closeModal } = useDiscountModalStore();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    toast.success("Discount Successfull!", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "light",
+    });
+    closeModal();
+  };
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center z-50">
       {/* Modal Container */}
@@ -36,7 +53,10 @@ export const DiscountModal = () => {
           typesetting industry.  
         </p>
         {/* Email Input */}
-        <form className="flex flex-col justify-center items-center space-y-4">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col justify-center items-center space-y-4"
+        >
           <input
             id="email"
             type="email"
