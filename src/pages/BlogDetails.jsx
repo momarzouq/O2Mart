@@ -1,16 +1,22 @@
-import React, { useState } from "react";
-import Container from "../UI/Container";
+import { useParams, Link } from "react-router-dom";
+import {
+  FaArrowLeft,
+  FaFacebookF,
+  FaInstagram,
+  FaXTwitter,
+} from "react-icons/fa6";
 import Article1 from "../assets/article1.svg";
 import Article2 from "../assets/article2.svg";
 import Article3 from "../assets/article3.svg";
-import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
-import { Breadcrumb } from "../UI/Breadcrumb";
-import { MdKeyboardArrowRight } from "react-icons/md";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import Email from "../assets/email.svg";
+import User from "../assets/user.svg";
+import Container from "../UI/Container";
 import { HiMiniMagnifyingGlass } from "react-icons/hi2";
-import { Link } from "react-router-dom";
+import { FaTelegramPlane } from "react-icons/fa";
+import { Breadcrumb } from "../UI/Breadcrumb";
 
-export default function Blog() {
+const BlogDetails = () => {
+  const { title } = useParams();
   const BlogData = [
     {
       image: Article3,
@@ -38,84 +44,95 @@ export default function Blog() {
     },
   ];
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12;
-  const totalPages = Math.ceil(BlogData.length / itemsPerPage);
-
-  const handlePageChange = (page) => setCurrentPage(page);
-
-  const displayedData = BlogData.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+  const selectedArticle = BlogData.find(
+    (article) => article.title === decodeURIComponent(title)
   );
 
+  if (!selectedArticle) {
+    return <div>Article not found</div>;
+  }
+
   return (
-    <Container>
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
-      <h3 className="text-2xl font-bold my-2">Blog</h3>
-      <div className="flex md:flex-col gap-10">
-        <div className="flex-[3]">
-          <Carts BlogData={displayedData} />
-          <div className="flex items-center justify-center mt-4">
-            {Array.from({ length: totalPages }, (_, index) => (
-              <button
-                key={index}
-                onClick={() => handlePageChange(index + 1)}
-                className={`text-sm font-semibold px-3 py-1 mx-1 ${
-                  currentPage === index + 1 ? " text-Brand" : " text-gray-700"
-                }`}
-              >
-                {index + 1}
-              </button>
-            ))}
-            <MdKeyboardArrowRight size={20} />
-          </div>
-        </div>
-        <div className="flex-[1]">
-          <SearchAndContent />
-        </div>
+    <Container className="flex lg:flex-col gap-10">
+      <div className="flex-[3]">
+        <BlogCartDetails selectedArticle={selectedArticle} />
+      </div>
+      <div className="flex-[1]">
+        <SearchAndContent />
       </div>
     </Container>
   );
-}
+};
 
-const Carts = ({ BlogData }) => {
+const BlogCartDetails = ({ selectedArticle }) => {
   return (
-    <div className="my-2">
-      <div className="grid-custom-blog gap-6">
-        {BlogData.map((item, index) => (
-          <div key={index} className="border rounded-lg">
-            {item.image ? (
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-48 object-cover rounded-t-lg"
-              />
-            ) : (
-              <iframe
-                className="w-full h-48 rounded-t-lg"
-                src={item.youtube}
-                title="YouTube video"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            )}
-            <div className="p-4">
-              <span className="text-gray-400 text-xs font-semibold">
-                {item.hook}
-              </span>
-              <h3 className="text-lg font-bold mt-2">{item.title}</h3>
-              <p className="text-gray-600 text-sm mt-1">{item.desc}</p>
-              <div className="flex items-center gap-2 text-Brand font-bold mt-2">
-                <Link to={`/blog/${encodeURIComponent(item.title)}`}>
-                  Read more
-                </Link>
-                <FaArrowRightLong />
-              </div>
-            </div>
-          </div>
-        ))}
+    <div className="flex flex-col gap-10 container mx-auto my-8 p-4">
+      <div className="flex lg:flex-col gap-2">
+        <img src={User} className="h-28 w-28" />
+        <div>
+          <Breadcrumb
+            items={[{ label: "News", href: "/" }, { label: "October 2,2023" }]}
+          />
+          <h3 className="text-xl font-bold my-2">
+            The number of new cars sold over 20 years
+          </h3>
+          <p className="text-sm">
+            The number of new cars sold in the United States over a 20-year
+            period can vary significantly depending on economic conditions,
+            consumer preferences, and various other factors. I can provide you
+            with historical data for new car sales in the United States up until
+            my knowledge cutoff date in September 2021. However, please note
+            that these figures are subject to change, and I recommend consulting
+            more recent sources for up-to-date information.
+          </p>
+        </div>
+      </div>
+      <div className="flex justify-center">
+        {selectedArticle.image ? (
+          <img
+            src={selectedArticle.image}
+            alt={selectedArticle.title}
+            className="w-full h-[600px] object-cover"
+          />
+        ) : (
+          <iframe
+            src={selectedArticle.youtube}
+            title="YouTube video"
+            className="w-full h-60 rounded-lg"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        )}
+      </div>
+      <p className="text-sm">
+        The number of new cars sold in the United States over a 20-year period
+        can vary significantly depending on economic conditions, consumer
+        preferences, and various other factors. I can provide you with
+        historical data for new car sales in the United States up until my
+        knowledge cutoff date in September 2021. However, please note that these
+        figures are subject to change, and I recommend consulting more recent
+        sources for up-to-date information.
+      </p>
+      <div className="flex md:flex-col gap-8 md:space-y-4 lg:gap-2 md:text-center px-8 md:px-4 items-center justify-around bg-Brand py-3 rounded-2xl">
+        <img src={Email} alt="Email" />
+        <div className="flex flex-col gap-2 text-white">
+          <h3 className="text-2xl lg:text-xl">
+            Get the Latest Deals & Updates.
+          </h3>
+          <p className="text-sm">
+            Stay in the loop! Subscribe to our newsletter to receive the latest
+            deals, discounts, announcements
+          </p>
+        </div>
+        <div className="relative flex flex-col gap-2 w-80 lg:w-72">
+          <input
+            id="email"
+            type="email"
+            placeholder="Email address"
+            className="text-sm border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-1 focus:ring-red-600"
+          />
+          <FaTelegramPlane className="absolute right-4 top-2 text-Brand size-6" />
+        </div>
       </div>
     </div>
   );
@@ -258,3 +275,5 @@ const SearchAndContent = () => {
     </div>
   );
 };
+
+export default BlogDetails;
