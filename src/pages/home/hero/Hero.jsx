@@ -40,7 +40,7 @@ const Section1 = () => {
 
 const Section2 = () => {
   return (
-    <div className="flex gap-12 md:gap-0 md:flex-col">
+    <div className="flex gap-12 md:gap-0 md:flex-col mt-8">
       {/* Text Section */}
       <div className="flex-[6] flex-col items-start md:items-center md:text-center gap-4 space-y-4">
         <h1 className="text-2xl font-bold ">
