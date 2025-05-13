@@ -363,11 +363,11 @@ export default function Inquiry() {
                 </select>
               </div>
               <div className="flex-1 flex flex-col">
-                <label className="mb-1 font-bold">VIN/ Chassis No</label>
+                <label className="md:text-[10px] mb-1 font-bold">VIN/ Chassis No</label>
                 <input
                   type="text"
                   placeholder="55"
-                  className="border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
+                  className="md:w-full border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
                 />
               </div>
             </div>
@@ -433,11 +433,11 @@ export default function Inquiry() {
                 </select>
               </div>
               <div className="flex-1 flex flex-col">
-                <label className="mb-1 font-bold">VIN/ Chassis No</label>
+                <label className="text-[10px] mb-1 font-bold">VIN/ Chassis No</label>
                 <input
                   type="text"
                   placeholder="55"
-                  className="border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
+                  className="md:w-full border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
                 />
               </div>
             </div>
@@ -503,7 +503,7 @@ export default function Inquiry() {
             {/* Next Button */}
             <button
               type="submit"
-              className="w-1/3 md:w-1/2 px-2 bg-Brand text-white py-1.5 md:text-xs rounded-md font-semibold"
+              className="w-1/3 lg:w-[50%] px-2 bg-Brand text-white py-1.5 md:text-xs rounded-md font-semibold"
             >
               Get Me The Best Offer!
             </button>
