@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <div className="bg-black pt-14 pb-10">
       <Container>
-        <div className="flex gap-10 md:flex-col md:items-start">
+        <div className="flex gap-24 xl:gap-10 md:flex-col md:items-start">
           {/* Products */}
           <div className="flex flex-col text-gray-300 space-y-4">
             <Link to="/shop" className="text-white font-semibold">
