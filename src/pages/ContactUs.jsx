@@ -48,7 +48,7 @@ export default function ContactUs() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center justify-start lg:justify-center mt-8 lg:mt-2 ml-[156px] lg:ml-0">
+              <div className="flex items-center justify-start lg:justify-center mt-8 lg:mt-2 custom-margin">
                 <div className="flex flex-col items-center ">
                   <AiOutlineMail size={20} color="#EC221F" />
                   <h4 className="font-medium">EMAIL</h4>

@@ -236,7 +236,8 @@ const Section1 = () => {
                 <select
                   value={carMake}
                   onChange={handleCarMakeChange}
-                  className="w-full border rounded-md py-3 px-2 focus:border-Brand appearance-none outline-none"
+                  className={`w-full border-2 rounded-md py-3 px-2 appearance-none outline-none border-Brand
+                  }`}
                 >
                   <option value="">Car Make</option>
                   <option value="Toyota">Toyota</option>
@@ -254,8 +255,10 @@ const Section1 = () => {
                   value={carModel}
                   onChange={handleCarModelChange}
                   disabled={!carMake}
-                  className={`w-full border rounded-md py-3 px-2 focus:border-Brand appearance-none outline-none ${
-                    carMake ? "" : "bg-[#E3E3E3] cursor-not-allowed"
+                  className={`w-full border-2 rounded-md py-3 px-2 appearance-none outline-none ${
+                    carMake
+                      ? "border-Brand"
+                      : " bg-[#E3E3E3] cursor-not-allowed"
                   }`}
                 >
                   <option value="">Model</option>
@@ -282,8 +285,10 @@ const Section1 = () => {
                   value={carYear}
                   onChange={handleCarYearChange}
                   disabled={!carModel}
-                  className={`w-full border rounded-md py-3 px-2 focus:border-Brand appearance-none outline-none ${
-                    carModel ? "" : "bg-[#E3E3E3] cursor-not-allowed"
+                  className={`w-full border-2 rounded-md py-3 px-2 appearance-none outline-none ${
+                    carModel
+                      ? "border-Brand"
+                      : " bg-[#E3E3E3] cursor-not-allowed"
                   }`}
                 >
                   <option value="">Year</option>
@@ -294,7 +299,7 @@ const Section1 = () => {
                 <div className="pointer-events-none absolute inset-y-0 right-4 lg:right-0 flex items-center px-2 text-gray-700">
                   <BiSolidDownArrow
                     className={`size-3 ${
-                      carMake ? "text-Brand" : "text-gray-500"
+                      carModel ? "text-Brand" : "text-gray-500"
                     }`}
                   />
                 </div>

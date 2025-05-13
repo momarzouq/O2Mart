@@ -205,7 +205,8 @@ const Section1 = () => {
                 <div className="relative flex-1">
                   <select
                     onChange={(e) => setCarMake(e.target.value)}
-                    className="w-full border focus:border-Brand rounded-md p-3 outline-none appearance-none cursor-pointer"
+                    className={`w-full border-2 rounded-md p-3 outline-none appearance-none cursor-pointer border-Brand
+                    `}
                   >
                     <option value="">Car Make</option>
                     <option value="Toyota">Toyota</option>
@@ -221,8 +222,10 @@ const Section1 = () => {
                   <select
                     onChange={(e) => setCarModel(e.target.value)}
                     disabled={!carMake}
-                    className={`w-full border focus:border-Brand rounded-md p-3 outline-none appearance-none cursor-pointer ${
-                      carMake ? "bg-white" : "bg-[#E3E3E3] cursor-not-allowed"
+                    className={`w-full border-2 rounded-md p-3 outline-none appearance-none cursor-pointer ${
+                      carMake
+                        ? "border-Brand bg-white"
+                        : " bg-[#E3E3E3] cursor-not-allowed"
                     }`}
                   >
                     <option value="">Model</option>
@@ -240,9 +243,9 @@ const Section1 = () => {
                     )}
                   </select>
                   <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-gray-700">
-                  <BiSolidDownArrow
+                    <BiSolidDownArrow
                       className={`${
-                        carModel
+                        carMake
                           ? "text-Brand"
                           : "text-gray-500 cursor-not-allowed"
                       }`}
@@ -254,8 +257,10 @@ const Section1 = () => {
                 <div className="relative flex-1">
                   <select
                     disabled={!carModel}
-                    className={`w-full border focus:border-Brand rounded-md p-3 outline-none appearance-none cursor-pointer ${
-                      carModel ? "bg-white" : "bg-[#E3E3E3] cursor-not-allowed"
+                    className={`w-full border-2 rounded-md p-3 outline-none appearance-none cursor-pointer ${
+                      carModel
+                        ? "border-Brand bg-white"
+                        : " bg-[#E3E3E3] cursor-not-allowed"
                     }`}
                   >
                     <option value="">Year</option>
@@ -309,7 +314,7 @@ const Section2 = () => {
 
       {/* Swiper Section */}
       <Swiper
-      className="mt-16"
+        className="mt-16"
         navigation={true}
         modules={[Navigation, Autoplay]}
         autoplay={{

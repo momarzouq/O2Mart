@@ -226,11 +226,11 @@ const Section1 = () => {
             {/* Car Info: Width, Height, RIM */}
             <form className="space-y-4 text-sm">
               <div className="flex lg:flex-col gap-2 lg:justify-center">
-                {/* Width Select */}
+                {/* Width Select (Always Active with Border-2) */}
                 <div className="w-1/4 lg:w-full relative flex items-center">
                   <select
                     onChange={(e) => setWidth(e.target.value)}
-                    className="w-full border border-gray-300 focus:border-Brand rounded-md p-3 pr-10 outline-none cursor-pointer appearance-none"
+                    className="w-full border-2 border-Brand rounded-md p-3 pr-10 outline-none cursor-pointer appearance-none"
                   >
                     <option value="">Width</option>
                     <option value="20">20</option>
@@ -239,15 +239,15 @@ const Section1 = () => {
                   <BiSolidDownArrow className="absolute right-3 text-Brand pointer-events-none" />
                 </div>
 
-                {/* Height Select */}
+                {/* Height Select (Conditional Border and Disabled State) */}
                 <div className="w-1/4 lg:w-full relative flex items-center">
                   <select
                     onChange={(e) => setHeight(e.target.value)}
                     disabled={!width}
-                    className={`w-full border border-gray-300 rounded-md p-3 pr-10 outline-none cursor-pointer appearance-none ${
+                    className={`w-full border-2 rounded-md p-3 pr-10 outline-none cursor-pointer appearance-none ${
                       width
-                        ? "bg-white text-black"
-                        : "bg-[#E3E3E3] text-gray-500 cursor-not-allowed"
+                        ? "border-Brand bg-white text-black"
+                        : " bg-[#E3E3E3] text-gray-500 cursor-not-allowed"
                     }`}
                   >
                     <option value="">Height</option>
@@ -261,15 +261,15 @@ const Section1 = () => {
                   />
                 </div>
 
-                {/* RIM Select */}
+                {/* RIM Select (Conditional Border and Disabled State) */}
                 <div className="w-1/4 lg:w-full relative flex items-center">
                   <select
                     onChange={(e) => setRim(e.target.value)}
                     disabled={!height}
-                    className={`w-full border border-gray-300 rounded-md p-3 pr-10 outline-none cursor-pointer appearance-none ${
+                    className={`w-full border-2 rounded-md p-3 pr-10 outline-none cursor-pointer appearance-none ${
                       height
-                        ? "bg-white text-black"
-                        : "bg-[#E3E3E3] text-gray-500 cursor-not-allowed"
+                        ? "border-Brand bg-white text-black"
+                        : " bg-[#E3E3E3] text-gray-500 cursor-not-allowed"
                     }`}
                   >
                     <option value="">RIM size</option>
@@ -278,12 +278,12 @@ const Section1 = () => {
                   </select>
                   <BiSolidDownArrow
                     className={`absolute right-3 ${
-                      width ? "text-Brand" : "text-gray-500"
+                      height ? "text-Brand" : "text-gray-500"
                     } pointer-events-none`}
                   />
                 </div>
 
-                {/* RIM SIZE */}
+                {/* RIM SIZE Image */}
                 <div className="flex lg:justify-center mt-4">
                   <img src={RIM_Size} className="rounded-3xl h-24 xl:h-16" />
                 </div>
@@ -360,7 +360,7 @@ const Section2 = () => {
 
       {/* Swiper Section */}
       <Swiper
-      className="mt-16"
+        className="mt-16"
         navigation={true}
         modules={[Navigation, Autoplay]}
         autoplay={{
