@@ -203,14 +203,14 @@ export default function Inquiry() {
                 </select>
               </div>
               <div className="flex-1 flex flex-col ">
-                <label className=" md:text-sm whitespace-nowrap flex items-center gap-1 mb-1 font-bold">
+                <label className=" md:text-[10px] whitespace-nowrap flex items-center gap-1 mb-1 font-bold">
                   VIN/Chassis Number<span className="text-Brand">*</span>
                   <HiOutlineExclamationCircle className="text-Brand size-4" />
                 </label>
                 <input
                   type="text"
                   placeholder="VIN/Chassis Number"
-                  className=" border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
+                  className="md:w-full border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
                 />
               </div>
             </div>
@@ -218,9 +218,7 @@ export default function Inquiry() {
             {/* Required Part / Quantity / Photo Upload */}
             <div className="flex gap-2 items-end">
               <div className="w-full flex flex-col">
-                <label className="mb-1 font-bold">
-                  Battery Space
-                </label>
+                <label className="mb-1 font-bold">Battery Space</label>
                 <input
                   type="text"
                   placeholder="Enter The Battery Space"
