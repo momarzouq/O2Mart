@@ -163,7 +163,7 @@ export default function AutoParts() {
   return (
     <div className="relative ">
       <Section1 />
-      <div className="lg:hidden absolute top-[15%] left-[12%] z-50 bg-white px-4 font-semibold shadow-md rounded-3xl">
+      <div className="lg:hidden absolute top-[15%] left-[13%] xl:left-[4%] xl:mr-10 z-50 bg-white px-4 font-semibold shadow-md rounded-2xl">
         <SelectingSteps
           steps={[
             { img: Step1, title: "SELECT YOUR TYRES" },

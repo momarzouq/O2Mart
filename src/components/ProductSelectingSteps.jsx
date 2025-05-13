@@ -2,7 +2,7 @@ import { SlArrowRight } from "react-icons/sl";
 
 export const SelectingSteps = ({ steps }) => {
   return (
-    <div className="flex lg:flex-col lg:w-fit md:items-start justify-around mx-auto  gap-4 mt-6 font-bold mb-6">
+    <div className=" flex lg:flex-col lg:w-fit md:items-start justify-around mx-auto  gap-4 my-2 lg:my-8 font-bold ">
       {steps.map((step, i) => (
         <SelectingStep
           img={step.img}
