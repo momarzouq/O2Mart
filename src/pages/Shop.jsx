@@ -9,16 +9,13 @@ import { BiMessageAltDetail, BiSolidDownArrow } from "react-icons/bi";
 import { RiArrowDownSFill } from "react-icons/ri";
 export default function Shop() {
   return (
-    <div className="relative mb-28">
+    <div className="mb-28">
       <Container>
         <Breadcrumb items={[{ label: "HOME", href: "/" }, { label: "Shop" }]} />
         <Section1 />
         <Section2 />
       </Container>
-      {/* Contact Us */}
-      <div>
-        <BiMessageAltDetail className="absolute z-50 right-8 md:right-4 top-[100%]  bg-Brand rounded-full p-2 text-white text-xl w-10 h-10 object-cover" />
-      </div>
+    
     </div>
   );
 }

@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import ScrollToTopButton from "./ScrolleToTop";
 import Inquiry from "./Inquiry";
 import SidebarCart from "./Sidebar";
+import ContactUsButton from "../UI/ContactUsButton";
 function Layout({ children }) {
   return (
     <div>
@@ -10,6 +11,7 @@ function Layout({ children }) {
       <SidebarCart />
       <Inquiry />
       <div className="min-h-screen">{children}</div>
+      <ContactUsButton />
       <ScrollToTopButton />
       <Footer />
     </div>

@@ -7,7 +7,6 @@ import Container from "../UI/Container";
 import { Breadcrumb } from "../UI/Breadcrumb";
 import CarsBrand from "../assets/Cars-Brand.svg";
 import HomeBG from "../assets/hombg.png";
-import { IoLogoWhatsapp } from "react-icons/io5";
 import { RiWhatsappFill } from "react-icons/ri";
 export default function AboutUs() {
   return (
@@ -15,9 +14,7 @@ export default function AboutUs() {
       <Container>
         <Section1 />
         <Section2 />
-      </Container>
-      <Section3 />
-      <Container>
+        <Section3 />
         <Section4 />
       </Container>
     </div>
@@ -76,7 +73,7 @@ const Section2 = () => {
   ];
 
   return (
-    <div className=" w-full">
+    <div className="flex w-full justify-center items-center">
       <Swiper
         navigation={true}
         modules={[Navigation, Autoplay]}
@@ -114,7 +111,7 @@ const Section3 = () => {
   return (
     <div className="  bg-[#FBFBFB] items-center">
       <div className="relative w-full flex justify-end mt-4 md:mt-0">
-        <div className="abolute top-[30%] left-1 w-full flex flex-col gap-4 px-10 md:px-2 py-4">
+        <div className="w-full flex flex-col gap-4 px-10 md:px-2 py-4">
           <h1 className="text-5xl md:text-xl font-medium text-[#333232]">
             Why We Started O2Mart?
           </h1>

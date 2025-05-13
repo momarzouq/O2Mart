@@ -19,7 +19,7 @@ const Section1 = () => {
   const { openModal } = useDiscountModalStore();
   return (
     <div className="flex justify-between bg-[#FBFBFB] ">
-      <div className="flex flex-col gap-4 md:gap-1 items-start mt-12 md:mt-4 mx-[188px] md:mx-8">
+      <div className="flex flex-col gap-4 md:gap-1 items-start mt-12 md:mt-4 ml-[188px] md:mx-8">
         <h1 className="text-6xl whitespace-nowrap md:text-xl font-bold ">
           Auto Parts
         </h1>

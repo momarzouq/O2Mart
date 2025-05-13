@@ -173,13 +173,6 @@ export default function AutoParts() {
           filters={AutoPartsFilters}
         />
       </Container>
-      {/* Contact Us */}
-      <div className="absolute z-50 flex items-center gap-1 max-h-12 max-w-28 shadow-md right-8 top-[100%] bg-[#FFFFFF]">
-        <img src={ContactUs} alt="Contact Us" className="pr-8" />
-        <div>
-          <BiMessageAltDetail className="absolute right-0 top-0 bg-Brand rounded-full p-2 text-white text-xl w-8 h-8 object-cover" />
-        </div>
-      </div>
     </div>
   );
 }

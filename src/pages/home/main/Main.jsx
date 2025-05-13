@@ -26,10 +26,7 @@ export default function Main() {
         <Section3 />
         <Section4 />
       </Container>
-      {/* Contact Us */}
-      <div>
-        <BiMessageAltDetail className="absolute z-50 right-20 md:right-4 top-[100%] bg-Brand rounded-full p-2 text-white text-xl w-10 h-10 object-cover" />
-      </div>
+     
     </div>
   );
 }

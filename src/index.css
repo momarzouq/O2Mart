@@ -55,6 +55,7 @@ span.swiper-pagination-bullet-active {
 .swiper-button-prev {
   color: #9b9797 !important; /* Red color */
   --swiper-navigation-size: 24px; /* Adjust size */
+ 
 }
 
 
