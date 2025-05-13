@@ -31,22 +31,22 @@ const Section1 = () => {
         items={[{ label: "Home", href: "/" }, { label: "About Us" }]}
       />
       <div className="flex lg:flex-col gap-8 mt-10">
-        <div className="flex-[4] flex-col items-start space-y-4">
-          <h3 className="text-2xl font-bold">
+        <div className="flex-[4] flex-col items-start space-y-4 ">
+          <h3 className="text-3xl font-bold text-[#333232]">
             The Easiest Way to Find Auto Parts
           </h3>
 
-          <p className="text-xs font-semibold text-gray-600 ">
+          <p className="text-xs font-semibold text-[#5F5D5D] ">
             Tired of the endless search for the right auto parts? Let us do the
             heavy lifting for you! Just tell us what you need, and our team will
             track down the best deals and quality auto parts across the UAE.
           </p>
-          <p className="text-xs font-semibold text-gray-600 ">
+          <p className="text-xs font-semibold text-[#5F5D5D] ">
             We compare prices, verify suppliers, and make sure you get exactly
             what you ordered. No more driving all over several emirates or
             sifting through suppliers.
           </p>
-          <p className="text-xs font-semibold text-gray-600 ">
+          <p className="text-xs font-semibold text-[#5F5D5D] ">
             From tiny sensors to complete engine parts, we've got your back!
           </p>
           <button className="text-Brand border border-Brand py-2 px-10 text-xs font-semibold rounded-md">
@@ -115,7 +115,7 @@ const Section3 = () => {
     <div className="  bg-[#FBFBFB] items-center">
       <div className="relative w-full flex justify-end mt-4 md:mt-0">
         <div className="abolute top-[30%] left-1 w-full flex flex-col gap-4 px-10 md:px-2 py-4">
-          <h1 className="text-4xl md:text-xl font-medium">
+          <h1 className="text-5xl md:text-xl font-medium text-[#333232]">
             Why We Started O2Mart?
           </h1>
           <p className="w-full text-[#808080] font-medium text-sm md:text-sm">
@@ -148,8 +148,8 @@ const Section3 = () => {
 const Section4 = () => {
   return (
     <div className="space-y-2 mt-8 mb-14">
-      <h3 className="text-2xl font-semibold">Need a Part ASAP?</h3>
-      <p>
+      <h3 className="text-2xl font-bold">Need a Part ASAP?</h3>
+      <p className="text-[#5F5D5D] font-semibold ">
         Hit us up! Our friendly team is ready to start hunting down exactly what
         you need. No hassle, no runaround - just straight-up efficient service.
       </p>

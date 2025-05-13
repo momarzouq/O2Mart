@@ -15,24 +15,32 @@ export default function Blog() {
     {
       image: Article3,
       hook: "News",
+      date: "02",
+      month: "OCT",
       title: "The number of new cars sold over 20 years",
       desc: " The number of new cars sold in the United States over a 20-year period can vary significantly depending on economic conditions,..",
     },
     {
       image: Article2,
       hook: "Usefull",
+      date: "02",
+      month: "OCT",
       title: "Warning lights indicating activation of various systems",
       desc: " Warning lights in a car's dashboard indicate the activation of various systems or alert the driver to potential issues. These..",
     },
     {
       image: Article1,
       hook: "Premium",
+      date: "02",
+      month: "OCT",
       title: "What to know about changing the engine oil and oil..",
       desc: "Regular oil and oil filter changes are essential for the health and longevity of your engine. Neglecting this maintenance can..",
     },
     {
       youtube: "https://youtu.be/xjgXPh4f2X4?si=CwMrZZ_3P_ytZIuv",
       hook: "Usefull",
+      date: "02",
+      month: "OCT",
       title: "Video guide for car maintenance",
       desc: "Learn how to maintain your car with this step-by-step video guide..",
     },
@@ -84,7 +92,11 @@ const Carts = ({ BlogData }) => {
     <div className="my-2">
       <div className="grid-custom-blog gap-6">
         {BlogData.map((item, index) => (
-          <div key={index} className="border rounded-lg">
+          <div key={index} className="relative border rounded-lg">
+            <div className="absolute left-4 top-4 text-center bg-[#EC221F] text-white rounded-lg py-2 px-4 font-semibold">
+              <p className="text-lg">{item.date}</p>
+              <p className="text-xs">{item.month}</p>
+            </div>
             {item.image ? (
               <img
                 src={item.image}
@@ -182,11 +194,11 @@ const SearchAndContent = () => {
         </div>
         {/* Search */}
         <div className="relative">
-          <input
+        <input
             type="text"
-            placeholder="Search"
-            className="rounded-lg px-4 pl-8 py-2 outline-none"
-            style={{ boxShadow: "0 0 15px rgba(0, 0, 0, 0.1)" }}
+            placeholder="Type a keyword"
+            className="text-xs border rounded-lg px-8 pl-8 py-3 outline-none"
+          
           />
           <HiMiniMagnifyingGlass className="absolute text-Brand top-1/2 right-[28%] md:right-[34%] -translate-y-1/2" />
         </div>

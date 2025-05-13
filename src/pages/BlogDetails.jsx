@@ -205,9 +205,9 @@ const SearchAndContent = () => {
         <div className="relative">
           <input
             type="text"
-            placeholder="Search"
-            className="rounded-lg px-4 pl-8 py-2 outline-none"
-            style={{ boxShadow: "0 0 15px rgba(0, 0, 0, 0.1)" }}
+            placeholder="Type a keyword"
+            className="text-xs border rounded-lg px-8 pl-8 py-3 outline-none"
+          
           />
           <HiMiniMagnifyingGlass className="absolute text-Brand top-1/2 right-[28%] md:right-[34%] -translate-y-1/2" />
         </div>
