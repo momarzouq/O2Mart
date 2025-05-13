@@ -29,7 +29,7 @@ export const renderStars = (rating) => {
 export const FiltersAndProducts = ({ products, filters }) => {
   const [openFilters, setOpenFilters] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
-  const {showToast} = useToastStore()
+  const { showToast } = useToastStore();
   const toggleFilter = (name) => {
     setOpenFilters((prev) => ({
       ...prev,
@@ -65,7 +65,9 @@ export const FiltersAndProducts = ({ products, filters }) => {
                   className="flex items-center justify-between cursor-pointer"
                   onClick={() => toggleFilter(filter.name)}
                 >
-                  <h3 className="font-semibold text-gray-500">{filter.name}</h3>
+                  <h3 className="font-semibold text-[#777777]">
+                    {filter.name}
+                  </h3>
                   {isOpen ? (
                     <RiArrowUpSFill className="size-6 text-Brand" />
                   ) : (
@@ -74,7 +76,7 @@ export const FiltersAndProducts = ({ products, filters }) => {
                 </div>
                 <hr className="border-gray-300 my-4" />
                 {isOpen && (
-                  <ul className="pl-4 mt-1 space-y-1 text-gray-400 font-medium">
+                  <ul className="pl-4 mt-1 space-y-1 text-[#BDBDBD] font-medium">
                     {filter.options.length > 0 ? (
                       filter.options.map((option, idx) => (
                         <li key={idx}>
@@ -85,7 +87,7 @@ export const FiltersAndProducts = ({ products, filters }) => {
                         </li>
                       ))
                     ) : (
-                      <li className="text-sm text-gray-500 italic">
+                      <li className="text-sm text-[#BDBDBD] italic">
                         No options
                       </li>
                     )}
@@ -147,7 +149,7 @@ export const FiltersAndProducts = ({ products, filters }) => {
                   </div>
                   <div className="mt-2 flex items-center gap-2">
                     {product.originalPrice && (
-                      <span className="line-through text-sm text-gray-400">
+                      <span className="line-through text-sm text-[#BDBDBD]">
                         AED {product.originalPrice}
                       </span>
                     )}
@@ -164,7 +166,12 @@ export const FiltersAndProducts = ({ products, filters }) => {
                       <option>3</option>
                       <option>4</option>
                     </select>
-                    <button onClick={()=> {showToast('Product Added To Cart')}} className=" text-sm text-gray-500 border border-Brand rounded-2xl py-1 md:py-0.5 px-16 xl:px-10">
+                    <button
+                      onClick={() => {
+                        showToast("Product Added To Cart");
+                      }}
+                      className=" text-sm text-gray-500 border border-Brand rounded-2xl py-1 md:py-0.5 px-16 xl:px-10"
+                    >
                       Add to Cart
                     </button>
                   </div>

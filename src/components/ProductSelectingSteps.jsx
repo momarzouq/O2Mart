@@ -19,7 +19,7 @@ const SelectingStep = ({ img, order, title, isLast }) => {
   return (
     <div className="flex items-center gap-2 text-lg">
       <img src={img} alt="Steps" />
-      <div className="w-32">
+      <div className="w-fit">
         <span className="text-Brand ">{order}.</span> {title.toUpperCase()}
       </div>
       {!isLast && <SlArrowRight className="size-12 text-gray-300" />}
