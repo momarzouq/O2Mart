@@ -73,11 +73,11 @@ const Section2 = () => {
 };
 const Section3 = () => {
   return (
-    <div className="xl:mx-8 flex md:gap-0 md:flex-col lg:justify-center mt-8">
+    <div className="xl:mx-8 flex  md:flex-col lg:justify-center mt-8">
       <h1 className="hidden lg:block text-4xl font-bold text-center lg:text-2xl mt-4  col-span-2">
         How this works
       </h1>
-      <div className="flex-[4] justify-center">
+      <div className="flex-[3] justify-center">
         <img
           src={Steps}
           className="h-[400px] lg:h-[250px] object-contain  shrink-0"
@@ -85,7 +85,7 @@ const Section3 = () => {
         />
       </div>
 
-      <div className="flex-[3] lg:text-center space-y-4 text-lg mb-8 ">
+      <div className="flex-[3] lg:text-center space-y-4 text-lg mt-4">
         <h1 className="lg:hidden text-3xl font-bold text-start lg:text-2xl mt-4 lg:mb-4 col-span-2">
           How this works
         </h1>
