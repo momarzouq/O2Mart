@@ -221,7 +221,7 @@ const Section1 = () => {
             Search by Car
           </h3>
         </div>
-        <div className="z-10 bg-[#FFFFFF] pt-4 md:pb-28 px-20 xl:px-10 rounded-[30px] my-12 mx-16 xl:mx-4">
+        <div className="z-10 bg-[#FFFFFF] pt-4 px-20 xl:px-10 rounded-[30px] my-12 mx-16 xl:mx-4">
           <div>
             {/* Car Info: Width, Height, RIM */}
             <form className="space-y-4 text-sm">
