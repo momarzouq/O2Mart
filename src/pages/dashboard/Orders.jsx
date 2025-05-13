@@ -114,18 +114,18 @@ const Orders = () => {
                 {orders.map((order, index) => (
                   <tr
                     key={index}
-                    className="hover:bg-gray-50 text-gray-400 transition-colors"
+                    className="hover:bg-gray-50 text-[#808080] transition-colors"
                   >
-                    <td className="py-3 px-4 md:py-1 md:px-1 md:max-w-6 text-Brand font-semibold">
+                    <td className="py-3 px-2 md:py-1 md:px-1 md:max-w-6 text-[#EC221F] font-semibold">
                       {order.id}
                     </td>
-                    <td className="py-3 px-4 md:py-1 md:px-1 md:max-w-6 md:text-center">
+                    <td className="py-3 px-2 md:py-1 md:px-1 md:max-w-6 md:text-center">
                       {order.date}
                     </td>
-                    <td className="py-3 px-4 md:py-1 md:px-1 md:max-w-6 md:text-center capitalize">
+                    <td className="py-3 px-2 md:py-1 md:px-1 md:max-w-6 md:text-center capitalize">
                       {order.status}
                     </td>
-                    <td className="py-3 px-4 md:py-1 md:px-1 md:max-w-6 md:text-center font-medium">
+                    <td className="py-3 px-2 md:py-1 md:px-1 md:max-w-6 md:text-center font-medium">
                       {order.total}
                     </td>
                     <td className="py-3 px-4 md:py-1 md:px-1 md:max-w-6 md:text-center">

@@ -45,11 +45,15 @@ export default function Checkout() {
               {/* Email And Number */}
               <div className="flex gap-4 md:gap-1 w-full md:text-sm">
                 <div className="w-[70%] lg:w-1/2 flex flex-col">
-                  <label className=" font-medium mb-1">E-Mail</label>
+                  <label className="mb-1 font-medium">
+                    Email <span className="">*</span>
+                  </label>
                   <input className="bg-[#DCDBDB80] p-2 rounded-md span-col-2" />
                 </div>
                 <div className="w-[29%] lg:w-1/2 flex flex-col">
-                  <label className=" font-medium mb-1">Mobile Number</label>
+                  <label className="mb-1 font-medium">
+                    Mobile Number <span className="">*</span>
+                  </label>
                   <input className="bg-[#DCDBDB80] p-2 rounded-md" />
                 </div>
               </div>

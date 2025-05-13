@@ -214,9 +214,9 @@ export default function Cart() {
                       <img src={item.image} className="h-20 w-20" />
                       {/* Middle */}
                       <div>
-                        <div className="flex md:flex-col items-start gap-12 md:gap-2">
+                        <div className="flex md:flex-col items-start md:gap-2">
                           <div>
-                            <h4 className="w-[400px] xl:w-[200px] font-medium">
+                            <h4 className="w-[380px] xl:w-[200px] font-medium">
                               {item.name}
                             </h4>
                             <p className="font-medium my-1">
@@ -282,7 +282,7 @@ export default function Cart() {
         )}
         {cartItems.length > 0 && (
           <div className="col-span-2 xl:col-span-5 bg-white p-6 rounded-md h-fit">
-            <h3 className="font-medium border-b mb-4 pb-2">ORDER SUMMARY</h3>
+            <h3 className="font-semibold border-b mb-4 pb-2">ORDER SUMMARY</h3>
 
             <div className="space-y-4">
               <div className="flex justify-between">

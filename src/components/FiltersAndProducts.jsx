@@ -141,7 +141,7 @@ export const FiltersAndProducts = ({ products, filters }) => {
                     alt={product.name}
                     className="object-cover"
                   />
-                  <h3 className="mt-2 font-semibold w-48 text-center">
+                  <h3 className="mt-2 font-medium w-48 text-center">
                     {product.name}
                   </h3>
                   <div className="flex items-center gap-1 mt-1">
