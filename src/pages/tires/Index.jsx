@@ -186,6 +186,7 @@ const Section1 = () => {
   const [height, setHeight] = useState("");
   const [rim, setRim] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [searchBy, setSearchBy] = useState("size"); // 'size' or 'car'
 
   useEffect(() => {
     if (width && height && rim) {
@@ -202,6 +203,14 @@ const Section1 = () => {
     { label: "255/55R19", img: Tyers },
   ];
 
+  const handleSearchByChange = (type) => {
+    setSearchBy(type);
+    // Reset form when switching search type
+    setWidth("");
+    setHeight("");
+    setRim("");
+  };
+
   return (
     <div className="relative bg-[#FBFBFB] flex items-center justify-center overflow-hidden">
       {/* Right Image */}
@@ -214,18 +223,32 @@ const Section1 = () => {
       {/* Modal in Center */}
       <div className="relative bg-[#F0EDED] w-[60%] md:w-[90%] rounded-[50px] my-10">
         <div className="absolute search-container top-8 flex items-center gap-2 ">
-          <h3 className="text-sm bg-[#FFFFFF] rounded py-1 px-2 h-12 font-semibold text-Brand cursor-pointer">
+          <h3
+            className={`text-sm rounded py-1 px-2 h-12 font-semibold cursor-pointer ${
+              searchBy === "size" ? "bg-[#FFFFFF] text-Brand" : "bg-[#FFFFFF]"
+            }`}
+            onClick={() => handleSearchByChange("size")}
+          >
             Search by Size
           </h3>
-          <h3 className="text-sm bg-[#FFFFFF] rounded  py-1 px-2 h-12 font-semibold cursor-pointer  ">
+          <h3
+            className={`text-sm rounded py-1 px-2 h-12 font-semibold cursor-pointer ${
+              searchBy === "car" ? "bg-[#FFFFFF] text-Brand" : "bg-[#FFFFFF]"
+            }`}
+            onClick={() => handleSearchByChange("car")}
+          >
             Search by Car
           </h3>
         </div>
-        <div className="z-10 bg-[#FFFFFF] pt-4 px-20 xl:px-10 rounded-[30px] my-12 mx-16 xl:mx-4">
+        <div
+          className={`z-10 bg-[#FFFFFF] py-4 ${
+            searchBy === "size" ? "pb-0" : "pb-4"
+          } px-20 xl:px-10 rounded-[30px] my-12 mx-16 xl:mx-4`}
+        >
           <div>
             {/* Car Info: Width, Height, RIM */}
             <form className="space-y-4 text-sm">
-              <div className="flex lg:flex-col gap-2 lg:justify-center">
+              <div className="flex lg:flex-col gap-2 justify-center">
                 {/* Width Select (Always Active with Border-2) */}
                 <div className="w-1/4 lg:w-full relative flex items-center">
                   <select
@@ -261,7 +284,7 @@ const Section1 = () => {
                   />
                 </div>
 
-                {/* RIM Select (Conditional Border and Disabled State) */}
+                {/* RIM/Year Select (Conditional Border and Disabled State) */}
                 <div className="w-1/4 lg:w-full relative flex items-center">
                   <select
                     onChange={(e) => setRim(e.target.value)}
@@ -272,9 +295,15 @@ const Section1 = () => {
                         : " bg-[#E3E3E3] text-gray-500 cursor-not-allowed"
                     }`}
                   >
-                    <option value="">RIM size</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
+                    <option value="">
+                      {searchBy === "size" ? "RIM size" : "Year"}
+                    </option>
+                    <option value="16">
+                      {searchBy === "size" ? "16" : "2020"}
+                    </option>
+                    <option value="17">
+                      {searchBy === "size" ? "17" : "2021"}
+                    </option>
                   </select>
                   <BiSolidDownArrow
                     className={`absolute right-3 ${
@@ -283,10 +312,12 @@ const Section1 = () => {
                   />
                 </div>
 
-                {/* RIM SIZE Image */}
-                <div className="flex lg:justify-center mt-4">
-                  <img src={RIM_Size} className="rounded-3xl h-24 xl:h-16" />
-                </div>
+                {/* RIM SIZE Image - Only shown when searching by size */}
+                {searchBy === "size" && (
+                  <div className="flex lg:justify-center mt-4">
+                    <img src={RIM_Size} className="rounded-3xl h-24 " />
+                  </div>
+                )}
               </div>
             </form>
           </div>
@@ -332,7 +363,6 @@ const Section1 = () => {
     </div>
   );
 };
-
 const Section2 = () => {
   const Brands = [
     { id: 1, image: BMW },
