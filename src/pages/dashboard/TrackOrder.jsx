@@ -18,7 +18,7 @@ const TrackOrder = () => {
           <DashboardSideNav />
         </div>
         <div className="space-y-6">
-          <h1 className="text-4xl font-semibold text-[#5F5D5D]">
+          <h1 className="text-4xl font-bold text-[#5F5D5D]">
             Track Your Order
           </h1>
 
