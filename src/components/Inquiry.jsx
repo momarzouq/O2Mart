@@ -196,21 +196,21 @@ export default function Inquiry() {
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-bold">
-                  Car Make<span className="text-Brand">*</span>
+                  Car Year<span className="text-Brand">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>Select Car Make</option>
                 </select>
               </div>
               <div className="flex-1 flex flex-col ">
-                <label className="flex items-center gap-1 mb-1 font-bold">
+                <label className=" md:text-sm whitespace-nowrap flex items-center gap-1 mb-1 font-bold">
                   VIN/Chassis Number<span className="text-Brand">*</span>
                   <HiOutlineExclamationCircle className="text-Brand size-4" />
                 </label>
                 <input
                   type="text"
                   placeholder="VIN/Chassis Number"
-                  className="border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
+                  className=" border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
                 />
               </div>
             </div>
