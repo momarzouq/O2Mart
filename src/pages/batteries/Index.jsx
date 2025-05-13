@@ -223,7 +223,7 @@ const Section1 = () => {
 
       {/* Modal in Center */}
 
-      <div className="z-10 bg-[#FFFFFF] py-10 px-20 rounded-[40px] shadow-md  w-[50%] md:w-[80%] my-28">
+      <div className="z-10 bg-[#FFFFFF] py-10 px-20 rounded-[40px] shadow-md  w-[60%] md:w-[80%] my-28">
         <div>
           <h3 className="text-sm font-semibold text-Brand mb-4">
             Search by Car
