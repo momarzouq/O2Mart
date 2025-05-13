@@ -174,7 +174,7 @@ export default function AutoParts() {
         />
       </Container>
       {/* Contact Us */}
-      <div className="absolute z-50 flex items-center gap-1 max-h-12 max-w-28 shadow-md right-24 top-[100%] bg-[#FFFFFF]">
+      <div className="absolute z-50 flex items-center gap-1 max-h-12 max-w-28 shadow-md right-8 top-[100%] bg-[#FFFFFF]">
         <img src={ContactUs} alt="Contact Us" className="pr-8" />
         <div>
           <BiMessageAltDetail className="absolute right-0 top-0 bg-Brand rounded-full p-2 text-white text-xl w-8 h-8 object-cover" />
@@ -241,7 +241,7 @@ const Section1 = () => {
       />
 
       {/* Modal in Center */}
-      <div className="z-10 bg-white p-6 rounded-lg shadow-md w-[40%] md:w-[90%] my-12">
+      <div className="z-10 bg-white p-6 rounded-lg shadow-md w-[70%] md:w-[90%] my-12">
         <div>
           <form className="space-y-4 text-sm">
             {/* Car Info: Make, Model, Year */}

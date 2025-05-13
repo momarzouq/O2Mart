@@ -18,8 +18,8 @@ export default function Hero() {
 const Section1 = () => {
   const { openModal } = useDiscountModalStore();
   return (
-    <div className="flex justify-between bg-[#FBFBFB]">
-      <div className="flex flex-col gap-4 md:gap-1 items-start mt-12 md:mt-4 mx-[70px] md:mx-8">
+    <div className="flex justify-between bg-[#FBFBFB] ">
+      <div className="flex flex-col gap-4 md:gap-1 items-start mt-12 md:mt-4 mx-[188px] md:mx-8">
         <h1 className="text-6xl whitespace-nowrap md:text-xl font-bold ">
           Auto Parts
         </h1>
@@ -53,7 +53,7 @@ const Section2 = () => {
           Lorem Ipsum is simply dummy text of the printing and <br />
           typesetting industry.
         </p>
-        <p className="max-w-[600px]">
+        <p className="max-w-[500px]">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -73,11 +73,11 @@ const Section2 = () => {
 };
 const Section3 = () => {
   return (
-    <div className="flex lg:flex-col items-center  lg:gap-4">
-      <h1 className="hidden lg:block text-3xl font-bold text-center lg:text-2xl mt-4  col-span-2">
+    <div className="xl:mx-8 flex md:gap-0 md:flex-col lg:justify-center mt-8">
+      <h1 className="hidden lg:block text-4xl font-bold text-center lg:text-2xl mt-4  col-span-2">
         How this works
       </h1>
-      <div className="flex justify-center">
+      <div className="flex-[4] justify-center">
         <img
           src={Steps}
           className="h-[400px] lg:h-[250px] object-contain  shrink-0"
@@ -85,7 +85,7 @@ const Section3 = () => {
         />
       </div>
 
-      <div className="lg:text-center space-y-4 text-lg mb-8 ">
+      <div className="flex-[3] lg:text-center space-y-4 text-lg mb-8 ">
         <h1 className="lg:hidden text-3xl font-bold text-start lg:text-2xl mt-4 lg:mb-4 col-span-2">
           How this works
         </h1>
@@ -93,7 +93,7 @@ const Section3 = () => {
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
         </p>
-        <p className="max-w-[450px]">
+        <p className="max-w-[500px]">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and

@@ -164,7 +164,7 @@ export const FiltersAndProducts = ({ products, filters }) => {
                       <option>3</option>
                       <option>4</option>
                     </select>
-                    <button onClick={()=> {showToast('Product Added To Cart')}} className=" text-sm text-gray-500 border border-Brand rounded-2xl py-1 md:py-0.5 px-20 xl:px-10">
+                    <button onClick={()=> {showToast('Product Added To Cart')}} className=" text-sm text-gray-500 border border-Brand rounded-2xl py-1 md:py-0.5 px-16 xl:px-12">
                       Add to Cart
                     </button>
                   </div>
