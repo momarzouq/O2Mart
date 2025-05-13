@@ -163,6 +163,16 @@ export default function AutoParts() {
   return (
     <div className="relative ">
       <Section1 />
+      <div className="absolute top-[15%] left-[12%] z-50 bg-white px-4 font-semibold shadow-md rounded-3xl">
+        <SelectingSteps
+          steps={[
+            { img: Step1, title: "SELECT YOUR TYRES" },
+            { img: Step2, title: "SELECT INSTALLER" },
+            { img: Step3, title: "ORDER & PAY ONLINE" },
+            { img: Step4, title: "WE INSTALL YOUR TYRES" },
+          ]}
+        />
+      </div>
       <Container>
         <Section2 />
         <FiltersAndProducts
@@ -312,18 +322,7 @@ const Section2 = () => {
     { id: 5, image: WV },
   ];
   return (
-    <div>
-      <div className=" font-semibold mb-10 shadow-md rounded-3xl">
-        <SelectingSteps
-          steps={[
-            { img: Step1, title: "SELECT YOUR TYRES" },
-            { img: Step2, title: "SELECT INSTALLER" },
-            { img: Step3, title: "ORDER & PAY ONLINE" },
-            { img: Step4, title: "WE INSTALL YOUR TYRES" },
-          ]}
-        />
-      </div>
-
+    <div className="mt-36">
       {/* Swiper Section */}
       <Swiper
         navigation={true}

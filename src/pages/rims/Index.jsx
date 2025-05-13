@@ -309,6 +309,7 @@ const Section2 = () => {
 
       {/* Swiper Section */}
       <Swiper
+      className="mt-16"
         navigation={true}
         modules={[Navigation, Autoplay]}
         autoplay={{

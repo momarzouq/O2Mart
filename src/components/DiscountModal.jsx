@@ -3,24 +3,11 @@ import Modal from "../assets/Modal.png";
 import PropTypes from "prop-types";
 import { useDiscountModalStore } from "../store/useDiscountModalStore";
 import { toast } from "react-toastify";
+import { useToastStore } from "../store/useToastStore";
 
 export const DiscountModal = () => {
   const { closeModal } = useDiscountModalStore();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    toast.success("Discount Successfull!", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      theme: "light",
-    });
-    closeModal();
-  };
-
+  const { showToast } = useToastStore();
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center z-50">
       {/* Modal Container */}
@@ -54,7 +41,10 @@ export const DiscountModal = () => {
         </p>
         {/* Email Input */}
         <form
-          onSubmit={handleSubmit}
+          onSubmit={(e) => {
+            e.preventDefault();
+            showToast("Su");
+          }}
           className="flex flex-col justify-center items-center space-y-4"
         >
           <input

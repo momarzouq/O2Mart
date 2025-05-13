@@ -304,21 +304,22 @@ const Section1 = () => {
             </div>
 
             {/* VIN / License Upload */}
-            <div className="flex gap-[18px] items-center">
+            <div className="flex gap-2">
               <input
                 type="text"
-                placeholder="Enter VIN/ Chassis Number"
-                className="w-1/2 flex border border-gray-500 rounded-md py-2 px-1 "
+                placeholder="Required Part"
+                className="w-1/2 border border-gray-500 rounded-md py-2 px-1"
               />
-              <span className="w-[6%] flex items-center gap-1 text-md text-Brand">
-                <BsExclamationCircle />
-                OR
-              </span>
+
+              <div className="w-[12%] flex items-center gap-4 md:gap-1 text-Brand font-semibold">
+                <BsExclamationCircle size={18} /> OR
+              </div>
+
               <button
                 type="button"
-                className="w-[40%] md:w-[45%] xl:text-xs border border-gray-500 rounded-md px-1.5 py-2 md:py-[10px]"
+                className="w-[40%] md:w-[45%]  text-xs border border-gray-500 rounded-md px-2"
               >
-                Upload car license
+                Upload Part Photo
               </button>
             </div>
 
@@ -418,6 +419,7 @@ const Section2 = () => {
       />
       {/* Swiper Section */}
       <Swiper
+      className="mt-16"
         navigation={true}
         modules={[Navigation, Autoplay]}
         autoplay={{

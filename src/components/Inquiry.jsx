@@ -33,8 +33,8 @@ export default function Inquiry() {
           <form onSubmit={handleNext} className="space-y-4 text-sm">
             {/* What Do You Need */}
             <div className="flex flex-col">
-              <label className="mb-1 font-medium">
-                What Do You Need?<span className="text-Brand">*</span>
+              <label className="mb-1 font-bold">
+                What Do You Need?<span className="text-Brand ">*</span>
               </label>
               <select className="w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                 <option>Auto Part</option>
@@ -44,16 +44,16 @@ export default function Inquiry() {
             {/* Car Make & Model */}
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
-                <label className="mb-1 font-medium">
-                  Car Make<span className="text-Brand">*</span>
+                <label className="mb-1 font-bold">
+                  Car Make<span className="text-Brand ">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>Select Car Make</option>
                 </select>
               </div>
               <div className="flex flex-col flex-1">
-                <label className="mb-1 font-medium">
-                  Car Model<span className="text-Brand">*</span>
+                <label className="mb-1 font-bold">
+                  Car Model<span className="text-Brand ">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>Select Car Model</option>
@@ -63,8 +63,8 @@ export default function Inquiry() {
 
             {/* Car Year */}
             <div className="flex flex-col">
-              <label className="mb-1 font-medium">
-                Car Year<span className="text-Brand">*</span>
+              <label className="mb-1 font-bold">
+                Car Year<span className="text-Brand ">*</span>
               </label>
               <select className="w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                 <option>Select Car Year</option>
@@ -74,7 +74,7 @@ export default function Inquiry() {
             {/* VIN / License Upload */}
             <div className="flex gap-[18px] items-end">
               <div className="flex flex-col w-1/2">
-                <label className="mb-1 font-medium">VIN/Chassis Number</label>
+                <label className="mb-1 font-bold">VIN/Chassis Number</label>
                 <input
                   type="text"
                   placeholder="VIN/Chassis Number"
@@ -83,14 +83,14 @@ export default function Inquiry() {
               </div>
 
               <div className="w-[4.1%] flex flex-col items-center pb-1">
-                <span className="flex items-center gap-1 text-md text-Brand font-medium">
+                <span className="flex items-center gap-1 text-md text-Brand font-bold">
                   <BsExclamationCircle />
                   OR
                 </span>
               </div>
 
               <div className="flex flex-col w-[40%] md:w-[45%]">
-                <label className="md:text-xs mb-1 font-medium">
+                <label className="md:text-xs mb-1 font-bold">
                   Upload Car License
                 </label>
                 <button
@@ -107,7 +107,7 @@ export default function Inquiry() {
               {parts.map((_, index) => (
                 <div key={index} className="flex gap-2 items-end mb-4">
                   <div className="flex flex-col w-1/2">
-                    <label className="mb-1 font-medium">
+                    <label className="mb-1 font-bold">
                       Required Part<span className="text-Brand">*</span>
                     </label>
                     <input
@@ -117,7 +117,7 @@ export default function Inquiry() {
                     />
                   </div>
                   <div className="flex flex-col w-[12%] max-w-14">
-                    <label className="mb-1 font-medium">QTY</label>
+                    <label className="mb-1 font-bold">QTY</label>
                     <input
                       type="number"
                       placeholder="QTY"
@@ -125,7 +125,7 @@ export default function Inquiry() {
                     />
                   </div>
                   <div className="flex flex-col w-[40%] md:w-[45%]">
-                    <label className="md:text-xs mb-1 font-medium">
+                    <label className="md:text-xs mb-1 font-bold">
                       Upload Part Photo<span className="text-Brand">*</span>
                     </label>
                     <button
@@ -165,7 +165,7 @@ export default function Inquiry() {
           <form onSubmit={handleNext} className="space-y-4 text-sm">
             {/* What Do You Need */}
             <div className="flex flex-col">
-              <label className="mb-1 font-medium">
+              <label className="mb-1 font-bold">
                 What Do You Need?<span className="text-Brand">*</span>
               </label>
               <select className="w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -176,7 +176,7 @@ export default function Inquiry() {
             {/* Car Make & Model */}
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
-                <label className="mb-1 font-medium">
+                <label className="mb-1 font-bold">
                   Car Make<span className="text-Brand">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -184,7 +184,7 @@ export default function Inquiry() {
                 </select>
               </div>
               <div className="flex flex-col flex-1">
-                <label className="mb-1 font-medium">
+                <label className="mb-1 font-bold">
                   Car Model<span className="text-Brand">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -195,7 +195,7 @@ export default function Inquiry() {
             {/* Car Make & Model */}
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
-                <label className="mb-1 font-medium">
+                <label className="mb-1 font-bold">
                   Car Make<span className="text-Brand">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -203,7 +203,7 @@ export default function Inquiry() {
                 </select>
               </div>
               <div className="flex-1 flex flex-col ">
-                <label className="flex items-center gap-1 mb-1 font-medium">
+                <label className="flex items-center gap-1 mb-1 font-bold">
                   VIN/Chassis Number<span className="text-Brand">*</span>
                   <HiOutlineExclamationCircle className="text-Brand size-4" />
                 </label>
@@ -218,7 +218,7 @@ export default function Inquiry() {
             {/* Required Part / Quantity / Photo Upload */}
             <div className="flex gap-2 items-end">
               <div className="w-full flex flex-col">
-                <label className="mb-1 font-medium">
+                <label className="mb-1 font-bold">
                   Battery Space
                 </label>
                 <input
@@ -244,7 +244,7 @@ export default function Inquiry() {
           <form onSubmit={handleNext} className="space-y-4 text-sm">
             {/* What Do You Need */}
             <div className="flex flex-col">
-              <label className="mb-1 font-medium">
+              <label className="mb-1 font-bold">
                 What Do You Need?<span className="text-Brand">*</span>
               </label>
               <select className="w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -255,7 +255,7 @@ export default function Inquiry() {
             {/* Car Make & Model */}
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
-                <label className="mb-1 font-medium">
+                <label className="mb-1 font-bold">
                   Width <span className="text-Brand">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -263,7 +263,7 @@ export default function Inquiry() {
                 </select>
               </div>
               <div className="flex flex-col flex-1">
-                <label className="mb-1 font-medium">
+                <label className="mb-1 font-bold">
                   Height <span className="text-Brand">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -276,7 +276,7 @@ export default function Inquiry() {
               {tyreSizes.map((_, index) => (
                 <div key={index} className="flex gap-2 mb-4">
                   <div className="flex flex-col flex-1">
-                    <label className="mb-1 font-medium">
+                    <label className="mb-1 font-bold">
                       Diameter <span className="text-Brand">*</span>
                     </label>
                     <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -287,7 +287,7 @@ export default function Inquiry() {
                     </select>
                   </div>
                   <div className="flex flex-col flex-1">
-                    <label className="mb-1 font-medium">Quantity</label>
+                    <label className="mb-1 font-bold">Quantity</label>
                     <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                       <option>Select Quantity</option>
                       <option>1</option>
@@ -327,7 +327,7 @@ export default function Inquiry() {
           <form onSubmit={handleNext} className="space-y-4 text-sm">
             {/* What Do You Need */}
             <div className="flex flex-col">
-              <label className="mb-1 font-medium">
+              <label className="mb-1 font-bold">
                 What Do You Need?<span className="text-Brand">*</span>
               </label>
               <select className="w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -338,7 +338,7 @@ export default function Inquiry() {
             {/* Car Make & Model */}
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
-                <label className="mb-1 font-medium">
+                <label className="mb-1 font-bold">
                   Car Make <span className="text-Brand">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -346,7 +346,7 @@ export default function Inquiry() {
                 </select>
               </div>
               <div className="flex flex-col flex-1">
-                <label className="mb-1 font-medium">
+                <label className="mb-1 font-bold">
                   Car Modal <span className="text-Brand">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -357,7 +357,7 @@ export default function Inquiry() {
             {/* Car Make & Model */}
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
-                <label className="mb-1 font-medium">
+                <label className="mb-1 font-bold">
                   Diameter <span className="text-Brand">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -365,7 +365,7 @@ export default function Inquiry() {
                 </select>
               </div>
               <div className="flex-1 flex flex-col">
-                <label className="mb-1 font-medium">VIN/ Chassis No</label>
+                <label className="mb-1 font-bold">VIN/ Chassis No</label>
                 <input
                   type="text"
                   placeholder="55"
@@ -374,7 +374,7 @@ export default function Inquiry() {
               </div>
             </div>
             <div className="w-1/2 flex flex-col">
-              <label className="mb-1 font-medium">Quantity</label>
+              <label className="mb-1 font-bold">Quantity</label>
               <input
                 type="text"
                 placeholder="1"
@@ -397,7 +397,7 @@ export default function Inquiry() {
           <form onSubmit={handleNext} className="space-y-4 text-sm">
             {/* What Do You Need */}
             <div className="flex flex-col">
-              <label className="mb-1 font-medium">
+              <label className="mb-1 font-bold">
                 What Do You Need?<span className="text-Brand">*</span>
               </label>
               <select className="w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -408,7 +408,7 @@ export default function Inquiry() {
             {/* Car Make & Model */}
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
-                <label className="mb-1 font-medium">
+                <label className="mb-1 font-bold">
                   Car Make <span className="text-Brand">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -416,7 +416,7 @@ export default function Inquiry() {
                 </select>
               </div>
               <div className="flex flex-col flex-1">
-                <label className="mb-1 font-medium">
+                <label className="mb-1 font-bold">
                   Car Modal <span className="text-Brand">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -427,7 +427,7 @@ export default function Inquiry() {
             {/* Car Make & Model */}
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
-                <label className="mb-1 font-medium">
+                <label className="mb-1 font-bold">
                   Diameter <span className="text-Brand">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
@@ -435,7 +435,7 @@ export default function Inquiry() {
                 </select>
               </div>
               <div className="flex-1 flex flex-col">
-                <label className="mb-1 font-medium">VIN/ Chassis No</label>
+                <label className="mb-1 font-bold">VIN/ Chassis No</label>
                 <input
                   type="text"
                   placeholder="55"
@@ -444,7 +444,7 @@ export default function Inquiry() {
               </div>
             </div>
             <div className="w-1/2 flex flex-col">
-              <label className="mb-1 font-medium">Quantity</label>
+              <label className="mb-1 font-bold">Quantity</label>
               <input
                 type="text"
                 placeholder="1"
@@ -468,7 +468,7 @@ export default function Inquiry() {
           <form onSubmit={handleNext} className="space-y-4 text-sm">
             {/* What Do You Need */}
             <div className="w-full flex flex-col">
-              <label className="mb-1 font-medium">
+              <label className="mb-1 font-bold">
                 Full Name<span className="text-Brand">*</span>
               </label>
               <input
@@ -481,7 +481,7 @@ export default function Inquiry() {
             {/* Car Make & Model */}
             <div className="flex gap-2">
               <div className="flex-1 flex flex-col">
-                <label className="mb-1 font-medium">
+                <label className="mb-1 font-bold">
                   Phone Number<span className="text-Brand">*</span>
                 </label>
                 <input
@@ -491,7 +491,7 @@ export default function Inquiry() {
                 />
               </div>
               <div className="flex-1 flex flex-col">
-                <label className="mb-1 font-medium">
+                <label className="mb-1 font-bold">
                   Email <span className="text-Brand">*</span>
                 </label>
                 <input

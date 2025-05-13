@@ -8,7 +8,9 @@ import Container from "../UI/Container";
 import Payment from "../assets/Payment_footer.svg";
 import Logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
+import {useToastStore} from '../store/useToastStore'
 export default function Footer() {
+  const {showToast} = useToastStore()
   return (
     <div className="bg-black pt-14 pb-10">
       <Container>
@@ -103,7 +105,7 @@ export default function Footer() {
                 placeholder="Email address"
                 className="text-sm border border-gray-300 rounded-sm p-2 focus:outline-none focus:ring-1 focus:ring-red-600"
               />
-              <FaTelegramPlane className="absolute right-4 top-9 text-Brand size-6" />
+              <FaTelegramPlane onClick={()=> {showToast("Your Messege Sended")}} className="absolute right-4 top-9 text-Brand size-6" />
             </div>
           </div>
         </div>

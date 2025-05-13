@@ -215,7 +215,7 @@ const Section1 = () => {
       <div className="relative bg-[#F0EDED] w-[60%] md:w-[90%] rounded-[50px] my-10">
         <div className="absolute search-container top-8 flex items-center gap-2 ">
           <h3 className="text-sm bg-[#FFFFFF] rounded py-1 px-2 h-12 font-semibold text-Brand cursor-pointer">
-            Search by Car
+            Search by Size
           </h3>
           <h3 className="text-sm bg-[#FFFFFF] rounded  py-1 px-2 h-12 font-semibold cursor-pointer  ">
             Search by Car
@@ -360,6 +360,7 @@ const Section2 = () => {
 
       {/* Swiper Section */}
       <Swiper
+      className="mt-16"
         navigation={true}
         modules={[Navigation, Autoplay]}
         autoplay={{

@@ -2,7 +2,7 @@ import { SlArrowRight } from "react-icons/sl";
 
 export const SelectingSteps = ({ steps }) => {
   return (
-    <div className="flex lg:flex-col lg:w-fit md:items-start justify-around mx-auto gap-4 py-8 font-semibold mb-10">
+    <div className="flex lg:flex-col lg:w-fit md:items-start justify-around mx-auto  gap-4 mt-6 font-bold mb-6">
       {steps.map((step, i) => (
         <SelectingStep
           img={step.img}
@@ -19,7 +19,7 @@ const SelectingStep = ({ img, order, title, isLast }) => {
   return (
     <div className="flex items-center gap-2 text-lg">
       <img src={img} alt="Steps" />
-      <div className="w-36">
+      <div className="w-32">
         <span className="text-Brand ">{order}.</span> {title.toUpperCase()}
       </div>
       {!isLast && <SlArrowRight className="size-12 text-gray-300" />}

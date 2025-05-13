@@ -16,6 +16,7 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { FaTelegramPlane } from "react-icons/fa";
 import { BiMessageAltDetail } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import {useToastStore} from '../../../store/useToastStore'
 export default function Main() {
   return (
     <div className="relative mb-20">
@@ -128,6 +129,7 @@ const Section2 = () => {
 };
 
 const Section3 = () => {
+  const {showToast} = useToastStore()
   const CarsBrandData = [
     {
       id: 1,
@@ -253,7 +255,7 @@ const Section3 = () => {
             placeholder="Email address"
             className="text-sm border border-gray-300 rounded-sm p-2 focus:outline-none focus:ring-1 focus:ring-red-600"
           />
-          <FaTelegramPlane className="absolute right-4 top-2 text-Brand size-6" />
+          <FaTelegramPlane onClick={()=> showToast("Your Message Sended")} className="absolute right-4 top-2 text-Brand size-6" />
         </div>
       </div>
     </div>
@@ -284,7 +286,7 @@ const Section4 = () => {
       {/* Left Side */}
       <div className="flex flex-col gap-3 items-start mt-6 ">
         <h3 className="text-xl font-bold">Guides and articles</h3>
-        <p className="text-sm text-gray-400 w-80 md:w-44">
+        <p className="text-sm text-gray-400 w-80 md:w-40">
           Articles and Guides that are written with the help of mechanics to
           ensure you have all the knowledge you need to make the correct
           purchase here at Mobex.
@@ -317,7 +319,7 @@ const Section4 = () => {
         {ArticleData.map((item) => (
           <SwiperSlide
             key={item.id}
-            className="flex items-center min-h-[300px] "
+            className="flex items-center justify-center min-h-[300px] "
           >
             <div className="h-full bg-white flex items-center justify-center">
               <div>

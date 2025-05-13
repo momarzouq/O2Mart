@@ -73,35 +73,32 @@ const Section2 = () => {
 };
 const Section3 = () => {
   return (
-    <div className="flex lg:flex-col items-center justify-between">
-      {/* <h1 className="hidden lg:block text-4xl font-bold text-center mt-8">
-        How this work
-      </h1> */}
-      <div className="flex-[4]">
+    <div className="flex lg:flex-col items-center  lg:gap-4">
+      <h1 className="hidden lg:block text-3xl font-bold text-center lg:text-2xl mt-4  col-span-2">
+        How this works
+      </h1>
+      <div className="flex justify-center">
         <img
           src={Steps}
-          className="h-[400px] object-contain"
+          className="h-[400px] lg:h-[250px] object-contain  shrink-0"
           alt="Home background"
         />
       </div>
 
-      <div className="flex-[2]">
-        <div className="mb-10">
-          <h1 className=" lg:hidden text-2xl font-bold text-start mb-6">
-            How this work
-          </h1>
-          <p className="font-medium mb-4 text-lg">
-            Lorem Ipsum is simply dummy text of the printing and <br />
-            typesetting industry.
-          </p>
-          <p className="max-w-[450px] text-lg">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries,
-          </p>
-        </div>
+      <div className="lg:text-center space-y-4 text-lg mb-8 ">
+        <h1 className="lg:hidden text-3xl font-bold text-start lg:text-2xl mt-4 lg:mb-4 col-span-2">
+          How this works
+        </h1>
+        <p className="font-medium">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
+        </p>
+        <p className="max-w-[450px]">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
+        </p>
       </div>
     </div>
   );
