@@ -43,7 +43,7 @@ export const DiscountModal = () => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            showToast("Su");
+            showToast("Submited");
           }}
           className="flex flex-col justify-center items-center space-y-4"
         >
