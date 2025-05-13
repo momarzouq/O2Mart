@@ -58,69 +58,36 @@ const Section1 = () => {
 
 const Section2 = () => {
   const [carMake, setCarMake] = useState("");
+  const [uploadedLincese, setUploadedLincese] = useState(false);
+  const [uploadedPart, setUploadedPart] = useState(false);
 
   const handleCarMakeChange = (e) => {
     const selectedMake = e.target.value;
     setCarMake(selectedMake);
   };
+
+  const handleLinceseUpload = (event) => {
+    if (event.target.files.length > 0) {
+      setUploadedLincese(true);
+    }
+  };
+
+  const handlePartUpload = (event) => {
+    if (event.target.files.length > 0) {
+      setUploadedPart(true);
+    }
+  };
+
   return (
     <div className="flex md:flex-col justify-between mt-10">
       {/* Left Side */}
       <div>
         <form className="space-y-4 text-sm">
-          {/* What do you need */}
           <input
             type="text"
             placeholder="What Do You Need"
             className="w-full text-sm border border-gray-500 rounded-md py-3 px-2 "
           />
-
-          {/* Car Info: Make, Model, Year */}
-          <div className="flex flex-wrap gap-4 w-full">
-            <div className="relative flex-1 ">
-              <select
-                value={carMake}
-                onChange={handleCarMakeChange}
-                className="w-full border border-gray-300 rounded-md py-3 px-2 outline-none appearance-none"
-              >
-                <option value="">Car Make</option>
-                <option value="Toyota">Toyota</option>
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-gray-700">
-                <BiSolidDownArrow className="size-3 text-Brand" />
-              </div>
-            </div>
-            <div className="relative flex-1">
-              <select
-                className={`w-full border border-gray-300 rounded-md py-3 px-2 outline-none appearance-none ${
-                  carMake ? "" : "bg-[#E3E3E3] cursor-not-allowed"
-                }`}
-                disabled={!carMake}
-              >
-                <option value="">Model</option>
-                <option value="Corolla">Corolla</option>
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-gray-700">
-                <BiSolidDownArrow className="size-3 text-Brand" />
-              </div>
-            </div>
-            <div className="relative flex-1 ">
-              <select
-                className={`w-full border border-gray-300 rounded-md py-3 px-2 outline-none appearance-none ${
-                  carMake && modelOptions.length
-                    ? ""
-                    : "bg-[#E3E3E3] cursor-not-allowed"
-                }`}
-                disabled={!carMake || !modelOptions.length}
-              >
-                <option value="">Year</option>
-                <option value="2023">2023</option>
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-gray-700">
-                <BiSolidDownArrow className="size-3 text-Brand" />
-              </div>
-            </div>
-          </div>
 
           {/* VIN / License Upload */}
           <div className="flex gap-[18px] items-center">
@@ -133,12 +100,17 @@ const Section2 = () => {
               <BsExclamationCircle />
               OR
             </span>
-            <button
-              type="button"
-              className="w-[35%] border border-gray-500 rounded-md px-2 py-3 lg:py-0"
-            >
-              Upload car license
-            </button>
+            <div className="w-[40%] md:w-[45%] text-xs border py-[14px] border-gray-500 rounded-md px-2 flex items-center">
+              <input
+                type="file"
+                id="uploadLicense"
+                className="hidden"
+                onChange={handleLinceseUpload}
+              />
+              <label htmlFor="uploadLicense" className="cursor-pointer">
+                {uploadedLincese ? "Photo Uploaded" : "Upload Car License"}
+              </label>
+            </div>
           </div>
 
           {/* Required Part / Quantity / Upload Photo */}
@@ -152,15 +124,20 @@ const Section2 = () => {
             <input
               type="number"
               placeholder="QTY"
-              className="w-[13%] border border-gray-500 rounded-md  py-3 px-1 outline-none"
+              className="w-[13%] border border-gray-500 rounded-md py-3 px-1 outline-none"
             />
 
-            <button
-              type="button"
-              className="w-[35%] border border-gray-500 rounded-md px-2 outline-none"
-            >
-              Upload Part Photo
-            </button>
+            <div className="w-[40%] md:w-[45%] text-xs border border-gray-500 rounded-md px-2 flex items-center">
+              <input
+                type="file"
+                id="uploadPart"
+                className="hidden"
+                onChange={handlePartUpload}
+              />
+              <label htmlFor="uploadPart" className="cursor-pointer">
+                {uploadedPart ? "Photo Uploaded" : "Upload Part Photo"}
+              </label>
+            </div>
           </div>
 
           {/* Add Another Part */}
@@ -200,8 +177,8 @@ const Section2 = () => {
         </form>
       </div>
       {/* Right Side */}
-      <div>
-        <img src={Steps} />
+      <div className="md:mt-4">
+        <img src={Steps} alt="Steps" />
       </div>
     </div>
   );

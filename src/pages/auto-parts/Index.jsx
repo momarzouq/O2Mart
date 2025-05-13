@@ -211,6 +211,19 @@ const Section1 = () => {
   const addAnotherPart = () => {
     setParts([...parts, {}]);
   };
+  const [uploadedLincese, setUploadedLincese] = useState(false);
+  const [uploadedPart, setUploadedPart] = useState(false);
+
+  const handleLinceseUpload = (event) => {
+    if (event.target.files.length > 0) {
+      setUploadedLincese(true);
+    }
+  };
+  const handlePartUpload = (event) => {
+    if (event.target.files.length > 0) {
+      setUploadedPart(true);
+    }
+  };
   return (
     <div className="relative bg-[#FBFBFB]  flex items-center justify-center overflow-hidden">
       {/* Left Image */}
@@ -315,12 +328,17 @@ const Section1 = () => {
                 <BsExclamationCircle size={18} /> OR
               </div>
 
-              <button
-                type="button"
-                className="w-[40%] md:w-[45%]  text-xs border border-gray-500 rounded-md px-2"
-              >
-                Upload Part Photo
-              </button>
+              <div className="w-[40%] md:w-[45%] text-xs border border-gray-500 rounded-md px-2 flex items-center">
+                <input
+                  type="file"
+                  id="uploadImage"
+                  className="hidden"
+                  onChange={handleLinceseUpload}
+                />
+                <label htmlFor="uploadImage" className="  cursor-pointer ">
+                  {uploadedLincese ? "Photo Uploaded" : "Upload Car License"}
+                </label>
+              </div>
             </div>
 
             {/* Required Part / Quantity / Upload Photo */}
@@ -337,12 +355,17 @@ const Section1 = () => {
                 className="w-[12%] max-w-14 border border-gray-500 rounded-md  py-2 px-1"
               />
 
-              <button
-                type="button"
-                className="w-[40%] md:w-[45%] text-xs border border-gray-500 rounded-md px-2"
-              >
-                Upload Part Photo
-              </button>
+              <div className="w-[40%] md:w-[45%] text-xs border border-gray-500 rounded-md px-2 flex items-center">
+                <input
+                  type="file"
+                  id="uploadImage"
+                  className="hidden"
+                  onChange={handlePartUpload}
+                />
+                <label htmlFor="uploadImage" className="  cursor-pointer ">
+                  {uploadedPart ? "Photo Uploaded " : "Upload Part Photo"}
+                </label>
+              </div>
             </div>
 
             {/* Add Another Part */}
@@ -419,7 +442,7 @@ const Section2 = () => {
       />
       {/* Swiper Section */}
       <Swiper
-      className="mt-16"
+        className="mt-16"
         navigation={true}
         modules={[Navigation, Autoplay]}
         autoplay={{
