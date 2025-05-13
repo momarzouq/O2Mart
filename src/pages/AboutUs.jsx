@@ -11,7 +11,7 @@ import { RiWhatsappFill } from "react-icons/ri";
 export default function AboutUs() {
   return (
     <div>
-      <div className="mx-28">
+      <div className="mx-28 lg:mx-4">
         <Section1 />
         <Section2 />
         <Section3 />
@@ -111,7 +111,7 @@ const Section3 = () => {
   return (
     <div className="  bg-[#FBFBFB] items-center">
       <div className="relative w-full flex justify-end mt-4 md:mt-0">
-        <div className="w-full flex flex-col gap-4 px-2 md:px-2 py-4">
+        <div className="w-full flex flex-col gap-4 px-2 lg:mr-4 py-4">
           <h1 className="text-5xl md:text-xl font-medium text-[#333232]">
             Why We Started O2Mart?
           </h1>
