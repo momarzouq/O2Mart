@@ -110,7 +110,7 @@ const ProductsComparisonTable = () => {
                       </select>
                       <button
                         onClick={() => handleAddToCart(index)}
-                        className={`text-sm font-medium border rounded-2xl py-1 md:py-0.5 px-16 xl:px-10 ${
+                        className={`text-sm font-semibold border rounded-2xl py-1 md:py-0.5 px-16 xl:px-10 ${
                           selectedIndex === index
                             ? "bg-[#D9D9D9] border-transparent"
                             : "border-Brand"
