@@ -299,7 +299,7 @@ export default function Checkout() {
             </div>
             <div className="flex justify-center">
               <Link to="/cart" className="text-center text-Brand underline">
-                View And Edit Cart
+                View and Edit Cart
               </Link>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Checkout() {
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
               odit consequatur laudantium voluptates perferendis, consequuntur
               sunt esse
-              <span className="text-Brand underline">Privacy policy.</span>
+              <Link to="/privacy-policy" className="text-Brand underline">Privacy policy.</Link>
             </p>
             <div className="flex items-center justify-between">
               <div className="space-x-1 lg:w-[70%]">

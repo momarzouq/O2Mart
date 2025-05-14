@@ -305,13 +305,13 @@ export default function Cart() {
                 <span>{total.toFixed(2)} AED</span>
               </div>
 
-              <button className="text-xs font-medium w-full bg-Brand text-white py-[9px] rounded-md mt-4 transition">
+              <Link to="/checkout" className="text-xs font-medium w-full bg-Brand text-white py-[9px] rounded-md mt-4 transition">
                 Proceed to Checkout
-              </button>
+              </Link>
 
-              <button className="text-xs font-medium w-full border border-Brand text-Brand py-2 rounded-md mt-1 transition">
+              <Link to="/auto-parts" className="text-xs font-medium w-full border border-Brand text-Brand py-2 rounded-md mt-1 transition">
                 Continue Shopping
-              </button>
+              </Link>
             </div>
           </div>
         )}
