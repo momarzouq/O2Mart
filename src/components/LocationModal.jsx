@@ -4,13 +4,11 @@ import {
   IoArrowForwardCircleOutline,
   IoLocationOutline,
 } from "react-icons/io5";
-import { useLocationModalStore } from "../store/locationStore";
 import { BsClock } from "react-icons/bs";
 import { SlClose } from "react-icons/sl";
 import { Link } from "react-router-dom";
 
-export const LocationModal = ({ selectedOption }) => {
-  const { closeLocationModal } = useLocationModalStore();
+export const LocationModal = ({ selectedOption,isLocationModalOpen }) => {
   const [currentCase, setCurrentCase] = useState(1);
   const [selectedDate, setSelectedDate] = useState(null);
 
@@ -122,7 +120,7 @@ export const LocationModal = ({ selectedOption }) => {
       <div className="relative bg-white w-[70%] md:w-[90%] p-10 md:p-6 rounded-xl">
         <button
           className="absolute right-6 top-4 text-Brand text-2xl"
-          onClick={() => closeLocationModal()}
+          onClick={() => isLocationModalOpen(false)}
         >
           <SlClose />
         </button>

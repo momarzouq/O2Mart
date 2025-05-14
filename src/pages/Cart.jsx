@@ -183,7 +183,7 @@ export default function Cart() {
       />
       {isLocationModalOpen && (
         <LocationModal
-        openLocationModal={openLocationModal}
+        isLocationModalOpen={isLocationModalOpen}
           selectedOption={isLocationModalOpen}
         />
       )}
