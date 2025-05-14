@@ -100,7 +100,7 @@ const Orders = () => {
           <div className="overflow-x-auto rounded-lg bg-white p-4 md:p-0">
             <table className="w-full  text-left text-sm md:text-xs">
               <thead>
-                <tr className=" text-gray-700">
+                <tr className=" font-semibold">
                   <th className="py-3 px-4 md:px-2 md:py-1">Order</th>
                   <th className="py-3 px-4 md:px-2 md:py-1">Date</th>
                   <th className="py-3 px-4 md:px-2 md:py-1">Status</th>
