@@ -345,7 +345,7 @@ const Section1 = () => {
                 className="w-1/2 border border-gray-500 rounded-md py-2 px-1"
               />
 
-              <div className="w-[12%] flex items-center gap-4 md:gap-1 text-Brand font-semibold">
+              <div className="w-[12%] flex items-center justify-center gap-4 md:gap-1 text-Brand font-semibold">
                 <BsExclamationCircle size={18} /> OR
               </div>
 
