@@ -76,14 +76,14 @@ const Section2 = () => {
 };
 const Section3 = () => {
   return (
-    <div className="xl:mx-8 flex  md:flex-col lg:justify-center mt-8">
+    <div className="xl:mx-8 flex  lg:flex-col lg:items-center  lg:mb-4 mt-8">
       <h1 className="hidden lg:block text-4xl font-bold text-center lg:text-2xl mt-4  col-span-2">
         How this works
       </h1>
       <div className="flex-[3] justify-center">
         <img
           src={Steps}
-          className="h-[400px] lg:h-[250px] object-contain  shrink-0"
+          className="h-[400px] lg:h-[300px] object-contain  shrink-0"
           alt="Home background"
         />
       </div>
@@ -96,7 +96,7 @@ const Section3 = () => {
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
         </p>
-        <p className="max-w-[500px]">
+        <p >
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
