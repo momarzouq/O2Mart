@@ -1,12 +1,7 @@
 import React, { useState } from "react";
-import {
-  BiMessageAltDetail,
-  BiX,
-  BiLinkExternal,
-  BiLogoWhatsapp,
-} from "react-icons/bi";
+import { BiMessageAltDetail, BiX, BiLogoWhatsapp } from "react-icons/bi";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { IoChatbox } from "react-icons/io5";
 const ContactUsButton = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -50,7 +45,7 @@ const ContactUsButton = () => {
               rel="noopener noreferrer"
               className="bg-blue-500 rounded-full p-2 text-white text-xl w-10 h-10 flex items-center justify-center"
             >
-              <BiLinkExternal />
+              <IoChatbox />
             </a>
           </motion.div>
         )}

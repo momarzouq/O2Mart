@@ -15,6 +15,9 @@ const BlogDetails = () => {
   const { slug } = useParams();
  
 
+  const selectedBlog = BlogData.find(
+    (article) => article.slug === decodeURIComponent(slug)
+  );
   const selectedArticle = BlogData.find(
     (article) => article.slug === decodeURIComponent(slug)
   );
@@ -29,7 +32,7 @@ const BlogDetails = () => {
       <h3 className="text-xl font-bold">Blog</h3>
       <div className="flex lg:flex-col gap-10">
         <div className="flex-[3]">
-          <BlogCartDetails selectedArticle={selectedArticle} />
+          <BlogCartDetails selectedBlog={selectedBlog} />
         </div>
         <div className="flex-[1]">
           <SearchAndContent />
@@ -39,7 +42,7 @@ const BlogDetails = () => {
   );
 };
 
-const BlogCartDetails = ({ selectedArticle }) => {
+const BlogCartDetails = ({ selectedBlog }) => {
   return (
     <div className="flex flex-col gap-10 container mx-auto my-8 p-4">
       <div className="flex lg:flex-col gap-2">
@@ -63,15 +66,15 @@ const BlogCartDetails = ({ selectedArticle }) => {
         </div>
       </div>
       <div className="flex justify-center">
-        {selectedArticle.image ? (
+        {selectedBlog.image ? (
           <img
-            src={selectedArticle.image}
-            alt={selectedArticle.title}
+            src={selectedBlog.image}
+            alt={selectedBlog.title}
             className="w-full h-[600px] object-cover"
           />
         ) : (
           <iframe
-            src={selectedArticle.youtube}
+            src={selectedBlog.youtube}
             title="YouTube video"
             className="w-full h-60 rounded-lg"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
