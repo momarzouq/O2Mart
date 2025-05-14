@@ -119,7 +119,9 @@ export const FiltersAndProducts = ({ products, filters }) => {
                       alt={product.brand}
                       className="absolute left-4 top-2 object-cover rounded h-12"
                     />
-                    <IoHeartOutline className="absolute right-4 top-2 size-6 hover:text-Brand" />
+                    <Link to="/wishlist">
+                      <IoHeartOutline className="absolute right-4 top-2 size-6 hover:text-Brand" />
+                    </Link>
                     <Link to="/comparsion">
                       <MdOutlineCompareArrows className="absolute right-11 top-2 size-6 hover:text-Brand" />
                     </Link>
