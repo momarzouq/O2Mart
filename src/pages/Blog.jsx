@@ -173,31 +173,31 @@ const SearchAndContent = () => {
           <div className="my-4 space-y-4 text-sm font-semibold">
             <div className="flex justify-between items-center">
               <p>Experts</p>
-              <p className="text-gray-800">(1)</p>
+              <p className="text-gray-700">(1)</p>
             </div>
             <div className="flex justify-between items-center">
               <p>Industry insights</p>
-              <p className="text-gray-800">(1)</p>
+              <p className="text-gray-700">(1)</p>
             </div>
             <div className="flex justify-between items-center">
               <p>News</p>
-              <p className="text-gray-800">(1)</p>
+              <p className="text-gray-700">(1)</p>
             </div>
             <div className="flex justify-between items-center">
               <p>Premium</p>
-              <p className="text-gray-800">(1)</p>
+              <p className="text-gray-700">(1)</p>
             </div>
             <div className="flex justify-between items-center">
               <p>Tips</p>
-              <p className="text-gray-800">(1)</p>
+              <p className="text-gray-700">(1)</p>
             </div>
             <div className="flex justify-between items-center">
               <p>Usefull</p>
-              <p className="text-gray-800">(1)</p>
+              <p className="text-gray-700">(1)</p>
             </div>
             <div className="flex justify-between items-center">
               <p>Video guides</p>
-              <p className="text-gray-800">(1)</p>
+              <p className="text-gray-700">(1)</p>
             </div>
           </div>
         </div>

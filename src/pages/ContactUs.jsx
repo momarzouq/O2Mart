@@ -61,7 +61,7 @@ export default function ContactUs() {
 
             {/* SEND A MESSAGE */}
             <div className="flex-1  flex flex-col gap-6">
-              <h4 className="text-lg font-medium">CONTACT RUBINO</h4>
+              <h4 className="text-lg font-medium">SEND A MESSAGE</h4>
               <p className="text-sm text-gray-500">
                 Lorem ipsum dolor sit amet praesent molestie Etiam quis risus
                 tincidunt non risus et, eget luctus elementum sociis vestibulum
