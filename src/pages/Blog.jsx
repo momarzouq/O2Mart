@@ -78,15 +78,13 @@ const Carts = ({ BlogData }) => {
               ></iframe>
             )}
             <div className="p-4">
-              <span className="text-gray-400 text-xs font-semibold">
+              <span className="text-[#9A9A9A] text-xs font-semibold">
                 {item.hook}
               </span>
               <h3 className="text-lg font-bold mt-2">{item.title}</h3>
               <p className="text-gray-600 text-sm mt-1">{item.desc}</p>
               <div className="flex items-center gap-2 text-Brand font-bold mt-2">
-                <Link to={`/blog/${item.slug}`}>
-                  Read more
-                </Link>
+                <Link to={`/blog/${item.slug}`}>Read more</Link>
                 <FaArrowRightLong />
               </div>
             </div>
@@ -158,11 +156,10 @@ const SearchAndContent = () => {
         </div>
         {/* Search */}
         <div className="relative">
-        <input
+          <input
             type="text"
             placeholder="Type a keyword"
             className="text-xs border rounded-lg px-8 pl-8 py-3 outline-none"
-          
           />
           <HiMiniMagnifyingGlass className="absolute text-Brand top-1/2 right-[28%] md:right-[34%] -translate-y-1/2" />
         </div>
@@ -222,7 +219,7 @@ const SearchAndContent = () => {
                 alt={post.title}
               />
               <div className="flex flex-col">
-                <p className="text-gray-400 text-xs font-semibold">
+                <p className="text-[#9A9A9A] text-xs font-semibold">
                   {post.date}
                 </p>
                 <p className="text-sm font-semibold">{post.title}</p>

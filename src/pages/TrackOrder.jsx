@@ -14,7 +14,7 @@ export default function TrackOrder() {
           <label className="text-sm  mb-2">Order Tracking Number</label>
           <input className="block tracking-order-input  p-4 rounded-md outline-none" />
         </div>
-        <button className="text-white text-sm font-medium bg-Brand py-2 px-10 rounded">
+        <button className="text-white text-sm font-medium bg-[#EC221F] py-2 px-10 rounded">
           Track Order
         </button>
       </div>

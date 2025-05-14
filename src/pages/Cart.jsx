@@ -376,12 +376,12 @@ export default function Cart() {
                 </div>
                 <div className="mt-2 flex items-center gap-2">
                   {product.originalPrice && (
-                    <span className="line-through text-sm text-gray-400">
+                    <span className="line-through text-sm text-[#9A9A9A]">
                       AED {product.originalPrice}
                     </span>
                   )}
                   <span className="font-semibold">
-                    <span className="text-gray-400">AED</span> {product.price}
+                    <span className="text-[#9A9A9A]">AED</span> {product.price}
                   </span>
                 </div>
 

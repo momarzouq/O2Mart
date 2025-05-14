@@ -56,7 +56,7 @@ const Orders = () => {
               <HiMiniMagnifyingGlass className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500" />
             </div>
             <select
-              className="text-gray-400 rounded-lg px-4 py-2 outline-none"
+              className="text-[#9A9A9A] rounded-lg px-4 py-2 outline-none"
               style={{ boxShadow: "0 0 15px rgba(0, 0, 0, 0.1)" }}
             >
               <option>Date</option>
@@ -72,29 +72,29 @@ const Orders = () => {
           <DashboardSideNav />
         </div>
         {/* Filter Mobile  */}
-      <div className="hidden md:block">
-        <div className=" flex items-start justify-start w-full mb-4">
-          <div className="flex gap-2 flex-wrap">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search"
-                className="rounded-lg px-4 pl-8 py-2 w-[200px] outline-none"
+        <div className="hidden md:block">
+          <div className=" flex items-start justify-start w-full mb-4">
+            <div className="flex gap-2 flex-wrap">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="rounded-lg px-4 pl-8 py-2 w-[200px] outline-none"
+                  style={{ boxShadow: "0 0 15px rgba(0, 0, 0, 0.1)" }}
+                />
+                <HiMiniMagnifyingGlass className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500" />
+              </div>
+              <select
+                className="text-[#9A9A9A] rounded-lg px-4 py-2 outline-none"
                 style={{ boxShadow: "0 0 15px rgba(0, 0, 0, 0.1)" }}
-              />
-              <HiMiniMagnifyingGlass className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500" />
+              >
+                <option>Date</option>
+                <option>Newest</option>
+                <option>Oldest</option>
+              </select>
             </div>
-            <select
-              className="text-gray-400 rounded-lg px-4 py-2 outline-none"
-              style={{ boxShadow: "0 0 15px rgba(0, 0, 0, 0.1)" }}
-            >
-              <option>Date</option>
-              <option>Newest</option>
-              <option>Oldest</option>
-            </select>
           </div>
         </div>
-      </div>
         <div className="space-y-6 flex-1">
           {/* Table */}
           <div className="overflow-x-auto rounded-lg bg-white p-4 md:p-0">
@@ -143,7 +143,6 @@ const Orders = () => {
           </div>
         </div>
       </div>
-
     </Container>
   );
 };

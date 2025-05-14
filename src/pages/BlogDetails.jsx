@@ -143,7 +143,7 @@ const BlogCartDetails = ({ content, isBlog }) => {
             className="text-sm border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-1 focus:ring-red-600"
           />
           <button className="absolute right-2 top-2">
-            <FaTelegramPlane className="text-Brand size-6" />
+            <FaTelegramPlane className="text-[#EC221F] size-6" />
           </button>
         </div>
       </div>

@@ -33,17 +33,17 @@ const Section1 = () => {
             The Easiest Way to Find Auto Parts
           </h3>
 
-          <p className="text-xs font-semibold text-[#5F5D5D] ">
+          <p className="text-xs font-bold text-[#5F5D5D] ">
             Tired of the endless search for the right auto parts? Let us do the
             heavy lifting for you! Just tell us what you need, and our team will
             track down the best deals and quality auto parts across the UAE.
           </p>
-          <p className="text-xs font-semibold text-[#5F5D5D] ">
+          <p className="text-xs font-bold text-[#5F5D5D] ">
             We compare prices, verify suppliers, and make sure you get exactly
             what you ordered. No more driving all over several emirates or
             sifting through suppliers.
           </p>
-          <p className="text-xs font-semibold text-[#5F5D5D] ">
+          <p className="text-xs font-bold text-[#5F5D5D] ">
             From tiny sensors to complete engine parts, we've got your back!
           </p>
           <button className="text-Brand border border-Brand py-2 px-10 text-xs font-semibold rounded-md">

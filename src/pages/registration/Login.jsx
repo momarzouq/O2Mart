@@ -16,7 +16,7 @@ export default function Login() {
           <button className="bg-Brand text-white py-3 w-[300px] rounded-xl">
             Login
           </button>
-          <button className="bg-[#F5F5F5] text-gray-400 py-3 w-[300px]  rounded-xl">
+          <button className="bg-[#F5F5F5] text-[#9A9A9A] py-3 w-[300px]  rounded-xl">
             Register
           </button>
         </div>

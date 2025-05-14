@@ -87,7 +87,7 @@ const SidebarCart = () => {
 
             <div className="flex flex-col space-y-2">
               <p className="text-sm font-medium">{item.name}</p>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-[#9A9A9A]">
                 Price: {item.price.toFixed(2)} AED
               </p>
 
@@ -107,7 +107,7 @@ const SidebarCart = () => {
       <div className="my-4 mx-4">
         <div className="flex font-semibold flex-col gap-1 mb-6">
           <div className="flex items-center justify-between">
-            <p >Subtotal</p>
+            <p>Subtotal</p>
             <p>AED {subtotal.toFixed(2)}</p>
           </div>
           <div className="flex items-center justify-between">
@@ -118,10 +118,16 @@ const SidebarCart = () => {
 
         {/* Buttons */}
         <div className="flex flex-col gap-2">
-          <Link to="/cart" className="w-full text-xs font-semibold text-Brand text-center rounded-md border py-2 border-Brand">
+          <Link
+            to="/cart"
+            className="w-full text-xs font-semibold text-Brand text-center rounded-md border py-2 border-Brand"
+          >
             View Cart
           </Link>
-          <Link to="/checkout" className="w-full text-xs font-semibold bg-Brand text-white text-center rounded-md border py-2 border-Brand">
+          <Link
+            to="/checkout"
+            className="w-full text-xs font-semibold bg-Brand text-white text-center rounded-md border py-2 border-Brand"
+          >
             Checkout
           </Link>
         </div>

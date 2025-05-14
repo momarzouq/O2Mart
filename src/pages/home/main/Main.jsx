@@ -21,7 +21,7 @@ export default function Main() {
         <Section1 />
         <Section2 />
         <Section3 />
-        <Section4 ArticleData={ArticleData}/>
+        <Section4 ArticleData={ArticleData} />
       </Container>
     </div>
   );
@@ -257,26 +257,26 @@ const Section3 = () => {
   );
 };
 
-const Section4 = ({ArticleData}) => {
+const Section4 = ({ ArticleData }) => {
   const handleCardClick = (item) => {
     setSelectedArticle(item);
   };
-  
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <div className="flex  md:gap-1">
       {/* Left Side */}
       <div className="flex flex-col gap-3 items-start mt-6 ">
         <h3 className="text-xl font-bold">Guides and articles</h3>
-        <p className="text-sm text-gray-400 w-80 md:w-40">
+        <p className="text-sm text-[#9A9A9A] w-80 md:w-40">
           Articles and Guides that are written with the help of mechanics to
           ensure you have all the knowledge you need to make the correct
           purchase here at Mobex.
         </p>
         <Link
-        onClick={scrollToTop}
+          onClick={scrollToTop}
           to="/blog"
           className="font-semibold border-2 border-gray-800 rounded-md py-1.5 px-8"
         >

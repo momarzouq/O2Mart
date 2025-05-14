@@ -31,7 +31,7 @@ export default function Checkout() {
               <div className="flex lg:flex-col gap-4 items-center w-full v">
                 <div className="w-[10%] lg:w-full  flex flex-col ">
                   <label className=" font-medium mb-1">Title </label>
-                  <select className="bg-[#DCDBDB80] pr-8 pl-1 py-2 rounded-md text-gray-400">
+                  <select className="bg-[#DCDBDB80] pr-8 pl-1 py-2 rounded-md text-[#9A9A9A]">
                     <option>MR</option>
                   </select>
                 </div>

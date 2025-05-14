@@ -99,7 +99,7 @@ export default function ContactUs() {
               </div>
 
               <div className="flex justify-start ">
-                <button className="text-white text-sm bg-Brand py-1.5 px-10 rounded-sm">
+                <button className="text-white text-sm bg-[#EC221F] py-1.5 px-10 rounded-sm">
                   SUBMIT
                 </button>
               </div>

@@ -51,12 +51,12 @@ const SavedCards = () => {
                   {/* Expiry and CVV */}
                   <div className="flex items-start gap-8 text-sm">
                     <div className="mr-4">
-                      <div className="text-gray-400 mb-1">Expiry Date</div>
+                      <div className="text-[#9A9A9A] mb-1">Expiry Date</div>
                       <div>24/2000</div>
                     </div>
 
                     <div>
-                      <div className="text-gray-400 mb-1">CVV</div>
+                      <div className="text-[#9A9A9A] mb-1">CVV</div>
                       <div>6986</div>
                     </div>
 
@@ -75,7 +75,7 @@ const SavedCards = () => {
                       Cardholder Name
                     </label>
                     <div className="flex items-center border-b border-gray-300 p-2">
-                      <div className="mr-2 text-gray-400">
+                      <div className="mr-2 text-[#9A9A9A]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-5 w-5"
@@ -118,7 +118,7 @@ const SavedCards = () => {
                     </label>
                     <div className="flex items-center border-b border-gray-300 p-2 justify-between">
                       <div className="flex items-center">
-                        <div className="mr-2 text-gray-400">
+                        <div className="mr-2 text-[#9A9A9A]">
                           <FiCreditCard className="h-5 w-5" />
                         </div>
                         <span>•••• •••• •••• •852</span>
@@ -162,12 +162,12 @@ const SavedCards = () => {
                   {/* Expiry and CVV */}
                   <div className="flex items-start gap-8 text-sm">
                     <div className="mr-4">
-                      <div className="text-gray-400 mb-1">Expiry Date</div>
+                      <div className="text-[#9A9A9A] mb-1">Expiry Date</div>
                       <div>24/2000</div>
                     </div>
 
                     <div>
-                      <div className="text-gray-400 mb-1">CVV</div>
+                      <div className="text-[#9A9A9A] mb-1">CVV</div>
                       <div>6986</div>
                     </div>
 
@@ -191,7 +191,7 @@ const SavedCards = () => {
                       Cardholder Name
                     </label>
                     <div className="flex items-center border-b border-gray-300 p-2">
-                      <div className="mr-2 text-gray-400">
+                      <div className="mr-2 text-[#9A9A9A]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-5 w-5"
@@ -234,7 +234,7 @@ const SavedCards = () => {
                     </label>
                     <div className="flex items-center border-b border-gray-300 p-2 justify-between">
                       <div className="flex items-center">
-                        <div className="mr-2 text-gray-400">
+                        <div className="mr-2 text-[#9A9A9A]">
                           <FiCreditCard className="h-5 w-5" />
                         </div>
                         <span>•••• •••• •••• •852</span>

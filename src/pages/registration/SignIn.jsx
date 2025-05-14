@@ -13,7 +13,7 @@ export default function SignIn() {
       <div className="flex flex-col justify-center items-center mt-10 space-y-2">
         {/* button */}
         <div className="flex gap-2 mb-6">
-          <button className="bg-[#F5F5F5] text-gray-400  py-3 w-[300px] rounded-xl">
+          <button className="bg-[#F5F5F5] text-[#9A9A9A]  py-3 w-[300px] rounded-xl">
             Login
           </button>
           <button className="bg-Brand text-white py-3 w-[300px]  rounded-xl">
@@ -98,7 +98,7 @@ export default function SignIn() {
 
         {/* button login */}
 
-        <button className="w-[44%] bg-[#F5F5F5] text-gray-400 hover:text-Brand py-2 rounded-xl">
+        <button className="w-[44%] bg-[#F5F5F5] text-[#9A9A9A] hover:text-Brand py-2 rounded-xl">
           Register
         </button>
       </div>

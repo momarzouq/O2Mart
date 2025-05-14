@@ -106,7 +106,7 @@ export default function ProductDetails() {
   const renderStars = (rating, size) => {
     const stars = [];
     for (let i = 0; i < rating; i++) {
-      stars.push(<AiFillStar key={i} className={`text-gray-400 `} />);
+      stars.push(<AiFillStar key={i} className={`text-[#9A9A9A] `} />);
     }
 
     while (stars.length < 5) {
@@ -163,7 +163,7 @@ const Section1 = () => {
           <p className="flex items-center font-semibold gap-1 mt-2 text-sm">
             Closest Matching image shown
             <HiOutlineExclamationCircle
-              className="text-gray-400 size-4 cursor-pointer"
+              className="text-[#9A9A9A] size-4 cursor-pointer"
               onClick={() => setIsModalOpen((prev) => !prev)}
             />
           </p>
@@ -211,7 +211,7 @@ const Section1 = () => {
 
         {/* Left side */}
         <div className="flex-1">
-          <div className="flex items-end md:justify-center justify-end gap-4 text-3xl text-gray-400 my-8">
+          <div className="flex items-end md:justify-center justify-end gap-4 text-3xl text-[#9A9A9A] my-8">
             <AiOutlineShareAlt className="hover:text-Brand" />
             <Link to="/comparsion">
               <MdOutlineCompareArrows className="hover:text-Brand" />
@@ -419,12 +419,12 @@ const Section3 = () => {
             </div>
             <div className="mt-2 flex items-center gap-2">
               {product.originalPrice && (
-                <span className="line-through text-sm text-gray-400">
+                <span className="line-through text-sm text-[#9A9A9A]">
                   AED {product.originalPrice}
                 </span>
               )}
               <span className="font-semibold">
-                <span className="text-gray-400">AED</span> ${product.price}
+                <span className="text-[#9A9A9A]">AED</span> ${product.price}
               </span>
             </div>
             <div className="relative">

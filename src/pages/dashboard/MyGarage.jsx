@@ -54,7 +54,7 @@ const MyGarage = () => {
               {/* Make Dropdown */}
               <div className="relative">
                 <select
-                  className="block text-gray-400 appearance-none w-full bg-white border border-[#D0D5DD] rounded-md py-3 px-4 pr-8 leading-tight focus:outline-none"
+                  className="block text-[#9A9A9A] appearance-none w-full bg-white border border-[#D0D5DD] rounded-md py-3 px-4 pr-8 leading-tight focus:outline-none"
                   value={garage.make}
                   onChange={(e) =>
                     handleInputChange(index, "make", e.target.value)
@@ -73,7 +73,7 @@ const MyGarage = () => {
               {/* Model Dropdown */}
               <div className="relative">
                 <select
-                  className="block text-gray-400 appearance-none w-full bg-white border border-[#D0D5DD] rounded-md py-3 px-4 pr-8 leading-tight focus:outline-none"
+                  className="block text-[#9A9A9A] appearance-none w-full bg-white border border-[#D0D5DD] rounded-md py-3 px-4 pr-8 leading-tight focus:outline-none"
                   value={garage.model}
                   onChange={(e) =>
                     handleInputChange(index, "model", e.target.value)
@@ -92,7 +92,7 @@ const MyGarage = () => {
               {/* Year Dropdown */}
               <div className="relative">
                 <select
-                  className="block text-gray-400 appearance-none w-full bg-white border border-[#D0D5DD] rounded-md py-3 px-4 pr-8 leading-tight focus:outline-none"
+                  className="block text-[#9A9A9A] appearance-none w-full bg-white border border-[#D0D5DD] rounded-md py-3 px-4 pr-8 leading-tight focus:outline-none"
                   value={garage.year}
                   onChange={(e) =>
                     handleInputChange(index, "year", e.target.value)

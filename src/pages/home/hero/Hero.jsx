@@ -20,7 +20,7 @@ const Section1 = () => {
   return (
     <div className="flex justify-between bg-[#FBFBFB] ">
       <div className="flex flex-col gap-2 md:gap-1 items-start mt-12 md:mt-4 ml-[55px] md:mx-8">
-        <h1 className="text-[70px] whitespace-nowrap md:text-xl font-bold ">
+        <h1 className="text-[75px] whitespace-nowrap md:text-xl font-bold ">
           Auto Parts
         </h1>
         <p className="font-bold text-xl md:text-sm md:mt-0 w-64 md:w-40">

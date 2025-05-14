@@ -1,7 +1,5 @@
-import React from "react";
 import { Breadcrumb } from "../../UI/Breadcrumb";
 import DashboardSideNav from "../../UI/DashboardSideNav";
-import { IoHeartOutline } from "react-icons/io5";
 import { MdOutlineCompareArrows } from "react-icons/md";
 import Container from "../../UI/Container";
 import { Link } from "react-router-dom";
@@ -9,6 +7,7 @@ import Volum from "../../assets/volum.png";
 import Tyers from "../../assets/Tyers.svg";
 import Nissan from "../../assets/nissan.svg";
 import { renderStars } from "../../components/FiltersAndProducts";
+import { FaHeart } from "react-icons/fa6";
 
 const Wishlist = () => {
   const TiresProducts = [
@@ -57,7 +56,7 @@ const Wishlist = () => {
       </div>
 
       <div className="flex gap-6 md:flex-col">
-      <div className="flex md:justify-start">
+        <div className="flex md:justify-start">
           <DashboardSideNav />
         </div>
         <div className="flex flex-wrap justify-center gap-4">
@@ -73,7 +72,7 @@ const Wishlist = () => {
                   alt={product.brand}
                   className="absolute left-4 top-2 object-cover rounded h-12"
                 />
-                <IoHeartOutline className="absolute right-4 top-2 size-6 hover:text-Brand" />
+                <FaHeart className="absolute right-4 top-2 size-6 text-Brand" />
                 <Link to="/comparsion">
                   <MdOutlineCompareArrows className="absolute right-11 top-2 size-6 hover:text-Brand" />
                 </Link>
@@ -98,12 +97,13 @@ const Wishlist = () => {
               </div>
               <div className="mt-2 flex items-center gap-2">
                 {product.originalPrice && (
-                  <span className="line-through text-sm text-gray-400">
+                  <span className="line-through text-sm text-[#9A9A9A]">
                     AED {product.originalPrice}
                   </span>
                 )}
                 <span className="font-semibold">
-                  <span className="text-gray-400">AED</span> ${product.price}
+                  <span className="text-[#9A9A9A] font-sans">AED</span> $
+                  {product.price}
                 </span>
               </div>
 
@@ -114,7 +114,7 @@ const Wishlist = () => {
                   <option>3</option>
                   <option>4</option>
                 </select>
-                <button className=" text-sm text-gray-500 border border-Brand rounded-2xl py-1 md:py-0.5 px-20 xl:px-10">
+                <button className="font-medium text-sm text-[#808080] border border-Brand rounded-2xl py-1 md:py-0.5 px-20 xl:px-10">
                   Add to Cart
                 </button>
               </div>
