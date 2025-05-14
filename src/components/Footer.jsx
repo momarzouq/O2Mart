@@ -9,6 +9,7 @@ import Payment from "../assets/Payment_footer.svg";
 import Logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import {useToastStore} from '../store/useToastStore'
+import LinkWithScroll from "./LinkWithScroll";
 export default function Footer() {
   const {showToast} = useToastStore()
   return (
@@ -17,70 +18,70 @@ export default function Footer() {
         <div className="flex gap-24 xl:gap-10 md:flex-col md:items-start">
           {/* Products */}
           <div className="flex flex-col text-gray-300 space-y-4">
-            <Link to="/shop" className="text-white font-semibold">
+            <LinkWithScroll to="/shop" className="text-white font-semibold">
               Products
-            </Link>
-            <Link to="/auto-parts" className="hover:text-white">
+            </LinkWithScroll>
+            <LinkWithScroll to="/auto-parts" className="hover:text-white">
               Auto Parts
-            </Link>
-            <Link to="/batteries" className="hover:text-white">
+            </LinkWithScroll>
+            <LinkWithScroll to="/batteries" className="hover:text-white">
               Batteries
-            </Link>
-            <Link to="/tyers" className="hover:text-white">
+            </LinkWithScroll>
+            <LinkWithScroll to="/tyers" className="hover:text-white">
               Tyers
-            </Link>
-            <Link to="/rims" className="hover:text-white">
+            </LinkWithScroll>
+            <LinkWithScroll to="/rims" className="hover:text-white">
               Rims
-            </Link>
-            <Link to="/auto-parts" className="hover:text-white">
+            </LinkWithScroll>
+            <LinkWithScroll to="/auto-parts" className="hover:text-white">
               All Products
-            </Link>
+            </LinkWithScroll>
             <img src={Payment} alt="Payment" />
           </div>
           {/* Help and Support */}
           <div className="flex flex-col text-gray-300 space-y-4">
-            <Link
+            <LinkWithScroll
               to="/faq"
               className="text-white font-semibold whitespace-nowrap"
             >
               Help and Support
-            </Link>
-            <Link to="/track-order" className="hover:text-white">
+            </LinkWithScroll>
+            <LinkWithScroll to="/track-order" className="hover:text-white">
               Track My Order
-            </Link>
-            <Link to="contact-us" className="hover:text-white">
+            </LinkWithScroll>
+            <LinkWithScroll to="contact-us" className="hover:text-white">
               Contact us
-            </Link>
-            <Link to="/dashboard" className="hover:text-white">
+            </LinkWithScroll>
+            <LinkWithScroll to="/dashboard" className="hover:text-white">
               My account
-            </Link>
-            <Link to="/blog" className="hover:text-white">
+            </LinkWithScroll>
+            <LinkWithScroll to="/blog" className="hover:text-white">
               Blog
-            </Link>
-            <Link to="/faq" className="hover:text-white">
+            </LinkWithScroll>
+            <LinkWithScroll to="/faq" className="hover:text-white">
               FAQ
-            </Link>
+            </LinkWithScroll>
           </div>
           {/* About us */}
           <div className="flex flex-col text-gray-300 space-y-4">
-            <Link to="/about-us" className="text-white font-semibold">
+            <LinkWithScroll to="/about-us" className="text-white font-semibold">
               About Us
-            </Link>
-            <Link to="/about-us" className="hover:text-white">
+            </LinkWithScroll>
+            <LinkWithScroll to="/about-us" className="hover:text-white">
               Why O2Mart
-            </Link>
-            <Link to="/become-partner" className="hover:text-white">
+            </LinkWithScroll>
+            <LinkWithScroll to="/become-partner" className="hover:text-white">
               Become Partner
-            </Link>
-            <Link to="/privacy-policy" className="hover:text-white">
+            </LinkWithScroll>
+            <LinkWithScroll to="/privacy-policy" className="hover:text-white">
               Privacy policy
-            </Link>
-            <Link to="/termsof-us" className="hover:text-white">
+            </LinkWithScroll>
+            <LinkWithScroll to="/termsof-us" className="hover:text-white">
               Terms of Use
-            </Link>
-            <Link to="/warranty-returns-policy" className="hover:text-white">
+            </LinkWithScroll>
+            <LinkWithScroll to="/warranty-returns-policy" className="hover:text-white">
               Warranty & Returns Policy
-            </Link>
+            </LinkWithScroll>
           </div>
           {/* logo and Contact us */}
           <div className="flex flex-col space-y-4 text-white">
