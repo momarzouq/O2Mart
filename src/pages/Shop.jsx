@@ -7,7 +7,7 @@ import { CiCirclePlus } from "react-icons/ci";
 import { Breadcrumb } from "../UI/Breadcrumb";
 export default function Shop() {
   return (
-    <div className="mb-28">
+    <div className="mb-8">
       <Container>
         <Breadcrumb items={[{ label: "HOME", href: "/" }, { label: "Shop" }]} />
         <Section1 />
@@ -73,7 +73,7 @@ const Section2 = () => {
   };
 
   return (
-    <div className="flex md:flex-col items-center ">
+    <div className="flex lg:flex-col items-center mt-4 lg:mt-8">
       {/* Left Side */}
       <div className="flex-[5]">
         <form className="space-y-4 text-sm">
@@ -171,8 +171,8 @@ const Section2 = () => {
         </form>
       </div>
       {/* Right Side */}
-      <div className="flex-[7] md:mt-4 ">
-        <img src={Steps} alt="Steps" className="h-[600px]" />
+      <div className="flex-[7] md:mt-4 lg:mb-8">
+        <img src={Steps} alt="Steps" className="h-[500px]" />
       </div>
     </div>
   );

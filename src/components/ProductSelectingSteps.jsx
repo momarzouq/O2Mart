@@ -5,6 +5,7 @@ export const SelectingSteps = ({ steps }) => {
     <div className=" flex lg:flex-col lg:w-fit md:items-start justify-around mx-auto  gap-4 my-2 lg:my-8 font-bold ">
       {steps.map((step, i) => (
         <SelectingStep
+          key={step.title || i}
           img={step.img}
           title={step.title}
           order={i + 1}
