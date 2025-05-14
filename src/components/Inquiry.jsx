@@ -25,6 +25,30 @@ export default function Inquiry() {
     setStep((prev) => Math.min(prev + 1, 7));
   };
 
+  // Upload
+  const [uploadedParts, setUploadedParts] = useState([]);
+  const [uploadedLincese, setUploadedLincese] = useState(false);
+
+  // Handle Part Upload
+  const handlePartUpload = (e, index) => {
+    if (e.target.files.length > 0) {
+      const updatedParts = [...parts];
+      updatedParts[index].partPhoto = e.target.files[0];
+      setParts(updatedParts);
+
+      const updatedUploaded = [...uploadedParts];
+      updatedUploaded[index] = true;
+      setUploadedParts(updatedUploaded);
+    }
+  };
+
+  // Handle License Upload
+  const handleLinceseUpload = (event) => {
+    if (event.target.files.length > 0) {
+      setUploadedLincese(true);
+    }
+  };
+
   const renderStepForm = () => {
     switch (step) {
       // Get Qoute Auto Parts
@@ -89,16 +113,16 @@ export default function Inquiry() {
                 </span>
               </div>
 
-              <div className="flex flex-col w-[40%] md:w-[45%]">
-                <label className="md:text-xs mb-1 font-bold">
-                  Upload Car License
+              <div className="w-[40%] md:w-[45%] text-xs border border-gray-500 rounded-md px-2 flex items-center">
+                <input
+                  type="file"
+                  id="uploadLicense"
+                  className="hidden"
+                  onChange={handleLinceseUpload}
+                />
+                <label htmlFor="uploadLicense" className="cursor-pointer">
+                  {uploadedLincese ? "Photo Uploaded" : "Upload Car License"}
                 </label>
-                <button
-                  type="button"
-                  className="text-gray-500 text-start border border-gray-500 rounded-md px-1.5 py-2 md:py-[10px] focus:border-Brand"
-                >
-                  Upload
-                </button>
               </div>
             </div>
 
@@ -124,16 +148,60 @@ export default function Inquiry() {
                       className="border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
                     />
                   </div>
-                  <div className="flex flex-col w-[40%] md:w-[45%]">
-                    <label className="md:text-xs mb-1 font-bold">
-                      Upload Part Photo<span className="text-Brand">*</span>
-                    </label>
-                    <button
-                      type="button"
-                      className="text-gray-500 text-start border border-gray-500 rounded-md px-2 py-2 focus:border-Brand"
+                  <div className="w-[40%] md:w-[45%] text-xs border border-gray-500 rounded-md px-2 flex items-center">
+                    <input
+                      type="file"
+                      id={`uploadPart-${index}`}
+                      className="hidden"
+                      onChange={(e) => handlePartUpload(e, index)}
+                    />
+                    <label
+                      htmlFor={`uploadPart-${index}`}
+                      className="cursor-pointer"
                     >
-                      Upload
-                    </button>
+                      {uploadedParts[index]
+                        ? "Photo Uploaded"
+                        : "Upload Part Photo"}
+                    </label>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Required Part / Quantity / Photo Upload */}
+            <div>
+              {parts.map((_, index) => (
+                <div key={index} className="flex gap-2 items-end mb-4">
+                  <div className="flex flex-col w-1/2">
+                    <label className="mb-1 font-bold">
+                      Required Part<span className="text-Brand">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter The Required Part"
+                      className="border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
+                    />
+                  </div>
+                  <div className="flex flex-col w-[12%] max-w-14">
+                    <label className="mb-1 font-bold">QTY</label>
+                    <input
+                      type="number"
+                      placeholder="QTY"
+                      className="border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
+                    />
+                  </div>
+                  <div className="w-[40%] md:w-[45%]  text-xs border border-gray-500 rounded-md px-2 flex items-center">
+                    <input
+                      type="file"
+                      id="uploadLicense"
+                      className="hidden"
+                      onChange={handleLinceseUpload}
+                    />
+                    <label htmlFor="uploadLicense" className="cursor-pointer">
+                      {uploadedLincese
+                        ? "Photo Uploaded"
+                        : "Upload Car License"}
+                    </label>
                   </div>
                 </div>
               ))}
@@ -363,7 +431,9 @@ export default function Inquiry() {
                 </select>
               </div>
               <div className="flex-1 flex flex-col">
-                <label className="md:text-[10px] mb-1 font-bold">VIN/ Chassis No</label>
+                <label className="md:text-[10px] mb-1 font-bold">
+                  VIN/ Chassis No
+                </label>
                 <input
                   type="text"
                   placeholder="55"
@@ -433,7 +503,9 @@ export default function Inquiry() {
                 </select>
               </div>
               <div className="flex-1 flex flex-col">
-                <label className="md:text-[10px] mb-1 font-bold">VIN/ Chassis No</label>
+                <label className="md:text-[10px] mb-1 font-bold">
+                  VIN/ Chassis No
+                </label>
                 <input
                   type="text"
                   placeholder="55"

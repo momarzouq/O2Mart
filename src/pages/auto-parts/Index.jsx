@@ -6,7 +6,6 @@ import "swiper/css/pagination";
 import Container from "../../UI/Container";
 import Background from "../../assets/hombg.png";
 import { BsExclamationCircle } from "react-icons/bs";
-import { CiCirclePlus } from "react-icons/ci";
 import Step1 from "../../assets/step1.png";
 import Step2 from "../../assets/step2.png";
 import Step3 from "../../assets/step3.png";
@@ -17,7 +16,6 @@ import Volum from "../../assets/volum.png";
 import Tyers from "../../assets/Tyers.svg";
 import Nissan from "../../assets/nissan.svg";
 import HONDA from "../../assets/HONDA.svg";
-import ContactUs from "../../assets/contact-us.svg";
 import { SelectingSteps } from "../../components/ProductSelectingSteps";
 import { FiltersAndProducts } from "../../components/FiltersAndProducts";
 import { BiMessageAltDetail, BiSolidDownArrow } from "react-icons/bi";
@@ -264,7 +262,7 @@ const Section1 = () => {
       />
 
       {/* Modal in Center */}
-      <div className="z-10 bg-white p-6 rounded-lg shadow-md w-[60%] md:w-[90%] my-12">
+      <div className="z-10 bg-white p-6 rounded-lg shadow-md w-[55%] md:w-[90%] my-12">
         <div>
           <form className="space-y-4 text-sm" onSubmit={handleSubmit}>
             {/* Car Info: Make, Model, Year */}
@@ -351,7 +349,7 @@ const Section1 = () => {
                 <BsExclamationCircle size={18} /> OR
               </div>
 
-              <div className="w-[40%] md:w-[45%] text-xs border border-gray-500 rounded-md px-2 flex items-center">
+              <div className="w-[40%] md:w-[45%]  text-xs border border-gray-500 rounded-md px-2 flex items-center">
                 <input
                   type="file"
                   id="uploadLicense"

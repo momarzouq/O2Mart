@@ -5,8 +5,6 @@ import Steps from "../assets/steps.svg";
 import { BsExclamationCircle } from "react-icons/bs";
 import { CiCirclePlus } from "react-icons/ci";
 import { Breadcrumb } from "../UI/Breadcrumb";
-import { BiMessageAltDetail, BiSolidDownArrow } from "react-icons/bi";
-import { RiArrowDownSFill } from "react-icons/ri";
 export default function Shop() {
   return (
     <div className="mb-28">
@@ -15,7 +13,6 @@ export default function Shop() {
         <Section1 />
         <Section2 />
       </Container>
-    
     </div>
   );
 }
@@ -25,7 +22,7 @@ const Section1 = () => {
     <div>
       <div className="flex flex-col gap-6 mt-4">
         <h3 className="text-2xl font-bold">All Your Auto Needs in one place</h3>
-        <p className="w-[60%]">
+        <p className="text-[#5F5D5D]">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley.
@@ -35,7 +32,7 @@ const Section1 = () => {
         <img src={AutoParts} />
 
         {/* Make sure this div spans full width and spaces the items */}
-        <div className="flex justify-center gap-[220px] w-full max-w-[1000px] mt-4 text-lg font-semibold">
+        <div className="flex justify-center gap-[220px] lg:gap-28 w-full max-w-[1000px] mt-4 text-lg font-semibold">
           <h3>Auto Parts</h3>
           <h3>Batteries</h3>
           <h3>Tyers</h3>
@@ -43,7 +40,7 @@ const Section1 = () => {
         </div>
       </div>
       <div className="flex flex-col gap-3 mt-16">
-        <h3 className="text-2xl">Not Sure How to Decide?</h3>
+        <h3 className="text-2xl font-medium">Not Sure How to Decide?</h3>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the
@@ -76,9 +73,9 @@ const Section2 = () => {
   };
 
   return (
-    <div className="flex md:flex-col justify-between mt-10">
+    <div className="flex md:flex-col items-center ">
       {/* Left Side */}
-      <div>
+      <div className="flex-[5]">
         <form className="space-y-4 text-sm">
           <input
             type="text"
@@ -174,8 +171,8 @@ const Section2 = () => {
         </form>
       </div>
       {/* Right Side */}
-      <div className="md:mt-4">
-        <img src={Steps} alt="Steps" />
+      <div className="flex-[7] md:mt-4 ">
+        <img src={Steps} alt="Steps" className="h-[600px]" />
       </div>
     </div>
   );
