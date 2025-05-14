@@ -7,7 +7,6 @@ import {
 import { useLocationModalStore } from "../store/locationStore";
 import { BsClock } from "react-icons/bs";
 import { SlClose } from "react-icons/sl";
-import Checkout from "./Checkout";
 import { Link } from "react-router-dom";
 
 export const LocationModal = ({ selectedOption }) => {
@@ -132,8 +131,8 @@ export const LocationModal = ({ selectedOption }) => {
           <>
             <h2 className="text-start text-2xl font-bold mb-2">
               {selectedOption === "Installation Center"
-                ? "Select Installation Center Service"
-                : "Delivery with Installation"}
+                ? "Select Installation Center"
+                : "Select Mobile Van Service"}
             </h2>
             <div className="flex md:flex-col gap-2 mb-6">
               <input

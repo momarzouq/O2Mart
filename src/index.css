@@ -55,9 +55,7 @@ span.swiper-pagination-bullet-active {
 .swiper-button-prev {
   color: #9b9797 !important; /* Red color */
   --swiper-navigation-size: 24px; /* Adjust size */
- 
 }
-
 
 /* List Style */
 ul.spec-list {
@@ -174,29 +172,43 @@ ul.spec-list {
   }
 }
 
-
-
-
-
-
-
 .custom-margin {
   margin-left: 130px; /* Default margin for small screens */
 }
 
-@media (max-width: 1024px) { /* lg breakpoint */
+@media (max-width: 1024px) {
+  /* lg breakpoint */
   .custom-margin {
     margin-left: 100px;
   }
 }
-@media (max-width: 912px) { /* lg breakpoint */
+@media (max-width: 912px) {
+  /* lg breakpoint */
   .custom-margin {
     margin-left: 10px;
   }
 }
-@media (max-width: 820px) { /* lg breakpoint */
+@media (max-width: 820px) {
+  /* lg breakpoint */
   .custom-margin {
     margin-left: 12px;
+  }
+}
+
+.custom-background {
+  height: 550px; /* Default margin for small screens */
+}
+
+@media (max-width: 1023px) {
+  /* lg breakpoint */
+  .custom-background {
+    height: 400px;
+  }
+}
+@media (max-width: 767px) {
+  /* lg breakpoint */
+  .custom-background {
+    height: 200px;
   }
 }
 

@@ -19,11 +19,11 @@ const Section1 = () => {
   const { openModal } = useDiscountModalStore();
   return (
     <div className="flex justify-between bg-[#FBFBFB] ">
-      <div className="flex flex-col gap-4 md:gap-1 items-start mt-12 md:mt-4 ml-[188px] md:mx-8">
-        <h1 className="text-6xl whitespace-nowrap md:text-xl font-bold ">
+      <div className="flex flex-col gap-6 md:gap-1 items-start mt-12 md:mt-4 ml-[188px] xl:ml-[55px] md:mx-8">
+        <h1 className="text-[70px] whitespace-nowrap md:text-xl font-bold ">
           Auto Parts
         </h1>
-        <p className="font-bold text-lg md:text-sm mt-2 md:mt-0 w-64 md:w-40">
+        <p className="font-bold text-xl md:text-sm md:mt-0 w-64 md:w-40">
           We scan the market, compare prices, and recommend the best deals
         </p>
         <button
@@ -34,7 +34,10 @@ const Section1 = () => {
         </button>
       </div>
       <div className="flex lg:justify-center">
-        <img src={HomeBG} className=" w-full h-96 md:h-40 object-contain" />
+        <img
+          src={HomeBG}
+          className=" w-full custom-background object-contain"
+        />
       </div>
     </div>
   );

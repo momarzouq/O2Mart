@@ -8,13 +8,13 @@ import Nissan from "../assets/nissan.svg";
 import { Link } from "react-router-dom";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { Breadcrumb } from "../UI/Breadcrumb";
-import CouponSection from "./AddCupon";
-import QuantityItem from "./QuantityItem";
+import CouponSection from "../components/AddCupon";
+import QuantityItem from "../components/QuantityItem";
 import { useCartStore } from "../store/cartStore";
-import { LocationModal } from "./LocationModal";
+import { LocationModal } from "../components/LocationModal";
 
 export default function Cart() {
-  const [isLocationModalOpen, openLocationModal] = useState();
+  const [isLocationModalOpen, openLocationModal] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
 
   const {
@@ -183,7 +183,7 @@ export default function Cart() {
       />
       {isLocationModalOpen && (
         <LocationModal
-          cartItems={cartItems}
+        openLocationModal={openLocationModal}
           selectedOption={isLocationModalOpen}
         />
       )}

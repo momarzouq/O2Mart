@@ -22,7 +22,7 @@ import AddressBook from "./pages/dashboard/AddressBook";
 import AccountDetails from "./pages/dashboard/AccountDetails";
 import ChangePassword from "./pages/dashboard/ChangePassword";
 import MyGarage from "./pages/dashboard/MyGarage";
-import Cart from "./components/Cart";
+import Cart from "./pages/Cart";
 import Checkout from "./components/Checkout";
 import ThankYou from "./components/ThankYou";
 import AboutUs from "./pages/AboutUs";
