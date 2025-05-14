@@ -14,9 +14,8 @@ import Article3 from "../../../assets/article3.svg";
 import Container from "../../../UI/Container";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { FaTelegramPlane } from "react-icons/fa";
-import { BiMessageAltDetail } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import {useToastStore} from '../../../store/useToastStore'
+import { useToastStore } from "../../../store/useToastStore";
 export default function Main() {
   return (
     <div className="relative mb-20">
@@ -26,7 +25,6 @@ export default function Main() {
         <Section3 />
         <Section4 />
       </Container>
-     
     </div>
   );
 }
@@ -126,7 +124,7 @@ const Section2 = () => {
 };
 
 const Section3 = () => {
-  const {showToast} = useToastStore()
+  const { showToast } = useToastStore();
   const CarsBrandData = [
     {
       id: 1,
@@ -217,19 +215,18 @@ const Section3 = () => {
         spaceBetween={20}
       >
         {CarsBrandData.map((item) => (
-        <SwiperSlide
-  key={item.id}
-  className="flex justify-center items-center select-text"
->
-  <div className="h-full px-6 my-2 bg-white rounded-lg flex items-center justify-center gap-2">
-    <div>
-      <h3 className="text-md font-semibold">{item.User}</h3>
-      <p className="flex mb-2">{renderStars(item.Rating)}</p>
-      <p className="text-gray-700 text-sm w-60">{item.Description}</p>
-    </div>
-  </div>
-</SwiperSlide>
-
+          <SwiperSlide
+            key={item.id}
+            className="flex justify-center items-center select-text"
+          >
+            <div className="h-full px-6 my-2 bg-white rounded-lg flex items-center justify-center gap-2">
+              <div>
+                <h3 className="text-md font-semibold">{item.User}</h3>
+                <p className="flex mb-2">{renderStars(item.Rating)}</p>
+                <p className="text-gray-700 text-sm w-60">{item.Description}</p>
+              </div>
+            </div>
+          </SwiperSlide>
         ))}
       </Swiper>
       <div className="flex md:flex-col md:space-y-4 lg:gap-2 md:text-center md:px-2 items-center justify-around bg-Brand py-2 rounded-2xl">
@@ -252,7 +249,10 @@ const Section3 = () => {
             placeholder="Email address"
             className="text-sm border border-gray-300 rounded-sm p-2 focus:outline-none focus:ring-1 focus:ring-red-600"
           />
-          <FaTelegramPlane onClick={()=> showToast("Your Message Sended")} className="absolute right-4 top-2 text-Brand size-6" />
+          <FaTelegramPlane
+            onClick={() => showToast("Your Message Sended")}
+            className="absolute right-4 top-2 text-Brand size-6"
+          />
         </div>
       </div>
     </div>
@@ -278,6 +278,9 @@ const Section4 = () => {
       desc: "What to know about changing theengine oil and oil filters",
     },
   ];
+  const handleCardClick = (item) => {
+    setSelectedArticle(item);
+  };
   return (
     <div className="flex  md:gap-1">
       {/* Left Side */}
@@ -318,14 +321,19 @@ const Section4 = () => {
             key={item.id}
             className="flex items-center justify-center min-h-[300px] "
           >
-            <div className="h-full bg-white flex items-center justify-center">
+            <Link
+              onClick={handleCardClick}
+              key={item.id}
+              to={`/blog/${encodeURIComponent(item.img)}`}
+              className="h-full bg-white flex items-center justify-center"
+            >
               <div>
                 <img src={item.img} className="rounded-md" />
                 <p className="text-sm font-semibold w-60 mt-2 md:w-48">
                   {item.desc}
                 </p>
               </div>
-            </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

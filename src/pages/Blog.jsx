@@ -9,49 +9,13 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { HiMiniMagnifyingGlass } from "react-icons/hi2";
 import { Link } from "react-router-dom";
-
+import { BlogData } from "../constants/blog";
 export default function Blog() {
-  const BlogData = [
-    {
-      image: Article3,
-      hook: "News",
-      date: "02",
-      month: "OCT",
-      title: "The number of new cars sold over 20 years",
-      desc: " The number of new cars sold in the United States over a 20-year period can vary significantly depending on economic conditions,..",
-    },
-    {
-      image: Article2,
-      hook: "Usefull",
-      date: "02",
-      month: "OCT",
-      title: "Warning lights indicating activation of various systems",
-      desc: " Warning lights in a car's dashboard indicate the activation of various systems or alert the driver to potential issues. These..",
-    },
-    {
-      image: Article1,
-      hook: "Premium",
-      date: "02",
-      month: "OCT",
-      title: "What to know about changing the engine oil and oil..",
-      desc: "Regular oil and oil filter changes are essential for the health and longevity of your engine. Neglecting this maintenance can..",
-    },
-    {
-      youtube: "https://youtu.be/xjgXPh4f2X4?si=CwMrZZ_3P_ytZIuv",
-      hook: "Usefull",
-      date: "02",
-      month: "OCT",
-      title: "Video guide for car maintenance",
-      desc: "Learn how to maintain your car with this step-by-step video guide..",
-    },
-  ];
-
+  //Pagination when carts = 12
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
   const totalPages = Math.ceil(BlogData.length / itemsPerPage);
-
   const handlePageChange = (page) => setCurrentPage(page);
-
   const displayedData = BlogData.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
@@ -120,7 +84,7 @@ const Carts = ({ BlogData }) => {
               <h3 className="text-lg font-bold mt-2">{item.title}</h3>
               <p className="text-gray-600 text-sm mt-1">{item.desc}</p>
               <div className="flex items-center gap-2 text-Brand font-bold mt-2">
-                <Link to={`/blog/${encodeURIComponent(item.title)}`}>
+                <Link to={`/blog/${item.slug}`}>
                   Read more
                 </Link>
                 <FaArrowRightLong />

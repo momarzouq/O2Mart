@@ -15,7 +15,7 @@ const ContactUsButton = () => {
   };
 
   return (
-    <div className="fixed bottom-20 right-7 flex flex-col items-center gap-2">
+    <div className="z-50 fixed bottom-20 right-7 flex flex-col items-center gap-2">
       {/* Main Button */}
       <motion.button
         onClick={toggleMenu}

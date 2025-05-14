@@ -31,7 +31,7 @@ export default function ScrollToTopButton() {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-7 bg-Brand text-white p-[10px] rounded-full shadow-lg hover:bg-red-600 transition duration-300"
+          className="z-50 fixed bottom-8 right-7 bg-Brand text-white p-[10px] rounded-full shadow-lg hover:bg-red-600 transition duration-300"
         >
           <IoIosArrowUp size={20} />
         </button>

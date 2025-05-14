@@ -50,7 +50,7 @@ const Section1 = () => {
             Shop Now
           </button>
         </div>
-        <div className="flex-[2] lg:w-full w-[200px] h-[230px] lg:h-[300px]">
+        <div className="flex-[2] lg:w-full w-[200px] h-[250px] lg:h-[300px]">
           <iframe
             className="w-full h-full rounded-lg"
             src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -109,13 +109,13 @@ const Section2 = () => {
 
 const Section3 = () => {
   return (
-    <div className="  bg-[#FBFBFB] items-center">
+    <div className="w-full  bg-[#FBFBFB] items-center">
       <div className="relative w-full flex justify-end mt-4 md:mt-0">
-        <div className="w-full flex flex-col gap-4 px-2 lg:mr-4 py-4">
-          <h1 className="text-5xl md:text-xl font-medium text-[#333232]">
+        <div className="md:ml-4 w-full flex flex-col gap-4 px-1 py-4">
+          <h1 className=" text-5xl md:text-xl font-medium text-[#333232]">
             Why We Started O2Mart?
           </h1>
-          <p className="w-full text-[#808080] font-medium text-sm md:text-sm">
+          <p className=" w-full text-[#808080] font-medium text-sm md:text-sm">
             Ever spent hours driving between Sharjah, Dubai, and Abu Dhabi
             looking for a specific car part? And did you usually
             <span className="md:hidden">
@@ -131,12 +131,12 @@ const Section3 = () => {
               built the platform we wished existed when we were in your shoes.
             </span>
           </p>
-          <button className="w-40 text-xs text-Brand border border-Brand py-3 px-10 md:py-1  md:px-4 rounded font-bold">
+          <button className=" w-40 lg:w-38 text-xs text-Brand border border-Brand py-3 px-8 lg:px-4 md:py-1  rounded font-bold">
             Send Inquire
           </button>
         </div>
 
-        <img src={HomeBG} className="max-w-[400px] h-[300px] object-contain" />
+        <img src={HomeBG} className="max-w-[330px] h-[300px] object-contain" />
       </div>
     </div>
   );

@@ -182,61 +182,91 @@ const Section1 = () => {
   const [carModel, setCarModel] = useState("");
   const [carYear, setCarYear] = useState("");
 
-  // Function to handle make change
+  // Parts state management
+  const [parts, setParts] = useState([
+    { partName: "", quantity: "", partPhoto: null },
+  ]);
+  const [uploadedParts, setUploadedParts] = useState([false]);
+  const [uploadedLincese, setUploadedLincese] = useState(false);
+
+  // Car selection handlers
   const handleCarMakeChange = (e) => {
     const selectedMake = e.target.value;
     setCarMake(selectedMake);
-    setCarModel(""); // Reset model when make changes
-    setCarYear(""); // Reset year when make changes
+    setCarModel("");
+    setCarYear("");
   };
 
-  // Function to handle model change
   const handleCarModelChange = (e) => {
     setCarModel(e.target.value);
   };
 
-  // Function to handle year change
   const handleCarYearChange = (e) => {
     setCarYear(e.target.value);
   };
-  //Add Another Part
-  const [parts, setParts] = useState([{}]);
+
+  // Parts management handlers
   const addAnotherPart = () => {
-    setParts([...parts, {}]);
+    setParts([...parts, { partName: "", quantity: "", partPhoto: null }]);
+    setUploadedParts([...uploadedParts, false]);
   };
-  const [uploadedLincese, setUploadedLincese] = useState(false);
-  const [uploadedPart, setUploadedPart] = useState(false);
+
+  const handlePartChange = (index, field, value) => {
+    const updatedParts = [...parts];
+    updatedParts[index][field] = value;
+    setParts(updatedParts);
+  };
+
+  const handlePartUpload = (e, index) => {
+    if (e.target.files.length > 0) {
+      const updatedParts = [...parts];
+      updatedParts[index].partPhoto = e.target.files[0];
+      setParts(updatedParts);
+
+      const updatedUploaded = [...uploadedParts];
+      updatedUploaded[index] = true;
+      setUploadedParts(updatedUploaded);
+    }
+  };
 
   const handleLinceseUpload = (event) => {
     if (event.target.files.length > 0) {
       setUploadedLincese(true);
     }
   };
-  const handlePartUpload = (event) => {
-    if (event.target.files.length > 0) {
-      setUploadedPart(true);
-    }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Process form data including all parts
+    console.log({
+      carMake,
+      carModel,
+      carYear,
+      parts,
+      // other form fields...
+    });
   };
+
   return (
-    <div className="relative bg-[#FBFBFB]  flex items-center justify-center overflow-hidden">
+    <div className="relative bg-[#FBFBFB] flex items-center justify-center overflow-hidden">
       {/* Left Image */}
       <img
         src={Background}
         alt="Background"
-        className="absolute left-0 top-0 h-full object-cover transform rotate-180"
+        className="absolute left-0 top-0 max-h-[550px] object-cover transform rotate-180"
       />
 
       {/* Right Image */}
       <img
         src={Background}
         alt="Background"
-        className="absolute right-0 top-0 h-full object-cover"
+        className="absolute right-0 top-0 max-h-[550px] object-cover"
       />
 
       {/* Modal in Center */}
-      <div className="z-10 bg-white p-6 rounded-lg shadow-md w-[70%] md:w-[90%] my-12">
+      <div className="z-10 bg-white p-6 rounded-lg shadow-md w-[60%] md:w-[90%] my-12">
         <div>
-          <form className="space-y-4 text-sm">
+          <form className="space-y-4 text-sm" onSubmit={handleSubmit}>
             {/* Car Info: Make, Model, Year */}
             <div className="flex gap-2">
               {/* Car Make */}
@@ -313,7 +343,7 @@ const Section1 = () => {
             <div className="flex gap-2">
               <input
                 type="text"
-                placeholder="Required Part"
+                placeholder="VIN Number"
                 className="w-1/2 border border-gray-500 rounded-md py-2 px-1"
               />
 
@@ -324,42 +354,57 @@ const Section1 = () => {
               <div className="w-[40%] md:w-[45%] text-xs border border-gray-500 rounded-md px-2 flex items-center">
                 <input
                   type="file"
-                  id="uploadImage"
+                  id="uploadLicense"
                   className="hidden"
                   onChange={handleLinceseUpload}
                 />
-                <label htmlFor="uploadImage" className="  cursor-pointer ">
+                <label htmlFor="uploadLicense" className="cursor-pointer">
                   {uploadedLincese ? "Photo Uploaded" : "Upload Car License"}
                 </label>
               </div>
             </div>
 
-            {/* Required Part / Quantity / Upload Photo */}
-            <div className="flex gap-2">
-              <input
-                type="text"
-                placeholder="Required Part"
-                className="w-1/2 border border-gray-500 rounded-md py-2 px-1"
-              />
-
-              <input
-                type="number"
-                placeholder="QTY"
-                className="w-[12%] max-w-14 border border-gray-500 rounded-md  py-2 px-1"
-              />
-
-              <div className="w-[40%] md:w-[45%] text-xs border border-gray-500 rounded-md px-2 flex items-center">
+            {/* Parts List */}
+            {parts.map((part, index) => (
+              <div key={index} className="flex gap-2">
                 <input
-                  type="file"
-                  id="uploadImage"
-                  className="hidden"
-                  onChange={handlePartUpload}
+                  type="text"
+                  placeholder="Required Part"
+                  value={part.partName}
+                  onChange={(e) =>
+                    handlePartChange(index, "partName", e.target.value)
+                  }
+                  className="w-1/2 border border-gray-500 rounded-md py-2 px-1"
                 />
-                <label htmlFor="uploadImage" className="  cursor-pointer ">
-                  {uploadedPart ? "Photo Uploaded " : "Upload Part Photo"}
-                </label>
+
+                <input
+                  type="number"
+                  placeholder="QTY"
+                  value={part.quantity}
+                  onChange={(e) =>
+                    handlePartChange(index, "quantity", e.target.value)
+                  }
+                  className="w-[12%] max-w-14 border border-gray-500 rounded-md py-2 px-1"
+                />
+
+                <div className="w-[40%] md:w-[45%] text-xs border border-gray-500 rounded-md px-2 flex items-center">
+                  <input
+                    type="file"
+                    id={`uploadPart-${index}`}
+                    className="hidden"
+                    onChange={(e) => handlePartUpload(e, index)}
+                  />
+                  <label
+                    htmlFor={`uploadPart-${index}`}
+                    className="cursor-pointer"
+                  >
+                    {uploadedParts[index]
+                      ? "Photo Uploaded"
+                      : "Upload Part Photo"}
+                  </label>
+                </div>
               </div>
-            </div>
+            ))}
 
             {/* Add Another Part */}
             <button

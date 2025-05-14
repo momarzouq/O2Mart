@@ -356,7 +356,7 @@ export default function Inquiry() {
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-bold">
-                  Diameter <span className="text-Brand">*</span>
+                  Year <span className="text-Brand">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>000</option>
@@ -426,14 +426,14 @@ export default function Inquiry() {
             <div className="flex gap-2">
               <div className="flex flex-col flex-1">
                 <label className="mb-1 font-bold">
-                  Diameter <span className="text-Brand">*</span>
+                  Year <span className="text-Brand">*</span>
                 </label>
                 <select className="md:w-full text-gray-500 border border-gray-500 rounded-md p-2 outline-none focus:border-Brand">
                   <option>000</option>
                 </select>
               </div>
               <div className="flex-1 flex flex-col">
-                <label className="text-[10px] mb-1 font-bold">VIN/ Chassis No</label>
+                <label className="md:text-[10px] mb-1 font-bold">VIN/ Chassis No</label>
                 <input
                   type="text"
                   placeholder="55"
@@ -522,7 +522,7 @@ export default function Inquiry() {
     <div>
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="relative z-10 bg-white px-10 md:px-6 py-6 rounded-lg shadow-md w-[60%] md:w-[90%] h-[90%] my-12 overflow-y-auto">
+          <div className="relative z-10 bg-white px-10 md:px-6 py-6 rounded-lg shadow-md w-[60%] md:w-[90%] h-[90%] xl:h-[70%] my-12 overflow-y-auto">
             <button
               onClick={() => closeModal(true)}
               className="absolute top-6 right-6 z-50 text-gray-600 hover:text-Brand text-xl"

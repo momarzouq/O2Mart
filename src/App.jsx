@@ -68,7 +68,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/track-order" element={<TrackOrder />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:title" element={<BlogDetails />} />
+        <Route path="/blog/:slug" element={<BlogDetails />} />
         <Route path="/termsof-us" element={<TermsofUs />} />
         <Route path="/warranty-returns-policy" element={<WarrantyReturnsPolicy />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

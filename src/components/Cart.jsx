@@ -11,13 +11,11 @@ import { Breadcrumb } from "../UI/Breadcrumb";
 import CouponSection from "./AddCupon";
 import QuantityItem from "./QuantityItem";
 import { useCartStore } from "../store/cartStore";
-import { useLocationModalStore } from "../store/locationStore";
 import { LocationModal } from "./LocationModal";
 
 export default function Cart() {
-  const { isLocationModalOpen, openLocationModal } = useLocationModalStore();
+  const [isLocationModalOpen, openLocationModal] = useState();
   const [isAdded, setIsAdded] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(""); // حالة لتخزين القيمة المختارة
 
   const {
     cartItems = [],
@@ -184,7 +182,10 @@ export default function Cart() {
         ]}
       />
       {isLocationModalOpen && (
-        <LocationModal cartItems={cartItems} selectedOption={selectedOption} />
+        <LocationModal
+          cartItems={cartItems}
+          selectedOption={isLocationModalOpen}
+        />
       )}
       <div className="grid grid-cols-5 xl:grid-cols-3 gap-4">
         {cartItems && cartItems.length === 0 ? (

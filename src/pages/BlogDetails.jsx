@@ -1,10 +1,5 @@
-import { useParams, Link } from "react-router-dom";
-import {
-  FaArrowLeft,
-  FaFacebookF,
-  FaInstagram,
-  FaXTwitter,
-} from "react-icons/fa6";
+import { useParams } from "react-router-dom";
+import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import Article1 from "../assets/article1.svg";
 import Article2 from "../assets/article2.svg";
 import Article3 from "../assets/article3.svg";
@@ -14,38 +9,14 @@ import Container from "../UI/Container";
 import { HiMiniMagnifyingGlass } from "react-icons/hi2";
 import { FaTelegramPlane } from "react-icons/fa";
 import { Breadcrumb } from "../UI/Breadcrumb";
+import { BlogData } from "../constants/blog";
 
 const BlogDetails = () => {
-  const { title } = useParams();
-  const BlogData = [
-    {
-      image: Article3,
-      hook: "News",
-      title: "The number of new cars sold over 20 years",
-      desc: " The number of new cars sold in the United States over a 20-year period can vary significantly depending on economic conditions,..",
-    },
-    {
-      image: Article2,
-      hook: "Usefull",
-      title: "Warning lights indicating activation of various systems",
-      desc: " Warning lights in a car's dashboard indicate the activation of various systems or alert the driver to potential issues. These..",
-    },
-    {
-      image: Article1,
-      hook: "Premium",
-      title: "What to know about changing the engine oil and oil..",
-      desc: "Regular oil and oil filter changes are essential for the health and longevity of your engine. Neglecting this maintenance can..",
-    },
-    {
-      youtube: "https://youtu.be/xjgXPh4f2X4?si=CwMrZZ_3P_ytZIuv",
-      hook: "Usefull",
-      title: "Video guide for car maintenance",
-      desc: "Learn how to maintain your car with this step-by-step video guide..",
-    },
-  ];
+  const { slug } = useParams();
+ 
 
   const selectedArticle = BlogData.find(
-    (article) => article.title === decodeURIComponent(title)
+    (article) => article.slug === decodeURIComponent(slug)
   );
 
   if (!selectedArticle) {
@@ -55,7 +26,7 @@ const BlogDetails = () => {
   return (
     <Container>
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
-        <h3 className="text-xl font-bold">Blog</h3>
+      <h3 className="text-xl font-bold">Blog</h3>
       <div className="flex lg:flex-col gap-10">
         <div className="flex-[3]">
           <BlogCartDetails selectedArticle={selectedArticle} />
@@ -207,7 +178,6 @@ const SearchAndContent = () => {
             type="text"
             placeholder="Type a keyword"
             className="text-xs border rounded-lg px-8 pl-8 py-3 outline-none"
-          
           />
           <HiMiniMagnifyingGlass className="absolute text-Brand top-1/2 right-[28%] md:right-[34%] -translate-y-1/2" />
         </div>
