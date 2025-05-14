@@ -131,7 +131,7 @@ const ProductsComparisonTable = () => {
               {products.map((p, index) => (
                 <td key={index} className="border px-6 py-3">
                   <div className="flex items-center justify-start text-Brand">
-                    <span className="text-Brand text-2xl mr-1">
+                    <span className="text-[#EC221F] text-2xl mr-1">
                       {"★".repeat(p.rating)}
                     </span>
                     <span className="ml-2 text-gray-500 text-sm">
