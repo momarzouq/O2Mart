@@ -39,11 +39,16 @@ const initialProducts = [
 ];
 const ProductsComparisonTable = () => {
   const [products, setProducts] = useState(initialProducts);
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedIndices, setSelectedIndices] = useState([]);
+
   const { showToast } = useToastStore();
 
   const handleAddToCart = (index) => {
-    setSelectedIndex(index);
+    if (selectedIndices.includes(index)) {
+      setSelectedIndices(selectedIndices.filter((i) => i !== index));
+    } else {
+      setSelectedIndices([...selectedIndices, index]);
+    }
     showToast(`Item ${index + 1} added to cart`);
   };
 
@@ -111,7 +116,7 @@ const ProductsComparisonTable = () => {
                       <button
                         onClick={() => handleAddToCart(index)}
                         className={`text-sm font-semibold border rounded-2xl py-1 md:py-0.5 px-16 xl:px-10 ${
-                          selectedIndex === index
+                          selectedIndices.includes(index)
                             ? "bg-[#D9D9D9] border-transparent"
                             : "border-Brand"
                         }`}

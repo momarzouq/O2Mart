@@ -147,7 +147,7 @@ export const LocationModal = ({ selectedOption }) => {
               {locations.map((location, index) => (
                 <div
                   key={index}
-                  className="relative border border-gray-400 rounded-lg  w-[460px] md:w-auto xl:w-full   p-4 md:pb-16 space-y-4"
+                  className="relative border border-gray-400 rounded-lg  w-[380px] md:w-auto xl:w-full   p-4 md:pb-16 space-y-4"
                 >
                   <div className="flex flex-col text-sm font-medium items-start space-y-2">
                     <h3 className="text-start font-semibold text-xl">
@@ -195,7 +195,7 @@ export const LocationModal = ({ selectedOption }) => {
               />
               <div className="absolute top-4  flex  items-center font-semibold gap-6 md:gap-2 md:text-sm md:max-w-60">
                 <h3>Pick Installation Date</h3>
-                <p className="text-Brand">Sand Dance - Al Qouz</p>
+                <p className="text-Brand italic">Sand Dance - Al Qouz</p>
               </div>
               <Link
                 className={`absolute font-medium right-4 bottom-4 rounded-md py-1 px-4 mt-4 ${

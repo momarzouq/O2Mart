@@ -5,29 +5,31 @@ import { IoMdAddCircleOutline } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import ThankYou from "./ThankYou";
 import useModalStore from "../store/getqouteStore";
+
 export default function Inquiry() {
-  const [step, setStep] = useState(1);
   const { isOpen, closeModal } = useModalStore();
-  //Add Another Part
+  const [step, setStep] = useState(1);
+  
+  // Add Another Part
   const [parts, setParts] = useState([{}]);
   const addAnotherPart = () => {
     setParts([...parts, {}]);
   };
-  //Differen Rear Tyer Size
+  
+  // Different Rear Tyre Size
   const [tyreSizes, setTyreSizes] = useState([{}]);
   const addAnotherTyreSize = () => {
     setTyreSizes([...tyreSizes, {}]);
   };
 
-  if (!isOpen) return null;
+  // Upload
+  const [uploadedParts, setUploadedParts] = useState([]);
+  const [uploadedLincese, setUploadedLincese] = useState(false);
+
   const handleNext = (e) => {
     e.preventDefault();
     setStep((prev) => Math.min(prev + 1, 7));
   };
-
-  // Upload
-  const [uploadedParts, setUploadedParts] = useState([]);
-  const [uploadedLincese, setUploadedLincese] = useState(false);
 
   // Handle Part Upload
   const handlePartUpload = (e, index) => {
@@ -113,7 +115,7 @@ export default function Inquiry() {
                 </span>
               </div>
 
-              <div className="w-[40%] md:w-[45%] text-xs border border-gray-500 rounded-md px-2 flex items-center">
+              <div className="w-[40%] md:w-[45%] text-xs border border-gray-500 rounded-md py-[10px] px-2 flex items-center">
                 <input
                   type="file"
                   id="uploadLicense"
@@ -148,7 +150,7 @@ export default function Inquiry() {
                       className="border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
                     />
                   </div>
-                  <div className="w-[40%] md:w-[45%] text-xs border border-gray-500 rounded-md px-2 flex items-center">
+                  <div className="w-[40%] md:w-[45%] text-xs border border-gray-500 rounded-md px-2 py-[10px] flex items-center">
                     <input
                       type="file"
                       id={`uploadPart-${index}`}
@@ -168,45 +170,8 @@ export default function Inquiry() {
               ))}
             </div>
 
-            {/* Required Part / Quantity / Photo Upload */}
+            {/* Add Another Part */}
             <div>
-              {parts.map((_, index) => (
-                <div key={index} className="flex gap-2 items-end mb-4">
-                  <div className="flex flex-col w-1/2">
-                    <label className="mb-1 font-bold">
-                      Required Part<span className="text-Brand">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Enter The Required Part"
-                      className="border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
-                    />
-                  </div>
-                  <div className="flex flex-col w-[12%] max-w-14">
-                    <label className="mb-1 font-bold">QTY</label>
-                    <input
-                      type="number"
-                      placeholder="QTY"
-                      className="border border-gray-500 rounded-md py-2 px-1 outline-none focus:border-Brand"
-                    />
-                  </div>
-                  <div className="w-[40%] md:w-[45%]  text-xs border border-gray-500 rounded-md px-2 flex items-center">
-                    <input
-                      type="file"
-                      id="uploadLicense"
-                      className="hidden"
-                      onChange={handleLinceseUpload}
-                    />
-                    <label htmlFor="uploadLicense" className="cursor-pointer">
-                      {uploadedLincese
-                        ? "Photo Uploaded"
-                        : "Upload Car License"}
-                    </label>
-                  </div>
-                </div>
-              ))}
-
-              {/* Add Another Part */}
               <button
                 type="button"
                 className="font-[500] text-lg flex items-center text-Brand"
@@ -365,7 +330,7 @@ export default function Inquiry() {
                 </div>
               ))}
 
-              {/* زر لإضافة مجموعة جديدة */}
+              {/* Add button for different rear tyre size */}
               <button
                 type="button"
                 className="font-[500] text-lg flex items-center text-Brand"
@@ -590,64 +555,63 @@ export default function Inquiry() {
     }
   };
 
+  // If modal is not open, return null early without rendering content
+  if (!isOpen) return null;
+
   return (
-    <div>
-      {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="relative z-10 bg-white px-10 md:px-6 py-6 rounded-lg shadow-md w-[60%] md:w-[90%] h-[90%] xl:h-[70%] my-12 overflow-y-auto">
-            <button
-              onClick={() => closeModal(true)}
-              className="absolute top-6 right-6 z-50 text-gray-600 hover:text-Brand text-xl"
-              aria-label="Close"
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+      <div className="relative z-10 bg-white px-10 md:px-6 py-6 rounded-lg shadow-md w-[60%] md:w-[90%] h-[90%] xl:h-[70%] my-12 overflow-y-auto">
+        <button
+          onClick={() => closeModal(true)}
+          className="absolute top-6 right-6 z-50 text-gray-600 hover:text-Brand text-xl"
+          aria-label="Close"
+        >
+          <IoClose size={20} />
+        </button>
+        <div>
+          {step <= 6 && (
+            <h3
+              className={`text-3xl text-center font-bold my-4 ${
+                step >= 6 ? "text-Brand" : "text-black"
+              }`}
             >
-              <IoClose size={20} />
-            </button>
-            <div>
-              {step <= 6 && (
-                <h3
-                  className={`text-3xl text-center font-bold my-4 ${
-                    step >= 6 ? "text-Brand" : "text-black"
-                  }`}
-                >
-                  INQUIRY FORM
-                </h3>
-              )}
-              {/* Progress Indicator */}
-              {step <= 6 && (
-                <div className="flex items-center justify-center mb-4">
-                  {[1, 2].map((s) => (
-                    <div key={s} className="flex items-center gap-2">
-                      <div className="flex flex-col items-center gap-2">
-                        <p
-                          className={`w-7 h-7 flex text-xs items-center justify-center rounded-full ${
-                            (s === 1 && step < 6) || (s === 2 && step === 6)
-                              ? "bg-Brand text-white"
-                              : "bg-gray-200 text-gray-700"
-                          } font-semibold`}
-                        >
-                          {s}
-                        </p>
-                        <span
-                          className={`text-center text-xs mt-1 font-medium ${
-                            (s === 1 && step < 6) || (s === 2 && step === 6)
-                              ? "text-Brand"
-                              : "text-black"
-                          }`}
-                        >
-                          {s === 1 ? "Inquiry Details" : "Contact Details"}
-                        </span>
-                      </div>
-                      {s === 1 && <hr className="w-40 mb-6 border-gray-300" />}
-                    </div>
-                  ))}
+              INQUIRY FORM
+            </h3>
+          )}
+          {/* Progress Indicator */}
+          {step <= 6 && (
+            <div className="flex items-center justify-center mb-4">
+              {[1, 2].map((s) => (
+                <div key={s} className="flex items-center gap-2">
+                  <div className="flex flex-col items-center gap-2">
+                    <p
+                      className={`w-7 h-7 flex text-xs items-center justify-center rounded-full ${
+                        (s === 1 && step < 6) || (s === 2 && step === 6)
+                          ? "bg-Brand text-white"
+                          : "bg-gray-200 text-gray-700"
+                      } font-semibold`}
+                    >
+                      {s}
+                    </p>
+                    <span
+                      className={`text-center text-xs mt-1 font-medium ${
+                        (s === 1 && step < 6) || (s === 2 && step === 6)
+                          ? "text-Brand"
+                          : "text-black"
+                      }`}
+                    >
+                      {s === 1 ? "Inquiry Details" : "Contact Details"}
+                    </span>
+                  </div>
+                  {s === 1 && <hr className="w-40 mb-6 border-gray-300" />}
                 </div>
-              )}
-              {/* Step Form */}
-              <div>{renderStepForm()}</div>
+              ))}
             </div>
-          </div>
+          )}
+          {/* Step Form */}
+          <div>{renderStepForm()}</div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

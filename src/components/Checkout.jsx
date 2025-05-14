@@ -9,6 +9,7 @@ import Delivery from "../assets/Delivery.svg";
 import Installation from "../assets/Installation.svg";
 
 import { HiOutlineExclamationCircle } from "react-icons/hi";
+import LinkWithScroll from "./LinkWithScroll";
 export default function Checkout() {
   return (
     <Container>
@@ -96,11 +97,11 @@ export default function Checkout() {
 
           {/* Vehicle Details */}
           <div className=" border rounded-lg">
-            <div className="flex bg-[#DCDBDB] justify-between items-center mb-4 p-4">
+            <div className="flex bg-[#DCDBDB] gap-2 items-center mb-4 p-4">
               <h2 className="text-lg font-bold">Vehicle Details</h2>
-              <Link to="/signin" className="text-Brand font-semibold underline">
-                Sign In
-              </Link>
+              <p className="text-xs font-medium">
+                (Requird for installation Service)
+              </p>
             </div>
 
             <div className="flex gap-4 lg:gap-1 w-full pt-4 px-4">
@@ -312,12 +313,15 @@ export default function Checkout() {
         {/* Mobile Agree */}
         <div className="hidden lg:block">
           <div className="flex flex-col gap-8">
-            <p className="text-[#333232]">
+            <div className="text-[#333232]">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
               odit consequatur laudantium voluptates perferendis, consequuntur
               sunt esse
-              <Link to="/privacy-policy" className="text-Brand underline">Privacy policy.</Link>
-            </p>
+              <Link to="/privacy-policy" className="text-Brand underline">
+                Privacy policy.
+              </Link>
+            </div>
+
             <div className="flex items-center justify-between">
               <div className="space-x-1 lg:w-[70%]">
                 <input type="checkbox" name="payment" />

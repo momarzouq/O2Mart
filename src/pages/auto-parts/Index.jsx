@@ -364,7 +364,7 @@ const Section1 = () => {
 
             {/* Parts List */}
             {parts.map((part, index) => (
-              <div key={index} className="flex gap-2">
+              <div key={index} className="flex gap-4">
                 <input
                   type="text"
                   placeholder="Required Part"

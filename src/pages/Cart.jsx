@@ -191,7 +191,7 @@ export default function Cart() {
         {cartItems && cartItems.length === 0 ? (
           <div className="flex flex-col space-y-6 my-4">
             <h3 className="text-xl font-bold">Cart</h3>
-            <p className="text-sm font-bold">
+            <p className="text-sm font-bold whitespace-nowrap">
               Your cart is empty. Start shopping now
             </p>
             <h3 className="text-2xl font-bold">New in store</h3>
@@ -305,11 +305,11 @@ export default function Cart() {
                 <span>{total.toFixed(2)} AED</span>
               </div>
 
-              <Link to="/checkout" className="text-xs font-medium w-full bg-Brand text-white py-[9px] rounded-md mt-4 transition">
+              <Link to="/checkout" className="text-center block text-xs font-medium w-full bg-Brand text-white py-[9px] rounded-md mt-4 transition">
                 Proceed to Checkout
               </Link>
 
-              <Link to="/auto-parts" className="text-xs font-medium w-full border border-Brand text-Brand py-2 rounded-md mt-1 transition">
+              <Link to="/shop" className="text-center block text-xs font-medium w-full border border-Brand text-Brand py-2 rounded-md mt-1 transition">
                 Continue Shopping
               </Link>
             </div>
@@ -375,7 +375,7 @@ export default function Cart() {
                   </select>
                   <button
                     onClick={handleClick}
-                    className={`text-sm text-gray-500 border border-Brand rounded-2xl py-1 md:py-0.5 px-20 xl:px-10 transition-colors duration-300 ${
+                    className={`text-sm text-gray-500 border border-Brand rounded-2xl py-1 md:py-0.5 px-16 xl:px-10 transition-colors duration-300 ${
                       isAdded ? "bg-Brand text-white" : ""
                     }`}
                   >
