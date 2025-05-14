@@ -34,7 +34,9 @@ export default function Checkout() {
                   </select>
                 </div>
                 <div className="w-[45%] lg:w-full flex flex-col">
-                  <label className=" font-medium mb-1">First Name</label>
+                  <label className=" font-medium mb-1">
+                    First Name <span className="">*</span>
+                  </label>
                   <input className="bg-[#DCDBDB80] p-2 rounded-md" />
                 </div>
                 <div className="w-[45%] lg:w-full flex flex-col">
