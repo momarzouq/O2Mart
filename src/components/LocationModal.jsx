@@ -8,7 +8,7 @@ import { BsClock } from "react-icons/bs";
 import { SlClose } from "react-icons/sl";
 import { Link } from "react-router-dom";
 
-export const LocationModal = ({ selectedOption,isLocationModalOpen }) => {
+export const LocationModal = ({ selectedOption,onClose  }) => {
   const [currentCase, setCurrentCase] = useState(1);
   const [selectedDate, setSelectedDate] = useState(null);
 
@@ -120,7 +120,7 @@ export const LocationModal = ({ selectedOption,isLocationModalOpen }) => {
       <div className="relative bg-white w-[70%] md:w-[90%] p-10 md:p-6 rounded-xl">
         <button
           className="absolute right-6 top-4 text-Brand text-2xl"
-          onClick={() => isLocationModalOpen(false)}
+          onClick={onClose}
         >
           <SlClose />
         </button>

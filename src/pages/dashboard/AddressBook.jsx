@@ -3,6 +3,7 @@ import DashboardSideNav from "../../UI/DashboardSideNav";
 import Container from "../../UI/Container";
 import { Breadcrumb } from "../../UI/Breadcrumb";
 import { IoClose } from "react-icons/io5";
+import { BiSolidDownArrow } from "react-icons/bi";
 
 const AddressBook = () => {
   const [addNewAddress, setAddNewAddress] = useState(false);
@@ -154,50 +155,68 @@ const AddNewAddress = ({ addNewAddress, setAddNewAddress }) => {
   return (
     <>
       {addNewAddress && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="relative z-10 bg-white px-10 md:px-6 py-6 rounded-lg shadow-md w-[70%] md:w-[90%] h-fit my-12 overflow-y-auto">
-            <button
-              onClick={() => setAddNewAddress(false)}
-              className="absolute top-4 right-6 z-50 text-gray-600 hover:text-Brand text-xl"
-              aria-label="Close"
-            >
-              <IoClose size={20} />
-            </button>
-            {/* Address And Country And City */}
-            <div className="flex gap-4 lg:gap-1 items-center w-full md:text-sm ">
-              <div className="w-[52%] lg:w-1/3 flex flex-col">
-                <label className=" font-medium mb-1">Address</label>
+        <form>
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+            <div className="relative z-10 bg-white px-10 md:px-6 py-6 rounded-lg shadow-md w-[70%] md:w-[90%] h-fit my-12 overflow-y-auto">
+              <button
+                onClick={() => setAddNewAddress(false)}
+                className="absolute top-4 right-6 z-50 text-gray-600 hover:text-Brand text-xl"
+                aria-label="Close"
+              >
+                <IoClose size={20} />
+              </button>
+              {/* Address And Country And City */}
+              <div className="flex gap-4 lg:gap-1 items-center w-full md:text-sm ">
+                <div className="w-[52%] lg:w-1/3 flex flex-col">
+                  <label className=" font-medium mb-1">Address</label>
+                  <input className="bg-[#DCDBDB80] p-2 rounded-md col-span-2 outline-none" />
+                </div>
+                <div className="w-[20%] lg:w-1/3 flex flex-col">
+                  <label className=" font-medium mb-1">Country</label>
+                  <input className="bg-[#DCDBDB80] p-2 rounded-md outline-none" />
+                </div>
+                <div className="relative w-[30%] lg:w-1/3 flex flex-col">
+                  <label className="font-medium mb-1">
+                    City <span className="text-red-500">*</span>
+                  </label>
+                  <select className="bg-[#DCDBDB80] p-2 rounded-md appearance-none">
+                    <option value="" disabled selected>
+                      Select your city
+                    </option>
+                    <option value="dubai">Dubai</option>
+                    <option value="abu-dhabi">Abu Dhabi</option>
+                    <option value="sharjah">Sharjah</option>
+                    <option value="ajman">Ajman</option>
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-4 top-7 flex items-center px-2 text-gray-500">
+                    <BiSolidDownArrow className="size-3" />
+                  </div>
+                </div>
+              </div>
+              {/* Address And Country And City */}
+              <div className="flex gap-4 md:gap-1 w-full md:text-sm mt-2">
+                <div className="w-[48.3%] lg:w-1/2 flex flex-col">
+                  <label className=" font-medium mb-1">Area</label>
+                  <input className="bg-[#DCDBDB80] p-2 rounded-md outline-none" />
+                </div>
+                <div className="w-[50%] lg:w-1/2 flex flex-col">
+                  <label className=" font-medium mb-1">Address</label>
+                  <input className="bg-[#DCDBDB80] p-2 rounded-md col-span-2 outline-none" />
+                </div>
+              </div>
+              {/* Additional Instructions */}
+              <div className="flex flex-col">
+                <label className="font-medium mb-1">
+                  Additional Instructions
+                </label>
                 <input className="bg-[#DCDBDB80] p-2 rounded-md col-span-2 outline-none" />
               </div>
-              <div className="w-[20%] lg:w-1/3 flex flex-col">
-                <label className=" font-medium mb-1">Country</label>
-                <input className="bg-[#DCDBDB80] p-2 rounded-md outline-none" />
-              </div>
-              <div className="w-[30%] lg:w-1/3 flex flex-col">
-                <label className=" font-medium mb-1">City</label>
-                <input className="bg-[#DCDBDB80] p-2 rounded-md outline-none" />
-              </div>
-            </div>
-            {/* Address And Country And City */}
-            <div className="flex gap-4 md:gap-1 w-full md:text-sm mt-2">
-              <div className="w-[48.3%] lg:w-1/2 flex flex-col">
-                <label className=" font-medium mb-1">Area</label>
-                <input className="bg-[#DCDBDB80] p-2 rounded-md outline-none" />
-              </div>
-              <div className="w-[50%] lg:w-1/2 flex flex-col">
-                <label className=" font-medium mb-1">Address</label>
-                <input className="bg-[#DCDBDB80] p-2 rounded-md col-span-2 outline-none" />
-              </div>
-            </div>
-            {/* Additional Instructions */}
-            <div className="flex flex-col">
-              <label className="font-medium mb-1">
-                Additional Instructions
-              </label>
-              <input className="bg-[#DCDBDB80] p-2 rounded-md col-span-2 outline-none" />
             </div>
           </div>
-        </div>
+          <button className="w-1/3 py-1 px-8 rounded-md bg-Brand text-white">
+            Add Address
+          </button>
+        </form>
       )}
     </>
   );

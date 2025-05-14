@@ -14,7 +14,25 @@ import { useCartStore } from "../store/cartStore";
 import { LocationModal } from "../components/LocationModal";
 
 export default function Cart() {
-  const [isLocationModalOpen, openLocationModal] = useState(false);
+  const [locationModalState, setLocationModalState] = useState({
+    isOpen: false,
+    selectedOption: null, // "Installation Center" or "Mobile Van Service"
+  });
+
+  // 2. Update your handleDeliveryOptionChange function
+  const handleDeliveryOptionChange = (option) => {
+    if (
+      ["Delivery with Installation", "Installation Center"].includes(option)
+    ) {
+      setLocationModalState({
+        isOpen: true,
+        selectedOption:
+          option === "Installation Center"
+            ? "Installation Center"
+            : "Mobile Van Service",
+      });
+    }
+  };
   const [isAdded, setIsAdded] = useState(false);
 
   const {
@@ -110,14 +128,6 @@ export default function Cart() {
     return stars;
   };
 
-  const handleDeliveryOptionChange = (option) => {
-    if (
-      ["Delivery with Installation", "Installation Center"].includes(option)
-    ) {
-      openLocationModal(option);
-    }
-  };
-
   const products = [
     {
       id: 1,
@@ -181,12 +191,15 @@ export default function Cart() {
           { label: "Cart" },
         ]}
       />
-      {isLocationModalOpen && (
+      {locationModalState.isOpen && (
         <LocationModal
-        isLocationModalOpen={isLocationModalOpen}
-          selectedOption={isLocationModalOpen}
+          selectedOption={locationModalState.selectedOption}
+          onClose={() =>
+            setLocationModalState({ isOpen: false, selectedOption: null })
+          }
         />
       )}
+
       <div className="grid grid-cols-5 xl:grid-cols-3 gap-4">
         {cartItems && cartItems.length === 0 ? (
           <div className="flex flex-col space-y-6 my-4">
@@ -305,11 +318,17 @@ export default function Cart() {
                 <span>{total.toFixed(2)} AED</span>
               </div>
 
-              <Link to="/checkout" className="text-center block text-xs font-medium w-full bg-Brand text-white py-[9px] rounded-md mt-4 transition">
+              <Link
+                to="/checkout"
+                className="text-center block text-xs font-medium w-full bg-Brand text-white py-[9px] rounded-md mt-4 transition"
+              >
                 Proceed to Checkout
               </Link>
 
-              <Link to="/shop" className="text-center block text-xs font-medium w-full border border-Brand text-Brand py-2 rounded-md mt-1 transition">
+              <Link
+                to="/shop"
+                className="text-center block text-xs font-medium w-full border border-Brand text-Brand py-2 rounded-md mt-1 transition"
+              >
                 Continue Shopping
               </Link>
             </div>

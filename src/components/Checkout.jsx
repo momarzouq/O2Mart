@@ -10,6 +10,7 @@ import Installation from "../assets/Installation.svg";
 
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import LinkWithScroll from "./LinkWithScroll";
+import { BiSolidDownArrow } from "react-icons/bi";
 export default function Checkout() {
   return (
     <Container>
@@ -57,7 +58,10 @@ export default function Checkout() {
                   <label className="mb-1 font-medium">
                     Mobile Number <span className="">*</span>
                   </label>
-                  <input className="bg-[#DCDBDB80] p-2 rounded-md" />
+                  <input
+                    placeholder="+971"
+                    className="bg-[#DCDBDB80] p-2 rounded-md"
+                  />
                 </div>
               </div>
               {/* Address And Country And City */}
@@ -68,11 +72,25 @@ export default function Checkout() {
                 </div>
                 <div className="w-[20%] lg:w-1/3 flex flex-col">
                   <label className=" font-medium mb-1">Country</label>
-                  <input className="bg-[#DCDBDB80] p-2 rounded-md" />
+                  <input
+                    placeholder="UAE"
+                    className="bg-[#DCDBDB80] p-2 rounded-md"
+                  />
                 </div>
-                <div className="w-[30%] lg:w-1/3 flex flex-col">
-                  <label className=" font-medium mb-1">City</label>
-                  <input className="bg-[#DCDBDB80] p-2 rounded-md" />
+                <div className="relative w-[30%] lg:w-1/3 flex flex-col">
+                  <label className="font-medium mb-1">
+                    City <span className="text-red-500">*</span>
+                  </label>
+                  <select className="bg-[#DCDBDB80] p-2 rounded-md appearance-none  ">
+                    <option value="">Select your city</option>
+                    <option value="dubai">Dubai</option>
+                    <option value="abu-dhabi">Abu Dhabi</option>
+                    <option value="sharjah">Sharjah</option>
+                    <option value="ajman">Ajman</option>
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-4 top-7 flex items-center px-2 text-gray-500">
+                    <BiSolidDownArrow className="size-3" />
+                  </div>
                 </div>
               </div>
               {/* Address And Country And City */}
