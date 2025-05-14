@@ -61,7 +61,7 @@ const AccountDetails = () => {
             />
           </div>
 
-          <p class="text-sm text-gray-500 mt-1">
+          <p class="text-sm  mt-1">
             This will be how your name will be displayed in the account section
             and in reviews
           </p>
