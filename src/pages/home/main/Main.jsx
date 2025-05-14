@@ -8,14 +8,12 @@ import Categories from "../../../assets/categories.svg";
 import GetHelp from "../../../assets/GetHelp.svg";
 import CarsBrand from "../../../assets/Cars-Brand.svg";
 import Email from "../../../assets/email.svg";
-import Article1 from "../../../assets/article1.svg";
-import Article2 from "../../../assets/article2.svg";
-import Article3 from "../../../assets/article3.svg";
 import Container from "../../../UI/Container";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { FaTelegramPlane } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useToastStore } from "../../../store/useToastStore";
+import { ArticleData } from "../../../constants/articles";
 export default function Main() {
   return (
     <div className="relative mb-20">
@@ -23,7 +21,7 @@ export default function Main() {
         <Section1 />
         <Section2 />
         <Section3 />
-        <Section4 />
+        <Section4 ArticleData={ArticleData}/>
       </Container>
     </div>
   );
@@ -259,25 +257,7 @@ const Section3 = () => {
   );
 };
 
-const Section4 = () => {
-  const ArticleData = [
-    {
-      id: 1,
-      img: Article1,
-      desc: "What to know about changing theengine oil and oil filters",
-    },
-    {
-      id: 2,
-      img: Article2,
-      desc: "Warning lights indicating activation of various systems",
-    },
-    { id: 3, img: Article3, desc: "The number of new cars sold over 20 years" },
-    {
-      id: 4,
-      img: Article1,
-      desc: "What to know about changing theengine oil and oil filters",
-    },
-  ];
+const Section4 = ({ArticleData}) => {
   const handleCardClick = (item) => {
     setSelectedArticle(item);
   };
@@ -329,7 +309,7 @@ const scrollToTop = () => {
             <Link
               onClick={handleCardClick}
               key={item.id}
-              to={`/blog/${encodeURIComponent(item.img)}`}
+              to={`/blog/${item.slug}`}
               className="h-full bg-white flex items-center justify-center"
             >
               <div>

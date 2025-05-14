@@ -8,10 +8,10 @@ import Container from "../UI/Container";
 import Payment from "../assets/Payment_footer.svg";
 import Logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
-import {useToastStore} from '../store/useToastStore'
+import { useToastStore } from "../store/useToastStore";
 import LinkWithScroll from "./LinkWithScroll";
 export default function Footer() {
-  const {showToast} = useToastStore()
+  const { showToast } = useToastStore();
   return (
     <div className="bg-black pt-14 pb-10">
       <Container>
@@ -79,13 +79,16 @@ export default function Footer() {
             <LinkWithScroll to="/termsof-us" className="hover:text-white">
               Terms of Use
             </LinkWithScroll>
-            <LinkWithScroll to="/warranty-returns-policy" className="hover:text-white">
+            <LinkWithScroll
+              to="/warranty-returns-policy"
+              className="hover:text-white"
+            >
               Warranty & Returns Policy
             </LinkWithScroll>
           </div>
           {/* logo and Contact us */}
           <div className="flex flex-col space-y-4 text-white">
-            <img src={Logo} alt="Logo" className="w-40" />
+           <LinkWithScroll to="/"> <img src={Logo} alt="Logo" className="w-40" /></LinkWithScroll>
             <p>Cusomer Service Hours</p>
             <p>Monday-Friday:</p>
             <p>7:00am-8:00pm.</p>
@@ -106,14 +109,19 @@ export default function Footer() {
                 placeholder="Email address"
                 className="text-sm border border-gray-300 rounded-sm p-2 focus:outline-none focus:ring-1 focus:ring-red-600"
               />
-              <FaTelegramPlane onClick={()=> {showToast("Your Messege Sended")}} className="absolute right-4 top-9 text-Brand size-6" />
+              <FaTelegramPlane
+                onClick={() => {
+                  showToast("Your Messege Sended");
+                }}
+                className="absolute right-4 top-9 text-Brand size-6"
+              />
             </div>
           </div>
         </div>
       </Container>
       <hr className="mt-6 border-1 border-gray-700" />
-      <p className="text-sm text-center text-Brand mt-8 ">
-        Copyright © 2025 O2Mart. All Rights Reserved
+      <p className="text-sm text-center text-white mt-8 ">
+        O2 Mart – All rights reserved · Made with <span className="text-Brand">❤</span> by Pikyhost
       </p>
     </div>
   );

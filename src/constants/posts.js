@@ -1,3 +1,6 @@
+import Article1 from "../assets/article1.svg";
+import Article2 from "../assets/article2.svg";
+import Article3 from "../assets/article3.svg";
 export const posts = [
   {
     id: 1,
