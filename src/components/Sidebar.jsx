@@ -121,9 +121,9 @@ const SidebarCart = () => {
           <Link to="/cart" className="w-full text-xs font-semibold text-Brand text-center rounded-md border py-2 border-Brand">
             View Cart
           </Link>
-          <button className="w-full text-xs font-semibold bg-Brand text-white text-center rounded-md border py-2 border-Brand">
+          <Link to="/checkout" className="w-full text-xs font-semibold bg-Brand text-white text-center rounded-md border py-2 border-Brand">
             Checkout
-          </button>
+          </Link>
         </div>
       </div>
     </div>
