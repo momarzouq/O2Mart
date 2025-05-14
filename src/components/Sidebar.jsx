@@ -105,7 +105,7 @@ const SidebarCart = () => {
 
       {/* Total */}
       <div className="my-4 mx-4">
-        <div className="flex font-medium flex-col gap-1 mb-6">
+        <div className="flex font-semibold flex-col gap-1 mb-6">
           <div className="flex items-center justify-between">
             <p >Subtotal</p>
             <p>AED {subtotal.toFixed(2)}</p>
