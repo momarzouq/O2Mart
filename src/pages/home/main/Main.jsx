@@ -281,6 +281,10 @@ const Section4 = () => {
   const handleCardClick = (item) => {
     setSelectedArticle(item);
   };
+  
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
   return (
     <div className="flex  md:gap-1">
       {/* Left Side */}
@@ -292,6 +296,7 @@ const Section4 = () => {
           purchase here at Mobex.
         </p>
         <Link
+        onClick={scrollToTop}
           to="/blog"
           className="font-semibold border-2 border-gray-800 rounded-md py-1.5 px-8"
         >
