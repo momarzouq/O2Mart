@@ -213,3 +213,23 @@ ul.spec-list {
 }
 
 
+
+.custom-gap {
+  gap: 220px;
+}
+
+@media (max-width: 1024px) {
+  .custom-gap {
+    gap: 110px;
+  }
+}
+@media (max-width: 767px) {
+  .custom-gap {
+    gap: 30px;
+  }
+}
+@media (max-width: 380px) {
+  .custom-gap {
+    gap: 20px;
+  }
+}

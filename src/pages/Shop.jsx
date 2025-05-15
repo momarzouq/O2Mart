@@ -34,7 +34,7 @@ const Section1 = () => {
       <div className="flex flex-col items-center">
         <img src={AutoParts} alt="Auto parts" />
 
-        <div className="flex justify-center gap-[220px] lg:gap-28 w-full max-w-[1000px] mt-4 text-lg font-semibold">
+        <div className="flex justify-center custom-gap w-full max-w-[1000px] mt-4 text-lg font-semibold">
           <h3>Auto Parts</h3>
           <h3>Batteries</h3>
           <h3>Tyers</h3>
@@ -307,7 +307,7 @@ const Section2 = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-1/2 text-start px-2 bg-Brand text-white py-2 md:py-0 md:text-xs rounded-md font-semibold"
+            className="w-1/2 text-start px-2 bg-Brand text-white py-2 md:py-2 md:text-xs rounded-md font-semibold"
           >
             Get Me The Best Offer
           </button>

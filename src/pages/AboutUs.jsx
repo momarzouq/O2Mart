@@ -32,7 +32,6 @@ const Section1 = () => {
           <h3 className="text-3xl font-bold text-[#333232]">
             The Easiest Way to Find Auto Parts
           </h3>
-
           <p className="text-xs font-bold text-[#5F5D5D] ">
             Tired of the endless search for the right auto parts? Let us do the
             heavy lifting for you! Just tell us what you need, and our team will
