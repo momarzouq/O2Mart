@@ -220,7 +220,12 @@ ul.spec-list {
 
 @media (max-width: 1024px) {
   .custom-gap {
-    gap: 110px;
+    gap: 190px;
+  }
+}
+@media (max-width: 900px) {
+  .custom-gap {
+    gap: 140px;
   }
 }
 @media (max-width: 767px) {

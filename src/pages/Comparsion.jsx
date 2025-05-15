@@ -1,6 +1,6 @@
-import React from "react";
+
 import Container from "../UI/Container";
-import ProductsComparisonTable from "./ComparsionDataTable";
+import ProductsComparisonTable from "../components/ComparsionDataTable";
 import { Breadcrumb } from "../UI/Breadcrumb";
 
 export default function Comparsion() {

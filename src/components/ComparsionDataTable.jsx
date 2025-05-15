@@ -40,7 +40,7 @@ const initialProducts = [
 const ProductsComparisonTable = () => {
   const [products, setProducts] = useState(initialProducts);
   const [selectedIndices, setSelectedIndices] = useState([]);
-
+  const [highlightedIndex, setHighlightedIndex] = useState(null);
   const { showToast } = useToastStore();
 
   const handleAddToCart = (index) => {
@@ -58,6 +58,10 @@ const ProductsComparisonTable = () => {
     if (updatedProducts.length === 0) {
       showToast("Comparison is empty");
     }
+  };
+
+  const toggleHighlight = (index) => {
+    setHighlightedIndex(index === highlightedIndex ? null : index);
   };
 
   return (
@@ -136,13 +140,33 @@ const ProductsComparisonTable = () => {
               {products.map((p, index) => (
                 <td key={index} className="border px-6 py-3">
                   <div className="flex items-center justify-start text-Brand">
-                    <span className="text-[#EC221F] text-2xl mr-1">
+                    <span className="text-[#EC221F] text-xl mr-1">
                       {"★".repeat(p.rating)}
+                      {"☆".repeat(5 - p.rating)}
                     </span>
                     <span className="ml-2 text-gray-500 text-sm">
                       ({p.feedback})
                     </span>
                   </div>
+                </td>
+              ))}
+            </tr>
+
+            <tr className="odd:bg-white even:bg-gray-100">
+              <td className="font-medium border text-sm text-gray-500 px-4 py-3">
+                Customer Feedback
+              </td>
+              {products.map((p, index) => (
+                <td
+                  key={index}
+                  className={`text-start text-sm border px-6 py-2 cursor-pointer ${
+                    highlightedIndex === index
+                      ? "text-red-500 font-bold"
+                      : "text-gray-500"
+                  }`}
+                  onClick={() => toggleHighlight(index)}
+                >
+                  {p.price}
                 </td>
               ))}
             </tr>

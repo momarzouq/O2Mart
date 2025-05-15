@@ -70,8 +70,16 @@ export default function Cart() {
           "Delivery with Installation",
           "Installation Center",
         ],
-        description:
-          "Get professional installation at your doorstep. Service cost is a flat AED200. Click here to select a mobile installer before checkout.",
+        description: (
+          <>
+            Get professional installation at your doorstep. Service cost is a
+            flat AED200.{" "}
+            <Link to="/mobile-installer" className="text-red-500 underline">
+              Click here
+            </Link>{" "}
+            to select a mobile installer before checkout.
+          </>
+        ),
       },
       {
         id: 3,

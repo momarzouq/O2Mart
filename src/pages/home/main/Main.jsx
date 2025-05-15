@@ -3,7 +3,7 @@ import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css/pagination";
-import TyersSlider from "../../../assets/Tyers-Slider.png";
+import TyersSlider from "../../../assets/Tyers-Slider.svg";
 import Categories from "../../../assets/categories.svg";
 import GetHelp from "../../../assets/GetHelp.svg";
 import CarsBrand from "../../../assets/Cars-Brand.svg";
@@ -32,6 +32,8 @@ const Section1 = () => {
     { id: 1, image: TyersSlider },
     { id: 2, image: TyersSlider },
     { id: 3, image: TyersSlider },
+    { id: 4, image: TyersSlider },
+    { id: 5, image: TyersSlider },
   ];
 
   return (
@@ -49,7 +51,7 @@ const Section1 = () => {
             slidesPerView: 1,
           },
           1024: {
-            slidesPerView: 1,
+            slidesPerView: 3,
           },
         }}
         loop={true}

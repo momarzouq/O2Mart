@@ -124,7 +124,7 @@ const Section2 = () => {
   };
 
   return (
-    <div className="flex lg:flex-col lg:ml-0 items-center lg:mt-8">
+    <div className="flex lg:flex-col lg:ml-0 items-center lg:mt-8 mb-12">
       {/* Left Side */}
       <div className="flex-[5]">
         <form className="space-y-4 text-sm" onSubmit={handleSubmit}>
@@ -307,7 +307,7 @@ const Section2 = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-1/2 text-start px-2 bg-Brand text-white py-2 md:py-2 md:text-xs rounded-md font-semibold"
+            className="w-1/2 text-center px-4 py-4 bg-[#EC221F] text-white   md:text-xs rounded-md font-semibold"
           >
             Get Me The Best Offer
           </button>
@@ -315,7 +315,7 @@ const Section2 = () => {
       </div>
       {/* Right Side */}
       <div className="flex-[7] md:mt-4 lg:mb-8">
-        <img src={Steps} alt="Steps" className="h-[500px]" />
+        <img src={Steps} alt="Steps" className="h-[550px]" />
       </div>
     </div>
   );

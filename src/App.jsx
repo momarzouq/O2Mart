@@ -12,7 +12,7 @@ import ForgotPassword from "./pages/registration/ForgotPassword";
 import Shop from "./pages/Shop";
 import ProductDetails from "./components/ProductDetails";
 import Inquiry from "./components/Inquiry";
-import Comparsion from "./components/Comparsion";
+import Comparsion from "./pages/Comparsion";
 import Dashboard from "./pages/dashboard/Index";
 import Wishlist from "./pages/dashboard/Wishlist";
 import Orders from "./pages/dashboard/Orders";
