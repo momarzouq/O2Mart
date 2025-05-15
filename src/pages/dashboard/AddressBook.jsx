@@ -211,11 +211,11 @@ const AddNewAddress = ({ addNewAddress, setAddNewAddress }) => {
                 </label>
                 <input className="bg-[#DCDBDB80] p-2 rounded-md col-span-2 outline-none" />
               </div>
+              <button className="w-1/4 lg:w-1/2 py-1 px-8 lg:px-4 rounded-md bg-Brand text-white mt-4">
+                Add Address
+              </button>
             </div>
           </div>
-          <button className="w-1/3 py-1 px-8 rounded-md bg-Brand text-white">
-            Add Address
-          </button>
         </form>
       )}
     </>

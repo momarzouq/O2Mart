@@ -7,8 +7,10 @@ import QuantityItem from "./QuantityItem";
 
 const SidebarCart = () => {
   const { isOpen, closeModal } = useCartStore();
-
-  // Sample dynamic cart data
+  const handleLinkClick = () => {
+    closeModal();
+  };
+  // example dynamic cart data
   const [cartItems, setCartItems] = useState([
     {
       id: 1,
@@ -77,7 +79,7 @@ const SidebarCart = () => {
             key={item.id}
             className="flex justify-start items-center gap-4 mb-4"
           >
-            <Link to="/cart">
+            <Link onClick={handleLinkClick} to="/cart">
               <img
                 src={item.image}
                 className="h-16 w-16 cursor-pointer"
@@ -119,12 +121,14 @@ const SidebarCart = () => {
         {/* Buttons */}
         <div className="flex flex-col gap-2">
           <Link
+            onClick={handleLinkClick}
             to="/cart"
             className="w-full text-xs font-semibold text-Brand text-center rounded-md border py-2 border-Brand"
           >
             View Cart
           </Link>
           <Link
+            onClick={handleLinkClick}
             to="/checkout"
             className="w-full text-xs font-semibold bg-Brand text-white text-center rounded-md border py-2 border-Brand"
           >

@@ -186,7 +186,7 @@ export default function Checkout() {
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
               odit consequatur laudantium voluptates perferendis, consequuntur
               sunt esse
-              <span className="text-Brand underline">Privacy policy.</span>
+              <Link to="/privacy-policy" className="text-Brand underline">Privacy policy.</Link>
             </p>
             <div className="flex items-center justify-between">
               <div className="space-x-1 lg:w-[70%]">
@@ -194,9 +194,9 @@ export default function Checkout() {
                 <span className="text-[#333232]">
                   I have read and agree to the website
                 </span>
-                <span className="text-Brand underline">
+                <Link to="/termsof-us" className="text-Brand underline">
                   Terms and conditions
-                </span>
+                </Link>
               </div>
               <Link
                 to="/thank-you"
@@ -346,9 +346,9 @@ export default function Checkout() {
                 <span className="text-[#333232]">
                   I have read and agree to the website
                 </span>
-                <span className="text-Brand underline">
+                <Link to="/termsof-us" className="text-Brand underline">
                   Terms and conditions
-                </span>
+                </Link>
               </div>
               <Link
                 to="/thank-you"

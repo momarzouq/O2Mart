@@ -120,7 +120,7 @@ export default function Footer() {
         </div>
       </Container>
       <hr className="mt-6 border-1 border-gray-700" />
-      <p className="text-sm text-center text-white mt-8 ">
+      <p className="text-sm text-center text-white mt-8 sm:mx-4">
         O2 Mart – All rights reserved · Made with <span className="text-Brand">❤</span> by Pikyhost
       </p>
     </div>

@@ -143,7 +143,7 @@ const ProfileBtnWithModal = () => {
         <BsPerson color="#FFFFFF" size={25} />
         <span className="sr-only">open profile</span>
       </button>
-      {isOpen && <ProfileModal />}
+      {isOpen && <ProfileModal setIsOpen={setIsOpen} />}
     </div>
   );
 };
@@ -156,7 +156,11 @@ const profileLinks = [
   { name: "My Garage", icon: FaCarSide, path: "/my-garage" },
 ];
 
-const ProfileModal = () => {
+const ProfileModal = ({ setIsOpen }) => {
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className="absolute bg-white rounded-[10px] p-5 space-y-2 z-50 top-[calc(100%+1rem)] -right-6 shadow-lg">
       <div className="flex gap-4 pb-4 border-b border-[#BDBDBD]">
@@ -166,8 +170,11 @@ const ProfileModal = () => {
             <h2 className="text-[18px] font-bold">Test</h2>
             <p className="text-[14px] text-[#616161]">mmm@gmail.com</p>
           </div>
-          <button className="bg-[#B2B2B2] py-2 px-3 text-white font-semibold rounded-lg">
-            <Link>Edit profile</Link>
+          <button 
+            className="bg-[#B2B2B2] py-2 px-3 text-white font-semibold rounded-lg"
+            onClick={handleLinkClick}
+          >
+            <Link to="/edit-profile">Edit profile</Link>
           </button>
         </div>
       </div>
@@ -178,6 +185,7 @@ const ProfileModal = () => {
             to={link.path}
             key={link.name}
             className="flex items-center gap-2 py-2 font-semibold hover:bg-gray-100"
+            onClick={handleLinkClick}
           >
             <link.icon size={24} />
             {link.name}
@@ -185,7 +193,10 @@ const ProfileModal = () => {
         ))}
       </div>
 
-      <button className="text-Brand font-semibold flex items-center gap-2 py-3">
+      <button 
+        className="text-Brand font-semibold flex items-center gap-2 py-3"
+        onClick={handleLinkClick}
+      >
         <IoMdLogOut size={24} /> Logout
       </button>
     </div>

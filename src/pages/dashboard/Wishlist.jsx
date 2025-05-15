@@ -8,6 +8,7 @@ import Tyers from "../../assets/Tyers.svg";
 import Nissan from "../../assets/nissan.svg";
 import { renderStars } from "../../components/FiltersAndProducts";
 import { FaHeart } from "react-icons/fa6";
+import { useToastStore } from "../../store/useToastStore";
 
 const Wishlist = () => {
   const TiresProducts = [
@@ -45,7 +46,7 @@ const Wishlist = () => {
       brand: Nissan,
     },
   ];
-
+  const { showToast } = useToastStore();
   return (
     <Container className="space-y-12 py-8">
       <div className="space-y-3">
@@ -114,7 +115,12 @@ const Wishlist = () => {
                   <option>3</option>
                   <option>4</option>
                 </select>
-                <button className="font-medium text-sm text-[#808080] border border-Brand rounded-2xl py-1 md:py-0.5 px-20 xl:px-10">
+                <button
+                  onClick={() => {
+                    showToast("Product Added To Cart");
+                  }}
+                  className="font-medium text-sm text-[#808080] border border-Brand rounded-2xl py-1 md:py-0.5 px-20 xl:px-10"
+                >
                   Add to Cart
                 </button>
               </div>

@@ -45,7 +45,8 @@ const Section1 = () => {
         <h3 className="text-2xl font-medium">Not Sure How to Decide?</h3>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the Lorem Ipsum has been the
+          industry. Lorem Ipsum has been the .Lorem Ipsum has been the rinting and typesetting
+          industry
         </p>
       </div>
     </div>

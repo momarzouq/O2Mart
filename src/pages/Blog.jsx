@@ -202,9 +202,9 @@ const SearchAndContent = () => {
           <h3 className=" font-bold">Tags</h3>
           <div className="flex flex-wrap items-center gap-2 my-4 space-y-2 text-sm font-semibold">
             {colors.map((color, index) => (
-              <p key={index} className="border rounded-lg py-1 px-2 mt-2">
+              <button key={index} className="border rounded-lg py-1 px-2 mt-2">
                 {color}
-              </p>
+              </button>
             ))}
           </div>
         </div>
