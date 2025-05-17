@@ -110,8 +110,8 @@ const Section3 = () => {
   return (
     <div className="w-full  bg-[#FBFBFB] items-center">
       <div className="relative w-full flex justify-end mt-4 md:mt-0">
-        <div className="md:ml-4 w-full flex flex-col gap-4 px-1 py-4">
-          <h1 className=" text-5xl md:text-xl font-medium text-[#333232]">
+        <div className="md:ml-4 w-full flex flex-col justify-center space-y-4 md:space-y-2">
+          <h1 className=" text-5xl md:text-sm  flex font-medium text-[#333232]">
             Why We Started O2Mart?
           </h1>
           <p className=" w-full text-[#808080] font-medium text-sm md:text-sm">
@@ -130,12 +130,12 @@ const Section3 = () => {
               built the platform we wished existed when we were in your shoes.
             </span>
           </p>
-          <button className=" w-40 lg:w-38 text-xs text-Brand border border-Brand py-3 px-8 lg:px-4 md:py-1  rounded font-bold">
+          <button className=" w-40 lg:w-32 text-xs text-Brand border border-Brand py-3 px-8 lg:px-4 md:py-1  rounded font-bold">
             Send Inquire
           </button>
         </div>
 
-        <img src={HomeBG} className="max-w-[330px] h-[300px] object-contain" />
+        <img src={HomeBG} className="max-w-[330px] md:max-w-[220px] h-[300px] object-contain" />
       </div>
     </div>
   );

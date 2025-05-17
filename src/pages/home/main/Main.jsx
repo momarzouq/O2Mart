@@ -50,6 +50,9 @@ const Section1 = () => {
           640: {
             slidesPerView: 1,
           },
+          767: {
+            slidesPerView: 2,
+          },
           1024: {
             slidesPerView: 3,
           },
